@@ -4,7 +4,7 @@
   "description": "backend nodejs part of novica-the-rapist project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nemanja02/Novica-The-Rapist/issues"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   },
   "homepage": "https://github.com/Nemanja02/Novica-The-Rapist#readme",
   "dependencies": {
