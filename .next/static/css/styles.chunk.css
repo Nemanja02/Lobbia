@@ -24,7 +24,8 @@
 
 ._1outjNDd2cnfOa1UOME6mf {
   color: #333333;
-  font-size: 16pt; }
+  font-size: 16pt;
+  text-indent: 4em; }
 
 ._2rqBj51wAHZmnt7KGA8GXJ {
   color: #f2f1ef;
@@ -33,10 +34,12 @@
   font-weight: 400; }
 
 .zeSKrs6FKqhaezHeZpFGz {
+  z-index: 100;
   width: 100%;
   height: 5.5rem;
   background-color: #2e3131;
   position: fixed;
+  top: 0;
   display: flex;
   flex-direction: row;
   align-items: center; }
@@ -63,6 +66,9 @@
     text-decoration: none;
     color: #bdc3c7;
     font-size: 1.6rem; }
+
+#_1vO7nIIcRqZ9HZwtzTFdOl {
+  margin-top: 5.5rem; }
 
 * {
   margin: 0;

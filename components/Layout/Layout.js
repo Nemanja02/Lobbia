@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
+import classes from "./Layout.module.scss";
 
 function Layout(props) {
-  return <div id="Root">
+  return <div id={classes.root}>
       <Navbar />
-      <div id="Main">{props.children}</div>;
+      <div id={classes.main}>{props.children}</div>;
     </div>
 }
 
