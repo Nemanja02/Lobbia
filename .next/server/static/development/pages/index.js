@@ -93,6 +93,33 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Layout/Layout.js":
+/*!*************************************!*\
+  !*** ./components/Layout/Layout.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Navbar/Navbar */ "./components/Navbar/Navbar.js");
+
+
+
+function Layout(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "Root"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "Main"
+  }, props.children), ";");
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
 /***/ "./components/Navbar/Navbar.js":
 /*!*************************************!*\
   !*** ./components/Navbar/Navbar.js ***!
@@ -1037,8 +1064,8 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./components/Navbar/Navbar.js");
-/* harmony import */ var _components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Typography/Typography */ "./components/Typography/Typography.js");
+/* harmony import */ var _components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Typography/Typography */ "./components/Typography/Typography.js");
+/* harmony import */ var _components_Layout_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout/Layout */ "./components/Layout/Layout.js");
 /* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/sass/global.scss */ "./config/sass/global.scss");
 /* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3__);
  // import { , Container } from "react-bootstrap";
@@ -1052,19 +1079,19 @@ __webpack_require__.r(__webpack_exports__);
     rel: "stylesheet"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "https://kit.fontawesome.com/8d5f687edf.js"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "h1",
     title: "H1 test"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "h2",
     title: "H2 test"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "h4",
     title: "H4 test"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "h6",
     title: "H6 test"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "p",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus pulvinar elementum integer enim neque volutpat ac. Quam nulla porttitor massa id neque aliquam. Enim lobortis scelerisque fermentum dui faucibus in ornare. Velit dignissim sodales ut eu sem integer vitae justo. Sed nisi lacus sed viverra tellus in. Sit amet cursus sit amet dictum sit amet justo donec. Iaculis at erat pellentesque adipiscing. Congue quisque egestas diam in arcu cursus euismod quis. Viverra maecenas accumsan lacus vel facilisis. Dui nunc mattis enim ut tellus elementum sagittis vitae. A scelerisque purus semper eget duis at tellus at urna. Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna. Quis auctor elit sed vulputate mi sit. Nec nam aliquam sem et tortor consequat id. Nec dui nunc mattis enim ut tellus. Bibendum at varius vel pharetra vel turpis nunc eget. Eget nullam non nisi est sit amet facilisis magna etiam. Sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum."
   })));
