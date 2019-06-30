@@ -2,7 +2,7 @@ const express = require("express");
 const next = require("next");
 
 const dev = process.env.NODE_ENV !== "production";
-const next_config = require("./config/next.config");
+const cfg = require("./config/config.json");
 
 const app = next({
   dev
@@ -18,11 +18,11 @@ app
       return handle(req, res);
     });
 
-    server.listen(next_config.port, err => {
+    server.listen(cfg.port, err => {
       if (err) throw err;
       console.log(
         "\n\t\t\x1b[46m%s\x1b[0m\n",
-        `Server running on http://localhost:${next_config.port}`
+        `Server running on http://localhost:${cfg.port}`
       );
     });
   })

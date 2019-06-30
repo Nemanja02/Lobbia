@@ -24,10 +24,15 @@
   },
   "homepage": "https://github.com/Nemanja02/Novica-The-Rapist#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "next": "^8.1.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6"
   }
 }
