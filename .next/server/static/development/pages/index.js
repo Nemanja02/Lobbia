@@ -254,9 +254,19 @@ function Typography(_ref) {
         className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h2
       }, title);
 
+    case "h3":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h3
+      }, title);
+
     case "h4":
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h4
+      }, title);
+
+    case "h5":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h5
       }, title);
 
     case "h6":
@@ -1102,8 +1112,14 @@ __webpack_require__.r(__webpack_exports__);
     variant: "h2",
     title: "H2 test"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "h3",
+    title: "H3 test"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "h4",
     title: "H4 test"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    variant: "h5",
+    title: "H5 test"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "h6",
     title: "H6 test"
