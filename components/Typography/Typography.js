@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Typography.module.scss";
 
-__webpack_require();
 function Typography({ variant, title }) {
   switch (variant) {
     case "h1":
