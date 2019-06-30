@@ -6,7 +6,7 @@ export class Navbar extends Component {
   render() {
     return (
       <div className={classes.navbar}>
-        <h6 className={classes.navbarHeading}>NovicaTheRapist</h6>
+        <h6 className={classes.navbarHeading}>Lobbia</h6>
         <div className={classes.navbarNavigation}>
           {["Home", "About", "Connect"].map(el => (
             <Link key={el} href="/">

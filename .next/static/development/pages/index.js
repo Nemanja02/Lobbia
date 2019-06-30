@@ -77,7 +77,7 @@ function (_Component) {
         className: _Navbar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.navbar
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h6", {
         className: _Navbar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.navbarHeading
-      }, "NovicaTheRapist"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _Navbar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.navbarNavigation
       }, ["Home", "About", "Connect"].map(function (el) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
