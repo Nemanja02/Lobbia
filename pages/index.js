@@ -1,6 +1,5 @@
 import React from "react";
-// import { , Container } from "react-bootstrap";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navigation/Sidebar";
 import "../config/sass/global.scss";
 
 export default () => {
@@ -16,4 +15,3 @@ export default () => {
     </>
   );
 };
-2;

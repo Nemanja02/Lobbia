@@ -1,0 +1,17 @@
+@import "../../config/sass/variables.scss";
+.navbarHeading {
+  color: $color-text;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.navbar {
+  width: 15rem;
+  height: 100%;
+  background-color: $color-bg;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

@@ -8,6 +8,7 @@ const app = next({
   dev
 });
 const handle = app.getRequestHandler();
+const { port } = cfg;
 
 app
   .prepare()
@@ -18,11 +19,11 @@ app
       return handle(req, res);
     });
 
-    server.listen(cfg.port, err => {
+    server.listen(port, err => {
       if (err) throw err;
       console.log(
         "\n\t\t\x1b[46m%s\x1b[0m\n",
-        `Server running on http://localhost:${cfg.port}`
+        `Server running on http://localhost:${port}`
       );
     });
   })

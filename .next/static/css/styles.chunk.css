@@ -1,0 +1,31 @@
+._2lx51WUQBOQOqiocJYvGuz {
+  color: #f2f1ef;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 400; }
+
+._2P3_-5HoPs2JkNMcVPNRxn {
+  width: 15rem;
+  height: 100%;
+  background-color: #2e3131;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  font-size: 10px; }
+
+#_3c5zKv40aD2qzzFN0EJB78 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem; }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
