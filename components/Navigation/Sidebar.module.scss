@@ -15,11 +15,11 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 .navHeading {
   color: $color-text-dark-second;
   font-size: 1.3rem;
-  margin: 2rem;
+  margin: 2rem 0 1rem 1rem;
 }
 
 .sidebarHeading {
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: $divider-nav-border-bottom;
   width: 100%;
   display: flex;
@@ -30,29 +30,31 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 }
 
 .sidebar {
+  padding: 0 0.5rem;
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: $divider-nav-border-bottom;
   &El {
-    padding: 0.6rem 0;
+    padding: 0.2rem 0;
     font-size: 1.5rem;
     color: $color-text-dark-second;
-    margin: 0.1rem 0;
+    margin: 0.2rem 0;
     display: flex;
     width: 100%;
     align-items: center;
 
     &:hover {
-      background-color: darken($color-bg, 10%);
+      background-color: darken($color-bg, 5%);
       cursor: pointer;
       color: $color-text;
+      border-radius: 6px;
     }
   }
 
   &_icon {
     font-size: 2rem;
     padding: 1rem;
-    margin: 0 2rem 0 0;
+    margin: 0 1rem 0 1rem;
     color: $color-text-dark-second;
   }
 }
