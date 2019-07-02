@@ -1,17 +1,58 @@
 @import "../../config/sass/variables.scss";
-.navbarHeading {
-  color: $color-text;
-  margin: 1rem;
-  font-size: 2rem;
-  font-weight: 400;
-}
 
-.navbar {
-  width: 15rem;
+$divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
+
+.container {
+  width: $sidebar-width;
   height: 100%;
   background-color: $color-bg;
+  border-right: 1px solid #ccc;
   position: fixed;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+}
+
+.navHeading {
+  color: $color-text-dark-second;
+  font-size: 1.3rem;
+  margin: 2rem;
+}
+
+.sidebarHeading {
+  padding-bottom: 2rem;
+  border-bottom: $divider-nav-border-bottom;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: $color-text;
+  margin: 2rem 0;
+}
+
+.sidebar {
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: $divider-nav-border-bottom;
+  &El {
+    padding: 0.6rem 0;
+    font-size: 1.5rem;
+    color: $color-text-dark-second;
+    margin: 0.1rem 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    &:hover {
+      background-color: darken($color-bg, 10%);
+      cursor: pointer;
+      color: $color-text;
+    }
+  }
+
+  &_icon {
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 0 2rem 0 0;
+    color: $color-text-dark-second;
+  }
 }

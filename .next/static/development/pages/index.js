@@ -1,5 +1,35 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
+/***/ "./components/Layout/Layout.js":
+/*!*************************************!*\
+  !*** ./components/Layout/Layout.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Navigation/Sidebar */ "./components/Navigation/Sidebar.js");
+/* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout.module.scss */ "./components/Layout/Layout.module.scss");
+/* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+function Layout(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
+  }, props.children), ";");
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
 /***/ "./components/Navigation/Sidebar.js":
 /*!******************************************!*\
   !*** ./components/Navigation/Sidebar.js ***!
@@ -26,6 +56,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+function NavHeading(_ref) {
+  var title = _ref.title;
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.navHeading
+  }, title.toUpperCase());
+}
+
 var Sidebar =
 /*#__PURE__*/
 function (_Component) {
@@ -41,14 +79,102 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.container
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarHeading
+      }, "Ovde logo i ime"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
-      }, "xD");
+      }, ["Feed", "My Profile", "Settings"].map(function (el) {
+        var faIcon;
+        if (el === "Feed") faIcon = "fas fa-th-list";
+        if (el === "My Profile") faIcon = "fas fa-user";
+        if (el === "Settings") faIcon = "fas fa-cog";
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+          key: el,
+          className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarEl
+        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
+          className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
+        }), " ", el);
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
+        title: "Lobbies"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+        style: {
+          color: "#fff"
+        }
+      }, "I ovde dole ispod lista lobbya"));
     }
   }]);
 
   return Sidebar;
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+
+/***/ }),
+
+/***/ "./components/Typography/Typography.js":
+/*!*********************************************!*\
+  !*** ./components/Typography/Typography.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Typography.module.scss */ "./components/Typography/Typography.module.scss");
+/* harmony import */ var _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function Typography(_ref) {
+  var variant = _ref.variant,
+      title = _ref.title;
+
+  switch (variant) {
+    case "h1":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h1
+      }, title);
+
+    case "h2":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h2
+      }, title);
+
+    case "h3":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h3
+      }, title);
+
+    case "h4":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h4
+      }, title);
+
+    case "h5":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h5
+      }, title);
+
+    case "h6":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h6
+      }, title);
+
+    case "span":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.span
+      }, title);
+
+    default:
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.p
+      }, title);
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Typography);
 
 /***/ }),
 
@@ -2196,9 +2322,11 @@ module.exports = (__webpack_require__(/*! dll-reference dll_6dc2816e14fab51b8269
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navigation/Sidebar */ "./components/Navigation/Sidebar.js");
-/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config/sass/global.scss */ "./config/sass/global.scss");
-/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout/Layout */ "./components/Layout/Layout.js");
+/* harmony import */ var _components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Typography/Typography */ "./components/Typography/Typography.js");
+/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/sass/global.scss */ "./config/sass/global.scss");
+/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -2208,7 +2336,10 @@ __webpack_require__.r(__webpack_exports__);
     rel: "stylesheet"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "https://kit.fontawesome.com/8d5f687edf.js"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    variant: "h2",
+    title: "Zelim da umrem"
+  })));
 });
 
 /***/ }),
