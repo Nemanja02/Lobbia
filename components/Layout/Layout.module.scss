@@ -1,5 +1,9 @@
 @import "../../config/sass/variables.scss";
 
+#root {
+  background-color: $color-bg;
+}
+
 #main {
   margin: 0 $sidebar-width;
   background-color: $color-bg;

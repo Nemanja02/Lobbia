@@ -1,10 +1,12 @@
 ._137uQMmYZ9psIw-Unn1Z-W {
+  margin: 25px;
   width: 460px;
-  height: 100%;
+  height: calc(100% - 50px);
   background-color: #454E54;
   position: fixed;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border-radius: 5px; }
 
 .UB3gAnnnnk04zsHuXer9F {
   color: #85898b;
@@ -44,6 +46,9 @@
     padding: 1rem;
     margin: 0 1rem 0 1rem;
     color: #85898b; }
+
+#_3kwh7x4ISw2sdc56HmDvZN {
+  background-color: #1E2024; }
 
 #_1vO7nIIcRqZ9HZwtzTFdOl {
   margin: 0 460px;

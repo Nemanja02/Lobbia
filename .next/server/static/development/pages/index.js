@@ -131,6 +131,7 @@ function Layout(props) {
 /***/ (function(module, exports) {
 
 module.exports = {
+	"root": "_3kwh7x4ISw2sdc56HmDvZN",
 	"main": "_1vO7nIIcRqZ9HZwtzTFdOl"
 };
 
