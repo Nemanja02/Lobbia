@@ -53,8 +53,8 @@
 #_1vO7nIIcRqZ9HZwtzTFdOl {
   margin: 0 460px;
   background-color: #1E2024;
-  width: 100vw;
-  height: 100vh; }
+  width: calc(100% - $sidebar-width - 50px);
+  height: calc(100vh); }
 
 ._1m-yaVkZe3V6us4CJcB9OD {
   color: #222222;
