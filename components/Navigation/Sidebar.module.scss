@@ -3,12 +3,14 @@
 $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 
 .container {
+  margin: 25px;
   width: $sidebar-width;
-  height: 100%;
+  height: calc(100% - 50px);
   background-color: $color-bg-light;
   position: fixed;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 }
 
 .navHeading {
