@@ -5,8 +5,7 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 .container {
   width: $sidebar-width;
   height: 100%;
-  background-color: $color-bg;
-  border-right: 1px solid #ccc;
+  background-color: $color-bg-light;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -44,7 +43,7 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
     align-items: center;
 
     &:hover {
-      background-color: darken($color-bg, 5%);
+      background-color: $color-bg;
       cursor: pointer;
       color: $color-text;
       border-radius: 6px;

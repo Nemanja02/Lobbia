@@ -131,7 +131,7 @@ function Layout(props) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"main": "_1uebS76EZIESUqVxVRJV5Z"
+	"main": "_1vO7nIIcRqZ9HZwtzTFdOl"
 };
 
 /***/ }),
@@ -225,12 +225,12 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"container": "_3YXQ9eM8q71zIRlzguFU8o",
-	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
-	"sidebarHeading": "_2PvQG9Sdi5j3LUA6YE0ySg",
-	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
-	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
-	"sidebar_icon": "KrlgPYtsakN9FmfsrnLx3"
+	"container": "_137uQMmYZ9psIw-Unn1Z-W",
+	"navHeading": "UB3gAnnnnk04zsHuXer9F",
+	"sidebarHeading": "_2muR0BcrPwYmgt2XBdkTUO",
+	"sidebar": "_2PB3hnb295yNtHiXpLgF6u",
+	"sidebarEl": "_3KdhE5TUwN2S40vL_0TYAQ",
+	"sidebar_icon": "_1t7N9dhjJQ-zdbUzFRqZCk"
 };
 
 /***/ }),
@@ -310,13 +310,13 @@ function Typography(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"h1": "_2Gu1oTUFVuVkckVKJWISjr",
-	"h2": "_2IG223MdCVeLFWATVFqxRH",
-	"h3": "eh1SrU78-PebH_Puue5iR",
-	"h4": "_2y4dUru7dL1d1ir-WtNLrc",
-	"h5": "_2aL6AOjfLgcmMYJe5-Wb9Q",
-	"h6": "_3nvDAxWG6WQXjmQKmfoRAT",
-	"p": "_2BsUHfr_BLCEGUQz7QNpD3"
+	"h1": "_1m-yaVkZe3V6us4CJcB9OD",
+	"h2": "WI2ZzuYunNKUnl6SRJhdl",
+	"h3": "_3GA1mfDrYIaITQE77uMzH2",
+	"h4": "_10MeLdFgr246BYF-GkkEQ_",
+	"h5": "_2QKxNHgAtwpyKXhsNoeZdS",
+	"h6": "_1ZxEDcby1kp9hErKxjgbdL",
+	"p": "_1outjNDd2cnfOa1UOME6mf"
 };
 
 /***/ }),
@@ -329,7 +329,7 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3c5zKv40aD2qzzFN0EJB78"
+	"wrapper": "IoDNnoLrVbc1VFd4LBVVZ"
 };
 
 /***/ }),
@@ -636,10 +636,7 @@ __webpack_require__.r(__webpack_exports__);
     rel: "stylesheet"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "https://kit.fontawesome.com/8d5f687edf.js"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    variant: "h2",
-    title: "Zelim da umrem"
-  })));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 });
 
 /***/ }),
@@ -651,7 +648,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Web Development\Novica-The-Rapist\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/petar/Documents/antisocial/git/Novica-The-Rapist/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

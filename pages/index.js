@@ -12,7 +12,6 @@ export default () => {
       />
       <script src="https://kit.fontawesome.com/8d5f687edf.js" />
       <Layout>
-        <Typography variant="h2" title="Zelim da umrem" />
       </Layout>
     </>
   );
