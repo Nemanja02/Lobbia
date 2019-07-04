@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
 /***/ "./components/Layout/Layout.js":
 /*!*************************************!*\
@@ -64,6 +64,24 @@ function NavHeading(_ref) {
   }, title.toUpperCase());
 }
 
+function Profile(_ref2) {
+  var ppicture = _ref2.ppicture,
+      username = _ref2.username,
+      status = _ref2.status;
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.user
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+    src: ppicture,
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.about
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.username
+  }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.status
+  }, status)));
+}
+
 var Sidebar =
 /*#__PURE__*/
 function (_Component) {
@@ -80,9 +98,13 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.container
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Profile, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZucc",
+        status: "Playing Minecraft"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarHeading
-      }, "Ovde logo i ime"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+      }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
       }, ["Feed", "My Profile", "Settings"].map(function (el) {
         var faIcon;
@@ -2277,10 +2299,10 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js!./":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js ***!
-  \**************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js!./":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2342,13 +2364,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js ***!
-  \******************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js!./");
 
 
 /***/ }),

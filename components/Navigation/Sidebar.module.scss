@@ -4,6 +4,7 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 
 .container {
   margin: 25px;
+  padding-top: 25px; 
   width: $sidebar-width;
   height: calc(100% - 50px);
   background-color: $color-bg-light;
@@ -58,4 +59,37 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
     margin: 0 1rem 0 1rem;
     color: $color-text-dark-second;
   }
+}
+
+.user {
+  display: flex;
+  flex-basis: row;
+  vertical-align: middle;
+}
+
+.about {
+  
+}
+
+.ppicture {
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+  margin-left: 25px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.username {
+  display: block;
+  color: white;
+  font-size: 28pt;
+  line-height: 28pt;
+}
+
+.status {
+  display: block;
+  color: #C6C6D9;
+  font-size: 16pt;
+  line-height: 16pt;
 }

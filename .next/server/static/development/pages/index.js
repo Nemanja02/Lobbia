@@ -131,8 +131,8 @@ function Layout(props) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"root": "_3kwh7x4ISw2sdc56HmDvZN",
-	"main": "_1vO7nIIcRqZ9HZwtzTFdOl"
+	"root": "_1vz7CQfPoZHCTWyxZve-ID",
+	"main": "_1uebS76EZIESUqVxVRJV5Z"
 };
 
 /***/ }),
@@ -171,6 +171,24 @@ function NavHeading(_ref) {
   }, title.toUpperCase());
 }
 
+function Profile(_ref2) {
+  var ppicture = _ref2.ppicture,
+      username = _ref2.username,
+      status = _ref2.status;
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.user
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+    src: ppicture,
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.about
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.username
+  }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.status
+  }, status)));
+}
+
 var Sidebar =
 /*#__PURE__*/
 function (_Component) {
@@ -187,9 +205,13 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.container
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Profile, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZucc",
+        status: "Playing Minecraft"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarHeading
-      }, "Ovde logo i ime"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+      }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
       }, ["Feed", "My Profile", "Settings"].map(function (el) {
         var faIcon;
@@ -226,12 +248,16 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"container": "_137uQMmYZ9psIw-Unn1Z-W",
-	"navHeading": "UB3gAnnnnk04zsHuXer9F",
-	"sidebarHeading": "_2muR0BcrPwYmgt2XBdkTUO",
-	"sidebar": "_2PB3hnb295yNtHiXpLgF6u",
-	"sidebarEl": "_3KdhE5TUwN2S40vL_0TYAQ",
-	"sidebar_icon": "_1t7N9dhjJQ-zdbUzFRqZCk"
+	"container": "_3YXQ9eM8q71zIRlzguFU8o",
+	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
+	"sidebarHeading": "_2PvQG9Sdi5j3LUA6YE0ySg",
+	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
+	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
+	"sidebar_icon": "KrlgPYtsakN9FmfsrnLx3",
+	"user": "_27r2Uk4oW1FofT_SDu9k1H",
+	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
+	"username": "_3JobRsf0NpbChEd__uJTLF",
+	"status": "_12DPtHue6uUICEGaiTBKUM"
 };
 
 /***/ }),
@@ -311,13 +337,13 @@ function Typography(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"h1": "_1m-yaVkZe3V6us4CJcB9OD",
-	"h2": "WI2ZzuYunNKUnl6SRJhdl",
-	"h3": "_3GA1mfDrYIaITQE77uMzH2",
-	"h4": "_10MeLdFgr246BYF-GkkEQ_",
-	"h5": "_2QKxNHgAtwpyKXhsNoeZdS",
-	"h6": "_1ZxEDcby1kp9hErKxjgbdL",
-	"p": "_1outjNDd2cnfOa1UOME6mf"
+	"h1": "_2Gu1oTUFVuVkckVKJWISjr",
+	"h2": "_2IG223MdCVeLFWATVFqxRH",
+	"h3": "eh1SrU78-PebH_Puue5iR",
+	"h4": "_2y4dUru7dL1d1ir-WtNLrc",
+	"h5": "_2aL6AOjfLgcmMYJe5-Wb9Q",
+	"h6": "_3nvDAxWG6WQXjmQKmfoRAT",
+	"p": "_2BsUHfr_BLCEGUQz7QNpD3"
 };
 
 /***/ }),
@@ -330,7 +356,7 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "IoDNnoLrVbc1VFd4LBVVZ"
+	"wrapper": "_3c5zKv40aD2qzzFN0EJB78"
 };
 
 /***/ }),
@@ -649,7 +675,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/petar/Documents/antisocial/git/Novica-The-Rapist/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\Petar\Documents\Lobbia\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
