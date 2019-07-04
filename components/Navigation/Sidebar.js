@@ -4,7 +4,20 @@ import Link from "./NavLink/NavLink";
 import Typography from "../Typography/Typography";
 
 function NavHeading({ title }) {
-  return <div className={classes.navHeading}>{title.toUpperCase()}</div>;
+  return <span className={classes.navHeading}>{title}</span>;
+}
+
+function Profile({ ppicture, username, status }) {
+  return (
+    <div className={classes.user}>
+      <img src={ppicture} className={classes.ppicture} />
+      <div className={classes.online} />
+      <div className={classes.about}>
+        <span className={classes.username}>{username}</span>
+        <span className={classes.status}>{status}</span>
+      </div>
+    </div>
+  );
 }
 
 export class Sidebar extends Component {

@@ -221,9 +221,29 @@ __webpack_require__.r(__webpack_exports__);
 
 function NavHeading(_ref) {
   var title = _ref.title;
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.navHeading
-  }, title.toUpperCase());
+  }, title);
+}
+
+function Profile(_ref2) {
+  var ppicture = _ref2.ppicture,
+      username = _ref2.username,
+      status = _ref2.status;
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.user
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+    src: ppicture,
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.online
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.about
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.username
+  }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.status
+  }, status)));
 }
 
 var Sidebar =
