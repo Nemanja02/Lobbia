@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import classes from "./Sidebar.module.scss";
 
 function NavHeading({ title }) {
-  return <div className={classes.navHeading}>{title.toUpperCase()}</div>;
+  return <span className={classes.navHeading}>{title}</span>;
 }
 
 function Profile({ppicture, username, status}) {
@@ -34,8 +34,7 @@ export class Sidebar extends Component {
             );
           })}
         </ul>
-        <NavHeading title="Lobbies" />
-        <span style={{ color: "#fff" }}>I ovde dole ispod lista lobbya</span>
+        <NavHeading title="Friends" />
       </div>
     );
   }
