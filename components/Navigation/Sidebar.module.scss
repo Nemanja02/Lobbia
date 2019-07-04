@@ -3,7 +3,7 @@
 $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 
 .container {
-  margin: 25px;
+  margin: 15px;
   width: $sidebar-width;
   height: calc(100% - 50px);
   background-color: $color-bg-light;
@@ -20,14 +20,8 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
 }
 
 .sidebarHeading {
-  padding-bottom: 1.5rem;
+  padding: 1.5rem 0;
   border-bottom: $divider-nav-border-bottom;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  color: $color-text;
-  margin: 2rem 0;
 }
 
 .sidebar {
@@ -35,27 +29,4 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
   width: 100%;
   padding-bottom: 1.5rem;
   border-bottom: $divider-nav-border-bottom;
-  &El {
-    padding: 0.2rem 0;
-    font-size: 1.5rem;
-    color: $color-text-dark-second;
-    margin: 0.2rem 0;
-    display: flex;
-    width: 100%;
-    align-items: center;
-
-    &:hover {
-      background-color: $color-bg;
-      cursor: pointer;
-      color: $color-text;
-      border-radius: 6px;
-    }
-  }
-
-  &_icon {
-    font-size: 2rem;
-    padding: 1rem;
-    margin: 0 1rem 0 1rem;
-    color: $color-text-dark-second;
-  }
 }
