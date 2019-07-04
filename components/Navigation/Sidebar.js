@@ -4,7 +4,7 @@ import Link from "./NavLink/NavLink";
 import Typography from "../Typography/Typography";
 
 function NavHeading({ title }) {
-  return <span className={classes.navHeading}>{title}</span>;
+  return <span className={classes.navHeading}>{title.toUpperCase()}</span>;
 }
 
 function Profile({ ppicture, username, status }) {

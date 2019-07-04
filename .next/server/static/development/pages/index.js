@@ -223,7 +223,7 @@ function NavHeading(_ref) {
   var title = _ref.title;
   return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.navHeading
-  }, title);
+  }, title.toUpperCase());
 }
 
 function Profile(_ref2) {
