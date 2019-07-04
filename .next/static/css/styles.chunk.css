@@ -1,6 +1,49 @@
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2"); }
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v8/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format("woff2"); }
+
+._3eKY8thn7d72qavZtGZDK3 {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+._13LbvDvQdDXyCRrE_FyLsy {
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
 ._3YXQ9eM8q71zIRlzguFU8o {
   margin: 25px;
-  padding-top: 25px;
   width: 460px;
   height: calc(100% - 50px);
   background-color: #454E54;
@@ -14,21 +57,10 @@
   font-size: 1.3rem;
   margin: 2rem 0 1rem 1rem; }
 
-._2PvQG9Sdi5j3LUA6YE0ySg {
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #535657;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  color: #f2f1ef;
-  margin: 2rem 0; }
-
 ._3Y2evKrHYXVrygyF4BI1Yr {
   padding: 0 0.5rem;
   width: 100%;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #535657; }
+  padding-bottom: 1.5rem; }
   ._2fMfc8emLc54RFPieMre6q {
     padding: 0.2rem 0;
     font-size: 1.5rem;
@@ -51,7 +83,8 @@
 ._27r2Uk4oW1FofT_SDu9k1H {
   display: flex;
   flex-basis: row;
-  vertical-align: middle; }
+  vertical-align: middle;
+  margin: 25px 0; }
 
 .GFB4rQmfbp2O79gvLuHIr {
   height: 70px;
@@ -64,14 +97,24 @@
 ._3JobRsf0NpbChEd__uJTLF {
   display: block;
   color: white;
-  font-size: 28pt;
+  font-size: 21pt;
   line-height: 30pt; }
 
 ._12DPtHue6uUICEGaiTBKUM {
   display: block;
   color: #C6C6D9;
-  font-size: 14pt;
+  font-size: 12pt;
   line-height: 16pt; }
+
+._2wUeJX5UAFj9CL9A-LSXBq {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #66BB6A;
+  border: solid #454E54 7px; }
 
 #_1vz7CQfPoZHCTWyxZve-ID {
   background-color: #1E2024; }

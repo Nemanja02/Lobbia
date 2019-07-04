@@ -114,7 +114,10 @@ __webpack_require__.r(__webpack_exports__);
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    href: "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined",
+    rel: "stylesheet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
   }, props.children), ";");
 }
@@ -181,6 +184,8 @@ function Profile(_ref2) {
     src: ppicture,
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.online
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.about
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.username
@@ -208,22 +213,20 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Profile, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZucc",
-        status: "Playing Minecraft"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarHeading
-      }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+        status: "Playing Minecraft survival"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
       }, ["Feed", "My Profile", "Settings"].map(function (el) {
-        var faIcon;
-        if (el === "Feed") faIcon = "fas fa-th-list";
-        if (el === "My Profile") faIcon = "fas fa-user";
-        if (el === "Settings") faIcon = "fas fa-cog";
+        var Icon;
+        if (el === "Feed") Icon = "list";
+        if (el === "My Profile") Icon = "person";
+        if (el === "Settings") Icon = "settings";
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
           key: el,
           className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarEl
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-          className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
-        }), " ", el);
+          className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.materialOutlined, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
+        }, Icon), " ", el);
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Lobbies"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
@@ -248,16 +251,18 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
+	"material-icons": "_3eKY8thn7d72qavZtGZDK3",
+	"materialOutlined": "_13LbvDvQdDXyCRrE_FyLsy",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
 	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
-	"sidebarHeading": "_2PvQG9Sdi5j3LUA6YE0ySg",
 	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
 	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
 	"sidebar_icon": "KrlgPYtsakN9FmfsrnLx3",
 	"user": "_27r2Uk4oW1FofT_SDu9k1H",
 	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
 	"username": "_3JobRsf0NpbChEd__uJTLF",
-	"status": "_12DPtHue6uUICEGaiTBKUM"
+	"status": "_12DPtHue6uUICEGaiTBKUM",
+	"online": "_2wUeJX5UAFj9CL9A-LSXBq"
 };
 
 /***/ }),
