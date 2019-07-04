@@ -21,10 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-    href: "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined",
-    rel: "stylesheet"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
   }, props.children), ";");
 }
