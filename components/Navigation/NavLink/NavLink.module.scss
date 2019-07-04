@@ -10,16 +10,21 @@
   width: 100%;
   align-items: center;
 
+  &Icon {
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 0 1rem 0 1rem;
+    color: $color-text-dark-second;
+  }
+
   &:hover {
     background-color: $color-bg;
     cursor: pointer;
     color: $color-text;
     border-radius: 6px;
   }
-  &Icon {
-    font-size: 2rem;
-    padding: 1rem;
-    margin: 0 1rem 0 1rem;
-    color: $color-text-dark-second;
+
+  &:hover > &Icon {
+    color: $color-primary-dark;
   }
 }

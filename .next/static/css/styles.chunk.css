@@ -32,16 +32,18 @@
   display: flex;
   width: 100%;
   align-items: center; }
-  ._1RTLLVZRxjzleNc3xsskO9:hover {
-    background-color: #1e2024;
-    cursor: pointer;
-    color: #f2f1ef;
-    border-radius: 6px; }
   ._4vfOEq8ynFgz-AI4JSPlw {
     font-size: 2rem;
     padding: 1rem;
     margin: 0 1rem 0 1rem;
     color: #85898b; }
+  ._1RTLLVZRxjzleNc3xsskO9:hover {
+    background-color: #1e2024;
+    cursor: pointer;
+    color: #f2f1ef;
+    border-radius: 6px; }
+  ._1RTLLVZRxjzleNc3xsskO9:hover > ._4vfOEq8ynFgz-AI4JSPlw {
+    color: #fe833d; }
 
 ._1m-yaVkZe3V6us4CJcB9OD {
   font-size: 89pt; }
