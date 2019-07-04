@@ -11,7 +11,7 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
   position: fixed;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .navHeading {
@@ -72,7 +72,7 @@ $divider-nav-border-bottom: 1px solid darken($color-text-dark-second, 20%);
   width: 70px;
   border-radius: 35px;
   margin-left: 25px;
-  margin-right: 10px;
+  margin-right: 15px;
   object-fit: cover;
 }
 
