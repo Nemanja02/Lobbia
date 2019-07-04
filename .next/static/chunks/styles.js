@@ -68,7 +68,7 @@ module.exports = {"material-icons":"_3eKY8thn7d72qavZtGZDK3","materialOutlined":
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1562271139253");
+            injectCss(link, link.href.split("?")[0] + "?unix=1562272244485");
           });
       }
     }

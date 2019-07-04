@@ -5,7 +5,7 @@
 .container {
   margin: 25px; 
   width: $sidebar-width;
-  height: calc(100% - 50px);
+  height: 280px;
   background-color: $color-bg-light;
   position: fixed;
   display: flex;
@@ -23,9 +23,10 @@
   padding: 0 0.5rem;
   width: 100%;
   padding-bottom: 1.5rem;
+
   &El {
     padding: 0.2rem 0;
-    font-size: 1.5rem;
+    font-size: 16px;
     color: white;
     margin: 0.2rem 0;
     display: flex;
@@ -41,9 +42,8 @@
   }
 
   &_icon {
-    font-size: 2rem;
-    padding: 1rem;
-    margin: 0 1rem 0 1rem;
+    font-size: 25px;
+    margin: 10px 25px;
     color: white;
   }
 }
@@ -52,7 +52,7 @@
   display: flex;
   flex-basis: row;
   vertical-align: middle;
-  margin: 25px 0;
+  margin: 25px 0 15px 0;
 }
 
 .ppicture {
@@ -67,15 +67,15 @@
 .username {
   display: block;
   color: white;
-  font-size: 21pt;
-  line-height: 30pt;
+  font-size: 28px;
+  line-height: 37px;
 }
 
 .status {
   display: block;
   color: #C6C6D9;
-  font-size: 12pt;
-  line-height: 16pt;
+  font-size: 16px;
+  line-height: 27px;
 }
 
 .online {
