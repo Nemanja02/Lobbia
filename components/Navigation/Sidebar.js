@@ -22,14 +22,14 @@ export class Sidebar extends Component {
       <div className={classes.container}>
         <Profile ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZucc" status="Playing Minecraft survival" />
         <ul className={classes.sidebar}>
-          {["Feed", "My Profile", "Settings"].map(el => {
-            let Icon;
-            if (el === "Feed") Icon = "list";
-            if (el === "My Profile") Icon = "person";
-            if (el === "Settings") Icon = "settings";
+          {["Feed", "Profile", "Settings"].map(el => {
+            let faIcon;
+            if (el === "Feed") faIcon = "fas fa-th-list";
+            if (el === "Profile") faIcon = "fas fa-user";
+            if (el === "Settings") faIcon = "fas fa-cog";
             return (
               <p key={el} className={classes.sidebarEl}>
-                <i className={`${classes.materialOutlined} ${classes.sidebar_icon}`}>{Icon}</i> {el}
+                <i className={`${faIcon} ${classes.sidebar_icon}`} /> {el}
               </p>
             );
           })}

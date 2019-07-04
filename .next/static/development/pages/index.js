@@ -109,17 +109,17 @@ function (_Component) {
         status: "Playing Minecraft survival"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
-      }, ["Feed", "My Profile", "Settings"].map(function (el) {
-        var Icon;
-        if (el === "Feed") Icon = "list";
-        if (el === "My Profile") Icon = "person";
-        if (el === "Settings") Icon = "settings";
+      }, ["Feed", "Profile", "Settings"].map(function (el) {
+        var faIcon;
+        if (el === "Feed") faIcon = "fas fa-th-list";
+        if (el === "Profile") faIcon = "fas fa-user";
+        if (el === "Settings") faIcon = "fas fa-cog";
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
           key: el,
           className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarEl
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
-          className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.materialOutlined, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
-        }, Icon), " ", el);
+          className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
+        }), " ", el);
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Lobbies"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
