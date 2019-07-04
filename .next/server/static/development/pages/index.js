@@ -207,6 +207,8 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.container
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Profile, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZucc",
@@ -224,9 +226,11 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
           className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
         }), " ", el);
-      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
+      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Friends"
-      }));
+      })));
     }
   }]);
 
@@ -244,9 +248,8 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"material-icons": "_3eKY8thn7d72qavZtGZDK3",
-	"materialOutlined": "_13LbvDvQdDXyCRrE_FyLsy",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
+	"division": "IdzUjFPTU5BhBLoZ9MtAi",
 	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
 	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
 	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
