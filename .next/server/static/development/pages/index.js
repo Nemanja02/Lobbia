@@ -191,6 +191,26 @@ function Profile(_ref2) {
   }, status)));
 }
 
+function Friend(_ref3) {
+  var ppicture = _ref3.ppicture,
+      username = _ref3.username,
+      status = _ref3.status;
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.friend
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+    src: ppicture,
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fppicture
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fonline
+  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fabout
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fusername
+  }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fstatus
+  }, status)));
+}
+
 var Sidebar =
 /*#__PURE__*/
 function (_Component) {
@@ -230,6 +250,14 @@ function (_Component) {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Friends"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone",
+        status: "Playing lol"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone",
+        status: "Playing lol"
       })));
     }
   }]);
@@ -258,7 +286,10 @@ module.exports = {
 	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
 	"username": "_3JobRsf0NpbChEd__uJTLF",
 	"status": "_12DPtHue6uUICEGaiTBKUM",
-	"online": "_2wUeJX5UAFj9CL9A-LSXBq"
+	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
+	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
+	"fppicture": "_3FhiERp1S6evqvtVjDych5",
+	"fonline": "_1tvsRMNyogso7_KSDJeN0T"
 };
 
 /***/ }),

@@ -90,3 +90,25 @@
   background-color: $color-ok;
   border: solid $color-bg-light 7px;
 }
+
+.friend {
+  position: relative;
+}
+
+.fppicture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fonline {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: $color-ok;
+  border: solid $color-bg-light 7px;
+}

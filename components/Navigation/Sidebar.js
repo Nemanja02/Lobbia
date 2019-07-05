@@ -6,14 +6,29 @@ function NavHeading({ title }) {
 }
 
 function Profile({ppicture, username, status}) {
-  return <div className={classes.user}>
-          <img src={ppicture} className={classes.ppicture}/>
-          <div className={classes.online} />
-          <div className={classes.about}>
-            <span className={classes.username}>{username}</span>
-            <span className={classes.status}>{status}</span>
-          </div>
-        </div>
+  return (
+    <div className={classes.user}>
+      <img src={ppicture} className={classes.ppicture}/>
+      <div className={classes.online} />
+      <div className={classes.about}>
+        <span className={classes.username}>{username}</span>
+        <span className={classes.status}>{status}</span>
+      </div>
+    </div>
+  );
+}
+
+function Friend({ppicture, username, status}) {
+  return (
+    <div className={classes.friend}>
+      <img src={ppicture} className={classes.fppicture}/>
+      <div className={classes.fonline} />
+      <div className={classes.fabout}>
+        <span className={classes.fusername}>{username}</span>
+        <span className={classes.fstatus}>{status}</span>
+      </div>
+    </div>
+  );
 }
 
 export class Sidebar extends Component {
@@ -38,7 +53,9 @@ export class Sidebar extends Component {
         </div>
         
         <div className={classes.division}>
-          <NavHeading title="Friends" />
+          <NavHeading title="Friends"  />
+          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone" status="Playing lol" />
+          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone" status="Playing lol" />
         </div>
       </div>
     );
