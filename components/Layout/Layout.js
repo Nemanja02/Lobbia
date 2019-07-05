@@ -6,9 +6,9 @@ function Layout(props) {
   return (
     <div id={classes.root}>
       <Sidebar />
-      <div id={classes.main}>{props.children}</div>;
+      <div id={classes.main}>{props.children}</div>
     </div>
-  );
+  )
 }
 
 export default Layout;

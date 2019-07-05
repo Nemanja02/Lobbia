@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import classes from "./Sidebar.module.scss";
 
 function NavHeading({ title }) {
-  return <span className={classes.navHeading}>{title}</span>;
+  return <span className={classes.navHeading}>{title}</span>
 }
 
 function Profile({ppicture, username, activity}) {

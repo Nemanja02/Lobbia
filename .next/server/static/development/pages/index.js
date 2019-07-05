@@ -116,7 +116,7 @@ function Layout(props) {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
-  }, props.children), ";");
+  }, props.children));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -288,6 +288,7 @@ function (_Component) {
 module.exports = {
 	"wrapper": "_3cw_iLpgEtU0F6CGKUS-ED",
 	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
+	"text": "ZBZuGOg0kosmxDSqNhrDo",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
 	"division": "IdzUjFPTU5BhBLoZ9MtAi",
 	"growdiv": "tm5p_xXr6fJp6UBexxKvv",
@@ -412,7 +413,8 @@ module.exports = {
 
 module.exports = {
 	"wrapper": "_3c5zKv40aD2qzzFN0EJB78",
-	"unselectable": "_301P-G3edSFpBv3xInH_c9"
+	"unselectable": "_301P-G3edSFpBv3xInH_c9",
+	"text": "_3xqqT-dldzNrWgExGGtGFf"
 };
 
 /***/ }),

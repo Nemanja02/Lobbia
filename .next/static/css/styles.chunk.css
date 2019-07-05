@@ -19,10 +19,17 @@
   -webkit-user-select: none;
   -o-user-select: none; }
 
+#ZBZuGOg0kosmxDSqNhrDo {
+  display: none; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
 ._3YXQ9eM8q71zIRlzguFU8o {
   display: flex;
   position: fixed;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   padding: 25px;
   padding-bottom: 0; }
@@ -208,6 +215,9 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none; }
+
+#_3xqqT-dldzNrWgExGGtGFf {
+  display: none; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
