@@ -142,7 +142,7 @@ function (_Component) {
           className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
         }), " ", el);
       }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.lastdiv)
+        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.growdiv)
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Friends"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {

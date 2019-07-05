@@ -58,7 +58,7 @@ export class Sidebar extends Component {
           </ul>
         </div>
         
-        <div className={`${classes.division} ${classes.lastdiv}`}>
+        <div className={`${classes.division} ${classes.growdiv}`}>
           <NavHeading title="Friends"  />
           <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone1" activity="online" />
           <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone2" activity="offline" />

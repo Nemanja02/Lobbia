@@ -249,7 +249,7 @@ function (_Component) {
           className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
         }), " ", el);
       }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.lastdiv)
+        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.growdiv)
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Friends"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
@@ -290,7 +290,7 @@ module.exports = {
 	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
 	"division": "IdzUjFPTU5BhBLoZ9MtAi",
-	"lastdiv": "_3gFksjAi9P0u5VMPq9lxEv",
+	"growdiv": "tm5p_xXr6fJp6UBexxKvv",
 	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
 	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
 	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
