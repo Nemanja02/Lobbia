@@ -1,31 +1,38 @@
+@import "../../config/sass/global.scss";
 @import "../../config/sass/variables.scss";
 
 .container {
+  display: flex;
   position: fixed;
+  height: 100%;
+  flex-direction: column;
+  padding: 25px;
+  padding-bottom: 0;
 }
 
 .division {
-  margin: 25px; 
+  padding: 25px; 
   width: $sidebar-width;
-  height: 280px;
   background-color: $color-bg-light;
   position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.lastdiv {
+  flex-grow: 100;
 }
 
 .navHeading {
   color: white;
   font-size: 37px;
-  margin-left: 35px;
+  margin-left: 10px;
 }
 
 .sidebar {
-  padding: 0 0.5rem;
   width: 100%;
-  padding-bottom: 1.5rem;
 
   &El {
     padding: 0.2rem 0;
@@ -73,7 +80,7 @@
   line-height: 37px;
 }
 
-.status {
+.activity {
   display: block;
   color: #C6C6D9;
   font-size: 16px;
@@ -109,6 +116,46 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: $color-ok;
   border: solid $color-bg-light 7px;
+}
+
+.friend {
+  display: flex;
+  flex-basis: row;
+  vertical-align: middle;
+  margin: 10px 0;
+}
+
+.fusername {
+  display: block;
+  color: white;
+  font-size: 21px;
+  line-height: 25px;
+}
+
+.factivity {
+  display: block;
+  color: #C6C6D9;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.fabout {
+  margin-left: 10px; 
+}
+
+.yellow {
+  background-color: $color-warning;
+}
+
+.red {
+  background-color: $color-danger;
+}
+
+.green {
+  background-color: $color-ok;
+}
+
+.black {
+  background-color: $color-bg;
 }

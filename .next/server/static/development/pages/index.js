@@ -174,12 +174,12 @@ function NavHeading(_ref) {
 function Profile(_ref2) {
   var ppicture = _ref2.ppicture,
       username = _ref2.username,
-      status = _ref2.status;
+      activity = _ref2.activity;
   return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.user
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
     src: ppicture,
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.unselectable)
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.online
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -187,28 +187,30 @@ function Profile(_ref2) {
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.username
   }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.status
-  }, status)));
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.activity
+  }, activity)));
 }
 
 function Friend(_ref3) {
   var ppicture = _ref3.ppicture,
       username = _ref3.username,
-      status = _ref3.status;
+      activity = _ref3.activity;
+  var status;
+  if (activity === "online") status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.green;else if (activity === "offline") status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.black;else if (activity === "do not disturb") status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.red;else status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.yellow;
   return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.friend
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
     src: ppicture,
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fppicture
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fppicture, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.unselectable)
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fonline
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fonline, " ").concat(status)
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fabout
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fusername
   }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fstatus
-  }, status)));
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.factivity
+  }, activity)));
 }
 
 var Sidebar =
@@ -232,7 +234,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Profile, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZucc",
-        status: "Playing Minecraft survival"
+        activity: "Playing Minecraft survival"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
         className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
       }, ["Feed", "Profile", "Settings"].map(function (el) {
@@ -247,17 +249,25 @@ function (_Component) {
           className: "".concat(faIcon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar_icon)
         }), " ", el);
       }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division
+        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.lastdiv)
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Friends"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone",
-        status: "Playing lol"
+        username: "MarkZuccClone1",
+        activity: "online"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone",
-        status: "Playing lol"
+        username: "MarkZuccClone2",
+        activity: "offline"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone3",
+        activity: "playing League of legends"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone4",
+        activity: "do not disturb"
       })));
     }
   }]);
@@ -276,8 +286,11 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
+	"wrapper": "_3cw_iLpgEtU0F6CGKUS-ED",
+	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
 	"division": "IdzUjFPTU5BhBLoZ9MtAi",
+	"lastdiv": "_3gFksjAi9P0u5VMPq9lxEv",
 	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
 	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
 	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
@@ -285,11 +298,18 @@ module.exports = {
 	"user": "_27r2Uk4oW1FofT_SDu9k1H",
 	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
 	"username": "_3JobRsf0NpbChEd__uJTLF",
-	"status": "_12DPtHue6uUICEGaiTBKUM",
+	"activity": "_2J2uKn8GgmXVVtTriYFMH1",
 	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
 	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
 	"fppicture": "_3FhiERp1S6evqvtVjDych5",
-	"fonline": "_1tvsRMNyogso7_KSDJeN0T"
+	"fonline": "_1tvsRMNyogso7_KSDJeN0T",
+	"fusername": "_1DZLKV2azHKNplJLU967Bw",
+	"factivity": "_1FTF9JboywP2SOgGwlvTDl",
+	"fabout": "Iv3PVJXkXJsISKaAcbNez",
+	"yellow": "_2gZbSF8pxTz5VoMIvxeM6n",
+	"red": "CQsOlRRup3w05eYBKs6WG",
+	"green": "_148i0dRO86RgBwotRPa_JO",
+	"black": "_1n8W3u3DEEI38NoxnfJaY-"
 };
 
 /***/ }),
@@ -312,7 +332,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function Typography(_ref) {
   var variant = _ref.variant,
-      title = _ref.title;
+      title = _ref.title,
+      color = _ref.color;
 
   switch (variant) {
     case "h1":
@@ -352,7 +373,7 @@ function Typography(_ref) {
 
     default:
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.p
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.p, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
       }, title);
   }
 }
@@ -375,7 +396,9 @@ module.exports = {
 	"h4": "_2y4dUru7dL1d1ir-WtNLrc",
 	"h5": "_2aL6AOjfLgcmMYJe5-Wb9Q",
 	"h6": "_3nvDAxWG6WQXjmQKmfoRAT",
-	"p": "_2BsUHfr_BLCEGUQz7QNpD3"
+	"p": "_2BsUHfr_BLCEGUQz7QNpD3",
+	"light": "_1WorM_LCUZwcyYUJzw-cXJ",
+	"dark": "_2R2xHZ4kh-h0UFZFaiQlZM"
 };
 
 /***/ }),
@@ -388,7 +411,8 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3c5zKv40aD2qzzFN0EJB78"
+	"wrapper": "_3c5zKv40aD2qzzFN0EJB78",
+	"unselectable": "_301P-G3edSFpBv3xInH_c9"
 };
 
 /***/ }),

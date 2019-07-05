@@ -11,8 +11,7 @@ export default () => {
         rel="stylesheet"
       />
       <script src="https://kit.fontawesome.com/8d5f687edf.js" />
-      <Layout>
-      </Layout>
+      <Layout />
     </>
   );
 };

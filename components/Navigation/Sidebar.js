@@ -5,27 +5,33 @@ function NavHeading({ title }) {
   return <span className={classes.navHeading}>{title}</span>;
 }
 
-function Profile({ppicture, username, status}) {
+function Profile({ppicture, username, activity}) {
   return (
     <div className={classes.user}>
-      <img src={ppicture} className={classes.ppicture}/>
+      <img src={ppicture} className={`${classes.ppicture} ${classes.unselectable}`}/>
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
-        <span className={classes.status}>{status}</span>
+        <span className={classes.activity}>{activity}</span>
       </div>
     </div>
   );
 }
 
-function Friend({ppicture, username, status}) {
+function Friend({ppicture, username, activity}) {
+  let status;
+  if(activity==="online") status = classes.green;
+  else if (activity==="offline") status = classes.black;
+  else if (activity==="do not disturb") status = classes.red;
+  else status = classes.yellow;
+  
   return (
     <div className={classes.friend}>
-      <img src={ppicture} className={classes.fppicture}/>
-      <div className={classes.fonline} />
+      <img src={ppicture} className={`${classes.fppicture} ${classes.unselectable}`}/>
+      <div className={`${classes.fonline} ${status}`} />
       <div className={classes.fabout}>
         <span className={classes.fusername}>{username}</span>
-        <span className={classes.fstatus}>{status}</span>
+        <span className={classes.factivity}>{activity}</span>
       </div>
     </div>
   );
@@ -36,7 +42,7 @@ export class Sidebar extends Component {
     return (
       <div className={classes.container}>
         <div className={classes.division}>
-          <Profile ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZucc" status="Playing Minecraft survival" />
+          <Profile ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZucc" activity="Playing Minecraft survival" />
           <ul className={classes.sidebar}>
             {["Feed", "Profile", "Settings"].map(el => {
               let faIcon;
@@ -52,10 +58,12 @@ export class Sidebar extends Component {
           </ul>
         </div>
         
-        <div className={classes.division}>
+        <div className={`${classes.division} ${classes.lastdiv}`}>
           <NavHeading title="Friends"  />
-          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone" status="Playing lol" />
-          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone" status="Playing lol" />
+          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone1" activity="online" />
+          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone2" activity="offline" />
+          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone3" activity="playing League of legends" />
+          <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone4" activity="do not disturb" />
         </div>
       </div>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Typography.module.scss";
 
-function Typography({ variant, title }) {
+function Typography({ variant, title, color }) {
   switch (variant) {
     case "h1":
       return <h1 className={classes.h1}>{title}</h1>;
@@ -18,7 +18,7 @@ function Typography({ variant, title }) {
     case "span":
       return <span className={classes.span}>{title}</span>;
     default:
-      return <p className={classes.p}>{title}</p>;
+      return <p className={`${classes.p} ${classes[color]}`}>{title}</p>;
   }
 }
 
