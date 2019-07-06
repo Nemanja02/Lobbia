@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Navigation/Sidebar */ "./components/Navigation/Sidebar.js");
 /* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout.module.scss */ "./components/Layout/Layout.module.scss");
 /* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Navigation/SidebarSecond */ "./components/Navigation/SidebarSecond.js");
+
 
 
 
@@ -21,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
   }, props.children));
 }
@@ -202,6 +204,43 @@ function (_Component) {
   return Sidebar;
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+
+/***/ }),
+
+/***/ "./components/Navigation/SidebarSecond.js":
+/*!************************************************!*\
+  !*** ./components/Navigation/SidebarSecond.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.scss */ "./components/Navigation/Sidebar.module.scss");
+/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function NavHeading(_ref) {
+  var title = _ref.title;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.navHeading
+  }, title);
+}
+
+function SidebarSecond() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.containerRight
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.growdiv)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavHeading, {
+    title: "Games"
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SidebarSecond);
 
 /***/ }),
 

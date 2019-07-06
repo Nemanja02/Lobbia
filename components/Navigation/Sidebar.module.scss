@@ -10,6 +10,16 @@
   padding-bottom: 0;
 }
 
+.containerRight {
+  display: flex;
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  flex-direction: column;
+  padding: 25px;
+  padding-bottom: 0;
+}
+
 .division {
   padding: 25px; 
   width: $sidebar-width;
