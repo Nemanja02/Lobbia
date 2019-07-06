@@ -270,6 +270,38 @@ function (_Component) {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone4",
         activity: "do not disturb"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone5",
+        activity: "online"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone6",
+        activity: "offline"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone7",
+        activity: "playing League of legends"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone8",
+        activity: "do not disturb"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone9",
+        activity: "online"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone10",
+        activity: "offline"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone11",
+        activity: "playing League of legends"
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+        username: "MarkZuccClone12",
+        activity: "do not disturb"
       }))));
     }
   }]);
