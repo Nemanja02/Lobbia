@@ -409,6 +409,33 @@ function Typography(_ref) {
 
 /***/ }),
 
+/***/ "./components/test/Test.js":
+/*!*********************************!*\
+  !*** ./components/test/Test.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Test_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Test.module.scss */ "./components/test/Test.module.scss");
+/* harmony import */ var _Test_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Test_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function Test(_ref) {
+  var messageText = _ref.messageText;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _Test_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.test
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Test);
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
@@ -2555,8 +2582,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout/Layout */ "./components/Layout/Layout.js");
 /* harmony import */ var _components_Typography_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Typography/Typography */ "./components/Typography/Typography.js");
-/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../config/sass/global.scss */ "./config/sass/global.scss");
-/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_test_Test__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/test/Test */ "./components/test/Test.js");
+/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/sass/global.scss */ "./config/sass/global.scss");
+/* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -2567,7 +2596,7 @@ __webpack_require__.r(__webpack_exports__);
     rel: "stylesheet"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "https://kit.fontawesome.com/8d5f687edf.js"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_test_Test__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 });
 
 /***/ }),

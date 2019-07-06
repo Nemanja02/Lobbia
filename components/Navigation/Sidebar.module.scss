@@ -144,6 +144,14 @@
     &:hover {
       background-color: $color-bg;
       border-radius: 5px;
+
+      & .fonline{
+        border: solid $color-bg 7px;
+      }
+
+      & .black {
+        background-color: $color-bg-light;
+      }
     }
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import Typography from "../components/Typography/Typography";
+import Test from "../components/test/Test";
 import "../config/sass/global.scss";
 
 export default () => {
@@ -11,7 +12,9 @@ export default () => {
         rel="stylesheet"
       />
       <script src="https://kit.fontawesome.com/8d5f687edf.js" />
-      <Layout />
+      <Layout>
+        <Test />
+      </Layout>
     </>
   );
 };
