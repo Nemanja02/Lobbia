@@ -1,6 +1,6 @@
 @import "../../config/sass/global.scss";
 @import "../../config/sass/variables.scss";
-html,body{margin:0;padding:0;}
+
 .container {
   display: flex;
   position: fixed;
@@ -19,6 +19,11 @@ html,body{margin:0;padding:0;}
   flex-direction: column;
   border-radius: 10px;
   margin-bottom: 25px;
+}
+
+.scrollable {
+  overflow-y: auto;
+  height: 100%;
 }
 
 .growdiv {

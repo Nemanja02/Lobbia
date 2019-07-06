@@ -131,8 +131,8 @@ function Layout(props) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"root": "_1vz7CQfPoZHCTWyxZve-ID",
-	"main": "_1uebS76EZIESUqVxVRJV5Z"
+	"root": "_3kwh7x4ISw2sdc56HmDvZN",
+	"main": "_1vO7nIIcRqZ9HZwtzTFdOl"
 };
 
 /***/ }),
@@ -252,7 +252,9 @@ function (_Component) {
         className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.growdiv)
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(NavHeading, {
         title: "Friends"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.scrollable
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone1",
         activity: "online"
@@ -268,7 +270,7 @@ function (_Component) {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone4",
         activity: "do not disturb"
-      })));
+      }))));
     }
   }]);
 
@@ -286,31 +288,32 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3cw_iLpgEtU0F6CGKUS-ED",
-	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
-	"text": "ZBZuGOg0kosmxDSqNhrDo",
-	"container": "_3YXQ9eM8q71zIRlzguFU8o",
-	"division": "IdzUjFPTU5BhBLoZ9MtAi",
-	"growdiv": "tm5p_xXr6fJp6UBexxKvv",
-	"navHeading": "_1rBufVoveF-A77Arvaz3x0",
-	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
-	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
-	"sidebar_icon": "KrlgPYtsakN9FmfsrnLx3",
-	"user": "_27r2Uk4oW1FofT_SDu9k1H",
-	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
-	"username": "_3JobRsf0NpbChEd__uJTLF",
-	"activity": "_2J2uKn8GgmXVVtTriYFMH1",
-	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
-	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
-	"fppicture": "_3FhiERp1S6evqvtVjDych5",
-	"fonline": "_1tvsRMNyogso7_KSDJeN0T",
-	"fusername": "_1DZLKV2azHKNplJLU967Bw",
-	"factivity": "_1FTF9JboywP2SOgGwlvTDl",
-	"fabout": "Iv3PVJXkXJsISKaAcbNez",
-	"yellow": "_2gZbSF8pxTz5VoMIvxeM6n",
-	"red": "CQsOlRRup3w05eYBKs6WG",
-	"green": "_148i0dRO86RgBwotRPa_JO",
-	"black": "_1n8W3u3DEEI38NoxnfJaY-"
+	"wrapper": "_3XSPO4L4nQMaQnBUs5wOeg",
+	"unselectable": "VU3kuLh24lh8VVXEd_3Cf",
+	"text": "y1p0a5_MjwInDil1CZRLY",
+	"container": "_137uQMmYZ9psIw-Unn1Z-W",
+	"division": "nboLf3iydr03j5qHq142M",
+	"scrollable": "_3_oby8tj5qLp_ceGqWUjT4",
+	"growdiv": "_26jXYsUd1AVjV13b4Kb6L1",
+	"navHeading": "UB3gAnnnnk04zsHuXer9F",
+	"sidebar": "_2PB3hnb295yNtHiXpLgF6u",
+	"sidebarEl": "_3KdhE5TUwN2S40vL_0TYAQ",
+	"sidebar_icon": "_1t7N9dhjJQ-zdbUzFRqZCk",
+	"user": "_2MiF9MaGaI8XFgW04ERC9i",
+	"ppicture": "_2hR-qIuWgort8TuTQy9Qc9",
+	"username": "_1Yu9GUNQCcxcZRbsl38eSk",
+	"activity": "K5zvaUYf-ZTnzyw_KChs-",
+	"online": "_3EhlUHYfBt0LGf-WgYnllf",
+	"friend": "_3udlxEOJh_2G9Idomd0xc",
+	"fppicture": "_1yVTmLSPP1QpZfR3SXnUaq",
+	"fonline": "_3PvKRw8QHObFNgvv6tuA_V",
+	"fusername": "_3R3ZKf9PCwnEjjaY5nHsXf",
+	"factivity": "cVWiVUlB-zi0y04t-f-5a",
+	"fabout": "xeGVY44WjXH835wiNvrOv",
+	"yellow": "_105UZ_dBUWctEXUojICb1Y",
+	"red": "_2zQ0dUbH2J1F_Je8KU8nhM",
+	"green": "NMMcOXZE1vcdGTZ5ArQ8Q",
+	"black": "_3RcZrX3cgZJr64QsnsuHBK"
 };
 
 /***/ }),
@@ -391,15 +394,15 @@ function Typography(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"h1": "_2Gu1oTUFVuVkckVKJWISjr",
-	"h2": "_2IG223MdCVeLFWATVFqxRH",
-	"h3": "eh1SrU78-PebH_Puue5iR",
-	"h4": "_2y4dUru7dL1d1ir-WtNLrc",
-	"h5": "_2aL6AOjfLgcmMYJe5-Wb9Q",
-	"h6": "_3nvDAxWG6WQXjmQKmfoRAT",
-	"p": "_2BsUHfr_BLCEGUQz7QNpD3",
-	"light": "_1WorM_LCUZwcyYUJzw-cXJ",
-	"dark": "_2R2xHZ4kh-h0UFZFaiQlZM"
+	"h1": "_1m-yaVkZe3V6us4CJcB9OD",
+	"h2": "WI2ZzuYunNKUnl6SRJhdl",
+	"h3": "_3GA1mfDrYIaITQE77uMzH2",
+	"h4": "_10MeLdFgr246BYF-GkkEQ_",
+	"h5": "_2QKxNHgAtwpyKXhsNoeZdS",
+	"h6": "_1ZxEDcby1kp9hErKxjgbdL",
+	"p": "_1outjNDd2cnfOa1UOME6mf",
+	"light": "_3OqAs04VqHwYfM0Ne7x0-v",
+	"dark": "_1Gj8I4Zsu1KitCqwqKbP9Q"
 };
 
 /***/ }),
@@ -412,9 +415,9 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3c5zKv40aD2qzzFN0EJB78",
-	"unselectable": "_301P-G3edSFpBv3xInH_c9",
-	"text": "_3xqqT-dldzNrWgExGGtGFf"
+	"wrapper": "IoDNnoLrVbc1VFd4LBVVZ",
+	"unselectable": "_3LgXwJfEnJK0Z0Hroz_KR4",
+	"text": "_2-r-PPrm8SXL7D3EVV5ijx"
 };
 
 /***/ }),
@@ -733,7 +736,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Petar\Documents\Lobbia\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/petar/Documents/antisocial/git/Novica-The-Rapist/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
