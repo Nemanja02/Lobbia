@@ -127,8 +127,8 @@
 
 .fonline {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 35px;
+  left: 35px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -136,10 +136,15 @@
 }
 
 .friend {
+  padding: 10px; 
   display: flex;
   flex-basis: row;
   vertical-align: middle;
-  margin: 10px 0;
+
+    &:hover {
+      background-color: $color-bg;
+      border-radius: 5px;
+    }
 }
 
 .fusername {
@@ -179,7 +184,12 @@
 .gamediv {
   align-items: center;
   display:flex;
-  padding: 5px;
+  padding: 10px;
+
+    &:hover {
+    background-color: $color-bg;
+    border-radius: 5px;
+    }
 }
 
 .gameicon {

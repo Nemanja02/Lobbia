@@ -128,18 +128,21 @@
 
 ._3PvKRw8QHObFNgvv6tuA_V {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 35px;
+  left: 35px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: solid #32393d 7px; }
 
 ._3udlxEOJh_2G9Idomd0xc {
+  padding: 10px;
   display: flex;
   flex-basis: row;
-  vertical-align: middle;
-  margin: 10px 0; }
+  vertical-align: middle; }
+  ._3udlxEOJh_2G9Idomd0xc:hover {
+    background-color: #1e2024;
+    border-radius: 5px; }
 
 ._3R3ZKf9PCwnEjjaY5nHsXf {
   display: block;
@@ -171,7 +174,10 @@
 .JKAG9fViihbDM5uLdhss0 {
   align-items: center;
   display: flex;
-  padding: 5px; }
+  padding: 10px; }
+  .JKAG9fViihbDM5uLdhss0:hover {
+    background-color: #1e2024;
+    border-radius: 5px; }
 
 ._37z27cVuaCGx49AOjABq9C {
   width: 50px;
