@@ -348,7 +348,11 @@ module.exports = {
 	"yellow": "_105UZ_dBUWctEXUojICb1Y",
 	"red": "_2zQ0dUbH2J1F_Je8KU8nhM",
 	"green": "NMMcOXZE1vcdGTZ5ArQ8Q",
-	"black": "_3RcZrX3cgZJr64QsnsuHBK"
+	"black": "_3RcZrX3cgZJr64QsnsuHBK",
+	"gamediv": "JKAG9fViihbDM5uLdhss0",
+	"gameicon": "_37z27cVuaCGx49AOjABq9C",
+	"gamename": "_5Y3LCjYFLaLqAPiQY2IHg",
+	"playicon": "BuQ1UTgAvpGvJXalCIGFA"
 };
 
 /***/ }),
@@ -376,6 +380,23 @@ function NavHeading(_ref) {
   }, title);
 }
 
+function Game(_ref2) {
+  var icon = _ref2.icon,
+      name = _ref2.name;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.gamediv
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: icon,
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.gameicon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.unselectable)
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.gamename
+  }, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.playicon
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-play"
+  })));
+}
+
 function SidebarSecond() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.containerRight
@@ -383,7 +404,87 @@ function SidebarSecond() {
     className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.growdiv)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavHeading, {
     title: "Games"
-  })));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.scrollable
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
+    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+    name: "Zucc The Game"
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SidebarSecond);
