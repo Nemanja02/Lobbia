@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import classes from "./Sidebar.module.scss";
+import NavLink from "./NavLink/NavLink";
+import NavHeading from "./NavHeading";
 
-function NavHeading({ title }) {
-  return <span className={classes.navHeading}>{title}</span>
-}
-
-function Profile({ppicture, username, activity}) {
+function Profile({ ppicture, username, activity }) {
   return (
     <div className={classes.user}>
-      <img src={ppicture} className={`${classes.ppicture} ${classes.unselectable}`}/>
+      <img
+        src={ppicture}
+        className={`${classes.ppicture} ${classes.unselectable}`}
+      />
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
@@ -18,20 +19,33 @@ function Profile({ppicture, username, activity}) {
   );
 }
 
-function Friend({ppicture, username, activity}) {
+function Friend({ ppicture, username, activity }) {
   let status;
-  if(activity==="online") status = classes.green;
-  else if (activity==="offline") status = classes.black;
-  else if (activity==="do not disturb") status = classes.red;
-  else status = classes.yellow;
-  
+  let displayActivity;
+  if (activity === "on") {
+    status = classes.green;
+    displayActivity = "Online";
+  } else if (activity === "off") {
+    status = classes.black;
+    displayActivity = "Offline";
+  } else if (activity === "dnd") {
+    status = classes.red;
+    displayActivity = "Do Not Disturb";
+  } else {
+    status = classes.yellow;
+    displayActivity = activity;
+  }
+
   return (
     <div className={classes.friend}>
-      <img src={ppicture} className={`${classes.fppicture} ${classes.unselectable}`}/>
+      <img
+        src={ppicture}
+        className={`${classes.fppicture} ${classes.unselectable}`}
+      />
       <div className={`${classes.fonline} ${status}`} />
       <div className={classes.fabout}>
         <span className={classes.fusername}>{username}</span>
-        <span className={classes.factivity}>{activity}</span>
+        <span className={classes.factivity}>{displayActivity}</span>
       </div>
     </div>
   );
@@ -42,37 +56,99 @@ export class Sidebar extends Component {
     return (
       <div className={classes.container}>
         <div className={classes.division}>
-          <Profile ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZucc" activity="Playing Minecraft survival" />
+          <Profile
+            ppicture="https://ichef.bbci.co.uk/news/660/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
+            username="MarkZucc"
+            activity="Playing Minecraft survival"
+          />
           <ul className={classes.sidebar}>
             {["Feed", "Profile", "Settings"].map(el => {
               let faIcon;
-              if (el === "Feed") faIcon = "fas fa-th-list";
-              if (el === "Profile") faIcon = "fas fa-user";
-              if (el === "Settings") faIcon = "fas fa-cog";
+              let href;
+              if (el === "Feed") {
+                faIcon = "fas fa-th-list";
+                href = "/feed";
+              }
+              if (el === "Profile") {
+                faIcon = "fas fa-user";
+                href = "/user/:id";
+              }
+              if (el === "Settings") {
+                faIcon = "fas fa-cog";
+                href = "/settings";
+              }
               return (
                 <p key={el} className={classes.sidebarEl}>
-                  <i className={`${faIcon} ${classes.sidebar_icon}`} /> {el}
+                  <NavLink path={href} title={el} icon={faIcon} />
                 </p>
               );
             })}
           </ul>
         </div>
-        
+
         <div className={`${classes.division} ${classes.growdiv}`}>
-          <NavHeading title="Friends"  />
-          <div className={classes.scrollable}>
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone1" activity="online" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone2" activity="offline" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone3" activity="playing League of legends" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone4" activity="do not disturb" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone5" activity="online" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone6" activity="offline" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone7" activity="playing League of legends" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone8" activity="do not disturb" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone9" activity="online" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone10" activity="offline" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone11" activity="playing League of legends" />
-            <Friend ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg" username="MarkZuccClone12" activity="do not disturb" />
+          <NavHeading title="friends" />
+          <div id="style-3" className={classes.scrollable}>
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone1"
+              activity="on"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone2"
+              activity="off"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone3"
+              activity="playing League of legends"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone4"
+              activity="dnd"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone5"
+              activity="on"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone6"
+              activity="off"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone7"
+              activity="playing League of legends"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone8"
+              activity="dnd"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone9"
+              activity="on"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone10"
+              activity="off"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone11"
+              activity="playing League of legends"
+            />
+            <Friend
+              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+              username="MarkZuccClone12"
+              activity="dnd"
+            />
           </div>
         </div>
       </div>

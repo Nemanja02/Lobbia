@@ -21,7 +21,7 @@
 }
 
 .division {
-  padding: 25px; 
+  padding: 15px;
   width: $sidebar-width;
   background-color: $color-bg-light;
   position: relative;
@@ -34,17 +34,12 @@
 .scrollable {
   overflow-y: auto;
   height: 100%;
+  //   border-top-left-radius: 8px;
+  //   border-top-right-radius: 8px;
 }
 
 .growdiv {
   flex-grow: 100;
-}
-
-.navHeading {
-  color: white;
-  font-size: 37px;
-  line-height: 60px;
-  margin-left: 10px;
 }
 
 .sidebar {
@@ -98,20 +93,36 @@
 
 .activity {
   display: block;
-  color: #C6C6D9;
-  font-size: 16px;
+  color: #c6c6d9;
+  font-size: 1.3rem;
   line-height: 27px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: $color-bg-light;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 5px;
+  background-color: $color-bg-light;
+  border-radius: 100px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: $color-bg;
+  border-radius: 100px;
 }
 
 .online {
   position: absolute;
-  top: 70px;
+  top: 52px;
   left: 70px;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  border-radius: 100px;
   background-color: $color-ok;
-  border: solid $color-bg-light 7px;
+  border: solid $color-bg-light 5px;
 }
 
 .friend {
@@ -128,49 +139,46 @@
 .fonline {
   position: absolute;
   top: 35px;
-  left: 35px;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  border: solid $color-bg-light 7px;
+  left: 44px;
+  height: 25px;
+  width: 25px;
+  border-radius: 100px;
+  background-color: $color-ok;
+  border: solid $color-bg-light 5px;
 }
 
 .friend {
-  padding: 10px; 
+  padding: 10px;
   display: flex;
   flex-basis: row;
   vertical-align: middle;
 
-    &:hover {
-      background-color: $color-bg;
-      border-radius: 5px;
+  &:hover {
+    background-color: $color-bg;
+    border-radius: 5px;
 
-      & .fonline{
-        border: solid $color-bg 7px;
-      }
-
-      & .black {
-        background-color: $color-bg-light;
-      }
+    & .fonline {
+      border: solid $color-bg 5px;
     }
+  }
 }
 
 .fusername {
   display: block;
   color: white;
-  font-size: 21px;
+  font-size: 1.45rem;
   line-height: 25px;
 }
 
 .factivity {
   display: block;
-  color: #C6C6D9;
-  font-size: 16px;
+  color: #c6c6d9;
+  font-size: 1.3rem;
   line-height: 25px;
 }
 
 .fabout {
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .yellow {
@@ -186,7 +194,7 @@
 }
 
 .black {
-  background-color: $color-bg;
+  background-color: lighten($color-bg, 25%);
 }
 
 .gamediv {
@@ -194,10 +202,10 @@
   display: flex;
   padding: 10px;
 
-    &:hover {
+  &:hover {
     background-color: $color-bg;
     border-radius: 5px;
-    }
+  }
 }
 
 .gameicon {
@@ -208,22 +216,22 @@
   object-fit: cover;
 }
 
-.gamename{
+.gamename {
   color: $color-text;
-  font-size: 21px;
+  font-size: 1.5rem;
   flex-grow: 100;
 }
 
 .playicon {
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   background-color: $color-primary;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 1.5rem;
 }
 
 .playicon i {
-  margin: 10px 10px 10px 11px;
-  font-size: 10px;
+  margin: 1rem 1rem 1rem 1.1rem;
+  font-size: 1rem;
   color: white;
 }
