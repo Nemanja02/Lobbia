@@ -1,3 +1,4 @@
+@import "../../config/sass/global.scss";
 @import "../../config/sass/variables.scss";
 
 .container {
@@ -109,15 +110,28 @@
   border: solid $color-bg-light 7px;
 }
 
-.friend {
-  position: relative;
-}
-
 .fppicture {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.friend {
+  position: relative;
+  margin-right: $margin;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $color-bg;
+
+    & .fonline {
+      border: solid $color-bg 5px;
+    }
+  }
 }
 
 .fonline {
@@ -129,21 +143,6 @@
   border-radius: 100px;
   background-color: $color-ok;
   border: solid $color-bg-light 5px;
-}
-
-.friend {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-
-  &:hover {
-    background-color: $color-bg;
-    border-radius: 5px;
-
-    & .fonline {
-      border: solid $color-bg 5px;
-    }
-  }
 }
 
 .fusername {
@@ -181,6 +180,7 @@
 }
 
 .gamediv {
+  margin-right: $margin;
   align-items: center;
   display: flex;
   padding: 10px;
@@ -194,7 +194,7 @@
 .gameicon {
   width: 50px;
   height: 50px;
-  margin-right: 15px;
+  margin-right: 10px;
   border-radius: 50%;
   object-fit: cover;
 }

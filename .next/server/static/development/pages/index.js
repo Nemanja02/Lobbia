@@ -442,6 +442,9 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
+	"wrapper": "_3cw_iLpgEtU0F6CGKUS-ED",
+	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
+	"text": "ZBZuGOg0kosmxDSqNhrDo",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
 	"containerRight": "_3zZqG7kjD_APl0KDGaWYtG",
 	"division": "IdzUjFPTU5BhBLoZ9MtAi",
@@ -455,8 +458,8 @@ module.exports = {
 	"username": "_3JobRsf0NpbChEd__uJTLF",
 	"activity": "_2J2uKn8GgmXVVtTriYFMH1",
 	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
-	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
 	"fppicture": "_3FhiERp1S6evqvtVjDych5",
+	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
 	"fonline": "_1tvsRMNyogso7_KSDJeN0T",
 	"fusername": "_1DZLKV2azHKNplJLU967Bw",
 	"factivity": "_1FTF9JboywP2SOgGwlvTDl",
