@@ -27,7 +27,8 @@
 
 ._3jGDVyv5UwdW24-Sr6HMqB {
   overflow-y: auto;
-  height: 100%; }
+  height: 200px;
+  flex-grow: 100; }
 
 .tm5p_xXr6fJp6UBexxKvv {
   flex-grow: 100; }
@@ -53,8 +54,8 @@
     color: white; }
 
 ._27r2Uk4oW1FofT_SDu9k1H {
+  position: relative;
   display: flex;
-  flex-basis: row;
   vertical-align: middle;
   margin: 0 0 15px 0; }
 
@@ -77,28 +78,15 @@
   font-size: 1.3rem;
   line-height: 27px; }
 
-._3jGDVyv5UwdW24-Sr6HMqB::-webkit-scrollbar-track {
-  border-radius: 100px;
-  background-color: #32393d; }
-
-._3jGDVyv5UwdW24-Sr6HMqB::-webkit-scrollbar {
-  width: 5px;
-  background-color: #32393d;
-  border-radius: 100px; }
-
-._3jGDVyv5UwdW24-Sr6HMqB::-webkit-scrollbar-thumb {
-  background-color: #1e2024;
-  border-radius: 100px; }
-
 ._2wUeJX5UAFj9CL9A-LSXBq {
   position: absolute;
-  top: 52px;
-  left: 70px;
-  height: 15px;
-  width: 15px;
+  top: 45px;
+  left: 45px;
+  height: 25px;
+  width: 25px;
   border-radius: 100px;
   background-color: #66bb6a;
-  border: solid #32393d 5px; }
+  border: solid #32393d 7px; }
 
 ._2I71jWjFw1pqKxJAdrxQeG {
   position: relative; }
@@ -111,10 +99,10 @@
 
 ._1tvsRMNyogso7_KSDJeN0T {
   position: absolute;
-  top: 35px;
-  left: 44px;
-  height: 15px;
-  width: 15px;
+  top: 40px;
+  left: 40px;
+  height: 20px;
+  width: 20px;
   border-radius: 100px;
   background-color: #66bb6a;
   border: solid #32393d 5px; }
@@ -122,8 +110,7 @@
 ._2I71jWjFw1pqKxJAdrxQeG {
   padding: 10px;
   display: flex;
-  flex-basis: row;
-  vertical-align: middle; }
+  align-items: center; }
   ._2I71jWjFw1pqKxJAdrxQeG:hover {
     background-color: #1e2024;
     border-radius: 5px; }
@@ -188,6 +175,19 @@
   margin: 1rem 1rem 1rem 1.1rem;
   font-size: 1rem;
   color: white; }
+
+._3jGDVyv5UwdW24-Sr6HMqB::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: #32393d; }
+
+._3jGDVyv5UwdW24-Sr6HMqB::-webkit-scrollbar {
+  width: 7px;
+  background-color: #32393d;
+  border-radius: 100px; }
+
+._3jGDVyv5UwdW24-Sr6HMqB::-webkit-scrollbar-thumb {
+  background-color: #1e2024;
+  border-radius: 100px; }
 
 .BHfcKqFSe3trQS-QbvYPw {
   font-size: 1.5rem;

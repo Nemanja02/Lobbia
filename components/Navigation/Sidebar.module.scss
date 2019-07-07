@@ -32,7 +32,8 @@
 
 .scrollable {
   overflow-y: auto;
-  height: 100%;
+  height: 200px;
+  flex-grow: 100;
   //   border-top-left-radius: 8px;
   //   border-top-right-radius: 8px;
 }
@@ -69,8 +70,8 @@
 }
 
 .user {
+  position: relative;
   display: flex;
-  flex-basis: row;
   vertical-align: middle;
   margin: 0 0 15px 0;
 }
@@ -97,31 +98,15 @@
   line-height: 27px;
 }
 
-.scrollable::-webkit-scrollbar-track {
-  border-radius: 100px;
-  background-color: $color-bg-light;
-}
-
-.scrollable::-webkit-scrollbar {
-  width: 5px;
-  background-color: $color-bg-light;
-  border-radius: 100px;
-}
-
-.scrollable::-webkit-scrollbar-thumb {
-  background-color: $color-bg;
-  border-radius: 100px;
-}
-
 .online {
   position: absolute;
-  top: 52px;
-  left: 70px;
-  height: $margin;
-  width: $margin;
+  top: 45px;
+  left: 45px;
+  height: 25px;
+  width: 25px;
   border-radius: 100px;
   background-color: $color-ok;
-  border: solid $color-bg-light 5px;
+  border: solid $color-bg-light 7px;
 }
 
 .friend {
@@ -137,10 +122,10 @@
 
 .fonline {
   position: absolute;
-  top: 35px;
-  left: 44px;
-  height: $margin;
-  width: $margin;
+  top: 40px;
+  left: 40px;
+  height: 20px;
+  width: 20px;
   border-radius: 100px;
   background-color: $color-ok;
   border: solid $color-bg-light 5px;
@@ -149,8 +134,7 @@
 .friend {
   padding: 10px;
   display: flex;
-  flex-basis: row;
-  vertical-align: middle;
+  align-items: center;
 
   &:hover {
     background-color: $color-bg;
@@ -233,4 +217,22 @@
   margin: 1rem 1rem 1rem 1.1rem;
   font-size: 1rem;
   color: white;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: $color-bg-light;
+}
+
+
+.scrollable::-webkit-scrollbar {
+  width: 7px;
+  background-color: $color-bg-light;
+  border-radius: 100px;
+}
+
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: $color-bg;
+  border-radius: 100px;
 }
