@@ -442,9 +442,6 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3cw_iLpgEtU0F6CGKUS-ED",
-	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
-	"text": "ZBZuGOg0kosmxDSqNhrDo",
 	"container": "_3YXQ9eM8q71zIRlzguFU8o",
 	"containerRight": "_3zZqG7kjD_APl0KDGaWYtG",
 	"division": "IdzUjFPTU5BhBLoZ9MtAi",
@@ -1552,7 +1549,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Web Development\xD\Novica-The-Rapist\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\Petar\Documents\Lobbia\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

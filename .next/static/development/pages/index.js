@@ -6078,10 +6078,10 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CWeb%20Development%5CxD%5CNovica-The-Rapist%5Cpages%5Cindex.js!./":
-/*!*********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CWeb%20Development%5CxD%5CNovica-The-Rapist%5Cpages%5Cindex.js ***!
-  \*********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js!./":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10370,13 +10370,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CWeb%20Development%5CxD%5CNovica-The-Rapist%5Cpages%5Cindex.js ***!
-  \*************************************************************************************************************************************/
+/*!*****************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CWeb%20Development%5CxD%5CNovica-The-Rapist%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CWeb%20Development%5CxD%5CNovica-The-Rapist%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js!./");
 
 
 /***/ }),

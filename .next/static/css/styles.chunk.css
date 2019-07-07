@@ -1,33 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Open Sans";
-  font-size: 10px; }
-
-#_3cw_iLpgEtU0F6CGKUS-ED {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem; }
-
-._39gkGt6YAYk4-J7xL47uOc {
-  user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none; }
-
-#ZBZuGOg0kosmxDSqNhrDo {
-  display: none; }
-
 ._3YXQ9eM8q71zIRlzguFU8o {
   display: flex;
   position: fixed;
   height: 100vh;
   flex-direction: column;
-  padding: 25px;
+  padding: 15px;
   padding-bottom: 0; }
 
 ._3zZqG7kjD_APl0KDGaWYtG {
@@ -36,18 +12,18 @@
   right: 0;
   height: 100vh;
   flex-direction: column;
-  padding: 25px;
+  padding: 15px;
   padding-bottom: 0; }
 
 .IdzUjFPTU5BhBLoZ9MtAi {
   padding: 15px;
-  width: 300px;
+  width: 350px;
   background-color: #32393d;
   position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  margin-bottom: 25px; }
+  margin-bottom: 15px; }
 
 ._3jGDVyv5UwdW24-Sr6HMqB {
   overflow-y: auto;
@@ -72,8 +48,8 @@
       color: #f2f1ef;
       border-radius: 6px; }
   .KrlgPYtsakN9FmfsrnLx3 {
-    font-size: 25px;
-    margin: 10px 25px;
+    font-size: 15px;
+    margin: 10px 15px;
     color: white; }
 
 ._27r2Uk4oW1FofT_SDu9k1H {
@@ -118,8 +94,8 @@
   position: absolute;
   top: 52px;
   left: 70px;
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
   border-radius: 100px;
   background-color: #66bb6a;
   border: solid #32393d 5px; }
@@ -137,8 +113,8 @@
   position: absolute;
   top: 35px;
   left: 44px;
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
   border-radius: 100px;
   background-color: #66bb6a;
   border: solid #32393d 5px; }
@@ -158,13 +134,13 @@
   display: block;
   color: white;
   font-size: 1.45rem;
-  line-height: 25px; }
+  line-height: 15px; }
 
 ._1FTF9JboywP2SOgGwlvTDl {
   display: block;
   color: #c6c6d9;
   font-size: 1.3rem;
-  line-height: 25px; }
+  line-height: 15px; }
 
 .Iv3PVJXkXJsISKaAcbNez {
   margin-left: 10px; }
@@ -244,10 +220,10 @@
   background-color: #1e2024; }
 
 #_1uebS76EZIESUqVxVRJV5Z {
-  margin: 0 calc(300px + 50px);
+  margin: 0 calc(350px + 15px);
   background-color: #1e2024;
   height: calc(100vh);
-  padding: 25px 0; }
+  padding: 15px; }
 
 ._2Gu1oTUFVuVkckVKJWISjr {
   font-size: 89pt; }
