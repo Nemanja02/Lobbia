@@ -1,8 +1,9 @@
 @import "../../config/sass/variables.scss";
 
 .test {
+  margin-top: $topbar-height;
   width: 100%;
-  height: 100%;
+  height: calc(100% - #{$topbar-height});
   background-color: $color-bg-light;
   border-radius: 10px;
 }

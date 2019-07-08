@@ -5,8 +5,9 @@
 }
 
 #main {
+  height: calc(100vh);
+  margin-top: $topbar-height;
   margin: 0 calc(#{$sidebar-width} + #{$margin});
   background-color: $color-bg;
-  height: calc(100vh);
   padding: $margin;
 }

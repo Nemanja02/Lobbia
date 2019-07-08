@@ -1,0 +1,8 @@
+@import "../../config/sass/variables.scss";
+
+.topbar {
+  position: fixed;
+  width: 100%;
+  height: $topbar-height;
+  background-color: $color-bg-light;
+}

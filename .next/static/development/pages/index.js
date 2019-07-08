@@ -15,6 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout.module.scss */ "./components/Layout/Layout.module.scss");
 /* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Navigation/SidebarSecond */ "./components/Navigation/SidebarSecond.js");
+/* harmony import */ var _Navigation_TopBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Navigation/TopBar */ "./components/Navigation/TopBar.js");
+
 
 
 
@@ -23,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_TopBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
   }, props.children));
 }
@@ -440,6 +442,32 @@ function SidebarSecond() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SidebarSecond);
+
+/***/ }),
+
+/***/ "./components/Navigation/TopBar.js":
+/*!*****************************************!*\
+  !*** ./components/Navigation/TopBar.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TopBar.module.scss */ "./components/Navigation/TopBar.module.scss");
+/* harmony import */ var _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function TopBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.topbar
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TopBar);
 
 /***/ }),
 
@@ -9294,7 +9322,7 @@ if (typeof WebSocket !== 'undefined') {
   BrowserWebSocket = self.WebSocket || self.MozWebSocket;
 } else {
   try {
-    NodeWebSocket = __webpack_require__(/*! ws */ 8);
+    NodeWebSocket = __webpack_require__(/*! ws */ 9);
   } catch (e) { }
 }
 
@@ -20495,7 +20523,7 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ 8:
+/***/ 9:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/
