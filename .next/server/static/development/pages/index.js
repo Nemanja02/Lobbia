@@ -133,8 +133,8 @@ function Layout(props) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"root": "_1vz7CQfPoZHCTWyxZve-ID",
-	"main": "_1uebS76EZIESUqVxVRJV5Z"
+	"root": "_3kwh7x4ISw2sdc56HmDvZN",
+	"main": "_1vO7nIIcRqZ9HZwtzTFdOl"
 };
 
 /***/ }),
@@ -174,7 +174,7 @@ function NavHeading(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"navHeading": "_37K4NO68Qce2FqpFn4xOmj"
+	"navHeading": "_1w0cJT_UwZPcVHhhvHMxHp"
 };
 
 /***/ }),
@@ -224,8 +224,8 @@ function NavLink(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"link": "BHfcKqFSe3trQS-QbvYPw",
-	"linkIcon": "_2_cD_7UOtmPAbxbt2u1f7"
+	"link": "_1RTLLVZRxjzleNc3xsskO9",
+	"linkIcon": "_4vfOEq8ynFgz-AI4JSPlw"
 };
 
 /***/ }),
@@ -284,7 +284,8 @@ function Profile(_ref) {
 function Friend(_ref2) {
   var ppicture = _ref2.ppicture,
       username = _ref2.username,
-      activity = _ref2.activity;
+      activity = _ref2.activity,
+      link = _ref2.link;
   var status;
   var displayActivity;
 
@@ -302,7 +303,8 @@ function Friend(_ref2) {
     displayActivity = activity;
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
+    href: link,
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.friend
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
     src: ppicture,
@@ -379,51 +381,63 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone1",
-        activity: "on"
+        activity: "on",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone2",
-        activity: "off"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone3",
-        activity: "playing League of legends"
+        activity: "playing League of legends",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone4",
-        activity: "dnd"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone5",
-        activity: "on"
+        activity: "on",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone6",
-        activity: "off"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone7",
-        activity: "playing League of legends"
+        activity: "playing League of legends",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone8",
-        activity: "dnd"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone9",
-        activity: "on"
+        activity: "on",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone10",
-        activity: "off"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone11",
-        activity: "playing League of legends"
+        activity: "playing League of legends",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone12",
-        activity: "dnd"
+        activity: "off",
+        link: "lol"
       }))));
     }
   }]);
@@ -442,36 +456,37 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3cw_iLpgEtU0F6CGKUS-ED",
-	"unselectable": "_39gkGt6YAYk4-J7xL47uOc",
-	"text": "ZBZuGOg0kosmxDSqNhrDo",
-	"container": "_3YXQ9eM8q71zIRlzguFU8o",
-	"containerRight": "_3zZqG7kjD_APl0KDGaWYtG",
-	"division": "IdzUjFPTU5BhBLoZ9MtAi",
-	"scrollable": "_3jGDVyv5UwdW24-Sr6HMqB",
-	"growdiv": "tm5p_xXr6fJp6UBexxKvv",
-	"sidebar": "_3Y2evKrHYXVrygyF4BI1Yr",
-	"sidebarEl": "_2fMfc8emLc54RFPieMre6q",
-	"sidebar_icon": "KrlgPYtsakN9FmfsrnLx3",
-	"user": "_27r2Uk4oW1FofT_SDu9k1H",
-	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
-	"username": "_3JobRsf0NpbChEd__uJTLF",
-	"activity": "_2J2uKn8GgmXVVtTriYFMH1",
-	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
-	"fppicture": "_3FhiERp1S6evqvtVjDych5",
-	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
-	"fonline": "_1tvsRMNyogso7_KSDJeN0T",
-	"fusername": "_1DZLKV2azHKNplJLU967Bw",
-	"factivity": "_1FTF9JboywP2SOgGwlvTDl",
-	"fabout": "Iv3PVJXkXJsISKaAcbNez",
-	"yellow": "_2gZbSF8pxTz5VoMIvxeM6n",
-	"red": "CQsOlRRup3w05eYBKs6WG",
-	"green": "_148i0dRO86RgBwotRPa_JO",
-	"black": "_1n8W3u3DEEI38NoxnfJaY-",
-	"gamediv": "_2gg6pL1GISeJLnNWUetgEW",
-	"gameicon": "_2RXpXDfJbX2EpxqdnDGBN6",
-	"gamename": "_1Gq64PAa8F1ZYt5vrKjKz-",
-	"playicon": "yN8rV-RO6lbaP0fK8WPVL"
+	"wrapper": "_3XSPO4L4nQMaQnBUs5wOeg",
+	"unselectable": "VU3kuLh24lh8VVXEd_3Cf",
+	"text": "y1p0a5_MjwInDil1CZRLY",
+	"container": "_137uQMmYZ9psIw-Unn1Z-W",
+	"containerRight": "dpw0P751pnjMsYl71NOp0",
+	"division": "nboLf3iydr03j5qHq142M",
+	"scrollable": "_3_oby8tj5qLp_ceGqWUjT4",
+	"growdiv": "_26jXYsUd1AVjV13b4Kb6L1",
+	"sidebar": "_2PB3hnb295yNtHiXpLgF6u",
+	"sidebarEl": "_3KdhE5TUwN2S40vL_0TYAQ",
+	"sidebar_icon": "_1t7N9dhjJQ-zdbUzFRqZCk",
+	"user": "_2MiF9MaGaI8XFgW04ERC9i",
+	"ppicture": "_2hR-qIuWgort8TuTQy9Qc9",
+	"online": "_3EhlUHYfBt0LGf-WgYnllf",
+	"about": "_1KQ-NvoGErn1ZYBVzWa-oa",
+	"username": "_1Yu9GUNQCcxcZRbsl38eSk",
+	"activity": "K5zvaUYf-ZTnzyw_KChs-",
+	"fppicture": "_1yVTmLSPP1QpZfR3SXnUaq",
+	"friend": "_3udlxEOJh_2G9Idomd0xc",
+	"fonline": "_3PvKRw8QHObFNgvv6tuA_V",
+	"fusername": "_3R3ZKf9PCwnEjjaY5nHsXf",
+	"factivity": "cVWiVUlB-zi0y04t-f-5a",
+	"fabout": "xeGVY44WjXH835wiNvrOv",
+	"yellow": "_105UZ_dBUWctEXUojICb1Y",
+	"red": "_2zQ0dUbH2J1F_Je8KU8nhM",
+	"green": "NMMcOXZE1vcdGTZ5ArQ8Q",
+	"black": "_3RcZrX3cgZJr64QsnsuHBK",
+	"gamediv": "JKAG9fViihbDM5uLdhss0",
+	"gameicon": "_37z27cVuaCGx49AOjABq9C",
+	"gamename": "_5Y3LCjYFLaLqAPiQY2IHg",
+	"playicon": "BuQ1UTgAvpGvJXalCIGFA"
 };
 
 /***/ }),
@@ -681,15 +696,15 @@ function Typography(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"h1": "_2Gu1oTUFVuVkckVKJWISjr",
-	"h2": "_2IG223MdCVeLFWATVFqxRH",
-	"h3": "eh1SrU78-PebH_Puue5iR",
-	"h4": "_2y4dUru7dL1d1ir-WtNLrc",
-	"h5": "_2aL6AOjfLgcmMYJe5-Wb9Q",
-	"h6": "_3nvDAxWG6WQXjmQKmfoRAT",
-	"p": "_2BsUHfr_BLCEGUQz7QNpD3",
-	"light": "_1WorM_LCUZwcyYUJzw-cXJ",
-	"dark": "_2R2xHZ4kh-h0UFZFaiQlZM"
+	"h1": "_1m-yaVkZe3V6us4CJcB9OD",
+	"h2": "WI2ZzuYunNKUnl6SRJhdl",
+	"h3": "_3GA1mfDrYIaITQE77uMzH2",
+	"h4": "_10MeLdFgr246BYF-GkkEQ_",
+	"h5": "_2QKxNHgAtwpyKXhsNoeZdS",
+	"h6": "_1ZxEDcby1kp9hErKxjgbdL",
+	"p": "_1outjNDd2cnfOa1UOME6mf",
+	"light": "_3OqAs04VqHwYfM0Ne7x0-v",
+	"dark": "_1Gj8I4Zsu1KitCqwqKbP9Q"
 };
 
 /***/ }),
@@ -729,7 +744,7 @@ function Test(_ref) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"test": "_1FfgHdnxQeqCMTjjDi16Q2"
+	"test": "m83I5eEx4CiFMEUSB9cCx"
 };
 
 /***/ }),
@@ -742,9 +757,9 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"wrapper": "_3c5zKv40aD2qzzFN0EJB78",
-	"unselectable": "_301P-G3edSFpBv3xInH_c9",
-	"text": "_3xqqT-dldzNrWgExGGtGFf"
+	"wrapper": "IoDNnoLrVbc1VFd4LBVVZ",
+	"unselectable": "_3LgXwJfEnJK0Z0Hroz_KR4",
+	"text": "_2-r-PPrm8SXL7D3EVV5ijx"
 };
 
 /***/ }),
@@ -1529,12 +1544,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_test_Test__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/test/Test */ "./components/test/Test.js");
 /* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/sass/global.scss */ "./config/sass/global.scss");
 /* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! socket.io-client */ "socket.io-client");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
 
 
+
+var socket = socket_io_client__WEBPACK_IMPORTED_MODULE_5___default()();
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  socket.on("childporn", function (data) {
+    console.log(data.xD);
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     href: "https://fonts.googleapis.com/css?family=Open+Sans&display=swap",
     rel: "stylesheet"
@@ -1552,7 +1574,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Petar\Documents\Lobbia\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/petar/Documents/antisocial/git/Novica-The-Rapist/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -1686,6 +1708,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "socket.io-client":
+/*!***********************************!*\
+  !*** external "socket.io-client" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("socket.io-client");
 
 /***/ }),
 

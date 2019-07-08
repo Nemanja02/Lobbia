@@ -49,7 +49,7 @@
   &El {
     padding: 0.2rem 0;
     font-size: 16px;
-    color: white;
+    color: $color-text;
     margin: 0.2rem 0;
     display: flex;
     width: 100%;
@@ -66,14 +66,14 @@
   &_icon {
     font-size: $margin;
     margin: 10px $margin;
-    color: white;
+    color: $color-text;
   }
 }
 
 .user {
   position: relative;
   display: flex;
-  vertical-align: middle;
+  align-items: center;
   margin: 0 0 15px 0;
 }
 
@@ -83,20 +83,6 @@
   border-radius: 35px;
   margin-right: 15px;
   object-fit: cover;
-}
-
-.username {
-  display: block;
-  color: white;
-  font-size: 28px;
-  line-height: 37px;
-}
-
-.activity {
-  display: block;
-  color: #c6c6d9;
-  font-size: 1.3rem;
-  line-height: 27px;
 }
 
 .online {
@@ -110,6 +96,24 @@
   border: solid $color-bg-light 7px;
 }
 
+.about {
+  height: min-content;
+}
+
+.username {
+  display: block;
+  color: $color-text;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.activity {
+  display: block;
+  color: $color-text-second;
+  font-size: 1.3rem;
+  line-height: 27px;
+}
+
 .fppicture {
   width: 50px;
   height: 50px;
@@ -118,6 +122,7 @@
 }
 
 .friend {
+  text-decoration: none;
   position: relative;
   margin-right: $margin;
   padding: 10px;
@@ -147,14 +152,14 @@
 
 .fusername {
   display: block;
-  color: white;
+  color: $color-text;
   font-size: 1.45rem;
   line-height: $margin;
 }
 
 .factivity {
   display: block;
-  color: #c6c6d9;
+  color: $color-text-second;
   font-size: 1.3rem;
   line-height: $margin;
 }
@@ -216,7 +221,7 @@
 .playicon i {
   margin: 1rem 1rem 1rem 1.1rem;
   font-size: 1rem;
-  color: white;
+  color: $color-text;
 }
 
 .scrollable::-webkit-scrollbar-track {
