@@ -1,30 +1,55 @@
-const express = require("express");
 const next = require("next");
+const app = require("express")();
+const socketIo = require("socket.io");
+const mongoose = require("mongoose");
+const { ApolloServer } = require("apollo-server-express");
 
-const dev = process.env.NODE_ENV !== "production";
+const typeDefs = require("./graphql/rootSchema");
+const resolvers = require("./graphql/resolvers/rootResolvers");
 const cfg = require("./config/config.json");
 
-const app = next({
-  dev
-});
-const handle = app.getRequestHandler();
-const { port } = cfg;
+const port = process.env.PORT || cfg.port;
+const dev = process.env.NODE_ENV !== "production";
+const nextApp = next({ dev });
+const handle = nextApp.getRequestHandler();
 
-app
+customFormatError = err => {
+  if (err.originalError && err.originalError.error_message) {
+    err.message = err.originalError.error_message;
+  }
+  return err;
+};
+
+const gqlServer = new ApolloServer({ typeDefs, resolvers });
+gqlServer.applyMiddleware({ app });
+
+nextApp
   .prepare()
   .then(() => {
-    const server = express();
+    const server = app.listen(port, err => {
+      if (err) throw err;
+      mongoose.connect(
+        "mongodb+srv://lobbia-test:lobbia-test@lobbia-dev-cluster-cicwj.mongodb.net/test?retryWrites=true&w=majority",
+        { useNewUrlParser: true }
+      );
+      console.log(`\n--------------------------------------`);
+      console.log(`\n ✔️ \x1b[4m\x1b[32mConnected to DB\x1b[0m`);
+      console.log(` > \x1b[4m\x1b[36mPreview\x1b[0m: http://localhost:${port}`);
+      console.log(
+        ` > \x1b[4m\x1b[31mGraphQL\x1b[0m: http://localhost:${port}\n`
+      );
+    });
+    const io = socketIo(server);
 
-    server.get("*", (req, res) => {
-      return handle(req, res);
+    let active;
+    io.on("connection", socket => {
+      active = "online";
+      socket.on("disconnect", () => (active = "offline"));
     });
 
-    server.listen(port, err => {
-      if (err) throw err;
-      console.log(
-        "\n\t\t\x1b[46m%s\x1b[0m\n",
-        `Server running on http://localhost:${port}`
-      );
+    app.get("*", (req, res) => {
+      req.user = { status: active };
+      return handle(req, res);
     });
   })
   .catch(ex => {

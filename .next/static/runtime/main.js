@@ -6671,7 +6671,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "C:\\Web Development\\xD\\Novica-The-Rapist\\.next");
+      source_map_support_1.rewriteStacktrace(error, "C:\\Web Development\\Novica-The-Rapist\\.next");
       return error;
     }
   };

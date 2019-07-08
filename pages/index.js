@@ -3,8 +3,15 @@ import Layout from "../components/Layout/Layout";
 import Typography from "../components/Typography/Typography";
 import Test from "../components/test/Test";
 import "../config/sass/global.scss";
+import io from "socket.io-client";
+
+const socket = io();
 
 export default () => {
+  socket.on("childporn", data => {
+    console.log(data.xD);
+  });
+
   return (
     <>
       <link
