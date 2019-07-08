@@ -6671,7 +6671,11 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
+<<<<<<< HEAD
       source_map_support_1.rewriteStacktrace(error, "C:\\Web Development\\Novica-The-Rapist\\.next");
+=======
+      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\Petar\\Documents\\Lobbia\\.next");
+>>>>>>> 05c2fb58ee3edb6358f0f673d303803ee817b9a7
       return error;
     }
   };
