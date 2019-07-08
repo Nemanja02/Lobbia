@@ -641,7 +641,15 @@ __webpack_require__.r(__webpack_exports__);
 function TopBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.topbar
-  });
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.logo
+  }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.isearch
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-th-search"
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TopBar);
@@ -656,7 +664,10 @@ function TopBar() {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"topbar": "_1QLhClawpbbVbhzwPKQnoW"
+	"topbar": "_1QLhClawpbbVbhzwPKQnoW",
+	"logo": "_3JdhEBxEuRZQqim-fOHmTW",
+	"search": "_2cfRFsWkV0IOTV97zsnJEY",
+	"isearch": "_1iTHvHqROHvFfxJb4waXh6"
 };
 
 /***/ }),

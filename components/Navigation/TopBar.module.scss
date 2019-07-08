@@ -1,8 +1,49 @@
 @import "../../config/sass/variables.scss";
 
 .topbar {
+  display: flex;
   position: fixed;
   width: 100%;
   height: $topbar-height;
   background-color: $color-bg-light;
+}
+
+.logo {
+  font-size: 28px;
+  color: white;
+  line-height: $topbar-height;
+  margin: 0 $margin;
+
+}
+
+.search {
+  font-size: 16px;
+  margin: 12px;
+  background-color: $color-bg;
+  border: none;
+  color: $color-text;
+  padding: 5px;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.search:focus {
+  outline: none;
+  border: 1.5px $color-primary solid;
+} 
+
+.isearch {
+  margin: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: $color-primary;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.isearch i {
+  margin: 1rem 1rem 1rem 1.1rem;
+  font-size: 1rem;
+  color: $color-text;
+  z-index: 11;
 }
