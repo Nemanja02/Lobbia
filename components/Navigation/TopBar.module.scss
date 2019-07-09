@@ -42,8 +42,9 @@
 }
 
 .isearch i {
-  margin: 1rem 1rem 1rem 1.1rem;
-  font-size: 1rem;
+  position: relative;
+  margin: 1.2rem;
+  font-size: 1.5rem;
   color: $color-text;
   z-index: 11;
 }

@@ -5,8 +5,10 @@ function TopBar() {
   return (
     <div className={classes.topbar}>
       <span className={classes.logo}>Lobbia</span>
-      <input className={classes.search}></input>
-      <div className={classes.isearch}><i className={`fas fa-th-search`} /></div>
+      <input placeholder="Search" className={classes.search}></input>
+      <a href="lol">
+        <div className={classes.isearch}><i className={`fas fa-search`} /></div>
+      </a>
     </div>
   );
 }

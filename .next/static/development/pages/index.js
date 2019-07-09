@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
 /***/ "./components/Layout/Layout.js":
 /*!*************************************!*\
@@ -467,12 +467,15 @@ function TopBar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.logo
   }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    placeholder: "Search",
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "lol"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.isearch
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-th-search"
-  })));
+    className: "fas fa-search"
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TopBar);
@@ -12705,10 +12708,10 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js!./":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js ***!
-  \**************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js!./":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20520,13 +20523,13 @@ var socket = socket_io_client__WEBPACK_IMPORTED_MODULE_5___default()();
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js ***!
-  \******************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fpetar%2FDocuments%2Fantisocial%2Fgit%2FNovica-The-Rapist%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js!./");
 
 
 /***/ }),
