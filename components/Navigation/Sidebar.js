@@ -87,7 +87,7 @@ export class Sidebar extends Component {
         </div>
 
         <div className={`${classes.division} ${classes.growdiv}`}>
-          <NavHeading title="friends" />
+          <NavHeading title="connections" />
           <div id="style-3" className={classes.scrollable}>
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"

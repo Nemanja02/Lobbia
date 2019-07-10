@@ -1,0 +1,38 @@
+- global state
+- custom 404 page
+
+ ---------------------------- QUERIES ----------------------------
+
+QUERY: feed (nzm sta bi ru trebalo da bude neki games news idk)
+QUERY: updates, (ako ima neki update prikazi useru sta je dodato)
+QUERY: group history
+QUERY: koliko usera ima u queue za neki igricu
+QUERY: podatci o useru (za profil i za settings)
+MUTATION: edit profile pic
+MUTATION: edit settingsa
+MUTATION: search, tj slanje podataka u bazu o useru koji je zapoceo search
+MUTATION: login/register
+MUTATION: kreiranje pernament grupa, dodavanje clanova
+MUTATION: Slanje poruka u temp i perm grupe i dm
+QUERY: dobijanje poruka
+MUTATION: nakon zavrsetka temp grupe, unistiti grupu i poslati podatke o pozivu (koliko je trajao, kad je poceo/zavrsio, ko je bio u njemu itd)
+MUTATION: slanje/prihvatanje/odbijanje friend req, block
+QUERY: dobijanje friend req
+MUTATION: dodavanje balance-a na odredjeni account
+MUTATION: lobby destory
+
+interest indexes:
+
+music:
+    0 -
+    1 -
+    2 -
+    3 -
+    4 -
+
+games: 
+    0 - 
+    1 -
+    2 -
+    3 -
+    4 -

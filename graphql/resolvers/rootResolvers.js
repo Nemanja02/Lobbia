@@ -1,5 +1,15 @@
+const { GraphQLDate, GraphQLDateTime } = require("graphql-iso-date");
+const { createUserAccount, usersList } = require("./user");
+
 module.exports = {
+  Date: GraphQLDate,
+  DateTime: GraphQLDateTime,
+
   Query: {
-    hello: () => ({ greet: "Hello world!" })
+    usersList
+  },
+
+  Mutation: {
+    createUserAccount
   }
 };
