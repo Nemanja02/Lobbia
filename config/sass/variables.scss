@@ -1,4 +1,6 @@
-$color-text: rgba(242, 241, 239, 1);
+//@import "../../config/sass/variables.scss";
+
+$color-text: white;
 $color-text-second: rgba(189, 195, 199, 1);
 $color-text-dark: rgba(46, 49, 49, 1);
 $color-text-dark-second: rgb(133, 137, 139);
@@ -13,3 +15,5 @@ $color-ok: #66bb6a;
 
 $sidebar-width: 350px;
 $margin: 15px;
+
+$topbar-height: 60px;

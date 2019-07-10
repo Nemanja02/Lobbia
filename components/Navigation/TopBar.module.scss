@@ -1,0 +1,69 @@
+@import "../../config/sass/variables.scss";
+
+.topbar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  height: $topbar-height;
+  background-color: $color-bg-light;
+}
+
+.logo {
+  font-size: 2.8rem;
+  color: white;
+  line-height: $topbar-height;
+  margin: 0 $margin;
+}
+
+.search {
+  font-size: 16px;
+  margin: 12px;
+  background-color: $color-bg;
+  border: none;
+  color: darken($color-text, 15%);
+  padding: 5px;
+  border-radius: 5px;
+  padding: 0 0 0 10px;
+  width: 30rem;
+  transition: 0.2s all;
+  border: 1.5px solid transparent;
+
+  &:focus {
+    outline: none;
+    border: 1.5px rgba($color-primary-dark, 0.6) solid;
+  }
+}
+
+.isearch {
+  margin: 10px;
+  height: 40px;
+  width: 80px;
+  background-color: $color-primary-dark;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  z-index: 10;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.2s all;
+
+  &:hover {
+    background-color: lighten($color-primary-dark, 3%);
+    margin-top: 1px;
+  }
+
+  &:hover > i {
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  & i {
+    position: relative;
+    transition: 0.2s all;
+    font-size: 2.8rem;
+    color: $color-text;
+    z-index: 11;
+  }
+}

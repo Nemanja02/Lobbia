@@ -108,6 +108,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout.module.scss */ "./components/Layout/Layout.module.scss");
 /* harmony import */ var _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Navigation/SidebarSecond */ "./components/Navigation/SidebarSecond.js");
+/* harmony import */ var _Navigation_TopBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Navigation/TopBar */ "./components/Navigation/TopBar.js");
+
 
 
 
@@ -116,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.root
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_TopBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_SidebarSecond__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: _Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.main
   }, props.children));
 }
@@ -284,7 +286,8 @@ function Profile(_ref) {
 function Friend(_ref2) {
   var ppicture = _ref2.ppicture,
       username = _ref2.username,
-      activity = _ref2.activity;
+      activity = _ref2.activity,
+      link = _ref2.link;
   var status;
   var displayActivity;
 
@@ -302,7 +305,8 @@ function Friend(_ref2) {
     displayActivity = activity;
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
+    href: link,
     className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.friend
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
     src: ppicture,
@@ -379,51 +383,63 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone1",
-        activity: "on"
+        activity: "on",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone2",
-        activity: "off"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone3",
-        activity: "playing League of legends"
+        activity: "playing League of legends",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone4",
-        activity: "dnd"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone5",
-        activity: "on"
+        activity: "on",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone6",
-        activity: "off"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone7",
-        activity: "playing League of legends"
+        activity: "playing League of legends",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone8",
-        activity: "dnd"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone9",
-        activity: "on"
+        activity: "on",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone10",
-        activity: "off"
+        activity: "off",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone11",
-        activity: "playing League of legends"
+        activity: "playing League of legends",
+        link: "lol"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
         ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
         username: "MarkZuccClone12",
-        activity: "dnd"
+        activity: "off",
+        link: "lol"
       }))));
     }
   }]);
@@ -455,9 +471,10 @@ module.exports = {
 	"sidebar_icon": "KrlgPYtsakN9FmfsrnLx3",
 	"user": "_27r2Uk4oW1FofT_SDu9k1H",
 	"ppicture": "GFB4rQmfbp2O79gvLuHIr",
+	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
+	"about": "OSW1ixJBmQ0AEL2d9UmHg",
 	"username": "_3JobRsf0NpbChEd__uJTLF",
 	"activity": "_2J2uKn8GgmXVVtTriYFMH1",
-	"online": "_2wUeJX5UAFj9CL9A-LSXBq",
 	"fppicture": "_3FhiERp1S6evqvtVjDych5",
 	"friend": "_2I71jWjFw1pqKxJAdrxQeG",
 	"fonline": "_1tvsRMNyogso7_KSDJeN0T",
@@ -602,6 +619,57 @@ function SidebarSecond() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SidebarSecond);
+
+/***/ }),
+
+/***/ "./components/Navigation/TopBar.js":
+/*!*****************************************!*\
+  !*** ./components/Navigation/TopBar.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TopBar.module.scss */ "./components/Navigation/TopBar.module.scss");
+/* harmony import */ var _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function TopBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.topbar
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.logo
+  }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.isearch
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-compass ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.button_search_icon)
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    placeholder: "Search community",
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TopBar);
+
+/***/ }),
+
+/***/ "./components/Navigation/TopBar.module.scss":
+/*!**************************************************!*\
+  !*** ./components/Navigation/TopBar.module.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"topbar": "_2J-AXA5bO-gnAB71XqxwiM",
+	"logo": "_2t82o8bEKj2penP5hYals9",
+	"search": "_3YKw-ugJ0BvKCTJvvZeg6m",
+	"isearch": "hEuH6DfguykbOzdnS3kvm"
+};
 
 /***/ }),
 
@@ -1414,6 +1482,19 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
+/***/ "./pages/Page.module.scss":
+/*!********************************!*\
+  !*** ./pages/Page.module.scss ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"main": "_1Klz4GVyamtS3dplitJ8AJ"
+};
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -1437,6 +1518,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _config_sass_global_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_config_sass_global_scss__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! socket.io-client */ "socket.io-client");
 /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _Page_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Page.module.scss */ "./pages/Page.module.scss");
+/* harmony import */ var _Page_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Page_module_scss__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -1476,7 +1560,9 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], null, "xD"));
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Page_module_scss__WEBPACK_IMPORTED_MODULE_11___default.a.main
+      })));
     }
   }]);
 

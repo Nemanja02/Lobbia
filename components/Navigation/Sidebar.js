@@ -19,7 +19,7 @@ function Profile({ ppicture, username, activity }) {
   );
 }
 
-function Friend({ ppicture, username, activity }) {
+function Friend({ ppicture, username, activity, link }) {
   let status;
   let displayActivity;
   if (activity === "on") {
@@ -37,7 +37,7 @@ function Friend({ ppicture, username, activity }) {
   }
 
   return (
-    <div className={classes.friend}>
+    <a href={link} className={classes.friend}>
       <img
         src={ppicture}
         className={`${classes.fppicture} ${classes.unselectable}`}
@@ -47,7 +47,7 @@ function Friend({ ppicture, username, activity }) {
         <span className={classes.fusername}>{username}</span>
         <span className={classes.factivity}>{displayActivity}</span>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -93,61 +93,73 @@ export class Sidebar extends Component {
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone1"
               activity="on"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone2"
               activity="off"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone3"
               activity="playing League of legends"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone4"
-              activity="dnd"
+              activity="off"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone5"
               activity="on"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone6"
               activity="off"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone7"
               activity="playing League of legends"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone8"
-              activity="dnd"
+              activity="off"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone9"
               activity="on"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone10"
               activity="off"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone11"
               activity="playing League of legends"
+              link="lol"
             />
             <Friend
               ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
               username="MarkZuccClone12"
-              activity="dnd"
+              activity="off"
+              link="lol"
             />
           </div>
         </div>

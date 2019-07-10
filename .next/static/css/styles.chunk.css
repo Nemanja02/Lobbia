@@ -23,18 +23,20 @@
   display: none; }
 
 ._3YXQ9eM8q71zIRlzguFU8o {
+  margin-top: 60px;
   display: flex;
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 60px);
   flex-direction: column;
   padding: 15px;
   padding-bottom: 0; }
 
 ._3zZqG7kjD_APl0KDGaWYtG {
+  margin-top: 60px;
   display: flex;
   position: fixed;
   right: 0;
-  height: 100vh;
+  height: calc(100vh - 60px);
   flex-direction: column;
   padding: 15px;
   padding-bottom: 0; }
@@ -51,7 +53,7 @@
 
 ._3jGDVyv5UwdW24-Sr6HMqB {
   overflow-y: auto;
-  height: 200px;
+  height: 70px;
   flex-grow: 100; }
 
 .tm5p_xXr6fJp6UBexxKvv {
@@ -70,7 +72,7 @@
     ._2fMfc8emLc54RFPieMre6q:hover {
       background-color: #1e2024;
       cursor: pointer;
-      color: #f2f1ef;
+      color: white;
       border-radius: 6px; }
   .KrlgPYtsakN9FmfsrnLx3 {
     font-size: 15px;
@@ -80,7 +82,7 @@
 ._27r2Uk4oW1FofT_SDu9k1H {
   position: relative;
   display: flex;
-  vertical-align: middle;
+  align-items: center;
   margin: 0 0 15px 0; }
 
 .GFB4rQmfbp2O79gvLuHIr {
@@ -89,18 +91,6 @@
   border-radius: 35px;
   margin-right: 15px;
   object-fit: cover; }
-
-._3JobRsf0NpbChEd__uJTLF {
-  display: block;
-  color: white;
-  font-size: 28px;
-  line-height: 37px; }
-
-._2J2uKn8GgmXVVtTriYFMH1 {
-  display: block;
-  color: #c6c6d9;
-  font-size: 1.3rem;
-  line-height: 27px; }
 
 ._2wUeJX5UAFj9CL9A-LSXBq {
   position: absolute;
@@ -112,6 +102,21 @@
   background-color: #66bb6a;
   border: solid #32393d 7px; }
 
+.OSW1ixJBmQ0AEL2d9UmHg {
+  height: min-content; }
+
+._3JobRsf0NpbChEd__uJTLF {
+  display: block;
+  color: white;
+  font-size: 21px;
+  line-height: 26px; }
+
+._2J2uKn8GgmXVVtTriYFMH1 {
+  display: block;
+  color: #bdc3c7;
+  font-size: 1.3rem;
+  line-height: 15px; }
+
 ._3FhiERp1S6evqvtVjDych5 {
   width: 50px;
   height: 50px;
@@ -119,6 +124,7 @@
   object-fit: cover; }
 
 ._2I71jWjFw1pqKxJAdrxQeG {
+  text-decoration: none;
   position: relative;
   margin-right: 15px;
   padding: 10px;
@@ -148,7 +154,7 @@
 
 ._1FTF9JboywP2SOgGwlvTDl {
   display: block;
-  color: #c6c6d9;
+  color: #bdc3c7;
   font-size: 1.3rem;
   line-height: 15px; }
 
@@ -184,7 +190,7 @@
   object-fit: cover; }
 
 ._1Gq64PAa8F1ZYt5vrKjKz- {
-  color: #f2f1ef;
+  color: white;
   font-size: 1.5rem;
   flex-grow: 100; }
 
@@ -230,10 +236,10 @@
   .BHfcKqFSe3trQS-QbvYPw:hover {
     background-color: #1e2024;
     cursor: pointer;
-    color: #f2f1ef;
+    color: white;
     border-radius: 6px; }
   .BHfcKqFSe3trQS-QbvYPw:hover > ._2_cD_7UOtmPAbxbt2u1f7 {
-    color: #fe833d; }
+    color: #ff9a60; }
 
 ._37K4NO68Qce2FqpFn4xOmj {
   color: #85898b;
@@ -244,10 +250,67 @@
   background-color: #1e2024; }
 
 #_1uebS76EZIESUqVxVRJV5Z {
+  height: calc(100vh);
+  margin-top: 60px;
   margin: 0 calc(350px + 15px);
   background-color: #1e2024;
-  height: calc(100vh);
   padding: 15px; }
+
+._2J-AXA5bO-gnAB71XqxwiM {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #32393d; }
+
+._2t82o8bEKj2penP5hYals9 {
+  font-size: 2.8rem;
+  color: white;
+  line-height: 60px;
+  margin: 0 15px; }
+
+._3YKw-ugJ0BvKCTJvvZeg6m {
+  font-size: 16px;
+  margin: 12px;
+  background-color: #1e2024;
+  border: none;
+  color: #d9d9d9;
+  padding: 5px;
+  border-radius: 5px;
+  padding: 0 0 0 10px;
+  width: 30rem;
+  transition: 0.2s all;
+  border: 1.5px solid transparent; }
+  ._3YKw-ugJ0BvKCTJvvZeg6m:focus {
+    outline: none;
+    border: 1.5px rgba(254, 131, 61, 0.6) solid; }
+
+.hEuH6DfguykbOzdnS3kvm {
+  margin: 10px;
+  height: 40px;
+  width: 80px;
+  background-color: #fe833d;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  z-index: 10;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.2s all; }
+  .hEuH6DfguykbOzdnS3kvm:hover {
+    background-color: #fe8d4c;
+    margin-top: 1px; }
+  .hEuH6DfguykbOzdnS3kvm:hover > i {
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
+  .hEuH6DfguykbOzdnS3kvm i {
+    position: relative;
+    transition: 0.2s all;
+    font-size: 2.8rem;
+    color: white;
+    z-index: 11; }
 
 * {
   margin: 0;
@@ -272,6 +335,12 @@
 
 #_3xqqT-dldzNrWgExGGtGFf {
   display: none; }
+
+._1Klz4GVyamtS3dplitJ8AJ {
+  margin-top: 60px;
+  height: calc(100% - 60px);
+  background-color: #32393d;
+  border-radius: 10px; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
