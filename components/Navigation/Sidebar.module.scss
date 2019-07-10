@@ -218,12 +218,18 @@
   background-color: $color-primary;
   border-radius: 50%;
   margin-right: 1.5rem;
-}
+  cursor: pointer;
 
-.playicon i {
-  margin: 1rem 1rem 1rem 1.1rem;
-  font-size: 1rem;
-  color: $color-text;
+  &:hover {
+    background-color: lighten($color-primary, 5%);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .5);
+  }
+
+  & i {
+      margin: 1rem 1rem 1rem 1.1rem;
+      font-size: 1rem;
+      color: $color-text;
+  }
 }
 
 .scrollable::-webkit-scrollbar-track {

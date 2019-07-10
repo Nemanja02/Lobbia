@@ -7,6 +7,7 @@
   justify-content: space-between;
   height: $topbar-height;
   background-color: $color-bg-light;
+  padding: 0 $margin;
 }
 
 .logo {
@@ -18,20 +19,19 @@
 
 .search {
   font-size: 16px;
-  margin: 12px;
+  margin: 12px 0;
   background-color: $color-bg;
-  border: none;
-  color: darken($color-text, 15%);
-  padding: 5px;
+  color: $color-text;
+  padding: 5px 10px;
   border-radius: 5px;
-  padding: 0 0 0 10px;
   width: 30rem;
   transition: 0.2s all;
   border: 1.5px solid transparent;
 
   &:focus {
     outline: none;
-    border: 1.5px rgba($color-primary-dark, 0.6) solid;
+    border: 1.5px solid $color-primary;
+    width: 50rem;
   }
 }
 
@@ -39,7 +39,7 @@
   margin: 10px;
   height: 40px;
   width: 80px;
-  background-color: $color-primary-dark;
+  background-color: $color-primary;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -47,16 +47,12 @@
   align-items: center;
   z-index: 10;
   cursor: pointer;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
   transition: 0.2s all;
 
   &:hover {
-    background-color: lighten($color-primary-dark, 3%);
-    margin-top: 1px;
-  }
-
-  &:hover > i {
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    background-color: lighten($color-primary, 5%);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .5);
   }
 
   & i {
