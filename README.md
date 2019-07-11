@@ -1,1 +1,1 @@
-# Cao svima ja sam Cile nista vise nista manje.
+# Ćao svima, ja sam Cile; ništa više, ništa manje.
