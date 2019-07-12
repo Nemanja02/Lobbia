@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -246,13 +246,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Sidebar.module.scss */ "./components/Navigation/Sidebar.module.scss");
-/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _NavLink_NavLink__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./NavLink/NavLink */ "./components/Navigation/NavLink/NavLink.js");
-/* harmony import */ var _NavHeading__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./NavHeading */ "./components/Navigation/NavHeading.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Sidebar.module.scss */ "./components/Navigation/Sidebar.module.scss");
+/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _NavLink_NavLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./NavLink/NavLink */ "./components/Navigation/NavLink/NavLink.js");
+/* harmony import */ var _NavHeading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./NavHeading */ "./components/Navigation/NavHeading.js");
+/* harmony import */ var _Typography_Typography__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Typography/Typography */ "./components/Typography/Typography.js");
+
+
+
 
 
 
@@ -267,19 +273,19 @@ function Profile(_ref) {
   var ppicture = _ref.ppicture,
       username = _ref.username,
       activity = _ref.activity;
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.user
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.user
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
     src: ppicture,
-    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ppicture, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.unselectable)
-  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.online
-  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.about
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.username
-  }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.activity
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.ppicture, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.unselectable)
+  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.online
+  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.about
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.username
+  }, username), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.activity
   }, activity)));
 }
 
@@ -292,60 +298,82 @@ function Friend(_ref2) {
   var displayActivity;
 
   if (activity === "on") {
-    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.green;
+    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.green;
     displayActivity = "Online";
   } else if (activity === "off") {
-    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.black;
+    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.black;
     displayActivity = "Offline";
   } else if (activity === "dnd") {
-    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.red;
+    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.red;
     displayActivity = "Do Not Disturb";
   } else {
-    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.yellow;
+    status = _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.yellow;
     displayActivity = activity;
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
+  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
     href: link,
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.friend
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.friend
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
     src: ppicture,
-    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fppicture, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.unselectable)
-  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fonline, " ").concat(status)
-  }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fabout
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.fusername
-  }, username), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.factivity
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.fppicture, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.unselectable)
+  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.fonline, " ").concat(status)
+  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.fabout
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.fusername
+  }, username), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.factivity
   }, displayActivity)));
 }
 
 var Sidebar =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Sidebar, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Sidebar, _Component);
 
   function Sidebar() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Sidebar);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Sidebar).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Sidebar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
+      activeTab: 1
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "switchActiveTab", function (i) {
+      _this.setState({
+        activeTab: i
+      });
+    });
+
+    return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Sidebar, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.container
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Profile, {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.container
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.division
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Profile, {
         ppicture: "https://ichef.bbci.co.uk/news/660/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg",
         username: "MarkZucc",
         activity: "Playing Minecraft survival"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
-        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebar
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.sidebar
       }, ["Feed", "Profile", "Settings"].map(function (el) {
         var faIcon;
         var href;
@@ -365,87 +393,56 @@ function (_Component) {
           href = "/settings";
         }
 
-        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
           key: el,
-          className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.sidebarEl
-        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_NavLink_NavLink__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.sidebarEl
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_NavLink_NavLink__WEBPACK_IMPORTED_MODULE_9__["default"], {
           path: href,
           title: el,
           icon: faIcon
         }));
-      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.growdiv)
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_NavHeading__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        title: "connections"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.growdiv)
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a["tab-control"]
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Typography_Typography__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        active: this.state.activeTab === 1 ? true : false,
+        clicked: function clicked() {
+          return _this2.switchActiveTab(1);
+        },
+        variant: "nav-title",
+        color: "light"
+      }, "Connections"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Typography_Typography__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        clicked: function clicked() {
+          return _this2.switchActiveTab(2);
+        },
+        active: this.state.activeTab === 2 ? true : false,
+        variant: "nav-title",
+        color: "light"
+      }, "Lobbies")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         id: "style-3",
-        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_6___default.a.scrollable
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone1",
-        activity: "on",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone2",
-        activity: "off",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone3",
-        activity: "playing League of legends",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone4",
-        activity: "off",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone5",
-        activity: "on",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone6",
-        activity: "off",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone7",
-        activity: "playing League of legends",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone8",
-        activity: "off",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone9",
-        activity: "on",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone10",
-        activity: "off",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone11",
-        activity: "playing League of legends",
-        link: "lol"
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Friend, {
-        ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-        username: "MarkZuccClone12",
-        activity: "off",
-        link: "lol"
+        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.scrollable, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.tab_body)
+      }, ["Faggot", "Big chungus", "Rrrrrrrresi", "Baka prasqui", "Novica"].map(function (el, i) {
+        var status = "on";
+
+        if (i % 2 === 0) {
+          status = "dnd";
+        }
+
+        if (i === 4) status = "off";
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Friend, {
+          key: el,
+          ppicture: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+          username: el,
+          activity: status,
+          link: "lol"
+        });
       }))));
     }
   }]);
 
   return Sidebar;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
 
 /***/ }),
@@ -486,6 +483,7 @@ module.exports = {
 	"green": "_148i0dRO86RgBwotRPa_JO",
 	"black": "_1n8W3u3DEEI38NoxnfJaY-",
 	"gamediv": "_2gg6pL1GISeJLnNWUetgEW",
+	"tab-control": "_1lnYtsIVFeHXhcRfTiW3IH",
 	"gameicon": "_2RXpXDfJbX2EpxqdnDGBN6",
 	"gamename": "_1Gq64PAa8F1ZYt5vrKjKz-",
 	"playicon": "yN8rV-RO6lbaP0fK8WPVL"
@@ -502,11 +500,25 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar.module.scss */ "./components/Navigation/Sidebar.module.scss");
-/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _NavHeading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavHeading */ "./components/Navigation/NavHeading.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Sidebar.module.scss */ "./components/Navigation/Sidebar.module.scss");
+/* harmony import */ var _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Typography_Typography__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Typography/Typography */ "./components/Typography/Typography.js");
+
+
+
+
+
+
+
 
 
 
@@ -514,109 +526,89 @@ __webpack_require__.r(__webpack_exports__);
 function Game(_ref) {
   var icon = _ref.icon,
       name = _ref.name;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.gamediv
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.gamediv
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
     src: icon,
-    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.gameicon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.unselectable)
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.gamename
-  }, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.playicon
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.gameicon, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.unselectable)
+  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.gamename
+  }, name), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.playicon
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
     className: "fas fa-play"
   })));
 }
 
-function SidebarSecond() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.containerRight
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.growdiv)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavHeading__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "Games"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.scrollable
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Game, {
-    icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
-    name: "Zucc The Game"
-  }))));
-}
+var SidebarSecond =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(SidebarSecond, _Component);
+
+  function SidebarSecond() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, SidebarSecond);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(SidebarSecond)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
+      activeTab: 1
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "switchActiveTab", function (i) {
+      _this.setState({
+        activeTab: i
+      });
+    });
+
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(SidebarSecond, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.containerRight
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "".concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.division, " ").concat(_Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.growdiv)
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a["tab-control"]
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Typography_Typography__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        active: this.state.activeTab === 1 ? true : false,
+        clicked: function clicked() {
+          return _this2.switchActiveTab(1);
+        },
+        variant: "nav-title",
+        color: "light"
+      }, "Games"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Typography_Typography__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        clicked: function clicked() {
+          return _this2.switchActiveTab(2);
+        },
+        active: this.state.activeTab === 2 ? true : false,
+        variant: "nav-title",
+        color: "light"
+      }, "smth else")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _Sidebar_module_scss__WEBPACK_IMPORTED_MODULE_8___default.a.scrollable
+      }, ["Minecraft", "Roblox", "Roblox 2", "Despacito", "Candy crush saga xD"].map(function (el, i) {
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Game, {
+          icon: "https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg",
+          name: el
+        });
+      }))));
+    }
+  }]);
+
+  return SidebarSecond;
+}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (SidebarSecond);
 
@@ -647,10 +639,12 @@ function TopBar() {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.isearch
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-compass ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.button_search_icon)
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    placeholder: "Search community",
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    placeholder: "Search",
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-search ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search_icon_input)
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TopBar);
@@ -668,7 +662,107 @@ module.exports = {
 	"topbar": "_2J-AXA5bO-gnAB71XqxwiM",
 	"logo": "_2t82o8bEKj2penP5hYals9",
 	"search": "_3YKw-ugJ0BvKCTJvvZeg6m",
+	"search_icon_input": "b0VqGRIQ_JfkeIuuJgbY0",
 	"isearch": "hEuH6DfguykbOzdnS3kvm"
+};
+
+/***/ }),
+
+/***/ "./components/Typography/Typography.js":
+/*!*********************************************!*\
+  !*** ./components/Typography/Typography.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Typography.module.scss */ "./components/Typography/Typography.module.scss");
+/* harmony import */ var _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function Typography(_ref) {
+  var clicked = _ref.clicked,
+      active = _ref.active,
+      variant = _ref.variant,
+      children = _ref.children,
+      color = _ref.color;
+
+  switch (variant) {
+    case "h1":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h1, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "h2":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h2, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "h3":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h3, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "h4":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h4, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "h5":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h5, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "h6":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.h6, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "span":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.span, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+
+    case "nav-title":
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        onClick: clicked,
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["nav-title"], " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color], " ").concat(active === true ? _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["tab-control-child-active"] : null, " ")
+      }, children.toUpperCase());
+
+    default:
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.p, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
+      }, children);
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Typography);
+
+/***/ }),
+
+/***/ "./components/Typography/Typography.module.scss":
+/*!******************************************************!*\
+  !*** ./components/Typography/Typography.module.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"h1": "_2Gu1oTUFVuVkckVKJWISjr",
+	"h2": "_2IG223MdCVeLFWATVFqxRH",
+	"h3": "eh1SrU78-PebH_Puue5iR",
+	"nav-title": "_1qUEHCiDlTFh_8XDcGOXBR",
+	"h4": "_2y4dUru7dL1d1ir-WtNLrc",
+	"h5": "_2aL6AOjfLgcmMYJe5-Wb9Q",
+	"h6": "_3nvDAxWG6WQXjmQKmfoRAT",
+	"p": "_2BsUHfr_BLCEGUQz7QNpD3",
+	"light": "_1WorM_LCUZwcyYUJzw-cXJ",
+	"dark": "_2R2xHZ4kh-h0UFZFaiQlZM",
+	"tab-control-child-active": "_2nMbDsgwvsH90vFA9iyBLk"
 };
 
 /***/ }),
@@ -1579,14 +1673,14 @@ Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Petar\Documents\Lobbia\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\web-dev\Novica-The-Rapist\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

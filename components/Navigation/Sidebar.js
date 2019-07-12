@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import classes from "./Sidebar.module.scss";
 import NavLink from "./NavLink/NavLink";
 import NavHeading from "./NavHeading";
+import Typography from "../Typography/Typography";
 
 function Profile({ ppicture, username, activity }) {
   return (
@@ -52,6 +53,14 @@ function Friend({ ppicture, username, activity, link }) {
 }
 
 export class Sidebar extends Component {
+  state = {
+    activeTab: 1
+  };
+
+  switchActiveTab = i => {
+    this.setState({ activeTab: i });
+  };
+
   render() {
     return (
       <div className={classes.container}>
@@ -87,80 +96,50 @@ export class Sidebar extends Component {
         </div>
 
         <div className={`${classes.division} ${classes.growdiv}`}>
-          <NavHeading title="connections" />
-          <div id="style-3" className={classes.scrollable}>
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone1"
-              activity="on"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone2"
-              activity="off"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone3"
-              activity="playing League of legends"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone4"
-              activity="off"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone5"
-              activity="on"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone6"
-              activity="off"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone7"
-              activity="playing League of legends"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone8"
-              activity="off"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone9"
-              activity="on"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone10"
-              activity="off"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone11"
-              activity="playing League of legends"
-              link="lol"
-            />
-            <Friend
-              ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-              username="MarkZuccClone12"
-              activity="off"
-              link="lol"
-            />
+          <div className={classes["tab-control"]}>
+            <Typography
+              active={this.state.activeTab === 1 ? true : false}
+              clicked={() => this.switchActiveTab(1)}
+              variant="nav-title"
+              color="light"
+            >
+              Connections
+            </Typography>
+            <Typography
+              clicked={() => this.switchActiveTab(2)}
+              active={this.state.activeTab === 2 ? true : false}
+              variant="nav-title"
+              color="light"
+            >
+              Lobbies
+            </Typography>
+          </div>
+          <div
+            id="style-3"
+            className={`${classes.scrollable} ${classes.tab_body}`}
+          >
+            {[
+              "Faggot",
+              "Big chungus",
+              "Rrrrrrrresi",
+              "Baka prasqui",
+              "Novica"
+            ].map((el, i) => {
+              let status = "on";
+              if (i % 2 === 0) {
+                status = "dnd";
+              }
+              if (i === 4) status = "off";
+              return (
+                <Friend
+                  key={el}
+                  ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+                  username={el}
+                  activity={status}
+                  link="lol"
+                />
+              );
+            })}
           </div>
         </div>
       </div>

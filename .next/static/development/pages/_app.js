@@ -9106,7 +9106,7 @@ function (_Component) {
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
-        href: "https://fonts.googleapis.com/css?family=Open+Sans&display=swap",
+        href: "https://fonts.googleapis.com/css?family=Roboto&display=swap",
         rel: "stylesheet"
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("script", {
         src: "https://kit.fontawesome.com/8d5f687edf.js"

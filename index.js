@@ -2,7 +2,7 @@ const next = require("next");
 const app = require("express")();
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
-const { ApolloServer, makeExecutableSchema } = require("apollo-server-express");
+const { ApolloServer } = require("apollo-server-express");
 
 const typeDefs = require("./graphql/rootSchema");
 const resolvers = require("./graphql/resolvers/rootResolvers");
