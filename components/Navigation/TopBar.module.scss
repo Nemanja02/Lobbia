@@ -14,7 +14,7 @@
   font-size: 2.8rem;
   color: white;
   line-height: $topbar-height;
-  margin: 0 $margin;
+  width: 30rem;
 }
 
 .search {
@@ -41,6 +41,7 @@
 }
 
 .isearch {
+  align-self: center;
   margin: 10px;
   height: 40px;
   width: 80px;

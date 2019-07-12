@@ -9335,7 +9335,7 @@ if (typeof WebSocket !== 'undefined') {
   BrowserWebSocket = self.WebSocket || self.MozWebSocket;
 } else {
   try {
-    NodeWebSocket = __webpack_require__(/*! ws */ 8);
+    NodeWebSocket = __webpack_require__(/*! ws */ 7);
   } catch (e) { }
 }
 
@@ -20570,9 +20570,15 @@ Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODUL
 /***/ }),
 
 /***/ 0:
+<<<<<<< HEAD
 /*!**********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5Cweb-dev%5CNovica-The-Rapist%5Cpages%5Cindex.js ***!
   \**********************************************************************************************************************/
+=======
+/*!*****************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPetar%5CDocuments%5CLobbia%5Cpages%5Cindex.js ***!
+  \*****************************************************************************************************************************/
+>>>>>>> 093f46c7202c1a596f5e9f268d42eddc702dc740
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20581,7 +20587,7 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ 8:
+/***/ 7:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/
