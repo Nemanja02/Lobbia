@@ -14,30 +14,46 @@
   font-size: 2.8rem;
   color: white;
   line-height: $topbar-height;
-  width: 30rem;
+  width: $searchbar-width-min;
+}
+
+.sbar {
+  display: flex;
+  width: min-content;
+  position: relative;
+  margin: $margin;
+  justify-content: center;
+  align-items: center;
 }
 
 .search {
   font-size: 1.25rem;
-  margin: 15px 0;
   background-color: $color-bg;
   color: $color-text;
   padding: 5px 10px;
   border-radius: 5px;
-  width: 15rem;
+  width: $searchbar-width-min;
   transition: 0.2s all;
   border: 1.5px solid transparent;
-  margin-right: -25px;
 
   &:focus {
     outline: none;
     border: 1.5px solid $color-primary;
-    width: 25rem;
+    width: $searchbar-width-max;
   }
 
   &:focus ~ .search_icon_input {
     color: darken($color-text, 20%);
   }
+}
+
+
+.search_icon_input {
+  position: absolute;
+  font-size: 1.5rem;
+  right: 7px;
+
+  color: darken($color-text, 60%);
 }
 
 .isearch {
@@ -68,9 +84,4 @@
     color: $color-text;
     z-index: 11;
   }
-}
-
-.search_icon_input {
-  font-size: 1.5rem;
-  color: darken($color-text, 60%);
 }
