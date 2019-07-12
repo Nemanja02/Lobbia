@@ -4,15 +4,20 @@ import classes from "./TopBar.module.scss";
 function TopBar() {
   return (
     <div className={classes.topbar}>
-      <span className={classes.logo}>Lobbia</span>
-      <div className={classes.isearch}>
-        <i className={`fas fa-compass ${classes.button_search_icon}`} />
+      <div className={classes.start}>
+        <span className={classes.logo}>Lobbia</span>
       </div>
-      <div>
-      <input placeholder="Search" className={classes.search} />
-      <i className={`fas fa-search ${classes.search_icon_input}`}/>
+      <div className={classes.center}>
+        <div className={classes.isearch}>
+          <i className={`fas fa-compass ${classes.button_search_icon}`} />
+        </div>
       </div>
-
+      <div className={classes.end}>
+        <div className={classes.sbar}>
+        <input placeholder="Search" className={classes.search} />
+        <i className={`fas fa-search ${classes.search_icon_input}`}/>
+        </div>
+      </div>
     </div>
   );
 }

@@ -21,17 +21,17 @@ function Typography({ clicked, active, variant, children, color }) {
       );
     case "nav-title":
       return (
-        <p
+        <span
           onClick={clicked}
           className={`${classes["nav-title"]} ${classes[color]} ${
             active === true ? classes["tab-control-child-active"] : null
           } `}
         >
           {children.toUpperCase()}
-        </p>
+        </span>
       );
     default:
-      return <p className={`${classes.p} ${classes[color]}`}>{children}</p>;
+      return <span className={`${classes.p} ${classes[color]}`}>{children}</span>;
   }
 }
 

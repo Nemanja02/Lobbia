@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -634,18 +634,26 @@ __webpack_require__.r(__webpack_exports__);
 function TopBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.topbar
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.start
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.logo
-  }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Lobbia")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.center
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.isearch
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-compass ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.button_search_icon)
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.end
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.sbar
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     placeholder: "Search",
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-search ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search_icon_input)
-  })));
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TopBar);
@@ -661,6 +669,9 @@ function TopBar() {
 
 module.exports = {
 	"topbar": "_2J-AXA5bO-gnAB71XqxwiM",
+	"start": "_24fn8cMtMBNHLQKffn7iWr",
+	"end": "_3JgRhn6fN7Oyt5walZTO6t",
+	"center": "_2GPQV2EeNDJR1qtBz7Ef2q",
 	"logo": "_2t82o8bEKj2penP5hYals9",
 	"search": "_3YKw-ugJ0BvKCTJvvZeg6m",
 	"search_icon_input": "b0VqGRIQ_JfkeIuuJgbY0",
@@ -729,13 +740,13 @@ function Typography(_ref) {
       }, children);
 
     case "nav-title":
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: clicked,
         className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["nav-title"], " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color], " ").concat(active === true ? _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["tab-control-child-active"] : null, " ")
       }, children.toUpperCase());
 
     default:
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.p, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
       }, children);
   }
@@ -1674,7 +1685,7 @@ Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
