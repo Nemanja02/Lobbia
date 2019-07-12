@@ -8,7 +8,7 @@ function TopBar() {
       <div className={classes.isearch}>
         <i className={`fas fa-compass ${classes.button_search_icon}`} />
       </div>
-      <div class={classes.sbar}>
+      <div className={classes.sbar}>
       <input placeholder="Search" className={classes.search} />
       <i className={`fas fa-search ${classes.search_icon_input}`}/>
       </div>

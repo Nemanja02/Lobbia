@@ -206,8 +206,9 @@
   align-items: center;
   margin-bottom: 5px;
 
-  & p {
-    padding: 1.3rem 4rem;
+  & span {
+    text-align: center;
+    padding: 1.3rem 0;
     font-weight: 500;
     font-size: 1.4rem;
     width: 100%;
@@ -217,7 +218,6 @@
     border-bottom: 3px solid lighten($color-bg, 15%);
     cursor: pointer;
     transition: 0.3s all;
-    font-weight: 500;
     color: darken($color-text, 25%);
 
     &:hover {

@@ -463,7 +463,7 @@ function TopBar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-compass ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.button_search_icon)
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.sbar
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.sbar
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     placeholder: "Search",
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
@@ -536,13 +536,13 @@ function Typography(_ref) {
       }, children);
 
     case "nav-title":
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: clicked,
         className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["nav-title"], " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color], " ").concat(active === true ? _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["tab-control-child-active"] : null, " ")
       }, children.toUpperCase());
 
     default:
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.p, " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color])
       }, children);
   }
