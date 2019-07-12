@@ -1,0 +1,25 @@
+@import "../../config/sass/variables.scss";
+
+body {
+    background: $color-bg;
+}
+
+form {
+    padding: $margin calc(50% - 350px);
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    width: 100%;
+    height: $topbar-height;
+    background-color: $color-bg-light;
+    padding: 0 $margin;
+}
+
+.logo {
+    font-size: 2.8rem;
+    color: white;
+    line-height: $topbar-height;
+}
+  
