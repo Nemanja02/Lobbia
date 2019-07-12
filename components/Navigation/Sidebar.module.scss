@@ -217,13 +217,18 @@
     border-bottom-right-radius: 0;
     border-bottom: 3px solid lighten($color-bg, 15%);
     cursor: pointer;
-    transition: 0.3s all;
+    transition: .2s all;
     color: darken($color-text, 25%);
 
     &:hover {
       color: $color-text;
     }
   }
+}
+
+span:focus {
+  border-bottom: 3px solid $color-primary !important;
+  color: $color-text !important;
 }
 
 .gameicon {
@@ -245,7 +250,7 @@
   height: 3rem;
   background-color: $color-primary;
   border-radius: 50%;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
   cursor: pointer;
 
   &:hover {

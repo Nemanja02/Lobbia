@@ -744,7 +744,7 @@ function Typography(_ref) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: clicked,
         className: "".concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["nav-title"], " ").concat(_Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a[color], " ").concat(active === true ? _Typography_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a["tab-control-child-active"] : null, " ")
-      }, children.toUpperCase());
+      }, children);
 
     default:
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
