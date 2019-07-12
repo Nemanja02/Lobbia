@@ -33,6 +33,14 @@
   line-height: $topbar-height;
 }
 
+.sbar {
+  display: flex;
+  width: min-content;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
 .search {
   font-size: 1.25rem;
   background-color: $color-bg;
