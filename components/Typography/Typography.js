@@ -27,7 +27,7 @@ function Typography({ clicked, active, variant, children, color }) {
             active === true ? classes["tab-control-child-active"] : null
           } `}
         >
-          {children.toUpperCase()}
+          {children} 
         </span>
       );
     default:
