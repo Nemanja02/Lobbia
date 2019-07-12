@@ -7,6 +7,17 @@ const {
   SessionExpired
 } = require("../errors");
 
+exports.marjanoveUmri = async () => {
+  const res = await User.find().limit(5);
+  res.map((el, i) => {
+    let gameId = 0;
+    if (i % 2 === 0) gameId = 1;
+    if (i === 4) gameId = 2;
+    el.gameSearching = gameId;
+  });
+  return res;
+};
+
 exports.createUserAccount = async (
   parent,
   { email, age, username, password },

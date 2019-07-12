@@ -18,10 +18,13 @@ module.exports = gql`
     id: ID!
     createdAt: DateTime!
     updatedAt: DateTime!
+    gameSearching: Int
   }
 
   type Query {
     usersList: [User!]!
+
+    marjanoveUmri: [User!]!
   }
 
   type Mutation {
