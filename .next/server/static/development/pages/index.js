@@ -634,20 +634,26 @@ __webpack_require__.r(__webpack_exports__);
 function TopBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.topbar
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.start
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.logo
-  }, "Lobbia"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Lobbia")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.center
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.isearch
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-compass ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.button_search_icon)
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.end
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.sbar
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     placeholder: "Search",
     className: _TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-search ".concat(_TopBar_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.search_icon_input)
-  })));
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TopBar);
@@ -663,6 +669,9 @@ function TopBar() {
 
 module.exports = {
 	"topbar": "_2J-AXA5bO-gnAB71XqxwiM",
+	"start": "_24fn8cMtMBNHLQKffn7iWr",
+	"end": "_3JgRhn6fN7Oyt5walZTO6t",
+	"center": "_2GPQV2EeNDJR1qtBz7Ef2q",
 	"logo": "_2t82o8bEKj2penP5hYals9",
 	"sbar": "_2MHKZDgQ2nDrazTDLHuD6I",
 	"search": "_3YKw-ugJ0BvKCTJvvZeg6m",
