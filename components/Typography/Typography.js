@@ -27,11 +27,13 @@ function Typography({ clicked, active, variant, children, color }) {
             active === true ? classes["tab-control-child-active"] : null
           } `}
         >
-          {children} 
+          {children.toUpperCase()}
         </span>
       );
     default:
-      return <span className={`${classes.p} ${classes[color]}`}>{children}</span>;
+      return (
+        <span className={`${classes.p} ${classes[color]}`}>{children}</span>
+      );
   }
 }
 

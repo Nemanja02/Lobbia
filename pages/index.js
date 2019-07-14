@@ -2,17 +2,33 @@ import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
 import "../config/sass/global.scss";
 import io from "socket.io-client";
-import classes from "./Page.module.scss";
+import classes from "./styles/Page.module.scss";
+// import { graphql } from "react-apollo";
+// import gql from "graphql-tag";
+// import withData from "../lib/withData";
+
+// const query = gql`
+//   {
+//     marjanoveUmri {
+//       gameSearching
+//       id
+//       createdAt
+//       interests {
+//         music
+//         games
+//       }
+//     }
+//   }
+// `;
 
 const socket = io();
 
 class Index extends Component {
-  static getInitialProps = ({ req }) => {
-    console.log(req.user);
-    return {};
-  };
-
   state = {};
+
+  componentDidMount() {
+    localStorage.setItem("status", this.props.user.status);
+  }
 
   render() {
     return (

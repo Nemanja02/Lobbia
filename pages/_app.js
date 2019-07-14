@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import App, { Container } from "next/app";
+// import { ApolloClient } from "apollo-client";
 
 export class _app extends Component {
+  static getInitialProps = ({ Component, ctx }) => {
+    let pageProps = {
+      user: ctx.req.user
+    };
+
+    return { pageProps };
+  };
+
   render() {
     const { Component, pageProps } = this.props;
     return (
       <div>
-        {/* <link
-          href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-          rel="stylesheet"
-        /> */}
         <link
           href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
           rel="stylesheet"

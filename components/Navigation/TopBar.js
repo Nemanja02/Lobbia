@@ -7,15 +7,14 @@ function TopBar() {
       <div className={classes.start}>
         <span className={classes.logo}>Lobbia</span>
       </div>
-      <div className={classes.center}>
-        <div className={classes.isearch}>
-          <i className={`fas fa-compass ${classes.button_search_icon}`} />
-        </div>
-      </div>
       <div className={classes.end}>
+        <div className={classes["icon-btn-control"]}>
+          <i className={`fas fa-compass ${classes["icon-special"]}`} />
+          <i className="fas fa-bell" />
+        </div>
         <div className={classes.sbar}>
-        <input placeholder="Search" className={classes.search} />
-        <i className={`fas fa-search ${classes.search_icon_input}`}/>
+          <input placeholder="Search" className={classes.search} />
+          <i className={`fas fa-search ${classes.search_icon_input}`} />
         </div>
       </div>
     </div>

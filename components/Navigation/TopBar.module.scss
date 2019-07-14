@@ -5,6 +5,7 @@
   position: fixed;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   height: $topbar-height;
   background-color: $color-bg-light;
   padding: 0 $margin;
@@ -31,6 +32,42 @@
   font-size: 2.8rem;
   color: white;
   line-height: $topbar-height;
+  margin: 0 1.5rem;
+}
+
+.icon-btn-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1rem;
+
+  & i {
+    transition: 0.2s all;
+    margin: 0 1rem;
+    font-size: 2.6rem;
+    color: darken($color-text, 30%);
+    cursor: pointer;
+
+    &:hover {
+      color: darken($color-text, 10%);
+    }
+  }
+
+  & > i.icon-special {
+    font-size: 2.6rem;
+    color: $color-primary-dark;
+    cursor: pointer;
+    transition: 0.2s all;
+    // border-radius: 50%;
+    // animation: shadow-pulse 0.85s infinite;
+    // animation-play-state: paused;
+    // box-shadow: none;
+
+    &:hover {
+      color: $color-primary;
+      animation-play-state: running;
+    }
+  }
 }
 
 .sbar {
@@ -97,5 +134,14 @@
     font-size: 2.8rem;
     color: $color-text;
     z-index: 11;
+  }
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(#fff, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 25px rgba(#fff, 0);
   }
 }
