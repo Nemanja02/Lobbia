@@ -1,5 +1,11 @@
 const { GraphQLDate, GraphQLDateTime } = require("graphql-iso-date");
-const { createUserAccount, usersList, marjanoveUmri } = require("./user");
+const {
+  createUserAccount,
+  usersList,
+  marjanoveUmri,
+  findUser,
+  login
+} = require("./user");
 
 module.exports = {
   Date: GraphQLDate,
@@ -7,7 +13,9 @@ module.exports = {
 
   Query: {
     usersList,
-    marjanoveUmri
+    marjanoveUmri,
+    findUser,
+    login
   },
 
   Mutation: {

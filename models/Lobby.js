@@ -26,15 +26,16 @@ const LobbySchema = new Schema(
         ref: "User"
       }
     ],
+
+    type: {
+      type: String,
+      default: "temporary"
+    },
+
     status: {
       type: Number,
       required: true,
       default: 0
-    },
-
-    duration: {
-      start: Date,
-      end: Date
     },
 
     messages: [MessageSchema],

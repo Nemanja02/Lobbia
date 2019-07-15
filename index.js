@@ -4,8 +4,6 @@ const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
 
-const graphql = require("graphql");
-
 const typeDefs = require("./graphql/rootSchema");
 const resolvers = require("./graphql/resolvers/rootResolvers");
 const cfg = require("./config/config.json");

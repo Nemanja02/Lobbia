@@ -1,12 +1,18 @@
 const { gql } = require("apollo-server-express");
 
 module.exports = gql`
+  # CUSTOM SCALARS
   scalar Date
   scalar DateTime
 
+  type Auth {
+    token: String!
+    id: ID
+  }
+
   type UserInterests {
-    music: [String!]
-    games: [String!]
+    music: [Int!]
+    games: [Int!]
   }
 
   type User {
@@ -21,18 +27,26 @@ module.exports = gql`
     gameSearching: Int
   }
 
+  # QUERIES
   type Query {
     usersList: [User!]!
+
+    findUser(id: ID): User!
+
+    login(signature: String, password: String): Auth
 
     marjanoveUmri: [User!]!
   }
 
+  # MUTATIONS
   type Mutation {
     createUserAccount(
       email: String
       username: String
-      age: Int
+      dateOfBirth: Date
       password: String
-    ): User
+    ): Auth
+
+    # initializeLobby(participants: [String] ):
   }
 `;

@@ -22,19 +22,42 @@ const UserSchema = new Schema(
       required: true
     },
 
+    fullName: {
+      type: String,
+      required: true
+    },
+
     age: {
       type: Number,
       required: true
     },
 
     interests: {
-      music: [String],
-      games: [String]
+      music: [Number],
+      games: [Number]
     },
 
     balance: {
       type: Number,
       default: 0
+    },
+
+    accountDescription: {
+      type: String
+    },
+
+    accountType: {
+      type: String,
+      default: "basic"
+    },
+
+    banned: {
+      type: Boolean,
+      default: false
+    },
+
+    profilePicture: {
+      type: String
     },
 
     connections: [

@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 import App, { Container } from "next/app";
 // import { ApolloClient } from "apollo-client";
+import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import { grey } from "@material-ui/core/colors";
+
+const theme = createMuiTheme({
+  palette: {
+    text: {
+      primary: grey[200],
+      secondary: grey[600]
+    }
+  }
+});
 
 export class _app extends Component {
   static getInitialProps = ({ Component, ctx }) => {
@@ -21,7 +33,9 @@ export class _app extends Component {
         />
         <script src="https://kit.fontawesome.com/8d5f687edf.js" />
         <Container>
-          <Component {...pageProps} />
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
         </Container>
       </div>
     );

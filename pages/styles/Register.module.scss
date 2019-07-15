@@ -4,21 +4,15 @@ body {
   background: $color-bg;
 }
 
-form {
-  padding: $margin calc(50% - 350px);
-  display: flex;
-  flex-direction: column;
-}
+.customSignupCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 45rem;
+  width: 60rem;
+  border-radius: 12px;
 
-.topbar {
-  width: 100%;
-  height: $topbar-height;
   background-color: $color-bg-light;
-  padding: 0 $margin;
-}
-
-.logo {
-  font-size: 2.8rem;
-  color: white;
-  line-height: $topbar-height;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
