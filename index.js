@@ -1,5 +1,6 @@
 const next = require("next");
-const app = require("express")();
+const express = require("express");
+const app = express();
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
@@ -26,6 +27,8 @@ const gqlServer = new ApolloServer({
   context: ({ req }) => req
 });
 gqlServer.applyMiddleware({ app });
+
+app.use(express.static("static"));
 
 nextApp
   .prepare()

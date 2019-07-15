@@ -48,6 +48,7 @@
     "react-apollo": "^2.5.8",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
+    "react-material-ui-form-validator": "^2.0.9",
     "react-redux": "^7.1.0",
     "redis": "^2.8.0",
     "redux": "^4.0.3",

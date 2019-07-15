@@ -1,7 +1,42 @@
 @import "../../config/sass/variables.scss";
 
-body {
-  background: $color-bg;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  transition: 0.3s all;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 650px !important;
+  height: 700px;
+  color: $color-text;
+  transform: translate(-50%, -50%);
+  background-color: $color-bg-light;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  outline: "none";
+  margin: "auto";
+  margin-top: "15rem";
+  border-radius: 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.bg-img {
+  background: url("http://localhost:8080/assets/landing-background.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.input {
+  font-size: 16px;
 }
 
 .customSignupCard {
@@ -9,10 +44,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 45rem;
-  width: 60rem;
+  height: 600px;
+  width: 650px;
+  padding: 40px;
   border-radius: 12px;
 
   background-color: $color-bg-light;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }

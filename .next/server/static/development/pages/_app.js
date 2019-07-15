@@ -905,7 +905,10 @@ var theme = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["createMuiThem
   palette: {
     text: {
       primary: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_10__["grey"][200],
-      secondary: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_10__["grey"][600]
+      secondary: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_10__["grey"][500]
+    },
+    primary: {
+      main: "#ff9a60"
     }
   }
 });
@@ -927,8 +930,8 @@ function (_Component) {
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
-        href: "https://fonts.googleapis.com/css?family=Roboto&display=swap",
-        rel: "stylesheet"
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
         src: "https://kit.fontawesome.com/8d5f687edf.js"
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_styles__WEBPACK_IMPORTED_MODULE_9__["ThemeProvider"], {

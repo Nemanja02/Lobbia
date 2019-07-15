@@ -9,7 +9,10 @@ const theme = createMuiTheme({
   palette: {
     text: {
       primary: grey[200],
-      secondary: grey[600]
+      secondary: grey[500]
+    },
+    primary: {
+      main: "#ff9a60"
     }
   }
 });
@@ -28,8 +31,8 @@ export class _app extends Component {
     return (
       <div>
         <link
-          href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
         <script src="https://kit.fontawesome.com/8d5f687edf.js" />
         <Container>
