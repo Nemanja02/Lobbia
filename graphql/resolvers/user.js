@@ -54,8 +54,8 @@ exports.createUserAccount = async (
   if (
     !password ||
     !validator.isLength(password, {
-      min: 6,
-      max: 16
+      min: 8,
+      max: 32
     })
   ) {
     throw new ValidationError({

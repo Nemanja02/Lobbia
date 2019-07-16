@@ -67,6 +67,11 @@ const UserSchema = new Schema(
       }
     ],
 
+    verified: {
+      type: Boolean,
+      default: false
+    },
+
     lobbiesHistory: [
       {
         type: ObjectId,

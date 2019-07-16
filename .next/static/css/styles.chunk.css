@@ -1,39 +1,3 @@
-._2Gu1oTUFVuVkckVKJWISjr {
-  font-size: 89px; }
-
-._2IG223MdCVeLFWATVFqxRH {
-  font-size: 67px; }
-
-.eh1SrU78-PebH_Puue5iR {
-  font-size: 50px; }
-
-._1qUEHCiDlTFh_8XDcGOXBR {
-  font-size: 1.4rem;
-  padding: 1rem 0; }
-
-._2y4dUru7dL1d1ir-WtNLrc {
-  font-size: 37px; }
-
-._2aL6AOjfLgcmMYJe5-Wb9Q {
-  font-size: 28px; }
-
-._3nvDAxWG6WQXjmQKmfoRAT {
-  font-size: 21px; }
-
-._2BsUHfr_BLCEGUQz7QNpD3 {
-  font-size: 16px;
-  text-indent: 2em; }
-
-._1WorM_LCUZwcyYUJzw-cXJ {
-  color: #f2f2f2; }
-
-._2R2xHZ4kh-h0UFZFaiQlZM {
-  color: #333333; }
-
-._2nMbDsgwvsH90vFA9iyBLk {
-  border-bottom: 3px solid #ff9a60 !important;
-  color: white !important; }
-
 * {
   margin: 0;
   padding: 0; }
@@ -60,21 +24,31 @@
 .I_vzSf8QYCuL0LyO3rFng {
   background: url("http://localhost:8080/assets/landing-background.jpg") no-repeat center center fixed;
   background-size: cover;
+  overflow: hidden;
   width: 100%;
   height: 100vh; }
 
 ._1f0pkpiY64K4x1N1Uh7GAz {
-  font-size: 16px; }
+  font-size: 24px; }
+
+._3ywvKJD8pyVM0YWkdKCPyf {
+  min-height: 100% !important;
+  flex: 1; }
+
+.dLSYrpBEXHdF_kj6jpeAA {
+  margin: 0 20px !important; }
 
 ._373JF_8yT5462reNat5IEu {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 600px;
-  width: 650px;
+  width: 500px;
+  min-height: 540px;
   padding: 40px;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
   background-color: #32393d;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
 
