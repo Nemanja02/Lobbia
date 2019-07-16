@@ -18,6 +18,22 @@ const marginTop = {
   marginTop: "20px"
 };
 
+function GameCheck({picture, stateField, clicked}) {
+
+  let customClasses = [classes.gameCheck];
+  if(stateField) customClasses.push(classes.gameCheck_selected);
+  
+  return (
+    <div className={customClasses.join(' ')} onClick={clicked} style={{background: `url(${picture})`, backgroundSize: `cover`}}>
+      <div>
+        <div>
+          <i className="fas fa-check"/>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function getFormattedDate(date) {
   var year = date.getFullYear();
 
@@ -30,7 +46,6 @@ function getFormattedDate(date) {
   return year + "-" + month + "-" + day;
 }
 
-function formSelecter({ picture, clicked }) {}
 
 class Register extends Component {
   state = {
@@ -41,6 +56,16 @@ class Register extends Component {
     password: "",
     showNextForm: true,
     game: "",
+    selectedField: {
+      games:{
+        minecraft: false,
+        pubg: false,
+        lol: false,
+        apex: false,
+        csgo: false
+      },
+      music: {}
+    },
     music: ""
   };
 
@@ -52,6 +77,20 @@ class Register extends Component {
   toggleFormState = () => {
     this.setState(prevState => ({ showNextForm: !prevState.showNextForm }));
   };
+
+  selectField = (type, field) => {
+    this.setState(prevState => ({
+      ...prevState,
+      selectedField: {
+        ...prevState.selectedField,
+        [type]: {
+          ...prevState.selectedField[type],
+          [field]: !prevState.selectedField[type][field]
+        }
+
+      }
+    }));
+  }
 
   handleChange = (e, type) => {
     this.setState({
@@ -78,7 +117,10 @@ class Register extends Component {
               We just need a bit more info
             </Typography>
           </Grid>
-
+          <GameCheck stateField={this.state.selectedField.games.minecraft}
+          clicked={() => this.selectField('games', 'minecraft')} picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"/>
+          <GameCheck stateField={this.state.selectedField.games.apex}
+          clicked={() => this.selectField('games', 'apex')} picture="https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Apex_legends_cover.jpg/220px-Apex_legends_cover.jpg"/>
           <Grid
             style={{
               width: "60%",
