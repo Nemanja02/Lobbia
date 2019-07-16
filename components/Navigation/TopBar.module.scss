@@ -55,16 +55,17 @@
 
   & > i.icon-special {
     font-size: 2.6rem;
-    color: $color-primary-dark;
+    color: $color-primary;
     cursor: pointer;
     transition: 0.2s all;
-    // border-radius: 50%;
+    border-radius: 50%;
     // animation: shadow-pulse 0.85s infinite;
     // animation-play-state: paused;
     // box-shadow: none;
 
     &:hover {
-      color: $color-primary;
+      color: lighten($color-primary, 5%);
+      box-shadow: 0 7px 8px rgba(0, 0, 0, 0.5);
       animation-play-state: running;
     }
   }
