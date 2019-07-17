@@ -141,3 +141,19 @@
     }
   }
 }
+
+.scrollable::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: $color-bg-light;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 7px;
+  background-color: $color-bg-light;
+  border-radius: 100px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: $color-bg;
+  border-radius: 100px;
+}
