@@ -53,9 +53,12 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
 
 ._2gK5-fTQ2cgEVg-B4EwUoL {
+  overflow-x: auto;
   margin: 20px;
-  min-height: 100% !important;
-  flex: 1; }
+  height: min-content;
+  flex: 1;
+  align-content: flex-start;
+  width: initial; }
   ._2gK5-fTQ2cgEVg-B4EwUoL span {
     color: #bdc3c7;
     font-size: 16px;
