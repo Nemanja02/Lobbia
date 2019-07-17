@@ -54,11 +54,10 @@
 
 ._3jo5suahdrSquhlhBCPeCV {
   overflow-x: auto;
-  margin: 20px;
   height: min-content;
   flex: 1;
   align-content: flex-start;
-  width: initial; }
+  max-height: calc(3 * 100px + 4rem); }
   ._3jo5suahdrSquhlhBCPeCV span {
     color: #bdc3c7;
     font-size: 16px;
@@ -96,7 +95,7 @@
       left: 0px;
       right: 0px;
       border-radius: 12px;
-      border: #32393d solid 4px;
+      border: #32393d solid 7px;
       transition: all 0.3s;
       display: flex;
       align-items: center;
