@@ -37,7 +37,6 @@ export class _app extends Component {
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
         <script src="https://kit.fontawesome.com/8d5f687edf.js" />
-        <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
         <Container>
           <ApolloProvider client={apollo}>
             <ThemeProvider theme={theme}>

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\_app.js"],{
 
 /***/ "./lib/withApollo.js":
 /*!***************************!*\
@@ -38529,7 +38529,7 @@ var flexbox = Object(_compose__WEBPACK_IMPORTED_MODULE_1__["default"])(flexBasis
 /*!*******************************************************!*\
   !*** ./node_modules/@material-ui/system/esm/index.js ***!
   \*******************************************************/
-/*! exports provided: borders, border, borderTop, borderRight, borderBottom, borderLeft, borderColor, borderRadius, breakpoints, compose, css, display, flexbox, flexBasis, flexDirection, flexWrap, justifyContent, alignItems, alignContent, order, flex, flexGrow, flexShrink, alignSelf, justifyItems, justifySelf, palette, color, bgcolor, positions, position, zIndex, top, right, bottom, left, shadows, sizing, width, maxWidth, minWidth, height, maxHeight, minHeight, sizeWidth, sizeHeight, spacing, style, typography, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, textAlign */
+/*! exports provided: borders, breakpoints, compose, css, display, flexbox, palette, positions, shadows, sizing, spacing, style, typography, border, borderTop, borderRight, borderBottom, borderLeft, borderColor, borderRadius, flexBasis, flexDirection, flexWrap, justifyContent, alignItems, alignContent, order, flex, flexGrow, flexShrink, alignSelf, justifyItems, justifySelf, color, bgcolor, position, zIndex, top, right, bottom, left, width, maxWidth, minWidth, height, maxHeight, minHeight, sizeWidth, sizeHeight, fontFamily, fontSize, fontStyle, fontWeight, letterSpacing, lineHeight, textAlign */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75189,8 +75189,6 @@ function (_Component) {
         href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
         src: "https://kit.fontawesome.com/8d5f687edf.js"
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
-        src: "https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_8__["ApolloProvider"], {
         client: apollo
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_styles__WEBPACK_IMPORTED_MODULE_11__["ThemeProvider"], {

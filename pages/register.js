@@ -18,16 +18,22 @@ const marginTop = {
   marginTop: "20px"
 };
 
-function GameCheck({picture, stateField, clicked}) {
-
+function GameCheck({ picture, stateField, clicked }) {
   let customClasses = [classes.gameCheck];
-  if(stateField) customClasses.push(classes.gameCheck_selected);
-  
+  if (stateField) customClasses.push(classes.gameCheck_selected);
+
   return (
-    <div className={customClasses.join(' ')} onClick={clicked} style={{background: `url(${picture})`, backgroundSize: `cover`}}>
+    <div
+      className={customClasses.join(" ")}
+      onClick={clicked}
+      style={{
+        background: `url(${picture})`,
+        backgroundSize: `cover`
+      }}
+    >
       <div>
         <div>
-          <i className="fas fa-check"/>
+          <i className="fas fa-check" />
         </div>
       </div>
     </div>
@@ -46,18 +52,28 @@ function getFormattedDate(date) {
   return year + "-" + month + "-" + day;
 }
 
-
 class Register extends Component {
   state = {
-    fullName: "",
     birthday: getFormattedDate(new Date()),
-    username: "",
-    email: "",
-    password: "",
     showNextForm: true,
-    game: "",
+    fullName: {
+      value: "",
+      isValid: false
+    },
+    username: {
+      value: "",
+      isValid: false
+    },
+    email: {
+      value: "",
+      isValid: false
+    },
+    password: {
+      value: "",
+      isValid: false
+    },
     selectedField: {
-      games:{
+      games: {
         minecraft: false,
         pubg: false,
         lol: false,
@@ -65,8 +81,7 @@ class Register extends Component {
         csgo: false
       },
       music: {}
-    },
-    music: ""
+    }
   };
 
   handleDateChange = e => {
@@ -87,14 +102,15 @@ class Register extends Component {
           ...prevState.selectedField[type],
           [field]: !prevState.selectedField[type][field]
         }
-
       }
     }));
-  }
+  };
 
   handleChange = (e, type) => {
     this.setState({
-      [type]: e.target.value
+      [type]: {
+        value: e.target.value
+      }
     });
   };
 
@@ -117,10 +133,55 @@ class Register extends Component {
               We just need a bit more info
             </Typography>
           </Grid>
-          <GameCheck stateField={this.state.selectedField.games.minecraft}
-          clicked={() => this.selectField('games', 'minecraft')} picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"/>
-          <GameCheck stateField={this.state.selectedField.games.apex}
-          clicked={() => this.selectField('games', 'apex')} picture="https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Apex_legends_cover.jpg/220px-Apex_legends_cover.jpg"/>
+          <Grid
+            style={{
+              flexGrow: 1,
+              height: "100%"
+            }}
+            container
+            direction="column"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid
+              style={{
+                marginTop: "2rem"
+              }}
+              container
+              direction="column"
+              alignItems="center"
+            >
+              <Typography
+                variant="caption"
+                style={{ alignSelf: "flex-start" }}
+                color="textSecondary"
+              >
+                Which kind of games do you play? (Select the one you do)
+              </Typography>
+              <Grid container direction="row" justify="center">
+                <GameCheck
+                  stateField={this.state.selectedField.games.minecraft}
+                  clicked={() => this.selectField("games", "minecraft")}
+                  picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.apex}
+                  clicked={() => this.selectField("games", "apex")}
+                  picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.lol}
+                  clicked={() => this.selectField("games", "lol")}
+                  picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+              </Grid>
+            </Grid>
+          </Grid>
           <Grid
             style={{
               width: "60%",
@@ -196,10 +257,27 @@ class Register extends Component {
                 alignItems="center"
               >
                 <TextField
-                  onChange={e => this.handleChange(e, "fullname")}
+                  onChange={e => this.handleChange(e, "fullName")}
                   fullWidth
-                  value={this.state.fullName}
+                  value={this.state.fullName.value}
                   label="Full name"
+                  style={marginTop}
+                  variant="filled"
+                />
+                <TextField
+                  onChange={e => this.handleChange(e, "username")}
+                  fullWidth
+                  label="Username"
+                  style={marginTop}
+                  value={this.state.username.value}
+                  variant="filled"
+                />
+                <TextField
+                  onChange={e => this.handleChange(e, "email")}
+                  fullWidth
+                  helperText="Be sure to enter a valid e-mail"
+                  label="E-Mail"
+                  value={this.state.email.value}
                   style={marginTop}
                   variant="filled"
                 />
@@ -216,30 +294,13 @@ class Register extends Component {
                   autoComplete="false"
                 />
                 <TextField
-                  onChange={e => this.handleChange(e, "username")}
-                  fullWidth
-                  label="Username"
-                  style={marginTop}
-                  value={this.state.username}
-                  variant="filled"
-                />
-                <TextField
-                  onChange={e => this.handleChange(e, "email")}
-                  fullWidth
-                  helperText="Be sure to enter a valid e-mail"
-                  label="E-Mail"
-                  value={this.state.email}
-                  style={marginTop}
-                  variant="filled"
-                />
-                <TextField
                   onChange={e => this.handleChange(e, "password")}
                   helperText="*Password should contain at least 6 characters"
                   fullWidth
                   label="Password"
                   style={marginTop}
                   variant="filled"
-                  value={this.state.password}
+                  value={this.state.password.value}
                   type="password"
                 />
               </Grid>

@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"modal":"_3qWGRHDWTdP1Mdqgm7wDwD","bg-img":"_2-SpzwN0dFsNgkRAF5gWMN","input":"_114aQDnkB9VUhk3697GUJT","grid":"_-4eHoyt7Zw0YwFrrNUp76","marginSides":"bSWC99E53s2USZEcaukIe","customSignupCard":"_37-CPKCTlzdQe30JdHTSBL","gameCheck":"_3PzvIbZ1DO6kkhPlAeYNLs","gameCheck_selected":"czo1uYkclaR6v4ABk3z4T"};;
+module.exports = {"modal":"_2QTuNNvcy5LkR8oXmRrDDr","bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7GAz","grid":"_3ywvKJD8pyVM0YWkdKCPyf","marginSides":"dLSYrpBEXHdF_kj6jpeAA","customSignupCard":"_373JF_8yT5462reNat5IEu","gameCheck":"_322PB2-Wzfkq9WrcbtWhO4","gameCheck_selected":"NCT1TCFmxgsIaSr9DMutu"};;
     if (true) {
       var injectCss = function injectCss(prev, href) {
         var link = prev.cloneNode();
@@ -30,7 +30,7 @@ module.exports = {"modal":"_3qWGRHDWTdP1Mdqgm7wDwD","bg-img":"_2-SpzwN0dFsNgkRAF
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563319141974");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563365693103");
           });
       }
     }

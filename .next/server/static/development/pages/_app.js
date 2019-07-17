@@ -1065,8 +1065,6 @@ function (_Component) {
         href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
         src: "https://kit.fontawesome.com/8d5f687edf.js"
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
-        src: "https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_8__["ApolloProvider"], {
         client: apollo
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_styles__WEBPACK_IMPORTED_MODULE_11__["ThemeProvider"], {
