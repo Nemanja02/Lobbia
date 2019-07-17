@@ -117,10 +117,22 @@ class Register extends Component {
               We just need a bit more info
             </Typography>
           </Grid>
-          <GameCheck stateField={this.state.selectedField.games.minecraft}
-          clicked={() => this.selectField('games', 'minecraft')} picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"/>
-          <GameCheck stateField={this.state.selectedField.games.apex}
-          clicked={() => this.selectField('games', 'apex')} picture="https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Apex_legends_cover.jpg/220px-Apex_legends_cover.jpg"/>
+          <Grid
+            className={classes.gamesGrid}
+            container
+            direction="row"
+            alignItems="top"
+            justify="flex-start"
+          >
+            <span>Pucacine</span>
+            <GameCheck stateField={this.state.selectedField.games.minecraft}
+            clicked={() => this.selectField('games', 'minecraft')} picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"/>
+            <GameCheck stateField={this.state.selectedField.games.pubg}
+            clicked={() => this.selectField('games', 'pubg')} picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"/>
+            <span>Kurac palac</span>
+            <GameCheck stateField={this.state.selectedField.games.apex}
+            clicked={() => this.selectField('games', 'apex')} picture="https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Apex_legends_cover.jpg/220px-Apex_legends_cover.jpg"/>
+          </Grid>
           <Grid
             style={{
               width: "60%",

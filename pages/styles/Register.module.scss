@@ -65,7 +65,23 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.gamesGrid {
+  margin: 20px;
+  min-height: 100% !important;
+  flex: 1;
+  & span {
+    color: $color-text-second;
+    font-size: 16px;
+    font-family: 'Roboto';
+    display: block;
+    width:100%;
+    line-height: 1.5;
+    height: min-content;
+  }
+}
+
 .gameCheck {
+  margin: 10px;
   cursor: pointer;
   position: relative;
   width: 80px;
