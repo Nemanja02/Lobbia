@@ -1,19 +1,19 @@
 @import "../../../config/sass/variables.scss";
 
 .link {
-  font-size: 1.5rem;
+  font-size: 15px;
   color: $color-text-dark-second;
   text-decoration: none;
-  padding: 0.2rem 0;
-  margin: 0.2rem 0;
+  padding: 2px 0;
+  margin: 2px 0;
   display: flex;
   width: 100%;
   align-items: center;
 
   &Icon {
-    font-size: 2rem;
-    padding: 1rem;
-    margin: 0 1rem 0 1rem;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 10px 0 10px;
     color: $color-text-dark-second;
   }
 
