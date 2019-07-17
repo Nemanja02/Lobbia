@@ -45,11 +45,9 @@
 
 .gamesGrid {
   overflow-x: auto;
-  margin: 20px;
-  height: min-content;
-  flex: 1;
   align-content: flex-start;
   width: initial;
+  height: 350px;
   & span {
     color: $color-text-second;
     font-size: 16px;
@@ -118,4 +116,20 @@
       }
     }
   }
+}
+
+.scrollable::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: $color-bg-light;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 7px;
+  background-color: $color-bg-light;
+  border-radius: 100px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: $color-bg;
+  border-radius: 100px;
 }

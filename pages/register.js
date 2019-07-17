@@ -144,7 +144,7 @@ class Register extends Component {
           >
             <Grid
               style={{
-                marginTop: "2rem"
+                margin: "2rem 0"
               }}
               container
               direction="column"
@@ -157,7 +157,7 @@ class Register extends Component {
               >
                 Select the one you do:
               </Typography>
-              <Grid container direction="row" justify="center">
+              <Grid className={`${classes.gamesGrid} ${classes.scrollable}`} container direction="row" justify="center">
                 <GameCheck
                   stateField={this.state.selectedField.games.minecraft}
                   clicked={() => this.selectField("games", "minecraft")}
@@ -172,6 +172,136 @@ class Register extends Component {
                   stateField={this.state.selectedField.games.lol}
                   clicked={() => this.selectField("games", "lol")}
                   picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+                />
+                <GameCheck
+                  stateField={this.state.selectedField.games.pubg}
+                  clicked={() => this.selectField("games", "pubg")}
+                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
                 />
                 <GameCheck
                   stateField={this.state.selectedField.games.pubg}
