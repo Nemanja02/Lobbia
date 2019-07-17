@@ -55,7 +55,7 @@ function getFormattedDate(date) {
 class Register extends Component {
   state = {
     birthday: getFormattedDate(new Date()),
-    showNextForm: true,
+    showNextForm: false,
     fullName: {
       value: "",
       isValid: false
@@ -126,11 +126,10 @@ class Register extends Component {
         >
           <Grid container direction="column" alignItems="center">
             <Typography variant="h4" color="textPrimary">
-              You are few steps away
+              Which games do you play?
             </Typography>
-
-            <Typography variant="subtitle2" color="textSecondary">
-              We just need a bit more info
+            <Typography variant="subtitle1" color="textSecondary">
+              You gotta be gamer, right?
             </Typography>
           </Grid>
           <Grid
@@ -152,11 +151,11 @@ class Register extends Component {
               alignItems="center"
             >
               <Typography
-                variant="caption"
                 style={{ alignSelf: "flex-start" }}
+                variant="caption"
                 color="textSecondary"
               >
-                Which kind of games do you play? (Select the one you do)
+                Select the one you do:
               </Typography>
               <Grid container direction="row" justify="center">
                 <GameCheck
@@ -242,7 +241,7 @@ class Register extends Component {
                 style={{
                   margin: "10 0 20 0"
                 }}
-                variant="h5"
+                variant="h4"
                 color="textPrimary"
               >
                 Create an account

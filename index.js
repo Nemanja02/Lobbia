@@ -8,6 +8,7 @@ const { ApolloServer } = require("apollo-server-express");
 const typeDefs = require("./graphql/rootSchema");
 const resolvers = require("./graphql/resolvers/rootResolvers");
 const cfg = require("./config/config.json");
+const isAuth = require("./middlewares/is-auth");
 
 const port = process.env.PORT || cfg.port;
 const dev = process.env.NODE_ENV !== "production";
@@ -21,14 +22,14 @@ customFormatError = err => {
   return err;
 };
 
+app.use(isAuth);
+app.use(express.static("static"));
 const gqlServer = new ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req }) => req
 });
 gqlServer.applyMiddleware({ app });
-
-app.use(express.static("static"));
 
 nextApp
   .prepare()

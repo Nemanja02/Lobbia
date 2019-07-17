@@ -1,11 +1,34 @@
 import React, { Component } from "react";
-import App, { Container } from "next/app";
+import { Container } from "next/app";
 import { ApolloProvider } from "react-apollo";
-import withApollo from "../lib/withApollo";
 
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { grey } from "@material-ui/core/colors";
+import withApollo from "next-with-apollo";
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { createHttpLink } from "apollo-link-http";
+import { setContext } from "apollo-link-context";
+
+const httpLink = createHttpLink({
+  uri: "http://localhost:8080/graphql"
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : ""
+    }
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+});
 
 const theme = createMuiTheme({
   palette: {
@@ -29,7 +52,7 @@ export class _app extends Component {
   };
 
   render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <div>
         <link
@@ -38,7 +61,7 @@ export class _app extends Component {
         />
         <script src="https://kit.fontawesome.com/8d5f687edf.js" />
         <Container>
-          <ApolloProvider client={apollo}>
+          <ApolloProvider client={client}>
             <ThemeProvider theme={theme}>
               <Component {...pageProps} />
             </ThemeProvider>
@@ -49,4 +72,4 @@ export class _app extends Component {
   }
 }
 
-export default withApollo(_app);
+export default _app;

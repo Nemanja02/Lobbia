@@ -2,25 +2,6 @@
   margin: 0;
   padding: 0; }
 
-._2QTuNNvcy5LkR8oXmRrDDr {
-  transition: 0.3s all;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 650px !important;
-  height: 700px;
-  color: white;
-  transform: translate(-50%, -50%);
-  background-color: #32393d;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-  padding: 40px;
-  outline: "none";
-  margin: "auto";
-  margin-top: "15rem";
-  border-radius: 12px; }
-  ._2QTuNNvcy5LkR8oXmRrDDr:focus {
-    outline: none; }
-
 .I_vzSf8QYCuL0LyO3rFng {
   background: url("http://localhost:8080/assets/landing-background.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -62,7 +43,7 @@
   ._3jo5suahdrSquhlhBCPeCV span {
     color: #bdc3c7;
     font-size: 16px;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     display: block;
     width: 100%;
     line-height: 1.5;
@@ -108,7 +89,7 @@
   .NCT1TCFmxgsIaSr9DMutu > div {
     background-color: rgba(0, 0, 0, 0); }
     .NCT1TCFmxgsIaSr9DMutu > div > div {
-      background-color: rgba(50, 57, 61, 0.7); }
+      background-color: rgba(254, 131, 61, 0.65); }
       .NCT1TCFmxgsIaSr9DMutu > div > div i {
         color: white; }
 

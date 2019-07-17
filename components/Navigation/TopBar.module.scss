@@ -29,22 +29,22 @@
 }
 
 .logo {
-  font-size: 2.8rem;
+  font-size: 28px;
   color: white;
   line-height: $topbar-height;
-  margin: 0 1.5rem;
+  margin: 0 15px;
 }
 
 .icon-btn-control {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 10px;
 
   & i {
     transition: 0.2s all;
-    margin: 0 1rem;
-    font-size: 2.6rem;
+    margin: 0 10px;
+    font-size: 26px;
     color: darken($color-text, 30%);
     cursor: pointer;
 
@@ -54,7 +54,7 @@
   }
 
   & > i.icon-special {
-    font-size: 2.6rem;
+    font-size: 26px;
     color: $color-primary;
     cursor: pointer;
     transition: 0.2s all;
@@ -80,7 +80,7 @@
 }
 
 .search {
-  font-size: 1.25rem;
+  font-size: 12, 5px;
   background-color: $color-bg;
   color: $color-text;
   padding: 5px 10px;
@@ -102,7 +102,7 @@
 
 .search_icon_input {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 15px;
   right: 7px;
 
   color: darken($color-text, 60%);
@@ -132,7 +132,7 @@
   & i {
     position: relative;
     transition: 0.2s all;
-    font-size: 2.8rem;
+    font-size: 28px;
     color: $color-text;
     z-index: 11;
   }
