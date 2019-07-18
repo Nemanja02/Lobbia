@@ -101,7 +101,7 @@ class Register extends Component {
       }
     },
 
-    selectedField: {
+    interestFields: {
       games: {
         minecraft: false,
         pubg: false,
@@ -109,7 +109,13 @@ class Register extends Component {
         apex: false,
         csgo: false
       },
-      music: {}
+      music: {
+        punk: false,
+        metal: false,
+        trap: false,
+        house: false,
+        rap: false
+      }
     }
   };
 
@@ -127,9 +133,9 @@ class Register extends Component {
 
   selectField = (type, field) => {
     this.setState({
-      selectedField: {
+      interestFields: {
         [type]: {
-          [field]: !prevState.selectedField[type][field]
+          [field]: !prevState.interestFields[type][field]
         }
       }
     });
@@ -151,6 +157,16 @@ class Register extends Component {
   render() {
     Object.keys(this.state.formFields).map(key => {
       if (this.state.formFields[key].isValid === true)
+        this.setState({ isFirstFormValid: true });
+    });
+
+    Object.keys(this.state.interestFields.games).map(key => {
+      if (this.state.interestFields.games[key])
+        this.setState({ isSecondFormValid: true });
+    });
+
+    Object.keys(this.state.interestFields.music).map(key => {
+      if (this.state.interestFields.music[key])
         this.setState({ isSecondFormValid: true });
     });
 
@@ -278,7 +294,6 @@ class Register extends Component {
             direction="column"
             alignItems="center"
           >
-<<<<<<< HEAD
             <Typography
               style={{ alignSelf: "flex-start" }}
               variant="caption"
@@ -286,205 +301,24 @@ class Register extends Component {
             >
               Select the one you do:
             </Typography>
-=======
-            <Grid
-              style={{
-                margin: "2rem 0"
-              }}
-              container
-              direction="column"
-              alignItems="center"
-            >
-              <Typography
-                style={{ alignSelf: "flex-start" }}
-                variant="caption"
-                color="textSecondary"
-              >
-                Select the one you do:
-              </Typography>
-              <Grid className={`${classes.gamesGrid} ${classes.scrollable}`} container direction="row" justify="center">
-                <GameCheck
-                  stateField={this.state.selectedField.games.minecraft}
-                  clicked={() => this.selectField("games", "minecraft")}
-                  picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.apex}
-                  clicked={() => this.selectField("games", "apex")}
-                  picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.lol}
-                  clicked={() => this.selectField("games", "lol")}
-                  picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid
-            style={{
-              width: "60%",
-              marginBottom: "20px"
-            }}
-            container
-            direction="column"
-            alignItems="center"
-            justify="space-between"
-          >
->>>>>>> 0f5eb93335308db9dcb0fdf0275e9cc7a7a8c0fa
             <Grid container direction="row" justify="center">
               <GameCheck
-                stateField={this.state.selectedField.games.minecraft}
+                stateField={this.state.interestFields.games.minecraft}
                 clicked={() => this.selectField("games", "minecraft")}
                 picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"
               />
               <GameCheck
-                stateField={this.state.selectedField.games.apex}
+                stateField={this.state.interestFields.games.apex}
                 clicked={() => this.selectField("games", "apex")}
                 picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
               />
               <GameCheck
-                stateField={this.state.selectedField.games.lol}
+                stateField={this.state.interestFields.games.lol}
                 clicked={() => this.selectField("games", "lol")}
                 picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
               />
               <GameCheck
-                stateField={this.state.selectedField.games.pubg}
+                stateField={this.state.interestFields.games.pubg}
                 clicked={() => this.selectField("games", "pubg")}
                 picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
               />
@@ -524,11 +358,11 @@ class Register extends Component {
     );
 
     const { email, fullName, password, username } = this.state.formFields;
-    const { selectedField } = this.state;
+    const { interestFields } = this.state;
 
     const gamesInterests = [];
 
-    Object.keys(selectedField.games).map(key => {
+    Object.keys(interestFields.games).map(key => {
       if (key === true) this.setState({ isSecondFormValid: true });
     });
 
