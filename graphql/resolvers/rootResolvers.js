@@ -6,6 +6,7 @@ const {
   findUser,
   login
 } = require("./user");
+const { initLobby, lobbiesList } = require("./lobby");
 
 module.exports = {
   Date: GraphQLDate,
@@ -15,10 +16,12 @@ module.exports = {
     usersList,
     marjanoveUmri,
     findUser,
-    login
+    login,
+    lobbiesList
   },
 
   Mutation: {
-    createUserAccount
+    createUserAccount,
+    initLobby
   }
 };

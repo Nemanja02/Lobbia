@@ -18,18 +18,40 @@ module.exports = gql`
   type User {
     email: String!
     username: String!
-    age: Int!
-    interests: UserInterests
+    fullName: String!
+    profilePictureUri: String
+    banned: Boolean
+    verified: Boolean
+    id: ID!
+    lobbyHistory: [ID!]
     balance: Float
+    interests: UserInterests
+    dateOfBirth: Date
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+
+  type Message {
+    sender: User
+    content: String
+  }
+
+  type Lobby {
     id: ID!
     createdAt: DateTime!
     updatedAt: DateTime!
-    gameSearching: Int
+    expiredAt: DateTime!
+    type: Int!
+    participants: [User!]
+    status: Int!
+    messages: [Message!]
   }
 
   # QUERIES
   type Query {
     usersList: [User!]!
+
+    lobbiesList: [Lobby!]!
 
     findUser(id: ID): User!
 
@@ -45,8 +67,11 @@ module.exports = gql`
       username: String
       dateOfBirth: Date
       password: String
+      fullName: String
+      musicInterests: [Int]
+      gamesInterests: [Int]
     ): Auth
 
-    # initializeLobby(participants: [String] ):
+    initLobby(participants: [String], type: Int, status: Int): Lobby
   }
 `;

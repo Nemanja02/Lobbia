@@ -1,22 +1,40 @@
 import React, { Component } from "react";
 import RouterLink from "next/link";
 import Particles from "react-particles-js";
+import { Mutation } from "react-apollo";
+import gql from "graphql-tag";
 
 import classes from "./styles/Register.module.scss";
 
-import {
-  Grid,
-  Fade,
-  TextField,
-  Typography,
-  Button,
-  Link,
-  Modal
-} from "@material-ui/core";
+import { Grid, TextField, Typography, Button, Link } from "@material-ui/core";
 
 const marginTop = {
   marginTop: "20px"
 };
+
+const createUserAccount = gql`
+  mutation(
+    $email: String
+    $fullName: String
+    $username: String
+    $dateOfBirth: Date
+    $password: String
+    $musicInterests: [Int]
+    $gamesInterests: [Int]
+  ) {
+    createUserAccount(
+      email: $email
+      musicInterests: $musicInterests
+      gamesInterests: $gamesInterests
+      fullName: $fullName
+      username: $username
+      dateOfBirth: $dateOfBirth
+      password: $password
+    ) {
+      token
+    }
+  }
+`;
 
 function GameCheck({ picture, stateField, clicked }) {
   let customClasses = [classes.gameCheck];
@@ -55,23 +73,34 @@ function getFormattedDate(date) {
 class Register extends Component {
   state = {
     birthday: getFormattedDate(new Date()),
-    showNextForm: false,
-    fullName: {
-      value: "",
-      isValid: false
+
+    formStage: 0,
+    isFirstFormValid: false,
+    isSecondFormValid: false,
+    isThirdFormValid: false,
+
+    formFields: {
+      fullName: {
+        value: "",
+        isValid: false
+      },
+
+      username: {
+        value: "",
+        isValid: false
+      },
+
+      email: {
+        value: "",
+        isValid: false
+      },
+
+      password: {
+        value: "",
+        isValid: false
+      }
     },
-    username: {
-      value: "",
-      isValid: false
-    },
-    email: {
-      value: "",
-      isValid: false
-    },
-    password: {
-      value: "",
-      isValid: false
-    },
+
     selectedField: {
       games: {
         minecraft: false,
@@ -86,135 +115,330 @@ class Register extends Component {
 
   handleDateChange = e => {
     this.setState({ birthday: e.target.value });
-    console.log(this.state);
   };
 
-  toggleFormState = () => {
-    this.setState(prevState => ({ showNextForm: !prevState.showNextForm }));
+  formForward = () => {
+    this.setState(prevState => ({ formStage: prevState.formStage + 1 }));
+  };
+
+  formBackward = () => {
+    this.setState(prevState => ({ formStage: prevState.formStage - 1 }));
   };
 
   selectField = (type, field) => {
-    this.setState(prevState => ({
-      ...prevState,
+    this.setState({
       selectedField: {
-        ...prevState.selectedField,
         [type]: {
-          ...prevState.selectedField[type],
           [field]: !prevState.selectedField[type][field]
+        }
+      }
+    });
+  };
+
+  handleChange = (e, type) => {
+    e.persist();
+    this.setState(prevState => ({
+      formFields: {
+        ...prevState.formFields,
+        [type]: {
+          ...prevState.formFields[type],
+          value: e.target.value
         }
       }
     }));
   };
 
-  handleChange = (e, type) => {
-    this.setState({
-      [type]: {
-        value: e.target.value
-      }
-    });
-  };
-
   render() {
-    const secondStepRegistration = (
-      <Fade timeout={500} in={this.state.showNextForm}>
+    Object.keys(this.state.formFields).map(key => {
+      if (this.state.formFields[key].isValid === true)
+        this.setState({ isSecondFormValid: true });
+    });
+
+    const firstStepRegistration = (
+      <Grid
+        className={classes.grid}
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+      >
+        <Typography
+          style={{
+            margin: "10 0 20 0"
+          }}
+          variant="h4"
+          color="textPrimary"
+        >
+          Create an account
+        </Typography>
         <Grid
-          className={classes.grid}
+          style={{
+            width: "60%",
+            marginBottom: "20px"
+          }}
+          container
+          direction="column"
+          alignItems="center"
+        >
+          <TextField
+            onChange={e => this.handleChange(e, "fullName")}
+            fullWidth
+            value={this.state.formFields.fullName.value}
+            label="Full name"
+            style={marginTop}
+            variant="filled"
+          />
+          <TextField
+            onChange={e => this.handleChange(e, "username")}
+            fullWidth
+            label="Username"
+            style={marginTop}
+            value={this.state.formFields.username.value}
+            variant="filled"
+          />
+          <TextField
+            onChange={e => this.handleChange(e, "email")}
+            fullWidth
+            helperText="Be sure to enter a valid e-mail"
+            label="E-Mail"
+            value={this.state.formFields.email.value}
+            style={marginTop}
+            variant="filled"
+          />
+          <TextField
+            classes={{ root: classes.input }}
+            onChange={this.handleDateChange}
+            fullWidth
+            label="Brithday"
+            style={marginTop}
+            variant="filled"
+            type="date"
+            spellCheck="false"
+            value={this.state.birthday}
+            autoComplete="false"
+          />
+          <TextField
+            onChange={e => this.handleChange(e, "password")}
+            helperText="*Password should contain at least 6 characters"
+            fullWidth
+            label="Password"
+            style={marginTop}
+            variant="filled"
+            value={this.state.formFields.password.value}
+            type="password"
+          />
+        </Grid>
+        <Button onClick={this.formForward} variant="contained" color="primary">
+          Proceed
+        </Button>
+        <Typography
+          style={{ margin: "4px" }}
+          color="textSecondary"
+          variant="caption"
+        >
+          You already have an account?{" "}
+          <RouterLink href="/login">
+            <Link style={{ cursor: "pointer" }}>Sign in</Link>
+          </RouterLink>
+        </Typography>
+      </Grid>
+    );
+
+    const secondStepRegistration = (
+      <Grid
+        className={classes.grid}
+        container
+        direction="column"
+        alignItems="center"
+        justify="space-between"
+      >
+        <Grid container direction="column" alignItems="center">
+          <Typography variant="h4" color="textPrimary">
+            Which games do you play?
+          </Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            You gotta be a gamer, right?
+          </Typography>
+        </Grid>
+        <Grid
+          style={{
+            flexGrow: 1,
+            height: "100%"
+          }}
+          container
+          direction="column"
+          justify="space-between"
+          alignItems="center"
+        >
+          <Grid
+            style={{
+              marginTop: "20px"
+            }}
+            container
+            direction="column"
+            alignItems="center"
+          >
+            <Typography
+              style={{ alignSelf: "flex-start" }}
+              variant="caption"
+              color="textSecondary"
+            >
+              Select the one you do:
+            </Typography>
+            <Grid container direction="row" justify="center">
+              <GameCheck
+                stateField={this.state.selectedField.games.minecraft}
+                clicked={() => this.selectField("games", "minecraft")}
+                picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"
+              />
+              <GameCheck
+                stateField={this.state.selectedField.games.apex}
+                clicked={() => this.selectField("games", "apex")}
+                picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
+              />
+              <GameCheck
+                stateField={this.state.selectedField.games.lol}
+                clicked={() => this.selectField("games", "lol")}
+                picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
+              />
+              <GameCheck
+                stateField={this.state.selectedField.games.pubg}
+                clicked={() => this.selectField("games", "pubg")}
+                picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+          style={{
+            width: "60%",
+            marginBottom: "20px"
+          }}
           container
           direction="column"
           alignItems="center"
           justify="space-between"
         >
-          <Grid container direction="column" alignItems="center">
-            <Typography variant="h4" color="textPrimary">
-              Which games do you play?
-            </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
-              You gotta be gamer, right?
-            </Typography>
+          <Grid container direction="row" justify="center">
+            <Button
+              className={classes.marginSides}
+              onClick={this.formBackward}
+              variant="outlined"
+              color="primary"
+            >
+              Back
+            </Button>
+            <Button
+              onClick={this.formForward}
+              classes={{ root: classes.marginSides }}
+              variant="contained"
+              color="primary"
+            >
+              next
+            </Button>
           </Grid>
-          <Grid
-            style={{
-              flexGrow: 1,
-              height: "100%"
-            }}
-            container
-            direction="column"
-            justify="space-between"
-            alignItems="center"
-          >
+        </Grid>
+      </Grid>
+    );
+
+    const { email, fullName, password, username } = this.state.formFields;
+    const { selectedField } = this.state;
+
+    const gamesInterests = [];
+
+    Object.keys(selectedField.games).map(key => {
+      if (key === true) this.setState({ isSecondFormValid: true });
+    });
+
+    const mutationVariables = {
+      email: email.value,
+      fullName: fullName.value,
+      password: password.value,
+      username: username.value,
+      dateOfBirth: new Date(this.state.birthday).getTime()
+    };
+
+    const thirdStepRegistration = (
+      <Mutation mutation={createUserAccount}>
+        {(createUserAccount, { data, error, loading }) => {
+          return (
             <Grid
-              style={{
-                marginTop: "2rem"
-              }}
+              className={classes.grid}
               container
               direction="column"
               alignItems="center"
+              justify="space-between"
             >
-              <Typography
-                style={{ alignSelf: "flex-start" }}
-                variant="caption"
-                color="textSecondary"
+              <Grid container direction="column" alignItems="center">
+                <Typography variant="h4" color="textPrimary">
+                  What about your music taste?
+                </Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                  Trap, Rock, R&B, or maybe Techno?
+                </Typography>
+              </Grid>
+              <Grid
+                style={{
+                  flexGrow: 1,
+                  height: "100%"
+                }}
+                container
+                direction="column"
+                justify="space-between"
+                alignItems="center"
               >
-                Select the one you do:
-              </Typography>
-              <Grid container direction="row" justify="center">
-                <GameCheck
-                  stateField={this.state.selectedField.games.minecraft}
-                  clicked={() => this.selectField("games", "minecraft")}
-                  picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.apex}
-                  clicked={() => this.selectField("games", "apex")}
-                  picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.lol}
-                  clicked={() => this.selectField("games", "lol")}
-                  picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-                />
-                <GameCheck
-                  stateField={this.state.selectedField.games.pubg}
-                  clicked={() => this.selectField("games", "pubg")}
-                  picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-                />
+                <Grid
+                  style={{
+                    marginTop: "20px"
+                  }}
+                  container
+                  direction="column"
+                  alignItems="center"
+                >
+                  <Typography
+                    style={{ alignSelf: "flex-start" }}
+                    variant="caption"
+                    color="textSecondary"
+                  >
+                    Select the one you listen:
+                  </Typography>
+                  <Grid container direction="row" justify="center" />
+                </Grid>
+              </Grid>
+              <Grid
+                style={{
+                  width: "80%",
+                  marginBottom: "20px"
+                }}
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-between"
+              >
+                <Grid container direction="row" justify="center">
+                  <Button
+                    className={classes.marginSides}
+                    onClick={this.formBackward}
+                    variant="outlined"
+                    color="primary"
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    classes={{ root: classes.marginSides }}
+                    variant="contained"
+                    color="primary"
+                  >
+                    finish
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid
-            style={{
-              width: "60%",
-              marginBottom: "20px"
-            }}
-            container
-            direction="column"
-            alignItems="center"
-            justify="space-between"
-          >
-            <Grid container direction="row" justify="center">
-              <Button
-                className={classes.marginSides}
-                onClick={this.toggleFormState}
-                variant="outlined"
-                color="primary"
-              >
-                Back
-              </Button>
-              <Button
-                classes={{ root: classes.marginSides }}
-                onClick={this.toggleFormState}
-                variant="contained"
-                color="primary"
-              >
-                Finish
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Fade>
+          );
+        }}
+      </Mutation>
     );
 
-    const { showNextForm } = this.state;
     return (
       <>
         <Particles
@@ -228,100 +452,11 @@ class Register extends Component {
           className={classes["bg-img"]}
         />
         <div className={classes.customSignupCard}>
-          {showNextForm ? (
-            secondStepRegistration
-          ) : (
-            <Grid
-              container
-              direction="column"
-              justify="center"
-              alignItems="center"
-            >
-              <Typography
-                style={{
-                  margin: "10 0 20 0"
-                }}
-                variant="h4"
-                color="textPrimary"
-              >
-                Create an account
-              </Typography>
-              <Grid
-                style={{
-                  width: "60%",
-                  marginBottom: "20px"
-                }}
-                container
-                direction="column"
-                alignItems="center"
-              >
-                <TextField
-                  onChange={e => this.handleChange(e, "fullName")}
-                  fullWidth
-                  value={this.state.fullName.value}
-                  label="Full name"
-                  style={marginTop}
-                  variant="filled"
-                />
-                <TextField
-                  onChange={e => this.handleChange(e, "username")}
-                  fullWidth
-                  label="Username"
-                  style={marginTop}
-                  value={this.state.username.value}
-                  variant="filled"
-                />
-                <TextField
-                  onChange={e => this.handleChange(e, "email")}
-                  fullWidth
-                  helperText="Be sure to enter a valid e-mail"
-                  label="E-Mail"
-                  value={this.state.email.value}
-                  style={marginTop}
-                  variant="filled"
-                />
-                <TextField
-                  classes={{ root: classes.input }}
-                  onChange={this.handleDateChange}
-                  fullWidth
-                  label="Brithday"
-                  style={marginTop}
-                  variant="filled"
-                  type="date"
-                  spellCheck="false"
-                  value={this.state.birthday}
-                  autoComplete="false"
-                />
-                <TextField
-                  onChange={e => this.handleChange(e, "password")}
-                  helperText="*Password should contain at least 6 characters"
-                  fullWidth
-                  label="Password"
-                  style={marginTop}
-                  variant="filled"
-                  value={this.state.password.value}
-                  type="password"
-                />
-              </Grid>
-              <Button
-                onClick={this.toggleFormState}
-                variant="contained"
-                color="primary"
-              >
-                Proceed
-              </Button>
-              <Typography
-                style={marginTop}
-                color="textSecondary"
-                variant="caption"
-              >
-                You already have an account?{" "}
-                <RouterLink href="/login">
-                  <Link style={{ cursor: "pointer" }}>Sign in</Link>
-                </RouterLink>
-              </Typography>
-            </Grid>
-          )}
+          {this.state.formStage === 0
+            ? firstStepRegistration
+            : this.state.formStage === 1
+            ? secondStepRegistration
+            : thirdStepRegistration}
         </div>
       </>
     );

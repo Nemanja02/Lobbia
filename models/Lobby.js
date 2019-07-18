@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
-const { ObjectId } = mongoose.Types;
+const { ObjectId } = mongoose.SchemaTypes;
 
 const MessageSchema = new Schema(
   {
@@ -28,14 +28,13 @@ const LobbySchema = new Schema(
     ],
 
     type: {
-      type: String,
-      default: "temporary"
+      type: Number,
+      default: 0
     },
 
     status: {
       type: Number,
-      required: true,
-      default: 0
+      default: 1
     },
 
     messages: [MessageSchema],

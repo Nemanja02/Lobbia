@@ -4,6 +4,7 @@ const app = express();
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
+const multer = require("multer");
 
 const typeDefs = require("./graphql/rootSchema");
 const resolvers = require("./graphql/resolvers/rootResolvers");
@@ -23,6 +24,7 @@ customFormatError = err => {
 };
 
 app.use(isAuth);
+app.use(multer().single("profilePicture"));
 app.use(express.static("static"));
 const gqlServer = new ApolloServer({
   typeDefs,
@@ -36,6 +38,8 @@ nextApp
   .then(() => {
     const server = app.listen(port, err => {
       if (err) throw err;
+
+      mongoose.set("useFindAndModify", false);
 
       mongoose.connect(
         "mongodb+srv://lobbia-test:lobbia-test@lobbia-dev-cluster-cicwj.mongodb.net/test?retryWrites=true&w=majority",

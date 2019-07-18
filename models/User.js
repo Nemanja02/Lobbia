@@ -27,8 +27,8 @@ const UserSchema = new Schema(
       required: true
     },
 
-    age: {
-      type: Number,
+    dateOfBirth: {
+      type: Date,
       required: true
     },
 
@@ -43,7 +43,8 @@ const UserSchema = new Schema(
     },
 
     accountDescription: {
-      type: String
+      type: String,
+      default: ""
     },
 
     accountType: {

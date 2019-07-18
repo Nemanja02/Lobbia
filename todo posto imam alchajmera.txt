@@ -31,11 +31,11 @@ music:
     4 -
 
 games: 
-    0 - 
-    1 -
-    2 -
-    3 -
-    4 -
+    0 - Minecraft
+    1 - LOL
+    2 - CSGO
+    3 - PUBG
+    4 - Apex
 //nije bitno sad to cemo posle da dodajemo
 
 Minecraft

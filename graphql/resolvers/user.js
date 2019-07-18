@@ -24,7 +24,16 @@ exports.marjanoveUmri = async () => {
 // register new user
 exports.createUserAccount = async (
   parent,
-  { email, age, username, password },
+  {
+    email,
+    dateOfBirth,
+    username,
+    password,
+    fullName,
+    gamesInterests,
+    musicInterests,
+    profilePictureUri
+  },
   ctx
 ) => {
   if (!email || !age || !username) {
@@ -88,7 +97,8 @@ exports.createUserAccount = async (
     username,
     email,
     password,
-    age
+    dateOfBirth,
+    profilePicture
   });
 
   const user = await newUser.save();
