@@ -8,7 +8,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+<<<<<<< HEAD
 module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7GAz","grid":"_3ywvKJD8pyVM0YWkdKCPyf","marginSides":"dLSYrpBEXHdF_kj6jpeAA","customSignupCard":"_373JF_8yT5462reNat5IEu","imageUploadCard":"_1ODUFV1w-0_0kXKKUlPY6O","uploadIcon":"_7rFiOX3SCbZvj6icdVWvw","gamesGrid":"_3jo5suahdrSquhlhBCPeCV","gameCheck":"_322PB2-Wzfkq9WrcbtWhO4","gameCheck_selected":"NCT1TCFmxgsIaSr9DMutu"};;
+=======
+module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7GAz","grid":"_3ywvKJD8pyVM0YWkdKCPyf","marginSides":"dLSYrpBEXHdF_kj6jpeAA","customSignupCard":"_373JF_8yT5462reNat5IEu","gamesGrid":"_3jo5suahdrSquhlhBCPeCV","gameCheck":"_322PB2-Wzfkq9WrcbtWhO4","gameCheck_selected":"NCT1TCFmxgsIaSr9DMutu","scrollable":"_9uoTjiopuGDNg475HioxN"};;
+>>>>>>> 0f5eb93335308db9dcb0fdf0275e9cc7a7a8c0fa
     if (true) {
       var injectCss = function injectCss(prev, href) {
         var link = prev.cloneNode();
@@ -30,7 +34,11 @@ module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
+<<<<<<< HEAD
             injectCss(link, link.href.split("?")[0] + "?unix=1563408767366");
+=======
+            injectCss(link, link.href.split("?")[0] + "?unix=1563400930872");
+>>>>>>> 0f5eb93335308db9dcb0fdf0275e9cc7a7a8c0fa
           });
       }
     }

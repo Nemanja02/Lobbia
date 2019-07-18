@@ -46,11 +46,9 @@
 
 ._3jo5suahdrSquhlhBCPeCV {
   overflow-x: auto;
-  margin: 20px;
-  height: min-content;
-  flex: 1;
   align-content: flex-start;
-  width: initial; }
+  width: initial;
+  height: 350px; }
   ._3jo5suahdrSquhlhBCPeCV span {
     color: #bdc3c7;
     font-size: 16px;
@@ -104,5 +102,21 @@
       .NCT1TCFmxgsIaSr9DMutu > div > div i {
         color: white; }
 
+<<<<<<< HEAD
+=======
+._9uoTjiopuGDNg475HioxN::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: #32393d; }
+
+._9uoTjiopuGDNg475HioxN::-webkit-scrollbar {
+  width: 7px;
+  background-color: #32393d;
+  border-radius: 100px; }
+
+._9uoTjiopuGDNg475HioxN::-webkit-scrollbar-thumb {
+  background-color: #1e2024;
+  border-radius: 100px; }
+
+>>>>>>> 0f5eb93335308db9dcb0fdf0275e9cc7a7a8c0fa
 
 /*# sourceMappingURL=styles.chunk.css.map*/
