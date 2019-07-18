@@ -8,7 +8,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+<<<<<<< HEAD
 module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7GAz","grid":"_3ywvKJD8pyVM0YWkdKCPyf","marginSides":"dLSYrpBEXHdF_kj6jpeAA","customSignupCard":"_373JF_8yT5462reNat5IEu","warning":"_3K2uaqm_7EkB66jTXDOr8y","danger":"_2eF6TQe7-YaZifX5T0sl7C","snackbarIcon":"_3y3-2r5gjMdBwlDGdDxk4z","imageUploadCard":"_1ODUFV1w-0_0kXKKUlPY6O","uploadIcon":"_7rFiOX3SCbZvj6icdVWvw","gamesGrid":"_3jo5suahdrSquhlhBCPeCV","gameCheck":"_322PB2-Wzfkq9WrcbtWhO4","gameCheck_selected":"NCT1TCFmxgsIaSr9DMutu","scrollable":"_9uoTjiopuGDNg475HioxN"};;
+=======
+module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7GAz","grid":"_3ywvKJD8pyVM0YWkdKCPyf","marginSides":"dLSYrpBEXHdF_kj6jpeAA","customSignupCard":"_373JF_8yT5462reNat5IEu","imageUploadCard":"_1ODUFV1w-0_0kXKKUlPY6O","uploadIcon":"_7rFiOX3SCbZvj6icdVWvw","gamesGrid":"_3jo5suahdrSquhlhBCPeCV","gameCheck":"_322PB2-Wzfkq9WrcbtWhO4","gameCheck_selected":"NCT1TCFmxgsIaSr9DMutu","genreCheck":"_1Hl2SILONnkazoROWqOB5k","scrollable":"_9uoTjiopuGDNg475HioxN"};;
+>>>>>>> fa4c3ee72463563c1b42bf2064db94309a4bc57e
     if (true) {
       var injectCss = function injectCss(prev, href) {
         var link = prev.cloneNode();
@@ -30,7 +34,11 @@ module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
+<<<<<<< HEAD
             injectCss(link, link.href.split("?")[0] + "?unix=1563472650986");
+=======
+            injectCss(link, link.href.split("?")[0] + "?unix=1563453039523");
+>>>>>>> fa4c3ee72463563c1b42bf2064db94309a4bc57e
           });
       }
     }

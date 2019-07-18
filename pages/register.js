@@ -99,6 +99,17 @@ function GameCheck({ picture, stateField, clicked }) {
   );
 }
 
+function GenreCheck({ name, stateField, clicked }) {
+  let customClasses = [classes.genreCheck];
+  if (stateField) customClasses.push(classes.genreCheck_selected);
+
+  return (
+    <div className={customClasses.join(" ")}>
+      <Chip label={name} onClick={clicked} />
+    </div>
+  );
+}
+
 function getFormattedDate(date) {
   var year = date.getFullYear();
 
@@ -488,7 +499,21 @@ class Register extends Component {
                   >
                     Select the one you listen:
                   </Typography>
-                  <Grid container direction="row" justify="center" />
+                  <Grid container direction="row" justify="flex-start">
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                    <GenreCheck name="rock" />
+                  </Grid>
                 </Grid>
               </Grid>
               <Grid

@@ -144,6 +144,11 @@
   }
 }
 
+.genreCheck {
+  width: min-content;
+  padding: 5px;
+}
+
 .scrollable::-webkit-scrollbar-track {
   border-radius: 100px;
   background-color: $color-bg-light;
