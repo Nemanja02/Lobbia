@@ -73,5 +73,12 @@ module.exports = gql`
     ): Auth
 
     initLobby(participants: [String], type: Int, status: Int): Lobby
+
+    validateFormCredentials(
+      fullName: String
+      username: String
+      password: String
+      email: String
+    ): Boolean
   }
 `;

@@ -43,6 +43,19 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.warning {
+  background-color: $color-warning !important;
+}
+
+.danger {
+  background-color: $color-danger !important;
+}
+
+.snackbarIcon {
+  font-size: 20px;
+  color: #fff;
+}
+
 .imageUploadCard {
   margin: 10px;
   background-color: rgba(0, 0, 0, 0.1);

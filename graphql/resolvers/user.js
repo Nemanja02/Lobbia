@@ -1,13 +1,61 @@
 const User = require("../../models/User");
-const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const { jwt_key } = require("../../config/config.json");
 
+const validator = require("validator");
+const passwordValidator = require("password-validator");
+const validationSchema = new passwordValidator();
+
+validationSchema
+  .is()
+  .min(8)
+  .is()
+  .max(32)
+  .has()
+  .uppercase()
+  .has()
+  .lowercase()
+  .has()
+  .digits()
+  .has()
+  .not()
+  .spaces()
+  .is()
+  .not()
+  .oneOf(["Passw0rd", "Password123"]);
 const {
   ValidationError,
   AuthenticationError,
   SessionExpired
 } = require("../errors");
+
+exports.validateFormCredentials = async (
+  parent,
+  { fullName, email, username, password }
+) => {
+  if (!fullName || !email || !username || !password)
+    throw new ValidationError({
+      data: {
+        message: "Please fill out all required fields."
+      },
+      internalData: {
+        status: 403,
+        error:
+          "User tried to proceed on signup form without providing all required data."
+      }
+    });
+
+  if (
+    !validator.isEmail(email) ||
+    !validationSchema.validate(password) ||
+    !(fullName.length >= 3) ||
+    !(username.length >= 5)
+  ) {
+    return false;
+  } else {
+    return true;
+  }
+};
 
 // xD
 exports.marjanoveUmri = async () => {

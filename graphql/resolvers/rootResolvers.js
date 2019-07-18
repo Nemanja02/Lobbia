@@ -4,7 +4,8 @@ const {
   usersList,
   marjanoveUmri,
   findUser,
-  login
+  login,
+  validateFormCredentials
 } = require("./user");
 const { initLobby, lobbiesList } = require("./lobby");
 
@@ -21,6 +22,7 @@ module.exports = {
   },
 
   Mutation: {
+    validateFormCredentials,
     createUserAccount,
     initLobby
   }

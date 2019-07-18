@@ -3,10 +3,22 @@ import RouterLink from "next/link";
 import Particles from "react-particles-js";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import {
+  Grid,
+  Tooltip,
+  Snackbar,
+  TextField,
+  Typography,
+  Button,
+  Link,
+  IconButton,
+  SnackbarContent,
+  Icon
+} from "@material-ui/core";
 
 import classes from "./styles/Register.module.scss";
-
-import { Grid, TextField, Typography, Button, Link } from "@material-ui/core";
+import genres from "../config/music_genres.json";
+import games from "../config/games.json";
 
 const marginTop = {
   marginTop: "20px"
@@ -35,6 +47,35 @@ const createUserAccount = gql`
     }
   }
 `;
+
+const validateFormCredentials = gql`
+  mutation(
+    $fullName: String
+    $username: String
+    $password: String
+    $email: String
+  ) {
+    validateFormCredentials(
+      fullName: $fullName
+      username: $username
+      password: $password
+      email: $email
+    )
+  }
+`;
+
+const initialInterestsState = {
+  music: {},
+  games: {}
+};
+
+Object.keys(genres).map(key => {
+  initialInterestsState.music[key] = false;
+});
+
+Object.keys(games).map(key => {
+  initialInterestsState.games[key] = false;
+});
 
 function GameCheck({ picture, stateField, clicked }) {
   let customClasses = [classes.gameCheck];
@@ -72,51 +113,36 @@ function getFormattedDate(date) {
 
 class Register extends Component {
   state = {
-    birthday: getFormattedDate(new Date()),
-
     formStage: 0,
-    isFirstFormValid: false,
-    isSecondFormValid: false,
-    isThirdFormValid: false,
+    formValidation: {
+      logLevel: "",
+      isValidated: true,
+      errorMessage: ""
+    },
 
     formFields: {
       fullName: {
-        value: "",
-        isValid: false
+        value: ""
       },
 
       username: {
-        value: "",
-        isValid: false
+        value: ""
       },
 
       email: {
-        value: "",
-        isValid: false
+        value: ""
+      },
+
+      birthday: {
+        value: getFormattedDate(new Date())
       },
 
       password: {
-        value: "",
-        isValid: false
+        value: ""
       }
     },
 
-    interestFields: {
-      games: {
-        minecraft: false,
-        pubg: false,
-        lol: false,
-        apex: false,
-        csgo: false
-      },
-      music: {
-        punk: false,
-        metal: false,
-        trap: false,
-        house: false,
-        rap: false
-      }
-    }
+    interestFields: initialInterestsState
   };
 
   handleDateChange = e => {
@@ -155,20 +181,13 @@ class Register extends Component {
   };
 
   render() {
-    Object.keys(this.state.formFields).map(key => {
-      if (this.state.formFields[key].isValid === true)
-        this.setState({ isFirstFormValid: true });
-    });
-
-    Object.keys(this.state.interestFields.games).map(key => {
-      if (this.state.interestFields.games[key])
-        this.setState({ isSecondFormValid: true });
-    });
-
-    Object.keys(this.state.interestFields.music).map(key => {
-      if (this.state.interestFields.music[key])
-        this.setState({ isSecondFormValid: true });
-    });
+    const formFieldsArr = [];
+    for (let key in this.state.formFields) {
+      formFieldsArr.push({
+        name: key,
+        ...this.state.formFields[key]
+      });
+    }
 
     const firstStepRegistration = (
       <Grid
@@ -196,57 +215,88 @@ class Register extends Component {
           direction="column"
           alignItems="center"
         >
-          <TextField
-            onChange={e => this.handleChange(e, "fullName")}
-            fullWidth
-            value={this.state.formFields.fullName.value}
-            label="Full name"
-            style={marginTop}
-            variant="filled"
-          />
-          <TextField
-            onChange={e => this.handleChange(e, "username")}
-            fullWidth
-            label="Username"
-            style={marginTop}
-            value={this.state.formFields.username.value}
-            variant="filled"
-          />
-          <TextField
-            onChange={e => this.handleChange(e, "email")}
-            fullWidth
-            helperText="Be sure to enter a valid e-mail"
-            label="E-Mail"
-            value={this.state.formFields.email.value}
-            style={marginTop}
-            variant="filled"
-          />
-          <TextField
-            classes={{ root: classes.input }}
-            onChange={this.handleDateChange}
-            fullWidth
-            label="Brithday"
-            style={marginTop}
-            variant="filled"
-            type="date"
-            spellCheck="false"
-            value={this.state.birthday}
-            autoComplete="false"
-          />
-          <TextField
-            onChange={e => this.handleChange(e, "password")}
-            helperText="*Password should contain at least 6 characters"
-            fullWidth
-            label="Password"
-            style={marginTop}
-            variant="filled"
-            value={this.state.formFields.password.value}
-            type="password"
-          />
+          {formFieldsArr.map(el => {
+            let placeholderText =
+              el.name.charAt(0).toUpperCase() + el.name.slice(1);
+
+            let helperText = "";
+
+            let type = "text";
+
+            if (el.name === "password") {
+              helperText =
+                "*Password should be at least 8 characters long with one uppercase and one special character";
+              type = "password";
+            }
+            if (el.name === "email") {
+              helperText = "Please provide a valid email";
+              type = "email";
+            }
+
+            if (el.name === "birthday") type = "date";
+
+            if (el.name === "fullName") placeholderText = "Full name";
+
+            return (
+              <TextField
+                key={el.name}
+                fullWidth
+                variant="filled"
+                helperText={helperText}
+                label={placeholderText}
+                style={marginTop}
+                type={type}
+                onChange={e => this.handleChange(e, el.name)}
+                value={this.state.formFields[el.name].value}
+              />
+            );
+          })}
         </Grid>
-        <Button onClick={this.formForward} variant="contained" color="primary">
-          Proceed
-        </Button>
+        <Mutation
+          onCompleted={data => {
+            if (data.validateFormCredentials) this.formForward();
+            if (!data.validateFormCredentials)
+              this.setState(prevState => ({
+                ...prevState,
+                formValidation: {
+                  ...prevState.formValidation,
+                  isValidated: false,
+                  logLevel: "warning",
+                  errorMessage: "Invalid credentials, please try again."
+                }
+              }));
+          }}
+          onError={({ graphQLErrors }) => {
+            this.setState(prevState => ({
+              ...prevState,
+              formValidation: {
+                ...prevState.formValidation,
+                isValidated: false,
+                logLevel: "danger",
+                errorMessage: graphQLErrors[0].extensions.exception.data.message
+              }
+            }));
+          }}
+          mutation={validateFormCredentials}
+          variables={{
+            email: this.state.formFields.email.value,
+            password: this.state.formFields.password.value,
+            fullName: this.state.formFields.fullName.value,
+            username: this.state.formFields.username.value
+          }}
+        >
+          {(validateFormCredentials, { data, error }) => {
+            return (
+              <Button
+                onClick={() => validateFormCredentials()}
+                variant="contained"
+                color="primary"
+              >
+                Proceed
+              </Button>
+            );
+          }}
+        </Mutation>
         <Typography
           style={{ margin: "4px" }}
           color="textSecondary"
@@ -357,22 +407,42 @@ class Register extends Component {
       </Grid>
     );
 
-    const { email, fullName, password, username } = this.state.formFields;
     const { interestFields } = this.state;
 
-    const gamesInterests = [];
+    const chosedGamesInterests = [];
 
     Object.keys(interestFields.games).map(key => {
-      if (key === true) this.setState({ isSecondFormValid: true });
+      if (key === true) chosedGamesInterests.push(key);
     });
 
-    const mutationVariables = {
-      email: email.value,
-      fullName: fullName.value,
-      password: password.value,
-      username: username.value,
-      dateOfBirth: new Date(this.state.birthday).getTime()
-    };
+    if (this.state.formStage === 1) console.log(chosedGamesInterests);
+
+    const chosedMusicInterests = [];
+
+    Object.keys(interestFields.games).map(key => {
+      if (key === true) chosedMusicInterests.push(key);
+    });
+
+    if (this.state.formStage === 2) console.log(chosedMusicInterests);
+
+    let mutationVariables = null;
+    if (
+      this.state.isFirstFormValid &&
+      this.state.isSecondFormValid &&
+      this.state.isThirdFormValid
+    ) {
+      const { email, fullName, password, username } = this.state.formFields;
+
+      mutationVariables = {
+        email: email.value,
+        fullName: fullName.value,
+        password: password.value,
+        username: username.value,
+        dateOfBirth: new Date(this.state.birthday).getTime(),
+        gamesInterests: chosedGamesInterests,
+        musicInterests: chosedGamesInterests
+      };
+    }
 
     const thirdStepRegistration = (
       <Mutation mutation={createUserAccount}>
@@ -474,6 +544,52 @@ class Register extends Component {
             ? secondStepRegistration
             : thirdStepRegistration}
         </div>
+        <Snackbar
+          autoHideDuration={3000}
+          onClose={() =>
+            this.setState(prevState => ({
+              ...prevState,
+              formValidation: {
+                ...prevState.formValidation,
+                isValidated: true,
+                logLevel: "",
+                errorMessage: ""
+              }
+            }))
+          }
+          open={!this.state.formValidation.isValidated}
+        >
+          <SnackbarContent
+            className={classes[this.state.formValidation.logLevel]}
+            message={
+              <span className={classes.errorMessage}>
+                <i
+                  className={`fas fa-exclamation-circle ${
+                    classes.snackbarIcon
+                  }`}
+                />{" "}
+                {this.state.formValidation.errorMessage}
+              </span>
+            }
+            action={
+              <IconButton
+                onClick={() =>
+                  this.setState(prevState => ({
+                    ...prevState,
+                    formValidation: {
+                      ...prevState.formValidation,
+                      isValidated: true,
+                      logLevel: "",
+                      errorMessage: ""
+                    }
+                  }))
+                }
+              >
+                <i className={`fas fa-times ${classes.snackbarIcon}`} />
+              </IconButton>
+            }
+          />
+        </Snackbar>
       </>
     );
   }
