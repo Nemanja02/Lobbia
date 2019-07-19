@@ -22,7 +22,7 @@ import genres from "../config/music_genres.json";
 import games from "../config/games.json";
 
 const marginTop = {
-  marginTop: "20px"
+  margin: " 20px 0"
 };
 
 const createUserAccount = gql`
@@ -144,7 +144,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 0,
+    formStage: 1,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -410,7 +410,7 @@ class Register extends Component {
         >
           <Grid
             style={{
-              marginTop: "20px"
+              margin: " 20px 0"
             }}
             container
             direction="column"
@@ -532,7 +532,7 @@ class Register extends Component {
               >
                 <Grid
                   style={{
-                    marginTop: "20px"
+                    margin: " 20px 0"
                   }}
                   container
                   direction="column"
