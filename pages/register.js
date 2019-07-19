@@ -111,6 +111,7 @@ function GameCheck({ picture, stateField, clicked }) {
 function GenreCheck({ name, stateField, clicked }) {
   return (
     <Chip
+      style={{ border: "1px solid #ff9a60 !important" }}
       className={classes.genreCheck}
       label={name}
       variant={stateField ? "default" : "outlined"}
@@ -143,7 +144,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 0,
+    formStage: 2,
     formValidation: {
       logLevel: "",
       isValidated: true,
