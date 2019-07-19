@@ -22,7 +22,7 @@ import genres from "../config/music_genres.json";
 import games from "../config/games.json";
 
 const marginTop = {
-  margin: " 20px 0"
+  marginTop: "15px"
 };
 
 const createUserAccount = gql`

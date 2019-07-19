@@ -1,0 +1,35 @@
+@mixin unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin scroll {
+  overflow-y: auto;
+  height: 350px;
+  flex-grow: 100;
+
+  &::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: $color-bg-light;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: $color-bg-light;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-bg;
+    border-radius: 100px;
+  }
+}

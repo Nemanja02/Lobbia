@@ -1,5 +1,6 @@
 @import "../../config/sass/global.scss";
 @import "../../config/sass/variables.scss";
+@import "../../config/sass/mixins.scss";
 
 .container {
   margin-top: $topbar-height;
@@ -37,13 +38,10 @@
   overflow-y: auto;
   height: 70px;
   flex-grow: 100;
-  //   border-top-left-radius: 8px;
-  //   border-top-right-radius: 8px;
+  @include scroll;
 }
 
-.growdiv {
-  flex-grow: 100;
-}
+.growdiv { flex-grow: 100; }
 
 .sidebar {
   width: 100%;
@@ -69,6 +67,7 @@
     font-size: $margin;
     margin: 10px $margin;
     color: $color-text;
+    background-color: red;
   }
 }
 
