@@ -114,14 +114,14 @@
       background-color: rgba(lighten($color-bg-light, 60%), 0.25);
     }
     & > div {
-      margin: 3px;
+      margin: 4px;
       position: absolute;
       top: 0px;
       bottom: 0px;
       left: 0px;
       right: 0px;
       border-radius: 12px;
-      border: $color-bg-light solid 4px;
+      border: $color-bg-light solid 5px;
       transition: all 0.3s;
       display: flex;
       align-items: center;
