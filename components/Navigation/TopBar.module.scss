@@ -10,19 +10,9 @@
   justify-content: space-between;
 }
 
-.start,
-.end {
-  width: 33.33%;
-}
-
 .end {
   display: flex;
   justify-content: flex-end;
-}
-
-.center {
-  width: 33.33%;
-  @include center;
 }
 
 .logo {
@@ -30,12 +20,12 @@
   color: white;
   line-height: $topbar-height;
   margin: 0 15px;
+  @include unselectable;
 }
 
 .icon-btn-control {
-  display: flex;
+  @include center;
   flex-direction: row;
-  align-items: center;
   padding: 0 10px;
 
   & i {

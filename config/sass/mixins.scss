@@ -14,7 +14,7 @@
 
 @mixin scroll {  
     &::-webkit-scrollbar-track {
-      border-radius: 100px;
+      border-radius: 50%;
       background-color: $color-bg-light;
     }
   
@@ -26,6 +26,6 @@
   
     &::-webkit-scrollbar-thumb {
       background-color: $color-bg;
-      border-radius: 100px;
+      border-radius: 50%;
     }
 }
