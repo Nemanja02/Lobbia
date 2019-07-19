@@ -152,7 +152,19 @@
   width: min-content;
   padding: 5px;
   margin: 5px;
-  font-size: 15px !important;
+  & div{
+    background-color: $color-bg;
+    color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & i {
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .scrollable {

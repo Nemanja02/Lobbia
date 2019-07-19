@@ -118,8 +118,18 @@
 ._3ujUQTE7jVQz8aGoWzaAlD {
   width: min-content;
   padding: 5px;
-  margin: 5px;
-  font-size: 15px !important; }
+  margin: 5px; }
+  ._3ujUQTE7jVQz8aGoWzaAlD div {
+    background-color: #1e2024;
+    color: #ff9a60;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    ._3ujUQTE7jVQz8aGoWzaAlD div i {
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 
 ._3BIAp43nIaQOLrCAe-i5AD {
   overflow-y: auto;

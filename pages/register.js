@@ -13,7 +13,8 @@ import {
   Link,
   Chip,
   IconButton,
-  SnackbarContent
+  SnackbarContent,
+  Avatar
 } from "@material-ui/core";
 
 import classes from "./styles/AuthForms.module.scss";
@@ -115,7 +116,7 @@ function GenreCheck({ name, stateField, clicked }) {
       label={name}
       variant={stateField ? "default" : "outlined"}
       color="primary"
-      icon={<i className="fas fa-music" />}
+      avatar={<Avatar><i className="fas fa-music" /></Avatar>}
       onClick={clicked}
     />
   );
