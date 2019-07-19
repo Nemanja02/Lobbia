@@ -163,5 +163,8 @@
 }
 
 .scrollable {
+  overflow-y: auto;
+  height: 350px;
+  flex-grow: 100;
   @include scroll;
 }

@@ -22,10 +22,8 @@
 }
 
 .center {
-  display: flex;
   width: 33.33%;
-  align-items: center;
-  justify-content: center;
+  @include center;
 }
 
 .logo {
@@ -72,11 +70,9 @@
 }
 
 .sbar {
-  display: flex;
   width: min-content;
   position: relative;
-  justify-content: center;
-  align-items: center;
+  @include center;
 }
 
 .search {
@@ -115,14 +111,12 @@
   width: 80px;
   background-color: $color-primary;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
   flex-direction: row;
-  align-items: center;
   z-index: 10;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
   transition: 0.2s all;
+  @include center;
 
   &:hover {
     background-color: lighten($color-primary, 5%);

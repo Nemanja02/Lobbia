@@ -7,7 +7,7 @@ function Game({ icon, name }) {
     <div className={classes.gamediv}>
       <img
         src={icon}
-        className={`${classes.gameicon} ${classes.unselectable}`}
+        className={classes.gameicon}
       />
       <span className={classes.gamename}>{name}</span>
       <div className={classes.playicon}>

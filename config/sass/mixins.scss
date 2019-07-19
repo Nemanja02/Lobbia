@@ -12,24 +12,20 @@
   justify-content: center;
 }
 
-@mixin scroll {
-  overflow-y: auto;
-  height: 350px;
-  flex-grow: 100;
-
-  &::-webkit-scrollbar-track {
-    border-radius: 100px;
-    background-color: $color-bg-light;
-  }
-
-  &::-webkit-scrollbar {
-    width: 7px;
-    background-color: $color-bg-light;
-    border-radius: 100px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-bg;
-    border-radius: 100px;
-  }
+@mixin scroll {  
+    &::-webkit-scrollbar-track {
+      border-radius: 100px;
+      background-color: $color-bg-light;
+    }
+  
+    &::-webkit-scrollbar {
+      width: 7px;
+      background-color: $color-bg-light;
+      border-radius: 100px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-bg;
+      border-radius: 100px;
+    }
 }

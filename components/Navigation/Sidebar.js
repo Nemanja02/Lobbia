@@ -9,7 +9,7 @@ function Profile({ ppicture, username, activity }) {
     <div className={classes.user}>
       <img
         src={ppicture}
-        className={`${classes.ppicture} ${classes.unselectable}`}
+        className={classes.ppicture}
       />
       <div className={classes.online} />
       <div className={classes.about}>
@@ -41,7 +41,7 @@ function Friend({ ppicture, username, activity, link }) {
     <a href={link} className={classes.friend}>
       <img
         src={ppicture}
-        className={`${classes.fppicture} ${classes.unselectable}`}
+        className={classes.fppicture}
       />
       <div className={`${classes.fonline} ${status}`} />
       <div className={classes.fabout}>
