@@ -34,29 +34,97 @@ const {
 
 exports.validateFormCredentials = async (
   parent,
-  { fullName, email, username, password }
+  { fullName, email, username, password, signature }
 ) => {
-  if (!fullName || !email || !username || !password)
-    throw new ValidationError({
-      data: {
-        message: "Please fill out all required fields."
-      },
-      internalData: {
-        status: 403,
-        error:
-          "User tried to proceed on signup form without providing all required data."
-      }
-    });
+  if (!signature) {
+    if (!(fullName && email && username && password))
+      throw new ValidationError({
+        data: {
+          message: "Please fill out all form fields."
+        },
+        internalData: {
+          status: 403,
+          error:
+            "User tried to proceed on signup/login form without providing all required data."
+        }
+      });
+  }
 
-  if (
-    !validator.isEmail(email) ||
-    !validationSchema.validate(password) ||
-    !(fullName.length >= 3) ||
-    !(username.length >= 5)
-  ) {
-    return false;
-  } else {
-    return true;
+  if (signature) {
+    if (!(signature && password))
+      throw new ValidationError({
+        data: {
+          message: "Please fill out all form fields."
+        },
+        internalData: {
+          status: 403,
+          error:
+            "User tried to proceed on signup/login form without providing all required data."
+        }
+      });
+  }
+
+  if (!signature) {
+    if (
+      !validator.isEmail(email) ||
+      !validationSchema.validate(password) ||
+      !(fullName.length >= 3) ||
+      !(username.length >= 5)
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  if (signature) {
+    let signatureType = "";
+    // first check
+    if (!User.findOne({ username: signature })) {
+      // second check
+      if (!User.findOne({ email: signature }))
+        throw new ValidationError({
+          data: {
+            message: "Email or username is not valid. Please try again."
+          },
+          internalData: {
+            error: "User tried to sign in with invalid email/username.",
+            status: 403
+          }
+        });
+      else {
+        signatureType = "email";
+      }
+    } else {
+      signatureType = "username";
+    }
+
+    const result = await User.findOne({
+      [signatureType]: signature
+    });
+    if (!result) {
+      throw new ValidationError({
+        data: {
+          message: "Email or username is not valid. Please try again."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid entered email.",
+          status: 403
+        }
+      });
+    } else {
+      if (await result.comparePasswords(password)) return true;
+      else
+        throw new ValidationError({
+          data: {
+            message: "Password is invalid. Please try again."
+          },
+          internalData: {
+            error: "User tried to sign in with invalid password.",
+            status: 403
+          }
+        });
+    }
   }
 };
 
@@ -86,15 +154,6 @@ exports.createUserAccount = async (
   },
   ctx
 ) => {
-  // console.log(
-  //   email,
-  //   username,
-  //   dateOfBirth,
-  //   password,
-  //   fullName,
-  //   gamesInterests,
-  //   musicInterests
-  // );
   if (!email || !dateOfBirth || !username || !password || !fullName) {
     throw new ValidationError({
       data: {
@@ -206,6 +265,12 @@ exports.createUserAccount = async (
     token,
     id: user._id
   };
+};
+
+exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
+  if (ctx.user.isAuth) {
+    // ...
+  }
 };
 
 exports.login = async (parent, { signature, password }) => {

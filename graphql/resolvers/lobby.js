@@ -1,7 +1,6 @@
 const Lobby = require("../../models/Lobby");
 const User = require("../../models/User");
 const { ValidationError } = require("../errors");
-const { ObjectId } = require("mongoose").Types;
 
 exports.initLobby = async (parent, { participants, type, status }, ctx) => {
   if (

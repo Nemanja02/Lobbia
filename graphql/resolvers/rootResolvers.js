@@ -17,13 +17,13 @@ module.exports = {
     usersList,
     marjanoveUmri,
     findUser,
-    login,
     lobbiesList
   },
 
   Mutation: {
     validateFormCredentials,
     createUserAccount,
+    login,
     initLobby
   }
 };

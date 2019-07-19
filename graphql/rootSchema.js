@@ -55,13 +55,25 @@ module.exports = gql`
 
     findUser(id: ID): User!
 
-    login(signature: String, password: String): Auth
-
     marjanoveUmri: [User!]!
+
+    getInitialProfileInfo: User!
   }
 
   # MUTATIONS
   type Mutation {
+    initLobby(participants: [String], type: Int, status: Int): Lobby
+
+    validateFormCredentials(
+      fullName: String
+      username: String
+      password: String
+      email: String
+      signature: String
+    ): Boolean
+
+    login(signature: String, password: String): Auth
+
     createUserAccount(
       email: String
       username: String
@@ -71,14 +83,5 @@ module.exports = gql`
       musicInterests: [Int]
       gamesInterests: [Int]
     ): Auth
-
-    initLobby(participants: [String], type: Int, status: Int): Lobby
-
-    validateFormCredentials(
-      fullName: String
-      username: String
-      password: String
-      email: String
-    ): Boolean
   }
 `;

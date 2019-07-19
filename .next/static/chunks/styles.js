@@ -30,7 +30,7 @@ module.exports = {"root":"_1vz7CQfPoZHCTWyxZve-ID","main":"_1uebS76EZIESUqVxVRJV
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467377");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200362");
           });
       }
     }
@@ -68,7 +68,7 @@ module.exports = {"navHeading":"_37K4NO68Qce2FqpFn4xOmj"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467532");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200527");
           });
       }
     }
@@ -106,7 +106,7 @@ module.exports = {"link":"BHfcKqFSe3trQS-QbvYPw","linkIcon":"_2_cD_7UOtmPAbxbt2u
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467555");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200552");
           });
       }
     }
@@ -144,7 +144,7 @@ module.exports = {"wrapper":"_3cw_iLpgEtU0F6CGKUS-ED","unselectable":"_39gkGt6YA
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467491");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200467");
           });
       }
     }
@@ -182,7 +182,7 @@ module.exports = {"topbar":"_2J-AXA5bO-gnAB71XqxwiM","start":"_24fn8cMtMBNHLQKff
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467444");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200418");
           });
       }
     }
@@ -220,7 +220,7 @@ module.exports = {"h1":"_2Gu1oTUFVuVkckVKJWISjr","h2":"_2IG223MdCVeLFWATVFqxRH",
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467544");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200539");
           });
       }
     }
@@ -258,7 +258,7 @@ module.exports = {"wrapper":"_3c5zKv40aD2qzzFN0EJB78","unselectable":"_301P-G3ed
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467350");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200358");
           });
       }
     }
@@ -296,45 +296,7 @@ module.exports = {"main":"_30T10-PLlH6FB7Yu286BQ9"};;
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496467357");
-          });
-      }
-    }
-  
-
-/***/ }),
-
-/***/ "./pages/styles/Register.module.scss":
-/*!*******************************************!*\
-  !*** ./pages/styles/Register.module.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {"bg-img":"I_vzSf8QYCuL0LyO3rFng","input":"_1f0pkpiY64K4x1N1Uh7GAz","grid":"_3ywvKJD8pyVM0YWkdKCPyf","marginSides":"dLSYrpBEXHdF_kj6jpeAA","customSignupCard":"_373JF_8yT5462reNat5IEu","warning":"_3K2uaqm_7EkB66jTXDOr8y","danger":"_2eF6TQe7-YaZifX5T0sl7C","info":"_2A7W7vtsw4lP2Q25oPzpRa","snackbarIcon":"_3y3-2r5gjMdBwlDGdDxk4z","imageUploadCard":"_1ODUFV1w-0_0kXKKUlPY6O","uploadIcon":"_7rFiOX3SCbZvj6icdVWvw","gamesGrid":"_3jo5suahdrSquhlhBCPeCV","gameCheck":"_322PB2-Wzfkq9WrcbtWhO4","gameCheck_selected":"NCT1TCFmxgsIaSr9DMutu","genreCheck":"_1Hl2SILONnkazoROWqOB5k","scrollable":"_9uoTjiopuGDNg475HioxN"};;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1563496449558");
+            injectCss(link, link.href.split("?")[0] + "?unix=1563532200366");
           });
       }
     }

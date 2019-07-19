@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import RouterLink from "next/link";
+import Router from "next/router";
 import Particles from "react-particles-js";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import {
   Grid,
-  Tooltip,
   Snackbar,
   TextField,
   Typography,
@@ -13,11 +13,10 @@ import {
   Link,
   Chip,
   IconButton,
-  SnackbarContent,
-  Icon
+  SnackbarContent
 } from "@material-ui/core";
 
-import classes from "./styles/Register.module.scss";
+import classes from "./styles/AuthForms.module.scss";
 import genres from "../config/music_genres.json";
 import games from "../config/games.json";
 
@@ -498,7 +497,7 @@ class Register extends Component {
         onCompleted={data => {
           localStorage.setItem("token", data.createUserAccount.token);
           localStorage.setItem("id", data.createUserAccount.id);
-          window.location.replace("http://localhost:8080");
+          Router.push("/feed");
         }}
         mutation={createUserAccount}
         variables={mutationVariables}
@@ -618,7 +617,7 @@ class Register extends Component {
           }}
           className={classes["bg-img"]}
         />
-        <div className={classes.customSignupCard}>
+        <div className={classes["custom-form-card"]}>
           {this.state.formStage === 0
             ? firstStepRegistration
             : this.state.formStage === 1

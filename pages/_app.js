@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Container } from "next/app";
 import { ApolloProvider } from "react-apollo";
-
+import "next-with-apollo";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { grey } from "@material-ui/core/colors";
-import withApollo from "next-with-apollo";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
+import Router from "next/router";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:8080/graphql"
@@ -43,14 +43,26 @@ const theme = createMuiTheme({
   }
 });
 
-export class _app extends Component {
-  static getInitialProps = ({ Component, ctx }) => {
-    let pageProps = {
-      user: ctx.req.user
-    };
+Router.events.on("routeChangeComplete", () => {
+  if (process.env.NODE_ENV !== "production") {
+    const els = document.querySelectorAll(
+      'link[href*="/_next/static/css/styles.chunk.css"]'
+    );
+    const timestamp = new Date().valueOf();
+    els[0].href = "/_next/static/css/styles.chunk.css?v=" + timestamp;
+  }
+});
 
-    return { pageProps };
-  };
+export class _app extends Component {
+  componentDidMount() {
+    const isAuth = localStorage.getItem("token");
+    if (isAuth) {
+      if (Router.route === "/login" || Router.route === "/register")
+        Router.push("/feed");
+    }
+
+    if (!isAuth) if (Router.route !== "/login") Router.push("/login");
+  }
 
   render() {
     const { Component, pageProps } = this.props;
