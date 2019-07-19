@@ -1,14 +1,13 @@
 @import "../../config/sass/variables.scss";
+@import "../../config/sass/mixins.scss";
 
 .topbar {
-  display: flex;
-  position: fixed;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
   height: $topbar-height;
   background-color: $color-bg-light;
   padding: 0 $margin;
+  @include center;
+  justify-content: space-between;
 }
 
 .start,
