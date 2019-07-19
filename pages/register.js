@@ -143,7 +143,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 0,
+    formStage: 2,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -262,7 +262,7 @@ class Register extends Component {
 
             if (el.name === "password") {
               helperText =
-                "*Password should be at least 8 characters long with one uppercase and one special character";
+                "*Password should be at least 8 characters long with one uppercase and at least one number";
               type = "password";
             }
             if (el.name === "email") {
