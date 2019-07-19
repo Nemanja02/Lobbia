@@ -144,7 +144,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 2,
+    formStage: 0,
     formValidation: {
       logLevel: "",
       isValidated: true,
