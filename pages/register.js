@@ -11,6 +11,7 @@ import {
   Typography,
   Button,
   Link,
+  Chip,
   IconButton,
   SnackbarContent,
   Icon
@@ -29,7 +30,7 @@ const createUserAccount = gql`
     $email: String
     $fullName: String
     $username: String
-    $dateOfBirth: Date
+    $dateOfBirth: DateTime
     $password: String
     $musicInterests: [Int]
     $gamesInterests: [Int]
@@ -44,6 +45,7 @@ const createUserAccount = gql`
       password: $password
     ) {
       token
+      id
     }
   }
 `;
@@ -70,11 +72,19 @@ const initialInterestsState = {
 };
 
 Object.keys(genres).map(key => {
-  initialInterestsState.music[key] = false;
+  initialInterestsState.music[key] = {
+    id: key,
+    name: genres[key],
+    isSelected: false
+  };
 });
 
 Object.keys(games).map(key => {
-  initialInterestsState.games[key] = false;
+  initialInterestsState.games[key] = {
+    id: key,
+    name: games[key],
+    isSelected: false
+  };
 });
 
 function GameCheck({ picture, stateField, clicked }) {
@@ -100,13 +110,15 @@ function GameCheck({ picture, stateField, clicked }) {
 }
 
 function GenreCheck({ name, stateField, clicked }) {
-  let customClasses = [classes.genreCheck];
-  if (stateField) customClasses.push(classes.genreCheck_selected);
-
   return (
-    <div className={customClasses.join(" ")}>
-      <Chip label={name} onClick={clicked} />
-    </div>
+    <Chip
+      className={classes.genreCheck}
+      label={name}
+      variant={stateField ? "default" : "outlined"}
+      color="primary"
+      icon={<i className="fas fa-music" />}
+      onClick={clicked}
+    />
   );
 }
 
@@ -122,15 +134,25 @@ function getFormattedDate(date) {
   return year + "-" + month + "-" + day;
 }
 
+function getTimestamp(myDate) {
+  myDate = myDate.split("-");
+  var newDate = myDate[1] + "/" + myDate[2] + "/" + myDate[0];
+  return new Date(newDate).toISOString();
+}
+
 class Register extends Component {
   state = {
+    isAuthSuccessful: false,
+
     formStage: 0,
     formValidation: {
       logLevel: "",
       isValidated: true,
-      errorMessage: ""
+
+      displayMessage: ""
     },
 
+    interestFields: initialInterestsState,
     formFields: {
       fullName: {
         value: ""
@@ -151,9 +173,7 @@ class Register extends Component {
       password: {
         value: ""
       }
-    },
-
-    interestFields: initialInterestsState
+    }
   };
 
   handleDateChange = e => {
@@ -169,13 +189,20 @@ class Register extends Component {
   };
 
   selectField = (type, field) => {
-    this.setState({
+    this.setState(prevState => ({
+      ...prevState,
+      isSecondFormUsed: true,
       interestFields: {
+        ...prevState.interestFields,
         [type]: {
-          [field]: !prevState.interestFields[type][field]
+          ...prevState.interestFields[type],
+          [field]: {
+            ...prevState.interestFields[type][field],
+            isSelected: !prevState.interestFields[type][field].isSelected
+          }
         }
       }
-    });
+    }));
   };
 
   handleChange = (e, type) => {
@@ -273,7 +300,8 @@ class Register extends Component {
                   ...prevState.formValidation,
                   isValidated: false,
                   logLevel: "warning",
-                  errorMessage: "Invalid credentials, please try again."
+
+                  displayMessage: "Invalid credentials, please try again."
                 }
               }));
           }}
@@ -284,7 +312,9 @@ class Register extends Component {
                 ...prevState.formValidation,
                 isValidated: false,
                 logLevel: "danger",
-                errorMessage: graphQLErrors[0].extensions.exception.data.message
+
+                displayMessage:
+                  graphQLErrors[0].extensions.exception.data.message
               }
             }));
           }}
@@ -320,6 +350,37 @@ class Register extends Component {
         </Typography>
       </Grid>
     );
+
+    const gamesFieldsArr = [];
+
+    for (let key in this.state.interestFields.games) {
+      gamesFieldsArr.push(this.state.interestFields.games[key]);
+    }
+
+    const musicFieldsArr = [];
+
+    for (let key in this.state.interestFields.music) {
+      musicFieldsArr.push(this.state.interestFields.music[key]);
+    }
+
+    const { interestFields } = this.state;
+    const { games, music } = interestFields;
+
+    // picking selected games
+    const selectedGames = [];
+    for (let field in games) {
+      if (games[field].isSelected) selectedGames.push(parseInt(field));
+    }
+
+    // if (this.state.formStage === 1) console.log(selectedGames);
+
+    // picking selected music
+    const selectedMusic = [];
+    for (let field in music) {
+      if (music[field].isSelected) selectedMusic.push(parseInt(field));
+    }
+
+    // if (this.state.formStage === 2) console.log(selectedMusic);
 
     const secondStepRegistration = (
       <Grid
@@ -362,27 +423,20 @@ class Register extends Component {
             >
               Select the one you do:
             </Typography>
-            <Grid container direction="row" justify="center">
-              <GameCheck
-                stateField={this.state.interestFields.games.minecraft}
-                clicked={() => this.selectField("games", "minecraft")}
-                picture="https://apkvision.com/wp-content/uploads/2019/05/Minecraft-Trial.png"
-              />
-              <GameCheck
-                stateField={this.state.interestFields.games.apex}
-                clicked={() => this.selectField("games", "apex")}
-                picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-              />
-              <GameCheck
-                stateField={this.state.interestFields.games.lol}
-                clicked={() => this.selectField("games", "lol")}
-                picture="https://www.mordeo.org/files/uploads/2019/03/Apex-Legends-4K-Ultra-HD-Mobile-Wallpaper-950x1689.jpg"
-              />
-              <GameCheck
-                stateField={this.state.interestFields.games.pubg}
-                clicked={() => this.selectField("games", "pubg")}
-                picture="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633"
-              />
+            <Grid
+              className={classes.scrollable}
+              container
+              direction="row"
+              justify="center"
+            >
+              {gamesFieldsArr.map(el => (
+                <GameCheck
+                  key={el.name}
+                  stateField={this.state.interestFields.games[el.id].isSelected}
+                  picture="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/b3/95/73/b3957315-51c1-19f2-767a-c2683457e019/AppIcon-0-1x_U007emarketing-0-85-220-9.png/246x0w.jpg"
+                  clicked={() => this.selectField("games", el.id)}
+                />
+              ))}
             </Grid>
           </Grid>
         </Grid>
@@ -406,6 +460,7 @@ class Register extends Component {
               Back
             </Button>
             <Button
+              disabled={selectedGames.length === 0}
               onClick={this.formForward}
               classes={{ root: classes.marginSides }}
               variant="contained"
@@ -418,30 +473,8 @@ class Register extends Component {
       </Grid>
     );
 
-    const { interestFields } = this.state;
-
-    const chosedGamesInterests = [];
-
-    Object.keys(interestFields.games).map(key => {
-      if (key === true) chosedGamesInterests.push(key);
-    });
-
-    if (this.state.formStage === 1) console.log(chosedGamesInterests);
-
-    const chosedMusicInterests = [];
-
-    Object.keys(interestFields.games).map(key => {
-      if (key === true) chosedMusicInterests.push(key);
-    });
-
-    if (this.state.formStage === 2) console.log(chosedMusicInterests);
-
     let mutationVariables = null;
-    if (
-      this.state.isFirstFormValid &&
-      this.state.isSecondFormValid &&
-      this.state.isThirdFormValid
-    ) {
+    if (this.state.formStage === 2) {
       const { email, fullName, password, username } = this.state.formFields;
 
       mutationVariables = {
@@ -449,15 +482,28 @@ class Register extends Component {
         fullName: fullName.value,
         password: password.value,
         username: username.value,
-        dateOfBirth: new Date(this.state.birthday).getTime(),
-        gamesInterests: chosedGamesInterests,
-        musicInterests: chosedGamesInterests
+        dateOfBirth: getTimestamp(this.state.formFields.birthday.value),
+        gamesInterests: selectedGames,
+        musicInterests: selectedMusic
       };
+
+      console.log(mutationVariables);
     }
 
     const thirdStepRegistration = (
-      <Mutation mutation={createUserAccount}>
-        {(createUserAccount, { data, error, loading }) => {
+      <Mutation
+        onError={({ graphQLErrors }) => {
+          console.log(graphQLErrors);
+        }}
+        onCompleted={data => {
+          localStorage.setItem("token", data.createUserAccount.token);
+          localStorage.setItem("id", data.createUserAccount.id);
+          window.location.replace("http://localhost:8080");
+        }}
+        mutation={createUserAccount}
+        variables={mutationVariables}
+      >
+        {createUserAccount => {
           return (
             <Grid
               className={classes.grid}
@@ -479,10 +525,10 @@ class Register extends Component {
                   flexGrow: 1,
                   height: "100%"
                 }}
+                className={classes.scrollable}
                 container
-                direction="column"
-                justify="space-between"
-                alignItems="center"
+                direction="row"
+                justify="center"
               >
                 <Grid
                   style={{
@@ -497,22 +543,28 @@ class Register extends Component {
                     variant="caption"
                     color="textSecondary"
                   >
-                    Select the one you listen:
+                    Select at least one you listen:
                   </Typography>
-                  <Grid container direction="row" justify="flex-start">
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
-                    <GenreCheck name="rock" />
+                  <Grid
+                    container
+                    direction="row"
+                    alignItems="center"
+                    justify="center"
+                    wrap="wrap"
+                  >
+                    {musicFieldsArr.map(el => {
+                      return (
+                        <GenreCheck
+                          name={el.name}
+                          key={el.name}
+                          stateField={
+                            this.state.interestFields.music[parseInt(el.id)]
+                              .isSelected
+                          }
+                          clicked={() => this.selectField("music", el.id)}
+                        />
+                      );
+                    })}
                   </Grid>
                 </Grid>
               </Grid>
@@ -536,9 +588,13 @@ class Register extends Component {
                     Back
                   </Button>
                   <Button
+                    disabled={selectedMusic.length === 0}
                     classes={{ root: classes.marginSides }}
                     variant="contained"
                     color="primary"
+                    onClick={() => {
+                      createUserAccount();
+                    }}
                   >
                     finish
                   </Button>
@@ -578,7 +634,8 @@ class Register extends Component {
                 ...prevState.formValidation,
                 isValidated: true,
                 logLevel: "",
-                errorMessage: ""
+
+                displayMessage: ""
               }
             }))
           }
@@ -587,13 +644,13 @@ class Register extends Component {
           <SnackbarContent
             className={classes[this.state.formValidation.logLevel]}
             message={
-              <span className={classes.errorMessage}>
+              <span className={classes.displayMessage}>
                 <i
                   className={`fas fa-exclamation-circle ${
                     classes.snackbarIcon
                   }`}
                 />{" "}
-                {this.state.formValidation.errorMessage}
+                {this.state.formValidation.displayMessage}
               </span>
             }
             action={
@@ -605,7 +662,8 @@ class Register extends Component {
                       ...prevState.formValidation,
                       isValidated: true,
                       logLevel: "",
-                      errorMessage: ""
+
+                      displayMessage: ""
                     }
                   }))
                 }

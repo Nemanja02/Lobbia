@@ -51,6 +51,10 @@
   background-color: $color-danger !important;
 }
 
+.info {
+  background-color: $color-info !important;
+}
+
 .snackbarIcon {
   font-size: 20px;
   color: #fff;
@@ -147,6 +151,14 @@
 .genreCheck {
   width: min-content;
   padding: 5px;
+  margin: 5px;
+  font-size: 15px !important;
+}
+
+.scrollable {
+  overflow-y: auto;
+  height: 350px;
+  flex-grow: 100;
 }
 
 .scrollable::-webkit-scrollbar-track {

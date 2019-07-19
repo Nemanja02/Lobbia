@@ -2,6 +2,9 @@ const User = require("../../models/User");
 const jwt = require("jsonwebtoken");
 const { jwt_key } = require("../../config/config.json");
 
+const genres = require("../../config/music_genres.json");
+const games = require("../../config/games.json");
+
 const validator = require("validator");
 const passwordValidator = require("password-validator");
 const validationSchema = new passwordValidator();
@@ -79,12 +82,20 @@ exports.createUserAccount = async (
     password,
     fullName,
     gamesInterests,
-    musicInterests,
-    profilePictureUri
+    musicInterests
   },
   ctx
 ) => {
-  if (!email || !age || !username) {
+  // console.log(
+  //   email,
+  //   username,
+  //   dateOfBirth,
+  //   password,
+  //   fullName,
+  //   gamesInterests,
+  //   musicInterests
+  // );
+  if (!email || !dateOfBirth || !username || !password || !fullName) {
     throw new ValidationError({
       data: {
         message: "Please fill out all sign up fields."
@@ -141,27 +152,60 @@ exports.createUserAccount = async (
     });
   }
 
+  const newGamesInterests = [];
+
+  for (let game in games) {
+    for (let field of gamesInterests) {
+      if (game == field) {
+        newGamesInterests.push({
+          label: games[game],
+          id: game
+        });
+      }
+    }
+  }
+
+  const newGenresInterests = [];
+
+  for (let genre in genres) {
+    for (let field of musicInterests) {
+      if (genre == field) {
+        newGenresInterests.push({
+          label: genres[genre],
+          id: genre
+        });
+      }
+    }
+  }
+
   const newUser = new User({
     username,
     email,
+    fullName,
     password,
     dateOfBirth,
-    profilePicture
+    interests: {
+      music: newGenresInterests,
+      games: newGamesInterests
+    }
   });
 
   const user = await newUser.save();
 
   const token = await jwt.sign(
     {
-      id: user_id,
+      id: user._id,
       username: user.username,
       email: user.email
     },
     jwt_key,
-    { expiresIn: "24h" }
+    { expiresIn: "30d" }
   );
 
-  return token;
+  return {
+    token,
+    id: user._id
+  };
 };
 
 exports.login = async (parent, { signature, password }) => {

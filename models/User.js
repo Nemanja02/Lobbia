@@ -5,6 +5,11 @@ const { Schema } = mongoose;
 
 const { ObjectId } = Schema.Types;
 
+const InterestSchema = new Schema({
+  id: Number,
+  label: String
+});
+
 const UserSchema = new Schema(
   {
     username: {
@@ -33,8 +38,8 @@ const UserSchema = new Schema(
     },
 
     interests: {
-      music: [Number],
-      games: [Number]
+      music: [InterestSchema],
+      games: [InterestSchema]
     },
 
     balance: {

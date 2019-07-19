@@ -65,7 +65,7 @@ module.exports = gql`
     createUserAccount(
       email: String
       username: String
-      dateOfBirth: Date
+      dateOfBirth: DateTime
       password: String
       fullName: String
       musicInterests: [Int]
