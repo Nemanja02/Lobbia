@@ -189,10 +189,6 @@ export class login extends Component {
                             alignItems="center"
                           >
                             <Button
-                              disabled={
-                                this.state.loginForm.password.length === 0 &&
-                                this.state.loginForm.signature.length === 0
-                              }
                               onClick={async () => {
                                 const isFormValid = await validateFormCredentials();
                                 if (isFormValid) await login();

@@ -1014,6 +1014,14 @@ var client = new apollo_client__WEBPACK_IMPORTED_MODULE_13__["ApolloClient"]({
   cache: new apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_14__["InMemoryCache"]()
 });
 var theme = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__["createMuiTheme"])({
+  overrides: {
+    MuiTooltip: {
+      tooltip: {
+        fontSize: "12px",
+        fontWeight: "400"
+      }
+    }
+  },
   palette: {
     text: {
       primary: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_12__["grey"][200],

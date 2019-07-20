@@ -14,7 +14,8 @@ import {
   Chip,
   IconButton,
   SnackbarContent,
-  Avatar
+  Avatar,
+  Tooltip
 } from "@material-ui/core";
 
 import classes from "./styles/AuthForms.module.scss";
@@ -148,7 +149,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 0,
+    formStage: 1,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -463,15 +464,25 @@ class Register extends Component {
             >
               Back
             </Button>
-            <Button
-              disabled={selectedGames.length === 0}
-              onClick={this.formForward}
-              classes={{ root: classes.marginSides }}
-              variant="contained"
-              color="primary"
+            <Tooltip
+              classes={{ tooltip: classes["tooltip"] }}
+              title={
+                selectedGames.length === 0 ? "Select at least one game" : ""
+              }
+              interactive={selectedGames.length !== 0}
             >
-              next
-            </Button>
+              <div>
+                <Button
+                  disabled={selectedGames.length === 0}
+                  onClick={this.formForward}
+                  classes={{ root: classes.marginSides }}
+                  variant="contained"
+                  color="primary"
+                >
+                  next
+                </Button>
+              </div>
+            </Tooltip>
           </Grid>
         </Grid>
       </Grid>
@@ -490,8 +501,6 @@ class Register extends Component {
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };
-
-      console.log(mutationVariables);
     }
 
     const thirdStepRegistration = (
@@ -547,7 +556,7 @@ class Register extends Component {
                     variant="caption"
                     color="textSecondary"
                   >
-                    Select at least one you listen:
+                    Select the one you listen:
                   </Typography>
                   <Grid
                     container
@@ -591,17 +600,28 @@ class Register extends Component {
                   >
                     Back
                   </Button>
-                  <Button
-                    disabled={selectedMusic.length === 0}
-                    classes={{ root: classes.marginSides }}
-                    variant="contained"
-                    color="primary"
-                    onClick={() => {
-                      createUserAccount();
-                    }}
+                  <Tooltip
+                    classes={{ tooltip: classes["tooltip"] }}
+                    title={
+                      selectedMusic.length === 0
+                        ? "Select at least one genre"
+                        : ""
+                    }
                   >
-                    finish
-                  </Button>
+                    <div>
+                      <Button
+                        disabled={selectedMusic.length === 0}
+                        classes={{ root: classes.marginSides }}
+                        variant="contained"
+                        color="primary"
+                        onClick={() => {
+                          createUserAccount();
+                        }}
+                      >
+                        finish
+                      </Button>
+                    </div>
+                  </Tooltip>
                 </Grid>
               </Grid>
             </Grid>
@@ -625,7 +645,7 @@ class Register extends Component {
         <div
           className={classes["custom-form-card"]}
           style={{
-            width: "500px !important",
+            width: "500px",
             minHeight: "540px"
           }}
         >

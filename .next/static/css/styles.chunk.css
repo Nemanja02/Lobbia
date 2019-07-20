@@ -90,14 +90,14 @@
     ._1pDiex8xw-7BDieWr-3zE5 > div:hover {
       background-color: rgba(204, 210, 213, 0.25); }
     ._1pDiex8xw-7BDieWr-3zE5 > div > div {
-      margin: 3px;
+      margin: 4px;
       position: absolute;
       top: 0px;
       bottom: 0px;
       left: 0px;
       right: 0px;
       border-radius: 12px;
-      border: #32393d solid 4px;
+      border: #32393d solid 5px;
       transition: all 0.3s;
       display: flex;
       align-items: center;
@@ -109,33 +109,43 @@
   ._1cuB84fp4g-JpRPQe00hOF > div {
     background-color: rgba(0, 0, 0, 0); }
     ._1cuB84fp4g-JpRPQe00hOF > div > div {
-      background-color: rgba(254, 131, 61, 0.65); }
+      background-color: rgba(220, 115, 55, 0.65); }
       ._1cuB84fp4g-JpRPQe00hOF > div > div i {
         color: white; }
+
+._39SY3Onik5gnrR67Z70GZQ {
+  font-size: 12px; }
 
 ._3ujUQTE7jVQz8aGoWzaAlD {
   width: min-content;
   padding: 5px;
-  margin: 5px;
-  font-size: 15px !important; }
+  margin: 5px; }
+  ._3ujUQTE7jVQz8aGoWzaAlD div {
+    background-color: rgba(30, 32, 36, 0.5);
+    color: #ff9a60;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    ._3ujUQTE7jVQz8aGoWzaAlD div i {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
 
 ._3BIAp43nIaQOLrCAe-i5AD {
-  overflow-y: auto;
   height: 350px;
+  overflow-y: auto;
   flex-grow: 100; }
-
-._3BIAp43nIaQOLrCAe-i5AD::-webkit-scrollbar-track {
-  border-radius: 100px;
-  background-color: #32393d; }
-
-._3BIAp43nIaQOLrCAe-i5AD::-webkit-scrollbar {
-  width: 7px;
-  background-color: #32393d;
-  border-radius: 100px; }
-
-._3BIAp43nIaQOLrCAe-i5AD::-webkit-scrollbar-thumb {
-  background-color: #1e2024;
-  border-radius: 100px; }
+  ._3BIAp43nIaQOLrCAe-i5AD::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: #32393d; }
+  ._3BIAp43nIaQOLrCAe-i5AD::-webkit-scrollbar {
+    width: 7px;
+    background-color: #32393d;
+    border-radius: 100px; }
+  ._3BIAp43nIaQOLrCAe-i5AD::-webkit-scrollbar-thumb {
+    background-color: #1e2024;
+    border-radius: 100px; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

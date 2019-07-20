@@ -101,7 +101,7 @@
   &:hover {
     color: rgba(white, 0.3);
   }
-  
+
   & > div {
     position: absolute;
     top: 0px;
@@ -146,12 +146,16 @@
   }
 }
 
+.tooltip {
+  font-size: 12px;
+}
+
 .genreCheck {
   width: min-content;
   padding: 5px;
   margin: 5px;
   & div {
-    background-color: $color-bg;
+    background-color: rgba($color-bg, 0.5);
     color: $color-primary;
     @include center;
     & i {
