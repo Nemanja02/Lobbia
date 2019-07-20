@@ -10,16 +10,12 @@ import gql from "graphql-tag";
 const socket = io();
 
 class Index extends Component {
-  state = {};
-
   render() {
     return (
       <>
         <Layout>
           <div className={classes.main} />
         </Layout>
-        
-        <FindDialog />
       </>
     );
   }

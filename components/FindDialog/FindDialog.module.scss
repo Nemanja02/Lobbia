@@ -1,6 +1,11 @@
 @import "../../config/sass/variables.scss";
 @import "../../config/sass/mixins.scss";
 
+li {
+  list-style: none;
+  padding: 1em;
+}
+
 #findBG {
   width: 100vw;
   height: 100vh;
@@ -35,6 +40,18 @@
       display: flex;
       flex: 1;
 
+      & > a:nth-child(1) > .grow {
+        background-color: rgba(44, 130, 201, 0.6);
+      }
+
+      & > a:nth-child(2) > .grow {
+        background-color: rgba(159, 90, 253, 0.6);
+      }
+
+      & > a:nth-child(3) > .grow {
+        background-color: rgba(249, 105, 14, 0.6);
+      }
+
       & > a {
         cursor: pointer;
         flex: 1;
@@ -68,7 +85,7 @@
           @include fillArea;
           top: 100%;
           border-radius: 10px;
-          background-color: $color-bg;
+          background-color: #fff;
           transition: top 0.3s;
           z-index: 11;
         }

@@ -17,6 +17,11 @@ import {
   Avatar,
   Tooltip
 } from "@material-ui/core";
+import { grey, orange } from "@material-ui/core/colors";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+
+import DateFnsUtils from "@date-io/date-fns";
 
 import classes from "./styles/AuthForms.module.scss";
 import genres from "../config/music_genres.json";
@@ -80,6 +85,19 @@ Object.keys(genres).map(key => {
   };
 });
 
+const dateTheme = createMuiTheme({
+  palette: {
+    text: {
+      primary: grey[500],
+      secondary: grey[600]
+    },
+
+    primary: {
+      main: "#ff9a60"
+    }
+  }
+});
+
 Object.keys(games).map(key => {
   initialInterestsState.games[key] = {
     id: key,
@@ -139,17 +157,11 @@ function getFormattedDate(date) {
   return year + "-" + month + "-" + day;
 }
 
-function getTimestamp(myDate) {
-  myDate = myDate.split("-");
-  var newDate = myDate[1] + "/" + myDate[2] + "/" + myDate[0];
-  return new Date(newDate).toISOString();
-}
-
 class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 1,
+    formStage: 0,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -205,6 +217,18 @@ class Register extends Component {
             ...prevState.interestFields[type][field],
             isSelected: !prevState.interestFields[type][field].isSelected
           }
+        }
+      }
+    }));
+  };
+
+  handleDate = date => {
+    this.setState(prevState => ({
+      formFields: {
+        ...prevState.formFields,
+        birthday: {
+          ...prevState.formFields.birthday,
+          value: Date.parse(date.toString())
         }
       }
     }));
@@ -280,7 +304,29 @@ class Register extends Component {
 
             if (el.name === "fullName") placeholderText = "Full name";
 
-            return (
+            const dateField = (
+              <MuiThemeProvider key={el.name} theme={dateTheme}>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <DatePicker
+                    inputVariant="filled"
+                    disableFuture
+                    openTo="year"
+                    format="dd/MM/yyyy"
+                    views={["year", "month", "date"]}
+                    helperText={helperText}
+                    label={placeholderText}
+                    style={marginTop}
+                    fullWidth
+                    value={this.state.formFields.birthday.value}
+                    onChange={date => this.handleDate(date)}
+                  />
+                </MuiPickersUtilsProvider>
+              </MuiThemeProvider>
+            );
+
+            return type === "date" ? (
+              dateField
+            ) : (
               <TextField
                 key={el.name}
                 fullWidth
@@ -377,15 +423,11 @@ class Register extends Component {
       if (games[field].isSelected) selectedGames.push(parseInt(field));
     }
 
-    // if (this.state.formStage === 1) console.log(selectedGames);
-
     // picking selected music
     const selectedMusic = [];
     for (let field in music) {
       if (music[field].isSelected) selectedMusic.push(parseInt(field));
     }
-
-    // if (this.state.formStage === 2) console.log(selectedMusic);
 
     const secondStepRegistration = (
       <Grid
@@ -497,7 +539,9 @@ class Register extends Component {
         fullName: fullName.value,
         password: password.value,
         username: username.value,
-        dateOfBirth: getTimestamp(this.state.formFields.birthday.value),
+        dateOfBirth: new Date(
+          this.state.formFields.birthday.value
+        ).toISOString(),
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };

@@ -1,12 +1,8 @@
-import React from "react";
-import classes from "./Find.module.scss";
+import React, { useState } from "react";
+import classes from "./FindDialog.module.scss";
 
-function Layout(props) {
-  function killme(element) {
-    console.log(element);
-  }
-
-  return (
+function FindDialog({ open, clicked }) {
+  return open ? (
     <div id={classes.findBG}>
       <div className={classes.dialog}>
         <span>Create Lobby</span>
@@ -33,10 +29,10 @@ function Layout(props) {
             </div>
           </a>
         </div>
-        <i className="fas fa-times" onClick={killme(this)} />
+        <i className="fas fa-times" onClick={clicked} />
       </div>
     </div>
-  );
+  ) : null;
 }
 
-export default Layout;
+export default FindDialog;
