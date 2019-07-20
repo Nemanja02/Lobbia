@@ -65,24 +65,88 @@ exports.validateFormCredentials = async (
   }
 
   if (!signature) {
-    if (
-      !validator.isEmail(email) ||
-      !validationSchema.validate(password) ||
-      !(fullName.length >= 3) ||
-      !(username.length >= 5)
-    ) {
-      return false;
-    } else {
-      return true;
+    if (!validator.isEmail(email)) {
+      throw new ValidationError({
+        data: {
+          message: "Email is not valid. Please try again."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid email.",
+          status: 403
+        }
+      });
     }
+
+    const isEmailUnique = await User.findOne({ email });
+    if (isEmailUnique) {
+      throw new ValidationError({
+        data: {
+          message: "Email is already in use. Please try again."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid email.",
+          status: 403
+        }
+      });
+    }
+
+    if (!validationSchema.validate(password)) {
+      throw new ValidationError({
+        data: {
+          message: "Please make sure password is valid."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid password requirements.",
+          status: 403
+        }
+      });
+    }
+
+    if (!(fullName.length >= 3))
+      throw new ValidationError({
+        data: {
+          message: "Your full name should be at least 3 characters long."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid password requirements.",
+          status: 403
+        }
+      });
+
+    if (!(username.length >= 5))
+      throw new ValidationError({
+        data: {
+          message: "Username should be at least 5 characters long."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid password requirements.",
+          status: 403
+        }
+      });
+
+    const isUsernameUnique = await User.findOne({ username });
+    if (isUsernameUnique)
+      throw new ValidationError({
+        data: {
+          message: "Username is already in use. Please make sure it is unique."
+        },
+        internalData: {
+          error: "User tried to sign in with invalid email.",
+          status: 403
+        }
+      });
+
+    return true;
   }
 
   if (signature) {
     let signatureType = "";
     // first check
-    if (!User.findOne({ username: signature })) {
+    const firstCheckResult = await User.findOne({ username: signature });
+    if (!firstCheckResult) {
       // second check
-      if (!User.findOne({ email: signature }))
+      const secondCheckResult = await User.findOne({ email: signature });
+      if (!secondCheckResult)
         throw new ValidationError({
           data: {
             message: "Email or username is not valid. Please try again."
@@ -113,7 +177,8 @@ exports.validateFormCredentials = async (
         }
       });
     } else {
-      if (await result.comparePasswords(password)) return true;
+      const isPasswordValid = await result.comparePasswords(password);
+      if (isPasswordValid) return true;
       else
         throw new ValidationError({
           data: {
@@ -307,9 +372,11 @@ exports.login = async (parent, { signature, password }) => {
 
   let signatureType = "";
   // first check
-  if (!User.findOne({ username: signature })) {
+  const firstCheckResult = await User.findOne({ username: signature });
+  if (!firstCheckResult) {
     // second check
-    if (!User.findOne({ email: signature }))
+    const secondCheckResult = await User.findOne({ email: signature });
+    if (!secondCheckResult)
       throw new ValidationError({
         data: {
           message: "Email or username is not valid. Please try again."

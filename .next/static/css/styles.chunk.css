@@ -24,8 +24,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px !important;
-  min-height: 540px;
   padding: 30px;
   border-radius: 12px;
   display: flex;

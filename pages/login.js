@@ -93,7 +93,13 @@ export class login extends Component {
           }}
           className={classes["bg-img"]}
         />
-        <div className={classes["custom-form-card"]}>
+        <div
+          className={classes["custom-form-card"]}
+          style={{
+            width: "500px",
+            minHeight: "540px"
+          }}
+        >
           <Mutation
             onError={({ graphQLErrors }) => {
               console.log(graphQLErrors[0]);

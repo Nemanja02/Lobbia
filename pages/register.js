@@ -143,7 +143,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 2,
+    formStage: 0,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -617,7 +617,13 @@ class Register extends Component {
           }}
           className={classes["bg-img"]}
         />
-        <div className={classes["custom-form-card"]}>
+        <div
+          className={classes["custom-form-card"]}
+          style={{
+            width: "500px !important",
+            minHeight: "540px"
+          }}
+        >
           {this.state.formStage === 0
             ? firstStepRegistration
             : this.state.formStage === 1
