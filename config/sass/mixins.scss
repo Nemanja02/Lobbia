@@ -37,3 +37,11 @@
   height: $R;
   border-radius: 50%;
 }
+
+@mixin fillArea {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
