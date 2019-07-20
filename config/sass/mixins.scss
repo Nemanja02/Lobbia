@@ -12,7 +12,9 @@
   justify-content: center;
 }
 
-@mixin scroll {  
+@mixin scroll {
+  overflow-y: auto;
+  flex-grow: 100;
     &::-webkit-scrollbar-track {
       border-radius: 100px;
       background-color: $color-bg-light;
@@ -28,4 +30,10 @@
       background-color: $color-bg;
       border-radius: 100px;
     }
+}
+
+@mixin circle($R) {
+  width: $R;
+  height: $R;
+  border-radius: 50%;
 }

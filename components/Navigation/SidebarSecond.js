@@ -28,7 +28,7 @@ class SidebarSecond extends Component {
 
   render() {
     return (
-      <div className={classes.containerRight}>
+      <div className={classes.container}>
         <div className={`${classes.division} ${classes.growdiv}`}>
           <div className={classes["tab-control"]}>
             <Typography
