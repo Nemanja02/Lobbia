@@ -128,11 +128,12 @@ function GameCheck({ picture, stateField, clicked }) {
   );
 }
 
-function GenreCheck({ name, stateField, clicked }) {
+function GenreCheck({ name, stateField, clicked, isClicked }) {
   return (
     <Chip
       className={classes.genreCheck}
       label={name}
+      classes={{ avatar: isClicked ? classes.clicked : "" }}
       variant={stateField ? "default" : "outlined"}
       color="primary"
       avatar={
@@ -612,6 +613,9 @@ class Register extends Component {
                     {musicFieldsArr.map(el => {
                       return (
                         <GenreCheck
+                          isClicked={
+                            this.state.interestFields.music[el.id].isSelected
+                          }
                           name={el.name}
                           key={el.name}
                           stateField={

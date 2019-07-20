@@ -4,6 +4,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .bg-img {
@@ -162,6 +163,9 @@
       font-size: 15px;
       @include center;
     }
+  }
+  & div.clicked {
+    background-color: rgba($color-bg, 1);
   }
 }
 
