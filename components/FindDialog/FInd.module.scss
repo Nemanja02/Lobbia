@@ -10,7 +10,9 @@
   z-index: 10;
   @include center;
   background-color: rgba($color-bg, 0.7);
+
   & .dialog {
+    position: relative;
     display: flex;
     flex-direction: row;
     box-shadow: 0 10px 20px $color-bg;
@@ -21,7 +23,8 @@
     padding: $margin;
     padding-right: 0;
 
-    & > div {
+    & > a {
+      cursor: pointer;
       flex: 1;
       position: relative;
       height: 100%;
@@ -33,21 +36,35 @@
         position: relative;
         color: $color-text;
         z-index: 100;
+        font-size: 21px;
       }
 
-      & > div {
+      & > .grow {
         @include fillArea;
         top: 100%;
         border-radius: 10px;
         background-color: $color-bg;
         transition: top .3s;
         z-index:11;
-        cursor: pointer;
       }
       
-      &:hover > div {
+      &:hover > .grow {
         top: 0;
       }
+    }
+    
+    & > i {
+      @include circle(30px);
+      @include center;
+      color: $color-text;
+      position: absolute;
+      font-size: 15px;
+      right:0;
+      top:0;
+      z-index: 20;
+      background-color: $color-bg;
+      transform: translate(50%, -50%); 
+      cursor: pointer;
     }
   }
 }
