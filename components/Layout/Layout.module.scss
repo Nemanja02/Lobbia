@@ -2,12 +2,17 @@
 
 #root {
   background-color: $color-bg;
+  height: 100vh;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 #main {
-  height: calc(100vh);
-  margin-top: $topbar-height;
-  margin: 0 calc(#{$sidebar-width} + #{$margin});
   background-color: $color-bg;
-  padding: $margin;
+  padding: $margin 0;
+  flex: 1;
 }

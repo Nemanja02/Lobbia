@@ -7,10 +7,7 @@ import Typography from "../Typography/Typography";
 function Profile({ ppicture, username, activity }) {
   return (
     <div className={classes.user}>
-      <img
-        src={ppicture}
-        className={`${classes.ppicture} ${classes.unselectable}`}
-      />
+      <img src={ppicture} />
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
@@ -39,14 +36,11 @@ function Friend({ ppicture, username, activity, link }) {
 
   return (
     <a href={link} className={classes.friend}>
-      <img
-        src={ppicture}
-        className={`${classes.fppicture} ${classes.unselectable}`}
-      />
-      <div className={`${classes.fonline} ${status}`} />
-      <div className={classes.fabout}>
-        <span className={classes.fusername}>{username}</span>
-        <span className={classes.factivity}>{displayActivity}</span>
+      <img src={ppicture} />
+      <div className={`${classes.online} ${status}`} />
+      <div className={classes.about}>
+        <span className={classes.username}>{username}</span>
+        <span className={classes.activity}>{displayActivity}</span>
       </div>
     </a>
   );

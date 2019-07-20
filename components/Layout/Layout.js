@@ -8,9 +8,11 @@ function Layout(props) {
   return (
     <div id={classes.root}>
       <TopBar />
-      <Sidebar />
-      <SidebarSecond />
-      <div id={classes.main}>{props.children}</div>
+      <div className={classes.wrap}>
+        <Sidebar />
+        <div id={classes.main}>{props.children}</div>
+        <SidebarSecond />
+      </div>
     </div>
   )
 }

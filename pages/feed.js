@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
+import FindDialog from "../components/FindDialog/FindDialog";
 import "../config/sass/global.scss";
 import io from "socket.io-client";
 import classes from "./styles/Page.module.scss";
@@ -17,6 +18,8 @@ class Index extends Component {
         <Layout>
           <div className={classes.main} />
         </Layout>
+        
+        <FindDialog />
       </>
     );
   }

@@ -1,4 +1,5 @@
 @import "../../config/sass/variables.scss";
+@import "../../config/sass/mixins.scss";
 
 * {
   margin: 0;
@@ -100,6 +101,7 @@
   &:hover {
     color: rgba(white, 0.3);
   }
+  
   & > div {
     position: absolute;
     top: 0px;
@@ -112,18 +114,16 @@
       background-color: rgba(lighten($color-bg-light, 60%), 0.25);
     }
     & > div {
-      margin: 3px;
+      margin: 4px;
       position: absolute;
       top: 0px;
       bottom: 0px;
       left: 0px;
       right: 0px;
       border-radius: 12px;
-      border: $color-bg-light solid 4px;
+      border: $color-bg-light solid 5px;
       transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include center;
 
       & i {
         font-size: 3em;
@@ -150,27 +150,18 @@
   width: min-content;
   padding: 5px;
   margin: 5px;
-  font-size: 15px !important;
+  & div {
+    background-color: $color-bg;
+    color: $color-primary;
+    @include center;
+    & i {
+      font-size: 15px;
+      @include center;
+    }
+  }
 }
 
 .scrollable {
-  overflow-y: auto;
   height: 350px;
-  flex-grow: 100;
-}
-
-.scrollable::-webkit-scrollbar-track {
-  border-radius: 100px;
-  background-color: $color-bg-light;
-}
-
-.scrollable::-webkit-scrollbar {
-  width: 7px;
-  background-color: $color-bg-light;
-  border-radius: 100px;
-}
-
-.scrollable::-webkit-scrollbar-thumb {
-  background-color: $color-bg;
-  border-radius: 100px;
+  @include scroll;
 }

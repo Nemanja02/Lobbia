@@ -7,7 +7,7 @@ function Game({ icon, name }) {
     <div className={classes.gamediv}>
       <img
         src={icon}
-        className={`${classes.gameicon} ${classes.unselectable}`}
+        className={classes.gameicon}
       />
       <span className={classes.gamename}>{name}</span>
       <div className={classes.playicon}>
@@ -28,7 +28,7 @@ class SidebarSecond extends Component {
 
   render() {
     return (
-      <div className={classes.containerRight}>
+      <div className={classes.container}>
         <div className={`${classes.division} ${classes.growdiv}`}>
           <div className={classes["tab-control"]}>
             <Typography

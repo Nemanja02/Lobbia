@@ -13,7 +13,8 @@ import {
   Link,
   Chip,
   IconButton,
-  SnackbarContent
+  SnackbarContent,
+  Avatar
 } from "@material-ui/core";
 
 import classes from "./styles/AuthForms.module.scss";
@@ -21,7 +22,7 @@ import genres from "../config/music_genres.json";
 import games from "../config/games.json";
 
 const marginTop = {
-  marginTop: "20px"
+  marginTop: "15px"
 };
 
 const createUserAccount = gql`
@@ -115,7 +116,11 @@ function GenreCheck({ name, stateField, clicked }) {
       label={name}
       variant={stateField ? "default" : "outlined"}
       color="primary"
-      icon={<i className="fas fa-music" />}
+      avatar={
+        <Avatar>
+          <i className="fas fa-music" />
+        </Avatar>
+      }
       onClick={clicked}
     />
   );
@@ -409,7 +414,7 @@ class Register extends Component {
         >
           <Grid
             style={{
-              marginTop: "20px"
+              margin: " 20px 0"
             }}
             container
             direction="column"
@@ -531,7 +536,7 @@ class Register extends Component {
               >
                 <Grid
                   style={{
-                    marginTop: "20px"
+                    margin: " 20px 0"
                   }}
                   container
                   direction="column"

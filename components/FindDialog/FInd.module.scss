@@ -1,0 +1,95 @@
+@import "../../config/sass/variables.scss";
+@import "../../config/sass/mixins.scss";
+
+#findBG {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  @include center;
+  background-color: rgba($color-bg, 0.7);
+
+  & .dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px $color-bg;
+    border-radius: 10px;
+    width: 65%;
+    height: 65%;
+    background-color: $color-bg-light;
+    padding: $margin;
+    padding-right: 0;
+
+    & > span {
+      font-size: 29px;
+      padding: 10px;
+      color: $color-text;
+      text-align: center;
+    }
+
+    & > div {
+      width: 100%;
+      display: flex;
+      flex: 1;
+
+      & > a {
+        cursor: pointer;
+        flex: 1;
+        position: relative;
+        height: 100%;
+        margin-right: 10px;
+        border-radius: 10px;
+        padding: $margin;
+        @include center;
+
+        & > .group {
+          height: min-content;
+          z-index: 100;
+          position: relative;
+          @include center;
+          flex-direction: column;
+          & span {
+            text-align: center;
+            &:nth-child(1) {
+              color: $color-text;
+              font-size: 21px;
+            }
+
+            &:nth-child(2) {
+              color: $color-text-second;
+            }
+          }
+        }
+
+        & > .grow {
+          @include fillArea;
+          top: 100%;
+          border-radius: 10px;
+          background-color: $color-bg;
+          transition: top 0.3s;
+          z-index: 11;
+        }
+
+        &:hover > .grow {
+          top: 0;
+        }
+      }
+    }
+    & > i {
+      @include circle(30px);
+      @include center;
+      color: $color-text;
+      position: absolute;
+      font-size: 15px;
+      right: 0;
+      top: 0;
+      z-index: 20;
+      background-color: $color-bg;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+    }
+  }
+}
