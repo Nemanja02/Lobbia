@@ -103,6 +103,7 @@
   &:hover {
     color: rgba(white, 0.3);
   }
+  
   & > div {
     position: absolute;
     top: 0px;
@@ -151,7 +152,7 @@
   width: min-content;
   padding: 5px;
   margin: 5px;
-  & div{
+  & div {
     background-color: $color-bg;
     color: $color-primary;
     @include center;
