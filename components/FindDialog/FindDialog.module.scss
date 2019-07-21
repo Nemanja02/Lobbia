@@ -1,12 +1,18 @@
 @import "../../config/sass/variables.scss";
 @import "../../config/sass/mixins.scss";
 
+@keyframes op {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 li {
   list-style: none;
   padding: 1em;
 }
 
 #findBG {
+  animation: op .3s;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -30,6 +36,7 @@ li {
 
     & > span {
       font-size: 29px;
+      font-weight: 700;
       padding: 10px;
       color: $color-text;
       text-align: center;
@@ -94,13 +101,17 @@ li {
 
           & span {
             text-align: center;
+            line-height: 1.4;
+
             &:nth-child(1) {
+              font-weight: 700;
               color: $color-text;
-              font-size: 21px;
+              font-size: 29px;
             }
 
             &:nth-child(2) {
               color: $color-text-second;
+              font-size: 21px;
             }
           }
         }
@@ -121,17 +132,16 @@ li {
     }
 
     & > i {
-      @include circle(30px);
+      @include circle(40px);
       @include center;
+      @include clickable($color-bg);
       color: $color-text;
       position: absolute;
-      font-size: 15px;
+      font-size: 20px;
       right: 0;
       top: 0;
       z-index: 20;
-      background-color: $color-bg;
       transform: translate(50%, -50%);
-      cursor: pointer;
     }
   }
 }

@@ -195,14 +195,8 @@ span:focus {
 .playicon {
   @include circle(30px);
   @include center;
-  background-color: $color-primary;
+  @include clickable ($color-primary);
   margin: 0 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: lighten($color-primary, 5%);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
-  }
 
   & i {
     @include center;
@@ -231,7 +225,7 @@ span:focus {
     border-bottom: 3px solid lighten($color-bg, 15%);
     cursor: pointer;
     transition: 0.2s all;
-    color: darken($color-text, 25%);
+    color: $color-text-second;
 
     &:hover {
       color: $color-text;

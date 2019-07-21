@@ -6,26 +6,26 @@ function FindDialog({ open, clicked }) {
     <div id={classes.findBG}>
       <div className={classes.dialog}>
         <span>Create Lobby</span>
-        <div className={classes.selected}>
+        <div>
           <a>
             <div className={classes.grow} />
             <div className={classes.group}>
               <span>Lobby size: 2</span>
-              <span>Prepare for trouble and make it double!</span>
+              <span>Partners in crime</span>
             </div>
           </a>
           <a>
             <div className={classes.grow} />
             <div className={classes.group}>
               <span>Lobby size: 5</span>
-              <span>Prepare for trouble and make it double!</span>
+              <span>Gang gang!</span>
             </div>
           </a>
-          <a className={classes.selected}>
+          <a>
             <div className={classes.grow} />
             <div className={classes.group}>
               <span>Custom settings</span>
-              <span>Prepare for trouble and make it double!</span>
+              <span>Choose your destiny!</span>
             </div>
           </a>
         </div>

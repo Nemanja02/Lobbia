@@ -84,7 +84,7 @@
     color: white;
     font-size: 21px; }
   ._2MiF9MaGaI8XFgW04ERC9i .K5zvaUYf-ZTnzyw_KChs- {
-    color: #bdc3c7;
+    color: #cacaca;
     font-size: 13px; }
 
 ._3udlxEOJh_2G9Idomd0xc {
@@ -124,7 +124,7 @@
     line-height: 1.2; }
   ._3udlxEOJh_2G9Idomd0xc .K5zvaUYf-ZTnzyw_KChs- {
     display: block;
-    color: #bdc3c7;
+    color: #cacaca;
     font-size: 13px;
     line-height: 1.2; }
   ._3udlxEOJh_2G9Idomd0xc ._1KQ-NvoGErn1ZYBVzWa-oa {
@@ -180,11 +180,12 @@ span:focus {
   align-items: center;
   justify-content: center;
   background-color: #ff9a60;
-  margin: 0 10px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: background-color .2s, box-shadow .2s;
+  margin: 0 10px; }
   .BuQ1UTgAvpGvJXalCIGFA:hover {
-    background-color: #ffaa7a;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5); }
+    background-color: #ffba93;
+    box-shadow: 0 2px 4px #1e2024; }
   .BuQ1UTgAvpGvJXalCIGFA i {
     display: flex;
     align-items: center;
@@ -213,13 +214,13 @@ span:focus {
     border-bottom: 3px solid #41454e;
     cursor: pointer;
     transition: 0.2s all;
-    color: #bfbfbf; }
+    color: #cacaca; }
     .f0QvsoDYkyphwVPVMQ4gY span:hover {
       color: white; }
 
 ._1RTLLVZRxjzleNc3xsskO9 {
   font-size: 15px;
-  color: #bdc3c7;
+  color: #cacaca;
   text-decoration: none;
   padding: 2px 0;
   margin: 2px 0;
@@ -230,7 +231,7 @@ span:focus {
     font-size: 20px;
     padding: 10px;
     margin: 0 10px 0 10px;
-    color: #bdc3c7; }
+    color: #cacaca; }
   ._1RTLLVZRxjzleNc3xsskO9:hover {
     background-color: #1e2024;
     cursor: pointer;
@@ -240,7 +241,7 @@ span:focus {
     color: #ff9a60; }
 
 ._1w0cJT_UwZPcVHhhvHMxHp {
-  color: #bdc3c7;
+  color: #cacaca;
   font-size: 13px;
   margin: 15px 0 15px 10px; }
 
@@ -294,11 +295,18 @@ span:focus {
   padding: 12px 0;
   flex: 1; }
 
+@keyframes _3d6CvJSuK1iYbc8gE-fMKz {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 li {
   list-style: none;
   padding: 1em; }
 
 #y459uD1o-NS6VebfzEvql {
+  animation: _3d6CvJSuK1iYbc8gE-fMKz .3s;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -322,6 +330,7 @@ li {
     padding-right: 0; }
     #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > span {
       font-size: 29px;
+      font-weight: 700;
       padding: 10px;
       color: white;
       text-align: center; }
@@ -373,12 +382,15 @@ li {
           flex-direction: column;
           transition: opacity .2s; }
           #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > div > a > .xRZDmcZ-NwXoz9S64Xe_u span {
-            text-align: center; }
+            text-align: center;
+            line-height: 1.4; }
             #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > div > a > .xRZDmcZ-NwXoz9S64Xe_u span:nth-child(1) {
+              font-weight: 700;
               color: white;
-              font-size: 21px; }
+              font-size: 29px; }
             #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > div > a > .xRZDmcZ-NwXoz9S64Xe_u span:nth-child(2) {
-              color: #bdc3c7; }
+              color: #cacaca;
+              font-size: 21px; }
         #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > div > a > ._1XyJ8esCAExFFW3iKjWWGH {
           position: absolute;
           top: 0;
@@ -393,21 +405,25 @@ li {
         #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > div > a:hover > ._1XyJ8esCAExFFW3iKjWWGH {
           top: 0; }
     #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > i {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: #1e2024;
+      cursor: pointer;
+      transition: background-color .2s, box-shadow .2s;
       color: white;
       position: absolute;
-      font-size: 15px;
+      font-size: 20px;
       right: 0;
       top: 0;
       z-index: 20;
-      background-color: #1e2024;
-      transform: translate(50%, -50%);
-      cursor: pointer; }
+      transform: translate(50%, -50%); }
+      #y459uD1o-NS6VebfzEvql ._2jWU8Vrf35DBfxfaFDJVdM > i:hover {
+        background-color: #353940;
+        box-shadow: 0 2px 4px #1e2024; }
 
 ._1QLhClawpbbVbhzwPKQnoW {
   width: 100%;
@@ -444,19 +460,18 @@ li {
     transition: 0.2s all;
     margin: 0 10px;
     font-size: 26px;
-    color: #b3b3b3;
+    color: #cacaca;
     cursor: pointer; }
     ._37oAn3Y89ApEv1mw3qJ6Vt i:hover {
-      color: #e6e6e6; }
+      color: #e4e4e4; }
   ._37oAn3Y89ApEv1mw3qJ6Vt > i.W905uihmewjDjQmTcAPZQ {
     font-size: 26px;
     color: #ff9a60;
     cursor: pointer;
-    transition: 0.2s all;
-    border-radius: 50%; }
+    transition: 0.2s all; }
     ._37oAn3Y89ApEv1mw3qJ6Vt > i.W905uihmewjDjQmTcAPZQ:hover {
-      color: #ffaa7a;
-      box-shadow: 0 7px 8px rgba(0, 0, 0, 0.5);
+      color: #ffba93;
+      box-shadow: 0 2px 4px #1e2024;
       animation-play-state: running; }
 
 ._1lLKVne6NzOc5jxDQaqfdJ {
