@@ -15,7 +15,7 @@ function Messages() {
         <input placeholder="Write message..." type="text"/>
         <i className="fas fa-paper-plane"/>
       </div>
-      <div class={classes.scroll}>
+      <div className={classes.scroll}>
         <Message sender="me">fuigheur ueig heuiorg eoiug oeirg owuiergiueogf iesygorihgsoerrighh</Message>
         <Message>fuigheur ueig heuiorg eoiug oeirg owuiergiueogf iesygorihgsoerrighh</Message>
         <Message>fuigheur ueig heuiorg eoiug oeirg owuiergiueogf iesygorihgsoerrighh</Message>
