@@ -3,7 +3,7 @@ import classes from "./FindDialog.module.scss";
 
 function FindDialog({ open, clicked }) {
   return open ? (
-    <div id={classes.findBG}>
+    <div id={classes.findBG} onClick={clicked}>
       <div className={classes.dialog}>
         <span>Create Lobby</span>
         <div>

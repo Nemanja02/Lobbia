@@ -41,15 +41,15 @@ li {
       flex: 1;
 
       & > a:nth-child(1) > .grow {
-        background-color: rgba(44, 130, 201, 0.6);
+        background: linear-gradient(-45deg, #4c87af, #4ca1af);
       }
 
       & > a:nth-child(2) > .grow {
-        background-color: rgba(159, 90, 253, 0.6);
+        background: linear-gradient(-45deg, #396afc, #2948ff);
       }
 
       & > a:nth-child(3) > .grow {
-        background-color: rgba(249, 105, 14, 0.6);
+        background: linear-gradient(-45deg, #f5844b, #ff5e62);
       }
 
       & > a {
@@ -86,7 +86,7 @@ li {
           top: 100%;
           border-radius: 10px;
           background-color: #fff;
-          transition: top 0.3s;
+          transition: top 0.3s ease-out ;
           z-index: 11;
         }
 

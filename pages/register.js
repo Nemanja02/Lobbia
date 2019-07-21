@@ -93,7 +93,151 @@ const dateTheme = createMuiTheme({
     },
 
     primary: {
-      main: "#ff9a60"
+      main: "#f    background-color: $color-bg-light;
+      padding: $margin;
+      padding-right: 0;
+  
+      & > span {
+        font-size: 29px;
+        padding: 10px;
+        color: $color-text;
+        text-align: center;
+      }
+  
+      & > div {
+        width: 100%;
+        display: flex;
+        flex: 1;
+  
+        & > a:nth-child(1) > .grow {
+          background: linear-gradient(-45deg, #4c87af, #4ca1af);
+        }
+  
+        & > a:nth-child(2) > .grow {
+          background: linear-gradient(-45deg, #396afc, #2948ff);
+        }
+  
+        & > a:nth-child(3) > .grow {
+          background: linear-gradient(-45deg, #f5844b, #ff5e62);
+        }
+  
+        & > a {    background-color: $color-bg-light;
+          padding: $margin;
+          padding-right: 0;
+      
+          & > span {
+            font-size: 29px;
+            padding: 10px;
+            color: $color-text;
+            text-align: center;
+          }
+      
+          & > div {
+            width: 100%;
+            display: flex;
+            flex: 1;
+      
+            & > a:nth-child(1) > .grow {
+              background: linear-gradient(-45deg, #4c87af, #4ca1af);
+            }
+      
+            & > a:nth-child(2) > .grow {
+              background: linear-gradient(-45deg, #396afc, #2948ff);
+            }
+      
+            & > a:nth-child(3) > .grow {
+              background: linear-gradient(-45deg, #f5844b, #ff5e62);
+            }
+      
+            & > a {
+              cursor: pointer;
+              flex: 1;
+              position: relative;
+              height: 100%;
+              margin-right: 10px;
+              border-radius: 10px;
+              padding: $margin;
+              @include center;
+      
+              & > .group {
+                height: min-content;
+                z-index: 100;
+                position: relative;
+                @include center;
+                flex-direction: column;
+                & span {
+                  text-align: center;
+                  &:nth-child(1) {
+                    color: $color-text;
+                    font-size: 21px;    background-color: $color-bg-light;
+                    padding: $margin;
+                    padding-right: 0;
+                
+                    & > span {
+                      font-size: 29px;
+                      padding: 10px;
+                      color: $color-text;
+                      text-align: center;
+                    }
+                
+                    & > div {
+                      width: 100%;
+                      display: flex;
+                      flex: 1;
+                
+                      & > a:nth-child(1) > .grow {
+                        background: linear-gradient(-45deg, #4c87af, #4ca1af);
+                      }
+                
+                      & > a:nth-child(2) > .grow {
+                        background: linear-gradient(-45deg, #396afc, #2948ff);
+                      }
+                
+                      & > a:nth-child(3) > .grow {
+                        background: linear-gradient(-45deg, #f5844b, #ff5e62);
+                      }
+                
+                      & > a {
+                        cursor: pointer;
+                        flex: 1;
+                        position: relative;
+                        height: 100%;
+                        margin-right: 10px;
+                        border-radius: 10px;
+                        padding: $margin;
+                        @include center;
+                
+                        & > .group {
+                          height: min-content;
+                          z-index: 100;
+                          position: relative;
+                          @include center;
+                          flex-direction: column;
+                          & span {
+                            text-align: center;
+                            &:nth-child(1) {
+                              color: $color-text;
+                              font-size: 21px;
+          cursor: pointer;
+          flex: 1;
+          position: relative;
+          height: 100%;
+          margin-right: 10px;
+          border-radius: 10px;
+          padding: $margin;
+          @include center;
+  
+          & > .group {
+            height: min-content;
+            z-index: 100;
+            position: relative;
+            @include center;
+            flex-direction: column;
+            & span {
+              text-align: center;
+              &:nth-child(1) {
+                color: $color-text;
+                font-size: 21px;f9a60"
     }
   }
 });
