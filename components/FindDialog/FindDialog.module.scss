@@ -52,6 +52,27 @@ li {
         background: linear-gradient(-45deg, #f5844b, #ff5e62);
       }
 
+      &.selected {
+        & a {
+          width: 0;
+          flex: none;
+          padding: 0;
+          margin: 0;
+          & > .group { opacity: 0; }
+        }
+
+        & a.selected {
+          width: 100%;
+          flex: 1;
+          padding: $margin;
+          margin-right: 10px;
+          & > .group { opacity: 1; }
+          & > .grow {
+            top: 0;
+          }
+        }
+      }
+
       & > a {
         cursor: pointer;
         flex: 1;
@@ -61,6 +82,7 @@ li {
         border-radius: 10px;
         padding: $margin;
         @include center;
+        transition: flex .5s;
 
         & > .group {
           height: min-content;
@@ -68,6 +90,8 @@ li {
           position: relative;
           @include center;
           flex-direction: column;
+          transition: opacity .2s;
+
           & span {
             text-align: center;
             &:nth-child(1) {
@@ -95,6 +119,7 @@ li {
         }
       }
     }
+
     & > i {
       @include circle(30px);
       @include center;

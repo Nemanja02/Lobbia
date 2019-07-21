@@ -3,10 +3,10 @@ import classes from "./FindDialog.module.scss";
 
 function FindDialog({ open, clicked }) {
   return open ? (
-    <div id={classes.findBG} onClick={clicked}>
+    <div id={classes.findBG}>
       <div className={classes.dialog}>
         <span>Create Lobby</span>
-        <div>
+        <div className={classes.selected}>
           <a>
             <div className={classes.grow} />
             <div className={classes.group}>
@@ -21,7 +21,7 @@ function FindDialog({ open, clicked }) {
               <span>Prepare for trouble and make it double!</span>
             </div>
           </a>
-          <a>
+          <a className={classes.selected}>
             <div className={classes.grow} />
             <div className={classes.group}>
               <span>Custom settings</span>
