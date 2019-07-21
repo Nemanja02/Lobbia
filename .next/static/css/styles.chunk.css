@@ -534,6 +534,79 @@ li {
   100% {
     box-shadow: 0 0 0 25px rgba(255, 255, 255, 0); } }
 
+._3aaY7Db9vPcTgihF6NhNxj {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse; }
+  ._3aaY7Db9vPcTgihF6NhNxj > .w8r5ZgswSqoyEsdYcCYqx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px; }
+    ._3aaY7Db9vPcTgihF6NhNxj > .w8r5ZgswSqoyEsdYcCYqx > input {
+      font-size: 16px;
+      background-color: #1e2024;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: 0.2s all;
+      border: 1.5px solid transparent;
+      flex: 1; }
+      ._3aaY7Db9vPcTgihF6NhNxj > .w8r5ZgswSqoyEsdYcCYqx > input:focus {
+        outline: none;
+        border: 1.5px solid #ff9a60; }
+    ._3aaY7Db9vPcTgihF6NhNxj > .w8r5ZgswSqoyEsdYcCYqx i {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ff9a60;
+      cursor: pointer;
+      transition: background-color .2s, box-shadow .2s;
+      margin-left: 12px;
+      color: white;
+      padding-right: 2px; }
+      ._3aaY7Db9vPcTgihF6NhNxj > .w8r5ZgswSqoyEsdYcCYqx i:hover {
+        background-color: #ffba93;
+        box-shadow: 0 2px 4px #1e2024; }
+
+._3tgDwFZA_sjSAvZTCiGxD8 {
+  overflow-y: auto;
+  flex-grow: 100;
+  height: 10px;
+  flex-grow: 100;
+  display: flex;
+  flex-direction: column-reverse; }
+  ._3tgDwFZA_sjSAvZTCiGxD8::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: #32393d; }
+  ._3tgDwFZA_sjSAvZTCiGxD8::-webkit-scrollbar {
+    width: 7px;
+    background-color: #32393d;
+    border-radius: 100px; }
+  ._3tgDwFZA_sjSAvZTCiGxD8::-webkit-scrollbar-thumb {
+    background-color: #1e2024;
+    border-radius: 100px; }
+
+._1It5Ie3tRiocLh_ziqqFBH {
+  color: white;
+  background-color: #1e2024;
+  align-self: flex-start;
+  padding: 12px;
+  margin: 12px;
+  margin-right: calc(3 * 12px);
+  margin-top: 0;
+  border-radius: 10px; }
+  ._1It5Ie3tRiocLh_ziqqFBH._2G2xGYyPVWwtOR835V-PMu {
+    margin: 12px;
+    margin-left: calc(3 * 12px);
+    align-self: flex-end;
+    background-color: #32393d;
+    border: #ff9a60 4px solid; }
+
 * {
   margin: 0;
   padding: 0;
@@ -550,7 +623,8 @@ li {
 ._36ZtNuIBxCDvEaBYCueabF {
   height: 100%;
   background-color: #32393d;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding: 12px; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
