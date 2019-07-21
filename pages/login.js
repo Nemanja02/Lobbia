@@ -16,6 +16,7 @@ const loginMutation = gql`
   mutation($signature: String, $password: String) {
     login(signature: $signature, password: $password) {
       token
+      id
     }
   }
 `;
@@ -173,6 +174,7 @@ export class login extends Component {
                     <Mutation
                       onCompleted={data => {
                         localStorage.setItem("token", data.login.token);
+                        localStorage.setItem("id", data.login.id);
                         Router.push("/feed");
                       }}
                       variables={{

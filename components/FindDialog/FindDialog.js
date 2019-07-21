@@ -1,36 +1,27 @@
 import React, { useState } from "react";
 import classes from "./FindDialog.module.scss";
+import { Slide } from "@material-ui/core";
 
-function FindDialog({ open, clicked }) {
+function FindDialog({ open, clicked, types }) {
   return open ? (
     <div id={classes.findBG}>
-      <div className={classes.dialog}>
-        <span>Create Lobby</span>
-        <div>
-          <a>
-            <div className={classes.grow} />
-            <div className={classes.group}>
-              <span>Lobby size: 2</span>
-              <span>Prepare for trouble and make it double!</span>
-            </div>
-          </a>
-          <a>
-            <div className={classes.grow} />
-            <div className={classes.group}>
-              <span>Lobby size: 5</span>
-              <span>Prepare for trouble and make it double!</span>
-            </div>
-          </a>
-          <a>
-            <div className={classes.grow} />
-            <div className={classes.group}>
-              <span>Custom settings</span>
-              <span>Prepare for trouble and make it double!</span>
-            </div>
-          </a>
+      <Slide in={open} direction="up" mountOnEnter unmountOnExit>
+        <div className={classes.dialog}>
+          <span>Create Lobby</span>
+          <div>
+            {types.map(el => (
+              <a key={el.heading}>
+                <div className={classes.grow} />
+                <div className={classes.group}>
+                  <span>{el.heading}</span>
+                  <span>{el.subheading}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+          <i className="fas fa-times" onClick={clicked} />
         </div>
-        <i className="fas fa-times" onClick={clicked} />
-      </div>
+      </Slide>
     </div>
   ) : null;
 }

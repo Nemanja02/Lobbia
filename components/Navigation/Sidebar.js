@@ -36,7 +36,12 @@ function Friend({ ppicture, username, activity, link }) {
 
   return (
     <a href={link} className={classes.friend}>
-      <img src={ppicture} />
+      <div
+        style={{
+          backgroundImage: `${ppicture}`,
+          backgroundSize: "center"
+        }}
+      />
       <div className={`${classes.online} ${status}`} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
@@ -60,8 +65,8 @@ export class Sidebar extends Component {
       <div className={classes.container}>
         <div className={classes.division}>
           <Profile
-            ppicture="https://ichef.bbci.co.uk/news/660/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
-            username="MarkZucc"
+            ppicture={this.props.profilePicture}
+            username={this.props.fullName}
             activity="Playing Minecraft survival"
           />
           <ul className={classes.sidebar}>

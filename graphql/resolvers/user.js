@@ -333,8 +333,24 @@ exports.createUserAccount = async (
 };
 
 exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
-  if (ctx.user.isAuth) {
-    // ...
+  if (!ctx.user.isAuth || !ctx.user)
+    throw new AuthenticationError({
+      data: {
+        message: "Please provide security token."
+      },
+      internalData: {
+        error: "User tried to fetch profile info with no token supplied."
+      }
+    });
+  else {
+    if (ctx.user.isAuth) {
+      const user = await User.findOne({ _id: id });
+
+      if (!user.profilePicture)
+        user.profilePicture = "/assets/default-user-photo.png";
+
+      return user;
+    }
   }
 };
 
@@ -432,7 +448,8 @@ exports.login = async (parent, { signature, password }) => {
     );
 
     return {
-      token
+      token,
+      id: result._id
     };
   } catch (e) {
     console.log(e);

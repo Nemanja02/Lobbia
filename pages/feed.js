@@ -13,7 +13,11 @@ class Index extends Component {
   render() {
     return (
       <>
-        <Layout>
+        <Layout
+          user={{
+            ...this.props.user
+          }}
+        >
           <div className={classes.main} />
         </Layout>
       </>

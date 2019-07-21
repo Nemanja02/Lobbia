@@ -10,6 +10,8 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
 import Router from "next/router";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:8080/graphql"
@@ -29,6 +31,17 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache()
 });
+
+const getInitialProfileInfo = gql`
+  query($id: ID) {
+    getInitialProfileInfo(id: $id) {
+      fullName
+      accountDescription
+      createdAt
+      profilePicture
+    }
+  }
+`;
 
 const theme = createMuiTheme({
   overrides: {
@@ -62,8 +75,30 @@ Router.events.on("routeChangeComplete", () => {
 });
 
 export class _app extends Component {
+  state = {
+    id: ""
+  };
+
+  static getinitialProps = async ({ Component, router, ctx }) => {
+    let pageProps = {};
+
+    if (Component.pageProps) {
+      const componentProps = await Component.getinitialProps(ctx);
+      pageProps = {
+        ...pageProps,
+        ...componentProps
+      };
+    }
+
+    return { pageProps };
+  };
+
   componentDidMount() {
-    const isAuth = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
+    const isAuth = Boolean(token);
+    const id = localStorage.getItem("id");
+    if (id) this.setState({ id });
+
     if (isAuth) {
       if (Router.route === "/login" || Router.route === "/register")
         Router.push("/feed");
@@ -74,6 +109,8 @@ export class _app extends Component {
 
   render() {
     const { Component, pageProps } = this.props;
+    const customProps = {};
+
     return (
       <div>
         <link
@@ -84,7 +121,30 @@ export class _app extends Component {
         <Container>
           <ApolloProvider client={client}>
             <ThemeProvider theme={theme}>
-              <Component {...pageProps} />
+              {this.state.id ? (
+                <Query
+                  onError={({ graphQLErrors }) => {
+                    console.log(graphQLErrors[0]);
+                  }}
+                  query={getInitialProfileInfo}
+                  variables={{ id: this.state.id }}
+                >
+                  {({ data, error, loading }) => {
+                    if (loading) console.log(`loading...`);
+                    if (error) console.log(error);
+                    else {
+                      for (let field in data.getInitialProfileInfo) {
+                        customProps[field] = data.getInitialProfileInfo[field];
+                      }
+                    }
+                    return (
+                      <Component user={{ ...customProps }} {...pageProps} />
+                    );
+                  }}
+                </Query>
+              ) : (
+                <Component {...pageProps} />
+              )}
             </ThemeProvider>
           </ApolloProvider>
         </Container>

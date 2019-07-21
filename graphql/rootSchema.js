@@ -6,7 +6,7 @@ module.exports = gql`
   scalar DateTime
 
   type Auth {
-    token: String!
+    token: String
     id: ID
   }
 
@@ -19,7 +19,8 @@ module.exports = gql`
     email: String!
     username: String!
     fullName: String!
-    profilePictureUri: String
+    profilePicture: String
+    accountDescription: String
     banned: Boolean
     verified: Boolean
     id: ID!
@@ -57,7 +58,7 @@ module.exports = gql`
 
     marjanoveUmri: [User!]!
 
-    getInitialProfileInfo: User!
+    getInitialProfileInfo(id: ID): User!
   }
 
   # MUTATIONS

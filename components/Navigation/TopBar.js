@@ -11,6 +11,20 @@ function TopBar() {
   return (
     <div className={classes.topbar}>
       <FindDialog
+        types={[
+          {
+            heading: "Lobby size: 2",
+            subheading: "Just you and your teammate"
+          },
+          {
+            heading: "Lobby size: 5",
+            subheading: "Get in touch with 4 others for best experience"
+          },
+          {
+            heading: "Custom",
+            subheading: "The way you like it to be"
+          }
+        ]}
         clicked={() => toggleSearchModal(isSearchModalOpen)}
         open={isSearchModalOpen}
       />
