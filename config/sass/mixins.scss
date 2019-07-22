@@ -45,3 +45,14 @@
   left: 0;
   right: 0;
 }
+
+@mixin clickable($color) {
+  background-color: $color;
+  cursor: pointer;
+  transition: background-color .2s, box-shadow .2s;
+
+  &:hover {
+    background-color: lighten($color, 10%);
+    box-shadow: 0 2px 4px $color-bg;
+  }
+}

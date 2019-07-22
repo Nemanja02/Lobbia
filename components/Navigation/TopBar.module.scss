@@ -40,11 +40,11 @@
     transition: 0.2s all;
     margin: 0 10px;
     font-size: 26px;
-    color: darken($color-text, 30%);
+    color: $color-text-second;
     cursor: pointer;
 
     &:hover {
-      color: darken($color-text, 10%);
+      color: lighten($color-text-second, 10%);
     }
   }
 
@@ -53,14 +53,13 @@
     color: $color-primary;
     cursor: pointer;
     transition: 0.2s all;
-    border-radius: 50%;
     // animation: shadow-pulse 0.85s infinite;
     // animation-play-state: paused;
     // box-shadow: none;
 
     &:hover {
-      color: lighten($color-primary, 5%);
-      box-shadow: 0 7px 8px rgba(0, 0, 0, 0.5);
+      color: lighten($color-primary, 10%);
+      box-shadow: 0 2px 4px $color-bg;
       animation-play-state: running;
     }
   }

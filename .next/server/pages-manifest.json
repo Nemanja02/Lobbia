@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/feed":"static/development/pages/feed.js","/logout":"static/development/pages/logout.js"}
+=======
+{"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js"}
+>>>>>>> f78da8e229498f5f3fbff3a2959084c76b981008

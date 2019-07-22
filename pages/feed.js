@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
+<<<<<<< HEAD
+=======
+import Messages from "../components/Messages/Messages"
+>>>>>>> f78da8e229498f5f3fbff3a2959084c76b981008
 import "../config/sass/global.scss";
 import io from "socket.io-client";
 import classes from "./styles/Page.module.scss";
