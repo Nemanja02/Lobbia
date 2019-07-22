@@ -326,8 +326,9 @@ exports.createUserAccount = async (
     { expiresIn: "30d" }
   );
 
+  ctx.res.setHeader("Set-Cookie", `token=${token}`);
+
   return {
-    token,
     id: user._id
   };
 };
@@ -354,7 +355,7 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
   }
 };
 
-exports.login = async (parent, { signature, password }) => {
+exports.login = async (parent, { signature, password }, ctx) => {
   if (!signature) {
     throw new ValidationError({
       data: {
@@ -447,8 +448,9 @@ exports.login = async (parent, { signature, password }) => {
       }
     );
 
+    ctx.res.setHeader("Set-Cookie", `token=${token}`);
+
     return {
-      token,
       id: result._id
     };
   } catch (e) {

@@ -1,17 +1,29 @@
 import React, { Component } from "react";
 import classes from "./Sidebar.module.scss";
 import Typography from "../Typography/Typography";
+import FindDialog from "../FindDialog/FindDialog";
 
 function Game({ icon, name }) {
+  const [isSearchModalOpen, setModalVisibility] = React.useState(false);
+
+  const toggleSearchModal = prevValue => setModalVisibility(!prevValue);
+
   return (
     <div className={classes.gamediv}>
+      <FindDialog
+        clicked={() => toggleSearchModal(isSearchModalOpen)}
+        open={isSearchModalOpen}
+      />
       <img
         src={icon}
         className={classes.gameicon}
       />
       <span className={classes.gamename}>{name}</span>
       <div className={classes.playicon}>
-        <i className={`fas fa-play`} />
+        <i
+          onClick={() => toggleSearchModal(isSearchModalOpen)}
+          className={`fas fa-play`}
+        />
       </div>
     </div>
   );

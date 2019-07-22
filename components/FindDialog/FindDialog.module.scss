@@ -41,11 +41,11 @@ li {
       flex: 1;
 
       & > a:nth-child(1) > .grow {
-        background-color: rgba(44, 130, 201, 0.6);
+        background: linear-gradient(-45deg, #4c87af, #4ca1af);
       }
 
       & > a:nth-child(2) > .grow {
-        background-color: rgba(159, 90, 253, 0.6);
+        background: linear-gradient(-45deg, #396afc, #2948ff);
       }
 
       & > a:nth-child(3) > .grow {
@@ -61,6 +61,7 @@ li {
         border-radius: 10px;
         padding: $margin;
         @include center;
+        transition: flex 0.5s;
 
         & > .group {
           height: min-content;
@@ -68,6 +69,8 @@ li {
           position: relative;
           @include center;
           flex-direction: column;
+          transition: opacity 0.2s;
+
           & span {
             text-align: center;
             &:nth-child(1) {
@@ -95,6 +98,7 @@ li {
         }
       }
     }
+
     & > i {
       @include circle(30px);
       @include center;

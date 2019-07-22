@@ -90,10 +90,6 @@ const dateTheme = createMuiTheme({
     text: {
       primary: grey[500],
       secondary: grey[600]
-    },
-
-    primary: {
-      main: "#ff9a60"
     }
   }
 });

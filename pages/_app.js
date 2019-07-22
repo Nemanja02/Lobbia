@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import { Container } from "next/app";
-import { ApolloProvider } from "react-apollo";
-import "next-with-apollo";
+import Router from "next/router";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { grey } from "@material-ui/core/colors";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
+import { ApolloProvider } from "react-apollo";
+import "next-with-apollo";
 import { setContext } from "apollo-link-context";
-import Router from "next/router";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import { Provider as UnstatedProvider, Subscribe } from "unstated";
+import UserContainer from "../lib/UserContainer";
+import { parseCookies } from "nookies";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:8080/graphql"
@@ -27,21 +28,10 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache()
 });
-
-const getInitialProfileInfo = gql`
-  query($id: ID) {
-    getInitialProfileInfo(id: $id) {
-      fullName
-      accountDescription
-      createdAt
-      profilePicture
-    }
-  }
-`;
 
 const theme = createMuiTheme({
   overrides: {
@@ -84,6 +74,7 @@ export class _app extends Component {
 
     if (Component.pageProps) {
       const componentProps = await Component.getinitialProps(ctx);
+      console.log(componentProps);
       pageProps = {
         ...pageProps,
         ...componentProps
@@ -94,7 +85,7 @@ export class _app extends Component {
   };
 
   componentDidMount() {
-    const token = localStorage.getItem("token");
+    const token = parseCookies().token;
     const isAuth = Boolean(token);
     const id = localStorage.getItem("id");
     if (id) this.setState({ id });
@@ -109,7 +100,6 @@ export class _app extends Component {
 
   render() {
     const { Component, pageProps } = this.props;
-    const customProps = {};
 
     return (
       <div>
@@ -121,30 +111,17 @@ export class _app extends Component {
         <Container>
           <ApolloProvider client={client}>
             <ThemeProvider theme={theme}>
-              {this.state.id ? (
-                <Query
-                  onError={({ graphQLErrors }) => {
-                    console.log(graphQLErrors[0]);
+              <UnstatedProvider>
+                <Subscribe to={[UserContainer]}>
+                  {user => {
+                    // if (this.state.id) {
+                    //   user.setId(this.state.id);
+                    // }
+
+                    return <Component {...pageProps} />;
                   }}
-                  query={getInitialProfileInfo}
-                  variables={{ id: this.state.id }}
-                >
-                  {({ data, error, loading }) => {
-                    if (loading) console.log(`loading...`);
-                    if (error) console.log(error);
-                    else {
-                      for (let field in data.getInitialProfileInfo) {
-                        customProps[field] = data.getInitialProfileInfo[field];
-                      }
-                    }
-                    return (
-                      <Component user={{ ...customProps }} {...pageProps} />
-                    );
-                  }}
-                </Query>
-              ) : (
-                <Component {...pageProps} />
-              )}
+                </Subscribe>
+              </UnstatedProvider>
             </ThemeProvider>
           </ApolloProvider>
         </Container>

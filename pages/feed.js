@@ -1,28 +1,65 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
-import FindDialog from "../components/FindDialog/FindDialog";
 import "../config/sass/global.scss";
 import io from "socket.io-client";
 import classes from "./styles/Page.module.scss";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import UserContainer from "../lib/UserContainer";
+import { Subscribe } from "unstated";
+import Router from "next/router";
 
 const socket = io();
 
-class Index extends Component {
+let nextContext = null;
+
+class Feed extends Component {
+  state = {
+    id: "",
+    token: ""
+  };
+
+  componentDidMount() {
+    this.setState({
+      id: localStorage.getItem("id"),
+      token: localStorage.getItem("token")
+    });
+  }
+
   render() {
+    const { pageProps } = this.props;
+    console.log(pageProps);
+
     return (
       <>
-        <Layout
-          user={{
-            ...this.props.user
+        <Subscribe to={[UserContainer]}>
+          {user => {
+            // user.getProfileData(this.state.id, this.state.token);
+            return (
+              <Layout
+                {...pageProps}
+                logout={() => {
+                  console.log(`hey`);
+                  Router.push("/logout");
+                }}
+                user={{
+                  ...this.props.user
+                }}
+              >
+                <div className={classes.main} />
+              </Layout>
+            );
           }}
-        >
-          <div className={classes.main} />
-        </Layout>
+        </Subscribe>
       </>
     );
   }
 }
 
-export default Index;
+Feed.getInitialProps = ({ req }) => {
+  return {
+    pageProps: {
+      req
+    }
+  };
+};
+
+export default Feed;

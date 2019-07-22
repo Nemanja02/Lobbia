@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import classes from "./Sidebar.module.scss";
 import NavLink from "./NavLink/NavLink";
-import NavHeading from "./NavHeading";
 import Typography from "../Typography/Typography";
+import { Subscribe } from "unstated";
+import UserContainer from "../../lib/UserContainer";
 
-function Profile({ ppicture, username, activity }) {
+function Profile({ profilePicture, username, activity }) {
   return (
     <div className={classes.user}>
-      <img src={ppicture} />
+      <img src={profilePicture} />
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
@@ -17,7 +18,7 @@ function Profile({ ppicture, username, activity }) {
   );
 }
 
-function Friend({ ppicture, username, activity, link }) {
+function Friend({ profilePicture, username, activity, link }) {
   let status;
   let displayActivity;
   if (activity === "on") {
@@ -38,7 +39,7 @@ function Friend({ ppicture, username, activity, link }) {
     <a href={link} className={classes.friend}>
       <div
         style={{
-          backgroundImage: `${ppicture}`,
+          backgroundImage: `${profilePicture}`,
           backgroundSize: "center"
         }}
       />
@@ -62,86 +63,92 @@ export class Sidebar extends Component {
 
   render() {
     return (
-      <div className={classes.container}>
-        <div className={classes.division}>
-          <Profile
-            ppicture={this.props.profilePicture}
-            username={this.props.fullName}
-            activity="Playing Minecraft survival"
-          />
-          <ul className={classes.sidebar}>
-            {["Feed", "Profile", "Settings"].map(el => {
-              let faIcon;
-              let href;
-              if (el === "Feed") {
-                faIcon = "fas fa-th-list";
-                href = "/feed";
-              }
-              if (el === "Profile") {
-                faIcon = "fas fa-user";
-                href = "/user/:id";
-              }
-              if (el === "Settings") {
-                faIcon = "fas fa-cog";
-                href = "/settings";
-              }
-              return (
-                <p key={el} className={classes.sidebarEl}>
-                  <NavLink path={href} title={el} icon={faIcon} />
-                </p>
-              );
-            })}
-          </ul>
-        </div>
-
-        <div className={`${classes.division} ${classes.growdiv}`}>
-          <div className={classes["tab-control"]}>
-            <Typography
-              active={this.state.activeTab === 1 ? true : false}
-              clicked={() => this.switchActiveTab(1)}
-              variant="nav-title"
-              color="light"
-            >
-              Connections
-            </Typography>
-            <Typography
-              clicked={() => this.switchActiveTab(2)}
-              active={this.state.activeTab === 2 ? true : false}
-              variant="nav-title"
-              color="light"
-            >
-              Lobbies
-            </Typography>
-          </div>
-          <div
-            id="style-3"
-            className={`${classes.scrollable} ${classes.tab_body}`}
-          >
-            {[
-              "Faggot",
-              "Big chungus",
-              "Rrrrrrrresi",
-              "Baka prasqui",
-              "Novica"
-            ].map((el, i) => {
-              let status = "on";
-              if (i % 2 === 0) {
-                status = "dnd";
-              }
-              if (i === 4) status = "off";
-              return (
-                <Friend
-                  key={el}
-                  ppicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-                  username={el}
-                  activity={status}
-                  link="lol"
+      <Subscribe to={[UserContainer]}>
+        {user => {
+          return (
+            <div className={classes.container}>
+              <div className={classes.division}>
+                <Profile
+                  profilePicture={this.props.profilePicture}
+                  username={this.props.fullName}
+                  activity="Playing Minecraft survival"
                 />
-              );
-            })}
-          </div>
-        </div>
-      </div>
+                <ul className={classes.sidebar}>
+                  {["Feed", "Profile", "Settings"].map(el => {
+                    let faIcon;
+                    let href;
+                    if (el === "Feed") {
+                      faIcon = "fas fa-th-list";
+                      href = "/feed";
+                    }
+                    if (el === "Profile") {
+                      faIcon = "fas fa-user";
+                      href = "/user/:id";
+                    }
+                    if (el === "Settings") {
+                      faIcon = "fas fa-cog";
+                      href = "/settings";
+                    }
+                    return (
+                      <p key={el} className={classes.sidebarEl}>
+                        <NavLink path={href} title={el} icon={faIcon} />
+                      </p>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div className={`${classes.division} ${classes.growdiv}`}>
+                <div className={classes["tab-control"]}>
+                  <Typography
+                    active={this.state.activeTab === 1 ? true : false}
+                    clicked={() => this.switchActiveTab(1)}
+                    variant="nav-title"
+                    color="light"
+                  >
+                    Connections
+                  </Typography>
+                  <Typography
+                    clicked={() => this.switchActiveTab(2)}
+                    active={this.state.activeTab === 2 ? true : false}
+                    variant="nav-title"
+                    color="light"
+                  >
+                    Lobbies
+                  </Typography>
+                </div>
+                <div
+                  id="style-3"
+                  className={`${classes.scrollable} ${classes.tab_body}`}
+                >
+                  {[
+                    "Faggot",
+                    "Big chungus",
+                    "Rrrrrrrresi",
+                    "Baka prasqui",
+                    "Novica"
+                  ].map((el, i) => {
+                    let status = "on";
+                    if (i % 2 === 0) {
+                      status = "dnd";
+                    }
+                    if (i === 4) status = "off";
+                    return (
+                      <Friend
+                        key={el}
+                        profilePicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+                        username={el}
+                        activity={status}
+                        link="lol"
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        }}
+      </Subscribe>
     );
   }
 }

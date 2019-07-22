@@ -5,6 +5,7 @@ const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
 const multer = require("multer");
+const cookieParser = require("cookie-parser");
 
 const typeDefs = require("./graphql/rootSchema");
 const resolvers = require("./graphql/resolvers/rootResolvers");
@@ -25,6 +26,7 @@ customFormatError = err => {
 
 app.use(isAuth);
 app.use(multer().single("profilePicture"));
+app.use(cookieParser());
 app.use(express.static("static"));
 const gqlServer = new ApolloServer({
   typeDefs,

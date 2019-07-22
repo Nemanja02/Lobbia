@@ -6,7 +6,6 @@ module.exports = gql`
   scalar DateTime
 
   type Auth {
-    token: String
     id: ID
   }
 
@@ -74,6 +73,8 @@ module.exports = gql`
     ): Boolean
 
     login(signature: String, password: String): Auth
+
+    logout: Boolean
 
     createUserAccount(
       email: String

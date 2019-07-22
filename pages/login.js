@@ -5,6 +5,7 @@ import gql from "graphql-tag";
 import Particles from "react-particles-js";
 import RouterLink from "next/link";
 import Router from "next/router";
+import { parseCookies } from "nookies";
 
 const validateFormCredentials = gql`
   mutation($signature: String, $password: String) {
@@ -15,7 +16,6 @@ const validateFormCredentials = gql`
 const loginMutation = gql`
   mutation($signature: String, $password: String) {
     login(signature: $signature, password: $password) {
-      token
       id
     }
   }
@@ -58,6 +58,20 @@ export class login extends Component {
     }));
   };
 
+  handleSubmit = async (e, validateFormCredentials, login, type) => {
+    if (type === "click") {
+      const isFormValid = await validateFormCredentials();
+      if (isFormValid) await login();
+    } else if (type === "keypress") {
+      if (e.keyCode == 13) {
+        const isFormValid = await validateFormCredentials();
+        if (isFormValid) await login();
+      } else {
+        return;
+      }
+    }
+  };
+
   render() {
     const formFieldsArr = [];
     let type = "text";
@@ -95,6 +109,14 @@ export class login extends Component {
           className={classes["bg-img"]}
         />
         <div
+          onKeyDown={e =>
+            this.handleSubmit(
+              e,
+              this.validateFormCredentials,
+              this.login,
+              "keypress"
+            )
+          }
           className={classes["custom-form-card"]}
           style={{
             width: "500px",
@@ -119,6 +141,7 @@ export class login extends Component {
             }}
           >
             {(validateFormCredentials, { data }) => {
+              this.validateFormCredentials = validateFormCredentials;
               return (
                 <Grid
                   className={classes.grid}
@@ -173,7 +196,6 @@ export class login extends Component {
                   <Grid>
                     <Mutation
                       onCompleted={data => {
-                        localStorage.setItem("token", data.login.token);
                         localStorage.setItem("id", data.login.id);
                         Router.push("/feed");
                       }}
@@ -184,6 +206,7 @@ export class login extends Component {
                       mutation={loginMutation}
                     >
                       {login => {
+                        this.login = login;
                         return (
                           <Grid
                             container
@@ -191,10 +214,14 @@ export class login extends Component {
                             alignItems="center"
                           >
                             <Button
-                              onClick={async () => {
-                                const isFormValid = await validateFormCredentials();
-                                if (isFormValid) await login();
-                              }}
+                              onClick={e =>
+                                this.handleSubmit(
+                                  e,
+                                  validateFormCredentials,
+                                  login,
+                                  "click"
+                                )
+                              }
                               variant="contained"
                               color="primary"
                             >

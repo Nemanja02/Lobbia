@@ -2,11 +2,63 @@ import React from "react";
 
 import classes from "./TopBar.module.scss";
 import FindDialog from "../FindDialog/FindDialog";
+import Router from "next/router";
+import {
+  Menu,
+  MenuItem,
+  ListItemIcon,
+  ListItemText,
+  withStyles
+} from "@material-ui/core";
 
-function TopBar() {
+import { ExitToApp as LogoutIcon } from "@material-ui/icons";
+
+const StyledMenu = withStyles({
+  paper: {
+    border: "1px solid rgba(218, 223, 225, .1)",
+    backgroundColor: "#32393d"
+  }
+})(props => (
+  <Menu
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "center"
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "center"
+    }}
+    {...props}
+  />
+));
+
+const StyledMenuItem = withStyles(theme => ({
+  root: {
+    "&:focus": {
+      backgroundColor: theme.palette.primary.dark,
+      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+        color: theme.palette.primary.light
+      }
+    }
+  }
+}))(MenuItem);
+
+function TopBar(props) {
+  console.log(props.logout);
   const [isSearchModalOpen, setModalVisibility] = React.useState(false);
+  const [isDropdownOpen, changeDropdownState] = React.useState(null);
 
   const toggleSearchModal = prevValue => setModalVisibility(!prevValue);
+
+  const openDropdown = e => changeDropdownState(e.currentTarget);
+  const closeDropdown = () => changeDropdownState(null);
+
+  let caretClasses = ["fas fa-caret-down"];
+
+  if (isDropdownOpen) caretClasses.push(classes.rotatedIcon);
+  if (!isDropdownOpen && caretClasses.length >= 2) caretClasses.splice(1, 1);
 
   return (
     <div className={classes.topbar}>
@@ -42,6 +94,31 @@ function TopBar() {
         <div className={classes.sbar}>
           <input placeholder="Search" className={classes.search} />
           <i className={`fas fa-search ${classes.search_icon_input}`} />
+        </div>
+        <div className={classes["icon-btn-control"]}>
+          <i className={caretClasses.join(" ")} onClick={openDropdown} />
+          <StyledMenu
+            anchorEl={isDropdownOpen}
+            keepMounted
+            open={Boolean(isDropdownOpen)}
+            onClose={closeDropdown}
+          >
+            <StyledMenuItem
+              onClick={() => {
+                console.log(`hey there`);
+                props.logout();
+              }}
+            >
+              <ListItemIcon>
+                <LogoutIcon
+                  classes={{
+                    root: classes["icon-light-color"]
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Log out" />
+            </StyledMenuItem>
+          </StyledMenu>
         </div>
       </div>
     </div>
