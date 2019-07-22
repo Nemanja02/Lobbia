@@ -98,6 +98,17 @@ export class _app extends Component {
     if (!isAuth) if (Router.route !== "/login") Router.push("/login");
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const token = parseCookies().token;
+    const isAuth = Boolean(token);
+    if (isAuth) {
+      if (Router.route === "/login" || Router.route === "/register")
+        Router.push("/feed");
+    }
+
+    if (!isAuth) if (Router.route !== "/login") Router.push("/login");
+  }
+
   render() {
     const { Component, pageProps } = this.props;
 

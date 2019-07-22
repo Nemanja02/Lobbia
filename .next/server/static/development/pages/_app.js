@@ -1361,6 +1361,18 @@ function (_Component) {
       if (!isAuth) if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/login") next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/login");
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      var token = Object(nookies__WEBPACK_IMPORTED_MODULE_24__["parseCookies"])().token;
+      var isAuth = Boolean(token);
+
+      if (isAuth) {
+        if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route === "/login" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route === "/register") next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/feed");
+      }
+
+      if (!isAuth) if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/login") next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/login");
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,

@@ -50,7 +50,6 @@ const createUserAccount = gql`
       dateOfBirth: $dateOfBirth
       password: $password
     ) {
-      token
       id
     }
   }

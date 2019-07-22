@@ -46,7 +46,6 @@ const StyledMenuItem = withStyles(theme => ({
 }))(MenuItem);
 
 function TopBar(props) {
-  console.log(props.logout);
   const [isSearchModalOpen, setModalVisibility] = React.useState(false);
   const [isDropdownOpen, changeDropdownState] = React.useState(null);
 
@@ -103,12 +102,7 @@ function TopBar(props) {
             open={Boolean(isDropdownOpen)}
             onClose={closeDropdown}
           >
-            <StyledMenuItem
-              onClick={() => {
-                console.log(`hey there`);
-                props.logout();
-              }}
-            >
+            <StyledMenuItem onClick={() => props.logout()}>
               <ListItemIcon>
                 <LogoutIcon
                   classes={{

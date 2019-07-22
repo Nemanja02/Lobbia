@@ -1,19 +1,14 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
-<<<<<<< HEAD
-=======
-import Messages from "../components/Messages/Messages"
->>>>>>> f78da8e229498f5f3fbff3a2959084c76b981008
 import "../config/sass/global.scss";
 import io from "socket.io-client";
 import classes from "./styles/Page.module.scss";
 import UserContainer from "../lib/UserContainer";
 import { Subscribe } from "unstated";
+import { destroyCookie } from "nookies";
 import Router from "next/router";
 
 const socket = io();
-
-let nextContext = null;
 
 class Feed extends Component {
   state = {
@@ -30,7 +25,6 @@ class Feed extends Component {
 
   render() {
     const { pageProps } = this.props;
-    console.log(pageProps);
 
     return (
       <>
@@ -41,8 +35,8 @@ class Feed extends Component {
               <Layout
                 {...pageProps}
                 logout={() => {
-                  console.log(`hey`);
-                  Router.push("/logout");
+                  destroyCookie({}, "token");
+                  Router.push("/login");
                 }}
                 user={{
                   ...this.props.user
