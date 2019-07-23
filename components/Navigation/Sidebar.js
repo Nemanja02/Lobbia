@@ -36,12 +36,7 @@ function Friend({ profilePicture, username, activity, link }) {
 
   return (
     <a href={link} className={classes.friend}>
-      <div
-        style={{
-          backgroundImage: `url(${profilePicture})`,
-          backgroundSize: "center"
-        }}
-      />
+      <img src={profilePicture} />
       <div className={`${classes.online} ${status}`} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
