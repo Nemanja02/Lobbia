@@ -10,9 +10,10 @@ import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "react-apollo";
 import "next-with-apollo";
 import { setContext } from "apollo-link-context";
-import { Provider as UnstatedProvider, Subscribe } from "unstated";
-import UserContainer from "../lib/UserContainer";
 import { parseCookies } from "nookies";
+import { Provider } from "react-redux";
+import withRedux from "next-redux-wrapper";
+import initStore from "../lib/initStore";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:8080/graphql"
@@ -95,7 +96,16 @@ export class _app extends Component {
         Router.push("/feed");
     }
 
-    if (!isAuth) if (Router.route !== "/login") Router.push("/login");
+    if (!isAuth)
+      if (
+        Router.route !== "/login" &&
+        !(
+          Router.route !== "/" ||
+          Router.route !== "/forgot-password" ||
+          Router.route !== "/signup"
+        )
+      )
+        Router.push("/login");
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -106,11 +116,20 @@ export class _app extends Component {
         Router.push("/feed");
     }
 
-    if (!isAuth) if (Router.route !== "/login") Router.push("/login");
+    if (!isAuth)
+      if (
+        Router.route !== "/login" &&
+        !(
+          Router.route !== "/" ||
+          Router.route !== "/forgot-password" ||
+          Router.route !== "/signup"
+        )
+      )
+        Router.push("/login");
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
 
     return (
       <div>
@@ -121,19 +140,11 @@ export class _app extends Component {
         <script src="https://kit.fontawesome.com/8d5f687edf.js" />
         <Container>
           <ApolloProvider client={client}>
-            <ThemeProvider theme={theme}>
-              <UnstatedProvider>
-                <Subscribe to={[UserContainer]}>
-                  {user => {
-                    // if (this.state.id) {
-                    //   user.setId(this.state.id);
-                    // }
-
-                    return <Component {...pageProps} />;
-                  }}
-                </Subscribe>
-              </UnstatedProvider>
-            </ThemeProvider>
+            <Provider store={store}>
+              <ThemeProvider theme={theme}>
+                <Component {...pageProps} />;
+              </ThemeProvider>
+            </Provider>
           </ApolloProvider>
         </Container>
       </div>
@@ -141,4 +152,4 @@ export class _app extends Component {
   }
 }
 
-export default _app;
+export default withRedux(initStore)(_app);

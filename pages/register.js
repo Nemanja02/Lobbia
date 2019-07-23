@@ -89,6 +89,9 @@ const dateTheme = createMuiTheme({
     text: {
       primary: grey[500],
       secondary: grey[600]
+    },
+    primary: {
+      main: "#ff9a60"
     }
   }
 });
@@ -549,7 +552,6 @@ class Register extends Component {
           console.log(graphQLErrors);
         }}
         onCompleted={data => {
-          localStorage.setItem("token", data.createUserAccount.token);
           localStorage.setItem("id", data.createUserAccount.id);
           Router.push("/feed");
         }}
@@ -685,13 +687,7 @@ class Register extends Component {
           }}
           className={classes["bg-img"]}
         />
-        <div
-          className={classes["custom-form-card"]}
-          style={{
-            width: "500px",
-            minHeight: "540px"
-          }}
-        >
+        <div className={classes["custom-form-card"]}>
           {this.state.formStage === 0
             ? firstStepRegistration
             : this.state.formStage === 1

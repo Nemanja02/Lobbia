@@ -1,26 +1,17 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
 import "../config/sass/global.scss";
-import io from "socket.io-client";
 import classes from "./styles/Page.module.scss";
-import UserContainer from "../lib/UserContainer";
-import { Subscribe } from "unstated";
-import { destroyCookie } from "nookies";
+import { destroyCookie, parseCookies } from "nookies";
 import Router from "next/router";
-
-const socket = io();
+import * as actions from "../actions/userActions";
+import { connect } from "react-redux";
+import jwt from "jsonwebtoken";
 
 class Feed extends Component {
-  state = {
-    id: "",
-    token: ""
-  };
-
-  componentDidMount() {
-    this.setState({
-      id: localStorage.getItem("id"),
-      token: localStorage.getItem("token")
-    });
+  async componentDidMount() {
+    const decoded = await jwt.decode(parseCookies().token);
+    this.props.fetchUserData(decoded.id);
   }
 
   render() {
@@ -28,25 +19,15 @@ class Feed extends Component {
 
     return (
       <>
-        <Subscribe to={[UserContainer]}>
-          {user => {
-            // user.getProfileData(this.state.id, this.state.token);
-            return (
-              <Layout
-                {...pageProps}
-                logout={() => {
-                  destroyCookie({}, "token");
-                  Router.push("/login");
-                }}
-                user={{
-                  ...this.props.user
-                }}
-              >
-                <div className={classes.main} />
-              </Layout>
-            );
+        <Layout
+          {...pageProps}
+          logout={() => {
+            destroyCookie({}, "token");
+            Router.push("/login");
           }}
-        </Subscribe>
+        >
+          <div className={classes.main} />
+        </Layout>
       </>
     );
   }
@@ -60,4 +41,7 @@ Feed.getInitialProps = ({ req }) => {
   };
 };
 
-export default Feed;
+export default connect(
+  state => state,
+  actions
+)(Feed);
