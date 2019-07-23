@@ -8,7 +8,10 @@ import UserContainer from "../../lib/UserContainer";
 function Profile({ profilePicture, username, activity }) {
   return (
     <div className={classes.user}>
-      <img src={profilePicture} />
+      <img 
+        src={profilePicture} 
+        alt={username}
+      />
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
@@ -37,11 +40,9 @@ function Friend({ profilePicture, username, activity, link }) {
 
   return (
     <a href={link} className={classes.friend}>
-      <div
-        style={{
-          backgroundImage: `${profilePicture}`,
-          backgroundSize: "center"
-        }}
+      <img
+        src={profilePicture}
+        alt={username}
       />
       <div className={`${classes.online} ${status}`} />
       <div className={classes.about}>
