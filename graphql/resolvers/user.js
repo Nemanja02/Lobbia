@@ -348,7 +348,7 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
       const user = await User.findOne({ _id: id });
 
       if (!user.profilePicture)
-        user.profilePicture = "/assets/default-user-photo.png";
+        user.profilePicture = "/assets/default-user-male.png";
 
       return user;
     }

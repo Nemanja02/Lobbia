@@ -62,7 +62,7 @@
   & > img {
     @include circle(70px);
     margin-right: 15px;
-    object-fit: cover;
+    object-fit: fill;
     @include unselectable;
   }
 
@@ -195,7 +195,7 @@ span:focus {
 .playicon {
   @include circle(30px);
   @include center;
-  @include clickable ($color-primary);
+  @include clickable($color-primary);
   margin: 0 10px;
 
   & i {
