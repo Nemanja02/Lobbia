@@ -4,14 +4,14 @@ import NavLink from "./NavLink/NavLink";
 import Typography from "../Typography/Typography";
 import { connect } from "react-redux";
 
-function Profile({ profilePicture, username, activity }) {
+function Profile({ profilePicture, username, status }) {
   return (
     <div className={classes.user}>
       <img src={profilePicture} />
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
-        <span className={classes.activity}>{activity}</span>
+        <span className={classes.activity}>{status}</span>
       </div>
     </div>
   );
@@ -62,10 +62,7 @@ export class Sidebar extends Component {
           <Profile
             profilePicture={this.props.user.profilePicture}
             username={this.props.user.username}
-            activity={
-              this.props.user.accountDescription ||
-              "Lobbia is an awesome website"
-            }
+            status={this.props.user.isOnline ? "online" : null}
           />
           <ul className={classes.sidebar}>
             {["Feed", "Profile", "Settings"].map(el => {

@@ -20,7 +20,7 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("token");
+  const token = parseCookies().token;
   return {
     headers: {
       ...headers,
@@ -86,46 +86,8 @@ export class _app extends Component {
   };
 
   componentDidMount() {
-    const token = parseCookies().token;
-    const isAuth = Boolean(token);
     const id = localStorage.getItem("id");
     if (id) this.setState({ id });
-
-    if (isAuth) {
-      if (Router.route === "/login" || Router.route === "/register")
-        Router.push("/feed");
-    }
-
-    if (!isAuth)
-      if (
-        Router.route !== "/login" &&
-        !(
-          Router.route !== "/" ||
-          Router.route !== "/forgot-password" ||
-          Router.route !== "/signup"
-        )
-      )
-        Router.push("/login");
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const token = parseCookies().token;
-    const isAuth = Boolean(token);
-    if (isAuth) {
-      if (Router.route === "/login" || Router.route === "/register")
-        Router.push("/feed");
-    }
-
-    if (!isAuth)
-      if (
-        Router.route !== "/login" &&
-        !(
-          Router.route !== "/" ||
-          Router.route !== "/forgot-password" ||
-          Router.route !== "/signup"
-        )
-      )
-        Router.push("/login");
   }
 
   render() {
@@ -142,7 +104,7 @@ export class _app extends Component {
           <ApolloProvider client={client}>
             <Provider store={store}>
               <ThemeProvider theme={theme}>
-                <Component {...pageProps} />;
+                <Component {...pageProps} />
               </ThemeProvider>
             </Provider>
           </ApolloProvider>

@@ -97,13 +97,19 @@ module.exports =
 /*!**************************!*\
   !*** ./actions/types.js ***!
   \**************************/
-/*! exports provided: PROFILE_DATA */
+/*! exports provided: PROFILE_DATA, LOGOUT, SET_ID, CLEAR_STATE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PROFILE_DATA", function() { return PROFILE_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT", function() { return LOGOUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_ID", function() { return SET_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_STATE", function() { return CLEAR_STATE; });
 var PROFILE_DATA = "SET_PROFILE_DATA";
+var LOGOUT = "logout_user";
+var SET_ID = "set_id";
+var CLEAR_STATE = "clear_state";
 
 /***/ }),
 
@@ -1126,7 +1132,7 @@ var httpLink = Object(apollo_link_http__WEBPACK_IMPORTED_MODULE_18__["createHttp
 });
 var authLink = Object(apollo_link_context__WEBPACK_IMPORTED_MODULE_21__["setContext"])(function (_, _ref) {
   var headers = _ref.headers;
-  var token = localStorage.getItem("token");
+  var token = Object(nookies__WEBPACK_IMPORTED_MODULE_22__["parseCookies"])().token;
   return {
     headers: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_9__["default"])({}, headers, {
       authorization: token ? "Bearer ".concat(token) : ""
@@ -1191,30 +1197,10 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(_app, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var token = Object(nookies__WEBPACK_IMPORTED_MODULE_22__["parseCookies"])().token;
-      var isAuth = Boolean(token);
       var id = localStorage.getItem("id");
       if (id) this.setState({
         id: id
       });
-
-      if (isAuth) {
-        if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route === "/login" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route === "/register") next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/feed");
-      }
-
-      if (!isAuth) if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/login" && !(next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/forgot-password" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/signup")) next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/login");
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      var token = Object(nookies__WEBPACK_IMPORTED_MODULE_22__["parseCookies"])().token;
-      var isAuth = Boolean(token);
-
-      if (isAuth) {
-        if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route === "/login" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route === "/register") next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/feed");
-      }
-
-      if (!isAuth) if (next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/login" && !(next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/forgot-password" || next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route !== "/signup")) next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/login");
     }
   }, {
     key: "render",
@@ -1234,7 +1220,7 @@ function (_Component) {
         store: store
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_material_ui_styles__WEBPACK_IMPORTED_MODULE_14__["ThemeProvider"], {
         theme: theme
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Component, pageProps), ";")))));
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Component, pageProps))))));
     }
   }]);
 
@@ -1329,7 +1315,9 @@ var initialUserStore = {
   createdAt: "",
   profilePicture: "",
   dateOfBirth: "",
-  username: ""
+  username: "",
+  id: "",
+  isOnline: false
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialUserStore;
@@ -1338,6 +1326,15 @@ var initialUserStore = {
   switch (action.type) {
     case _actions_types__WEBPACK_IMPORTED_MODULE_1__["PROFILE_DATA"]:
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, action.payload);
+
+    case _actions_types__WEBPACK_IMPORTED_MODULE_1__["LOGOUT"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, action.payload);
+
+    case _actions_types__WEBPACK_IMPORTED_MODULE_1__["SET_ID"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, action.payload);
+
+    case _actions_types__WEBPACK_IMPORTED_MODULE_1__["CLEAR_STATE"]:
+      return {};
 
     default:
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);

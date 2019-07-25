@@ -4,6 +4,7 @@ const app = express();
 const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
+const { formatError, isInstance } = require("apollo-errors");
 const multer = require("multer");
 const cookieParser = require("cookie-parser");
 
@@ -17,12 +18,18 @@ const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
 
-customFormatError = err => {
-  if (err.originalError && err.originalError.error_message) {
-    err.message = err.originalError.error_message;
+function customFormatError(error) {
+  const { originalError } = error;
+
+  if (isInstance(originalError)) {
+    console.log({
+      type: originalError.name,
+      date: originalError.time_thrown,
+      internalData: originalError.internalData
+    });
   }
-  return err;
-};
+  return formatError(error);
+}
 
 app.use(isAuth);
 app.use(multer().single("profilePicture"));
@@ -31,6 +38,7 @@ app.use(express.static("static"));
 const gqlServer = new ApolloServer({
   typeDefs,
   resolvers,
+  formatError: customFormatError,
   context: ({ req }) => req
 });
 gqlServer.applyMiddleware({ app });

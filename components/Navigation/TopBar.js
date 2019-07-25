@@ -2,7 +2,6 @@ import React from "react";
 
 import classes from "./TopBar.module.scss";
 import FindDialog from "../FindDialog/FindDialog";
-import Router from "next/router";
 import {
   Menu,
   MenuItem,
@@ -11,11 +10,11 @@ import {
   withStyles
 } from "@material-ui/core";
 
-import { ExitToApp as LogoutIcon } from "@material-ui/icons";
+import { ExitToApp as LogoutIcon, Settings } from "@material-ui/icons";
 
 const StyledMenu = withStyles({
   paper: {
-    border: "1px solid rgba(218, 223, 225, .1)",
+    border: "1px solid rgba(218, 223, 225, .05)",
     backgroundColor: "#32393d"
   }
 })(props => (
@@ -28,7 +27,7 @@ const StyledMenu = withStyles({
     }}
     transformOrigin={{
       vertical: "top",
-      horizontal: "center"
+      horizontal: "left"
     }}
     {...props}
   />
@@ -37,9 +36,9 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles(theme => ({
   root: {
     "&:focus": {
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: "rgba(255,255,255,0.1)",
       "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.primary.light
+        color: theme.palette.text.primary
       }
     }
   }
@@ -55,6 +54,17 @@ function TopBar(props) {
   const closeDropdown = () => changeDropdownState(null);
 
   let caretClasses = ["fas fa-caret-down"];
+
+  const dropdownFields = [
+    {
+      title: "Settings",
+      icon: Settings
+    },
+    {
+      title: "Log out",
+      icon: LogoutIcon
+    }
+  ];
 
   if (isDropdownOpen) caretClasses.push(classes.rotatedIcon);
   if (!isDropdownOpen && caretClasses.length >= 2) caretClasses.splice(1, 1);
@@ -102,16 +112,18 @@ function TopBar(props) {
             open={Boolean(isDropdownOpen)}
             onClose={closeDropdown}
           >
-            <StyledMenuItem onClick={() => props.logout()}>
-              <ListItemIcon>
-                <LogoutIcon
-                  classes={{
-                    root: classes["icon-light-color"]
-                  }}
-                />
-              </ListItemIcon>
-              <ListItemText primary="Log out" />
-            </StyledMenuItem>
+            {dropdownFields.map(el => (
+              <StyledMenuItem key={el.title} onClick={() => props.logout()}>
+                <ListItemIcon>
+                  <el.icon
+                    classes={{
+                      root: classes["icon-light-color"]
+                    }}
+                  />
+                </ListItemIcon>
+                <ListItemText primary={el.title} />
+              </StyledMenuItem>
+            ))}
           </StyledMenu>
         </div>
       </div>

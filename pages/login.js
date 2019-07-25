@@ -5,7 +5,8 @@ import gql from "graphql-tag";
 import Particles from "react-particles-js";
 import RouterLink from "next/link";
 import Router from "next/router";
-import { parseCookies } from "nookies";
+import { connect } from "react-redux";
+import * as actions from "../actions/userActions";
 
 const validateFormCredentials = gql`
   mutation($signature: String, $password: String) {
@@ -28,7 +29,6 @@ import {
   Typography,
   Button,
   Link,
-  Chip,
   IconButton,
   SnackbarContent
 } from "@material-ui/core";
@@ -125,11 +125,10 @@ export class login extends Component {
         >
           <Mutation
             onError={({ graphQLErrors }) => {
-              console.log(graphQLErrors[0]);
               this.setState({
                 error: {
                   show: true,
-                  message: graphQLErrors[0].extensions.exception.data.message,
+                  message: graphQLErrors[0].data.message,
                   logLevel: "danger"
                 }
               });
@@ -302,4 +301,7 @@ export class login extends Component {
   }
 }
 
-export default login;
+export default connect(
+  null,
+  actions
+)(login);

@@ -1,51 +1,131 @@
 {
-  "0": "League of Legends",
-  "5": "DOTA 2",
-  "10": "Smite",
-  "15": "Rocket League",
-  "20": "Terraria",
-  "25": "Minecraft",
-  "30": "Fortnite",
-  "35": "PUBG",
-  "40": "DayZ",
-  "45": "CS: GO",
-  "50": "CS: Source",
-  "55": "CS 1.6",
-  "60": "World of Warcraft",
-  "65": "Hearthstone",
-  "70": "Gwent",
-  "75": "APEX Legends",
-  "80": "Overwatch",
-  "85": "Starcraft",
-  "90": "Paladins",
-  "95": "Realm Royale",
-  "100": "Starcraft II",
-  "105": "Street Fighter V",
-  "110": "Dragon Ball FighterZ",
-  "115": "Super Smash Bros",
-  "120": "Rivals of Aether",
-  "125": "Iconoclasts",
-  "130": "Superhot",
-  "135": "Mirror\\'s Edge",
-  "140": "Brawlhalla",
-  "145": "Stick Fight the Game",
-  "150": "Himno",
-  "155": "GTA ",
-  "160": "Clash of Clans",
-  "165": "Clash Royale",
-  "170": "Brawl Stars",
-  "175": "Sims",
-  "180": "Legend of Zelda: Breath of the Wild",
-  "185": "Super Mario Odyssey",
-  "190": "Totally Accurate Battle Simulator",
-  "195": "Enter the Gungeon",
-  "200": "Binding of Isaac",
-  "205": "Fallout",
-  "210": "Crash Bandicoot",
-  "215": "Don't starve",
-  "220": "Spyro",
-  "225": "Half Life",
-  "230": "Hollow Knight",
-  "235": "Shovel Knight",
-  "240": "The End is Nigh"
+  "0": {
+    "label": "League of Legends",
+    "modes": ["unranked", "ranked"]
+  },
+  "5": {
+    "label": "DOTA 2",
+    "modes": ["ranked", "unranked", "turbo"]
+  },
+  "10": {
+    "label": "Smite"
+  },
+  "15": {
+    "label": "Rocket League"
+  },
+  "20": {
+    "label": "Terraria"
+  },
+  "25": {
+    "label": "Minecraft",
+    "modes": ["PVP", "Hunger Games", "Survival"]
+  },
+  "30": {
+    "label": "Fortnite"
+  },
+  "35": {
+    "label": "PUBG"
+  },
+  "40": {
+    "label": "DayZ"
+  },
+  "45": {
+    "label": "CS:GO"
+  },
+  "50": {
+    "label": "CS Source"
+  },
+  "55": {
+    "label": "CS 1.6"
+  },
+  "60": {
+    "label": "World of Warcraft"
+  },
+  "65": {
+    "label": "Hearthstone"
+  },
+  "70": {
+    "label": "Gwent"
+  },
+  "75": {
+    "label": "APEX Legends"
+  },
+  "80": {
+    "label": "Overwatch"
+  },
+  "85": {
+    "label": "Starcraft"
+  },
+  "90": {
+    "label": "Paladins"
+  },
+  "95": {
+    "label": "Realm Royale"
+  },
+  "100": {
+    "label": "Starcraft II"
+  },
+  "105": {
+    "label": "Street Fighter V"
+  },
+  "110": {
+    "label": "Dragon Ball FighterZ"
+  },
+  "115": {
+    "label": "Super Smash Bros"
+  },
+  "120": {
+    "label": "Rivals of Aether"
+  },
+  "125": {
+    "label": "Iconoclasts"
+  },
+  "130": {
+    "label": "Superhot"
+  },
+  "135": {
+    "label": "Mirror\\'s Edge"
+  },
+  "140": {
+    "label": "Brawlhalla"
+  },
+  "145": {
+    "label": "Stick Fight the Game"
+  },
+  "150": {
+    "label": "Himno"
+  },
+  "155": {
+    "label": "GTA V"
+  },
+  "160": {
+    "label": "Clash of Clans"
+  },
+  "165": {
+    "label": "Clash Royale"
+  },
+  "170": {
+    "label": "Brawl Stars"
+  },
+  "175": {
+    "label": "Sims"
+  },
+  "180": {
+    "label": "Legend of Zelda: Breath of the Wild"
+  },
+  "185": {
+    "label": "Super Mario Odyssey"
+  },
+  "190": {
+    "label": "Totally Accurate Battle Simulator"
+  },
+  "195": {
+    "label": "Enter the Gungeon"
+  },
+  "200": {
+    "label": "Binding of Isaac"
+  },
+  "205": {
+    "label": "Fallout"
+  }
 }

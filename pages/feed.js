@@ -2,16 +2,13 @@ import React, { Component } from "react";
 import Layout from "../components/Layout/Layout";
 import "../config/sass/global.scss";
 import classes from "./styles/Page.module.scss";
-import { destroyCookie, parseCookies } from "nookies";
-import Router from "next/router";
 import * as actions from "../actions/userActions";
 import { connect } from "react-redux";
-import jwt from "jsonwebtoken";
+import withAuth from "../lib/withAuth";
 
 class Feed extends Component {
-  async componentDidMount() {
-    const decoded = await jwt.decode(parseCookies().token);
-    this.props.fetchUserData(decoded.id);
+  componentDidMount() {
+    this.props.setId(localStorage.getItem("id"));
   }
 
   render() {
@@ -19,13 +16,7 @@ class Feed extends Component {
 
     return (
       <>
-        <Layout
-          {...pageProps}
-          logout={() => {
-            destroyCookie({}, "token");
-            Router.push("/login");
-          }}
-        >
+        <Layout {...pageProps}>
           <div className={classes.main} />
         </Layout>
       </>
@@ -36,7 +27,7 @@ class Feed extends Component {
 Feed.getInitialProps = ({ req }) => {
   return {
     pageProps: {
-      req
+      isAuth: req.user.isAuth
     }
   };
 };
@@ -44,4 +35,4 @@ Feed.getInitialProps = ({ req }) => {
 export default connect(
   state => state,
   actions
-)(Feed);
+)(withAuth(Feed));

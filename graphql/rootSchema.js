@@ -29,6 +29,7 @@ module.exports = gql`
     dateOfBirth: Date
     createdAt: DateTime!
     updatedAt: DateTime!
+    isOnline: Boolean
   }
 
   type Message {
@@ -60,6 +61,10 @@ module.exports = gql`
     getInitialProfileInfo(id: ID): User!
   }
 
+  type Response {
+    success: Boolean
+  }
+
   # MUTATIONS
   type Mutation {
     initLobby(participants: [String], type: Int, status: Int): Lobby
@@ -74,7 +79,7 @@ module.exports = gql`
 
     login(signature: String, password: String): Auth
 
-    logout: Boolean
+    logout(id: ID!): Response
 
     createUserAccount(
       email: String

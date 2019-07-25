@@ -47,6 +47,11 @@ const UserSchema = new Schema(
       default: 0
     },
 
+    isOnline: {
+      type: Boolean,
+      default: false
+    },
+
     accountDescription: {
       type: String,
       default: ""

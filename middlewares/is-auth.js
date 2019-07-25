@@ -4,7 +4,10 @@ const { parseCookies } = require("nookies");
 
 module.exports = async (req, res, next) => {
   req.user = {};
-  const token = parseCookies({ req, res }).token;
+  const tokenHeader = req.get("Authorization");
+  let token;
+  if (tokenHeader) token = tokenHeader.split(" ")[1];
+  else req.user.isAuth = false;
 
   if (!token || token === "") {
     req.user.isAuth = false;

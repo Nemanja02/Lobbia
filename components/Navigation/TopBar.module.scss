@@ -59,7 +59,7 @@
 
     &:hover {
       color: lighten($color-primary, 10%);
-      box-shadow: 0 2px 4px $color-bg;
+      text-shadow: 0 2px 4px $color-bg;
       animation-play-state: running;
     }
   }

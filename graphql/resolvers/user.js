@@ -355,6 +355,28 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
   }
 };
 
+exports.logout = async (parent, { id }) => {
+  try {
+    const doc = await User.findOneAndUpdate(
+      { _id: id },
+      {
+        isOnline: false
+      },
+      { new: true }
+    );
+    if (doc) {
+      return {
+        succes: true
+      };
+    }
+  } catch (e) {
+    console.log(e);
+    return {
+      success: false
+    };
+  }
+};
+
 exports.login = async (parent, { signature, password }, ctx) => {
   if (!signature) {
     throw new ValidationError({
@@ -424,7 +446,6 @@ exports.login = async (parent, { signature, password }, ctx) => {
       }
     });
   }
-
   const isMatch = await result.comparePasswords(password);
 
   if (!isMatch) {
@@ -449,6 +470,13 @@ exports.login = async (parent, { signature, password }, ctx) => {
     );
 
     ctx.res.setHeader("Set-Cookie", `token=${token}`);
+
+    await User.findOneAndUpdate(
+      { _id: result._id },
+      {
+        isOnline: true
+      }
+    );
 
     return {
       id: result._id

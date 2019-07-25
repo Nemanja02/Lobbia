@@ -1,4 +1,4 @@
-import { PROFILE_DATA } from "../actions/types";
+import { PROFILE_DATA, LOGOUT, SET_ID, CLEAR_STATE } from "../actions/types";
 
 const initialUserStore = {
   fullName: "",
@@ -6,7 +6,9 @@ const initialUserStore = {
   createdAt: "",
   profilePicture: "",
   dateOfBirth: "",
-  username: ""
+  username: "",
+  id: "",
+  isOnline: false
 };
 
 export default (state = initialUserStore, action) => {
@@ -16,6 +18,18 @@ export default (state = initialUserStore, action) => {
         ...state,
         ...action.payload
       };
+    case LOGOUT:
+      return {
+        ...state,
+        ...action.payload
+      };
+    case SET_ID:
+      return {
+        ...state,
+        ...action.payload
+      };
+    case CLEAR_STATE:
+      return {};
     default:
       return {
         ...state

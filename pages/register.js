@@ -3,6 +3,8 @@ import RouterLink from "next/link";
 import Router from "next/router";
 import Particles from "react-particles-js";
 import { Mutation } from "react-apollo";
+import { connect } from "react-redux";
+import * as actions from "../actions/userActions";
 import gql from "graphql-tag";
 import {
   Grid,
@@ -363,8 +365,7 @@ class Register extends Component {
                 isValidated: false,
                 logLevel: "danger",
 
-                displayMessage:
-                  graphQLErrors[0].extensions.exception.data.message
+                displayMessage: graphQLErrors[0].data.message
               }
             }));
           }}
@@ -747,4 +748,7 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default connect(
+  state => state,
+  actions
+)(Register);
