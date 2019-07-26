@@ -1,5 +1,27 @@
 @import "../../../config/sass/variables.scss";
 
+
+.link-active {
+  background-color: rgba(#fff, 0.1);
+  font-size: 15px;
+  color: $color-text;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 2px 0;
+  margin: 2px 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  cursor: default;
+
+  &Icon {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    color: $color-primary;
+  }
+}
+
 .link {
   font-size: 15px;
   color: $color-text-second;

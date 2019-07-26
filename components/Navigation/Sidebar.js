@@ -46,23 +46,21 @@ function Friend({ profilePicture, username, activity, link }) {
   );
 }
 
-export class Sidebar extends Component {
-  state = {
-    activeTab: 1
+export function Sidebar(props) {
+
+  const [activeTab, changeTabState] = React.useState(1);
+
+  const switchActiveTab = i => {
+    changeTabState(i)
   };
 
-  switchActiveTab = i => {
-    this.setState({ activeTab: i });
-  };
-
-  render() {
     return (
       <div className={classes.container}>
         <div className={classes.division}>
           <Profile
-            profilePicture={this.props.user.profilePicture}
-            username={this.props.user.username}
-            status={this.props.user.isOnline ? "online" : null}
+            profilePicture={props.user.profilePicture}
+            username={props.user.username}
+            status={props.user.isOnline ? "online" : null}
           />
           <ul className={classes.sidebar}>
             {["Feed", "Profile", "Settings"].map(el => {
@@ -82,7 +80,7 @@ export class Sidebar extends Component {
               }
               return (
                 <p key={el} className={classes.sidebarEl}>
-                  <NavLink path={href} title={el} icon={faIcon} />
+                  <NavLink statePath={props.path.value} path={href} title={el} icon={faIcon} />
                 </p>
               );
             })}
@@ -92,16 +90,17 @@ export class Sidebar extends Component {
         <div className={`${classes.division} ${classes.growdiv}`}>
           <div className={classes["tab-control"]}>
             <Typography
-              active={this.state.activeTab === 1 ? true : false}
-              clicked={() => this.switchActiveTab(1)}
+              active={activeTab === 1 ? true : false}
+              clicked={() => switchActiveTab(1)}
               variant="nav-title"
               color="light"
             >
               Connections
             </Typography>
             <Typography
-              clicked={() => this.switchActiveTab(2)}
-              active={this.state.activeTab === 2 ? true : false}
+              clicked={() => switchActiveTab(2)}
+              active={
+                activeTab === 2 ? true : false}
               variant="nav-title"
               color="light"
             >
@@ -138,7 +137,6 @@ export class Sidebar extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default connect(state => state)(Sidebar);

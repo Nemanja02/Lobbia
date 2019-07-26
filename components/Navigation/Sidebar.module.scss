@@ -30,27 +30,6 @@
 
 .sidebar {
   width: 100%;
-
-  &El {
-    font-size: 16px;
-    color: $color-text;
-    display: flex;
-    width: 100%;
-    align-items: center;
-
-    &:hover {
-      background-color: $color-bg;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-  }
-
-  &_icon {
-    font-size: $margin;
-    margin: 10px $margin;
-    color: $color-text;
-    background-color: red;
-  }
 }
 
 .user {

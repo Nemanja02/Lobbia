@@ -97,7 +97,7 @@ module.exports =
 /*!**************************!*\
   !*** ./actions/types.js ***!
   \**************************/
-/*! exports provided: PROFILE_DATA, LOGOUT, SET_ID, CLEAR_STATE */
+/*! exports provided: PROFILE_DATA, LOGOUT, SET_ID, CLEAR_STATE, SET_PATH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106,10 +106,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT", function() { return LOGOUT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_ID", function() { return SET_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_STATE", function() { return CLEAR_STATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_PATH", function() { return SET_PATH; });
 var PROFILE_DATA = "SET_PROFILE_DATA";
 var LOGOUT = "logout_user";
 var SET_ID = "set_id";
 var CLEAR_STATE = "clear_state";
+var SET_PATH = "set_path";
 
 /***/ }),
 
@@ -1276,6 +1278,39 @@ function () {
 
 /***/ }),
 
+/***/ "./reducers/path.js":
+/*!**************************!*\
+  !*** ./reducers/path.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _actions_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/types */ "./actions/types.js");
+
+
+var initialPathState = {
+  value: ""
+};
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialPathState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_types__WEBPACK_IMPORTED_MODULE_1__["SET_PATH"]:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        value: action.payload
+      });
+
+    default:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+  }
+});
+
+/***/ }),
+
 /***/ "./reducers/rootReducers.js":
 /*!**********************************!*\
   !*** ./reducers/rootReducers.js ***!
@@ -1288,10 +1323,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user */ "./reducers/user.js");
+/* harmony import */ var _path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./path */ "./reducers/path.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  user: _user__WEBPACK_IMPORTED_MODULE_1__["default"]
+  user: _user__WEBPACK_IMPORTED_MODULE_1__["default"],
+  path: _path__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
