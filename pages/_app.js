@@ -99,6 +99,8 @@ export class _app extends Component {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"/>
         <script src="https://kit.fontawesome.com/8d5f687edf.js" />
         <Container>
           <ApolloProvider client={client}>

@@ -1214,6 +1214,9 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("link", {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("link", {
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+        rel: "stylesheet"
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("script", {
         src: "https://kit.fontawesome.com/8d5f687edf.js"
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_11__["Container"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_19__["ApolloProvider"], {

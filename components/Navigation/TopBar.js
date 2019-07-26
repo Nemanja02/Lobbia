@@ -57,12 +57,12 @@ function TopBar(props) {
 
   const dropdownFields = [
     {
-      title: "Settings",
-      icon: Settings
+      title: "Preferences",
+      icon: "fas fa-sliders-h",
     },
     {
       title: "Log out",
-      icon: LogoutIcon
+      icon: "fas fa-caret-square-right",
     }
   ];
 
@@ -112,18 +112,18 @@ function TopBar(props) {
             open={Boolean(isDropdownOpen)}
             onClose={closeDropdown}
           >
-            {dropdownFields.map(el => (
-              <StyledMenuItem key={el.title} onClick={() => props.logout()}>
+            {dropdownFields.map(el => {
+              return (
+                <StyledMenuItem key={el.title} onClick={el.title === "Log out" ? () => props.logout() : null}>
                 <ListItemIcon>
-                  <el.icon
-                    classes={{
-                      root: classes["icon-light-color"]
-                    }}
+                  <i
+                    className={`${el.icon} ${classes["icon-light-color"]}`}
                   />
                 </ListItemIcon>
                 <ListItemText primary={el.title} />
               </StyledMenuItem>
-            ))}
+              )
+            })}
           </StyledMenu>
         </div>
       </div>
