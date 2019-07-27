@@ -5,10 +5,16 @@ const { Schema } = mongoose;
 
 const { ObjectId } = Schema.Types;
 
-const InterestSchema = new Schema({
+const GamesSchema = new Schema({
   id: Number,
   label: String
 });
+
+const MusicSchema = new Schema({
+  id: Number,
+  label: String,
+  subgenres: [String]
+})
 
 const UserSchema = new Schema(
   {
@@ -38,8 +44,8 @@ const UserSchema = new Schema(
     },
 
     interests: {
-      music: [InterestSchema],
-      games: [InterestSchema]
+      music: [MusicSchema],
+      games: [GamesSchema]
     },
 
     balance: {

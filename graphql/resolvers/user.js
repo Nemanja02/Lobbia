@@ -278,11 +278,14 @@ exports.createUserAccount = async (
 
   const newGamesInterests = [];
 
+  console.log()
+
   for (let game in games) {
     for (let field of gamesInterests) {
+      console.log(game, field);
       if (game == field) {
         newGamesInterests.push({
-          label: games[game],
+          label: games[game].label,
           id: game
         });
       }
@@ -295,7 +298,8 @@ exports.createUserAccount = async (
     for (let field of musicInterests) {
       if (genre == field) {
         newGenresInterests.push({
-          label: genres[genre],
+          label: genres[genre].label,
+          subgenres: genres[genre].subgenres,
           id: genre
         });
       }

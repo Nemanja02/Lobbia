@@ -101,7 +101,7 @@ const dateTheme = createMuiTheme({
 Object.keys(games).map(key => {
   initialInterestsState.games[key] = {
     id: key,
-    name: games[key],
+    name: games[key].label,
     isSelected: false
   };
 });
