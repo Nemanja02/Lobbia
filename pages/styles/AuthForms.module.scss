@@ -155,8 +155,8 @@
 
 .genreCheck {
   width: min-content;
-  padding: 5px;
-  margin: 5px;
+  margin: 5px !important;
+  border: none !important;
   & div {
     background-color: rgba($color-bg, 0.5);
     color: $color-primary;

@@ -29,7 +29,7 @@ li {
     box-shadow: 0 10px 20px $color-bg;
     border-radius: 10px;
     width: 65%;
-    height: 65%;
+    height: 85%;
     background-color: $color-bg-light;
     padding: $margin;
     padding-right: 0;
@@ -48,15 +48,15 @@ li {
       flex: 1;
 
       & > a:nth-child(1) > .grow {
-        background: linear-gradient(-45deg, #4c87af, #4ca1af);
+        background: rgba(34, 167, 240, 0.7);
       }
 
       & > a:nth-child(2) > .grow {
-        background: linear-gradient(-45deg, #396afc, #2948ff);
+        background: rgba(154, 18, 179, 0.7);
       }
 
       & > a:nth-child(3) > .grow {
-        background-color: rgba(255, 143, 73, 0.6);
+        background-color: rgba(255, 138, 65, 0.75);
       }
 
       & > a {

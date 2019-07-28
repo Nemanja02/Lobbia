@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import classes from "./FindDialog.module.scss";
+import classes from "./SearchModal.module.scss";
 import { Slide } from "@material-ui/core";
 
-function FindDialog({ open, clicked, types }) {
+function SearchModal({ open, clicked, types }) {
   return open ? (
     <div id={classes.findBG}>
       <Slide in={open} direction="up" mountOnEnter unmountOnExit>
@@ -26,4 +26,4 @@ function FindDialog({ open, clicked, types }) {
   ) : null;
 }
 
-export default FindDialog;
+export default SearchModal;

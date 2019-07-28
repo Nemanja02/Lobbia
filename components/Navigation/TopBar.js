@@ -1,7 +1,7 @@
 import React from "react";
 
 import classes from "./TopBar.module.scss";
-import FindDialog from "../FindDialog/FindDialog";
+import SearchModal from "../SearchModal/SearchModal";
 import {
   Menu,
   MenuItem,
@@ -71,7 +71,7 @@ function TopBar(props) {
 
   return (
     <div className={classes.topbar}>
-      <FindDialog
+      <SearchModal
         types={[
           {
             heading: "Lobby size: 2",
