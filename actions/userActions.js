@@ -5,17 +5,13 @@ import gql from "graphql-tag";
 const fetchQuery = gql`
   query ProfileData($id: ID) {
     getInitialProfileInfo(id: $id) {
-      fullName
-      accountDescription
-      createdAt
       profilePicture
-      dateOfBirth
       username
-      email
       isOnline
     }
   }
 `;
+
 
 const logoutMutation = gql`
   mutation($id: ID!) {

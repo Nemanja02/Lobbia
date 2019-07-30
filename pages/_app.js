@@ -41,6 +41,11 @@ const theme = createMuiTheme({
         fontSize: "12px",
         fontWeight: "400"
       }
+    },
+    MuiButton: {
+      contained: {
+        color: "#fff !important"
+      }
     }
   },
   palette: {
@@ -50,7 +55,13 @@ const theme = createMuiTheme({
     },
 
     primary: {
-      main: "#ff9a60"
+      main: "#ff9a60",
+    },
+    secondary: {
+      main: "#3b84c0"
+    },
+    error: {
+      main: "#c03b3b"
     }
   }
 });
@@ -94,24 +105,15 @@ export class _app extends Component {
     const { Component, pageProps, store } = this.props;
 
     return (
-      <div>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"/>
-        <script src="https://kit.fontawesome.com/8d5f687edf.js" />
-        <Container>
-          <ApolloProvider client={client}>
-            <Provider store={store}>
-              <ThemeProvider theme={theme}>
-                <Component {...pageProps} />
-              </ThemeProvider>
-            </Provider>
-          </ApolloProvider>
-        </Container>
-      </div>
+      <Container>
+        <ApolloProvider client={client}>
+          <Provider store={store}>
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </Provider>
+        </ApolloProvider>
+      </Container>
     );
   }
 }

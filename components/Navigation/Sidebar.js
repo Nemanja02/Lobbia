@@ -48,95 +48,106 @@ function Friend({ profilePicture, username, activity, link }) {
 
 export function Sidebar(props) {
 
+
   const [activeTab, changeTabState] = React.useState(1);
 
   const switchActiveTab = i => {
     changeTabState(i)
   };
 
-    return (
-      <div className={classes.container}>
-        <div className={classes.division}>
-          <Profile
-            profilePicture={props.user.profilePicture}
-            username={props.user.username}
-            status={props.user.isOnline ? "online" : null}
-          />
-          <ul className={classes.sidebar}>
-            {["Feed", "Profile", "Settings"].map(el => {
-              let faIcon;
-              let href;
-              if (el === "Feed") {
-                faIcon = "fas fa-th-list";
-                href = "/feed";
-              }
-              if (el === "Profile") {
-                faIcon = "fas fa-user";
-                href = "/user/:id";
-              }
-              if (el === "Settings") {
-                faIcon = "fas fa-cog";
-                href = "/settings";
-              }
-              return (
-                <p key={el} className={classes.sidebarEl}>
-                  <NavLink statePath={props.path.value} path={href} title={el} icon={faIcon} />
-                </p>
-              );
-            })}
-          </ul>
-        </div>
+  return (
+    <div className={classes.container}>
+      <div className={classes.division}>
+        <Profile
+          profilePicture={props.user.profilePicture}
+          username={props.user.username}
+          status={props.user.isOnline ? "online" : null}
+        />
+        <ul className={classes.sidebar}>
+          {[{
+            name: "Feed",
+            type: "link"
+          }, {
+            name: "Profile",
+            type: "button",
+            id: props.user.id
+          }, {
+            name: "Settings",
+            type: "link"
+          }].map(el => {
+            let faIcon;
+            let href;
+            if (el.name === "Feed") {
+              faIcon = "fas fa-th-list";
+              href = "/feed";
+            }
+            if (el.name === "Profile") {
+              faIcon = `fas fa-user`;
+              href = `/user/${props.user.id}`;
+            }
+            if (el.name === "Settings") {
+              faIcon = "fas fa-cog";
+              href = "/settings";
+            }
+            return (
+              <p key={el.name} className={classes.sidebarEl}>
+                <NavLink type={el.type} id={el.id || null} statePath={props.path.value} path={href} title={el.name} icon={faIcon} />
+              </p>
+            );
+          })}
+        </ul>
+      </div>
 
-        <div className={`${classes.division} ${classes.growdiv}`}>
-          <div className={classes["tab-control"]}>
-            <Typography
-              active={activeTab === 1 ? true : false}
-              clicked={() => switchActiveTab(1)}
-              variant="nav-title"
-              color="light"
-            >
-              Connections
-            </Typography>
-            <Typography
-              clicked={() => switchActiveTab(2)}
-              active={
-                activeTab === 2 ? true : false}
-              variant="nav-title"
-              color="light"
-            >
-              Lobbies
-            </Typography>
-          </div>
-          <div
-            id="style-3"
-            className={`${classes.scrollable} ${classes.tab_body}`}
+      <div className={`${classes.division} ${classes.growdiv}`}>
+        <div className={classes["tab-control"]}>
+          <Typography
+            active={activeTab === 1 ? true : false}
+            clicked={() => switchActiveTab(1)}
+            variant="nav-title"
+            color="light"
           >
-            {[
-              "Faggot",
-              "Big chungus",
-              "Rrrrrrrresi",
-              "Baka prasqui",
-              "Novica"
-            ].map((el, i) => {
-              let status = "on";
-              if (i % 2 === 0) {
-                status = "dnd";
-              }
-              if (i === 4) status = "off";
-              return (
-                <Friend
-                  key={el}
-                  profilePicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-                  username={el}
-                  activity={status}
-                  link="lol"
-                />
-              );
-            })}
-          </div>
+            Connections
+            </Typography>
+          <Typography
+            clicked={() => switchActiveTab(2)}
+            active={
+              activeTab === 2 ? true : false}
+            variant="nav-title"
+            color="light"
+          >
+            Lobbies
+            </Typography>
+        </div>
+        <div
+          id="style-3"
+          className={`${classes.scrollable} ${classes.tab_body}`}
+        >
+          {[
+            "Faggot",
+            "Big chungus",
+            "Rrrrrrrresi",
+            "Baka prasqui",
+            "Novica"
+          ].map((el, i) => {
+            let status = "on";
+            if (i % 2 === 0) {
+              status = "dnd";
+            }
+            if (i === 4) status = "off";
+            return (
+              <Friend
+                key={el}
+                profilePicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
+                username={el}
+                activity={status}
+                link="lol"
+              />
+            );
+          })}
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default connect(state => state)(Sidebar);

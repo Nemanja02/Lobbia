@@ -327,7 +327,7 @@ exports.createUserAccount = async (
       email: user.email
     },
     jwt_key,
-    { expiresIn: "30d" }
+    { expiresIn: "1d" }
   );
 
   ctx.res.setHeader("Set-Cookie", `token=${token}`);

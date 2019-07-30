@@ -1,11 +1,7 @@
 import { PROFILE_DATA, LOGOUT, SET_ID, CLEAR_STATE } from "../actions/types";
 
 const initialUserStore = {
-  fullName: "",
-  accountDescription: "",
-  createdAt: "",
   profilePicture: "",
-  dateOfBirth: "",
   username: "",
   id: "",
   isOnline: false

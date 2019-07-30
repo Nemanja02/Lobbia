@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
-const key = require("../config/config.json").jwt_key;
-const { parseCookies } = require("nookies");
+const { jwt_key } = require("../config/config.json");
+const { setCookie } = require("nookies");
 
 module.exports = async (req, res, next) => {
   req.user = {};
@@ -17,9 +17,22 @@ module.exports = async (req, res, next) => {
   let decoded;
 
   try {
-    decoded = await jwt.verify(token, key);
+    decoded = await jwt.verify(token, jwt_key);
   } catch (e) {
-    req.user.isAuthExpired = true;
+    if (e.name === "TokenExpiredError") {
+      const credentials = await jwt.decode(token);
+      const newToken = jwt.sign({
+        id: credentials.id,
+        username: credentials.username,
+        email: credentials.email
+      }, jwt_key, {
+          expiresIn: "1d"
+        })
+      res.setHeader("Set-Cookie", `token=${newToken}`);
+      console.log(`NEW TOKEN: ${newToken}`);
+      req.user.isAuth = true;
+      return next();
+    }
     req.user.isAuth = false;
     return next();
   }
