@@ -22,7 +22,7 @@
     margin-left: 10px;
 }
 
-.bg {
+.bg > div:nth-child(1){ 
     @include bg;
 }
 

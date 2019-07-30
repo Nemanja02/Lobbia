@@ -35,7 +35,7 @@ class profile extends Component {
         const { isOpen, onClose, id } = this.props;
 
         return (
-            <Modal classes={{ root: classes.bg }} style={{ display: "flex", alignItems: "center", justifyContent: "center" }} open={isOpen} onClose={onClose}>
+            <Modal className={classes.bg} style={{ display: "flex", alignItems: "center", justifyContent: "center" }} open={isOpen} onClose={onClose}>
                 <>
                     <Slide in={open} direction="up" mountOnEnter unmountOnExit>
                         <Paper classes={{ root: classes.profileDialog }} >

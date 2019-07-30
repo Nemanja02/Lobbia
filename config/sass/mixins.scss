@@ -79,14 +79,14 @@
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: rgba($color-bg, 0.7);
+  background-color: rgba($color-bg, 0.7) !important;
   @include center;
 }
 
 @mixin popup {
   background-color: $color-bg-light !important;
-  box-shadow: 0 10px 20px $color-bg;
-  border-radius: 10px;
+  box-shadow: 0 10px 20px $color-bg  !important;
+  border-radius: 10px !important;
   padding: $margin;
   position: relative;
   @include close;
