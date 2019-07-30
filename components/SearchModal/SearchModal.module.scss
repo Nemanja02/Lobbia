@@ -1,37 +1,20 @@
 @import "../../config/sass/variables.scss";
 @import "../../config/sass/mixins.scss";
 
-@keyframes op {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 li {
   list-style: none;
   padding: 1em;
 }
 
 #findBG {
-  animation: op .3s;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  @include center;
-  background-color: rgba($color-bg, 0.7);
+  @include bg;
 
   & .dialog {
-    position: relative;
+    @include popup;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 20px $color-bg;
-    border-radius: 10px;
     width: 65%;
-    height: 85%;
-    background-color: $color-bg-light;
-    padding: $margin;
+    height: 65%;
     padding-right: 0;
 
     & > span {
@@ -108,19 +91,6 @@ li {
           top: 0;
         }
       }
-    }
-
-    & > i {
-      @include circle(40px);
-      @include center;
-      @include clickable($color-bg);
-      color: $color-text;
-      position: absolute;
-      font-size: 20px;
-      right: 0;
-      top: 0;
-      z-index: 20;
-      transform: translate(50%, -50%);
     }
   }
 }

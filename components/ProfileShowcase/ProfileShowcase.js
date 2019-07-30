@@ -5,7 +5,7 @@ import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { connect } from 'react-redux';
 
-import { CircularProgress, Avatar, Typography, DialogActions, Modal, Grid, Button, Paper, Fade, createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import { CircularProgress, Avatar, Typography, DialogActions, Modal, Grid, Button, Paper, Slide, createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 
 
 const dangerButtonTheme = createMuiTheme({
@@ -31,17 +31,15 @@ const profileQuery = gql`
 `;
 
 class profile extends Component {
-
     render() {
-
         const { isOpen, onClose, id } = this.props;
 
         return (
-            <Modal style={{ display: "flex", alignItems: "center", justifyContent: "center" }} open={isOpen} onClose={onClose}>
+            <Modal classes={{ root: classes.bg }} style={{ display: "flex", alignItems: "center", justifyContent: "center" }} open={isOpen} onClose={onClose}>
                 <>
-                    <i className={`fas fa-times ${classes.icon} ${classes.close}`} onClick={onClose} />
-                    <Fade in={isOpen}>
-                        <Paper classes={{ root: classes.profileDialog }}>
+                    <Slide in={open} direction="up" mountOnEnter unmountOnExit>
+                        <Paper classes={{ root: classes.profileDialog }} >
+                            <i className={`fas fa-times`} onClick={onClose} />
                             <Query query={profileQuery} variables={{
                                 id
                             }}>
@@ -110,7 +108,7 @@ class profile extends Component {
                                 }}
                             </Query>
                         </Paper>
-                    </Fade>
+                    </Slide>
                 </>
             </Modal>
         )

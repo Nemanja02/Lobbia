@@ -56,3 +56,38 @@
     box-shadow: 0 2px 4px $color-bg;
   }
 }
+
+@mixin close {
+  & > i {
+    @include circle(40px);
+    @include center;
+    @include clickable($color-bg);
+    color: $color-text;
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    transform: translate(50%, -50%);
+  }
+}
+
+@mixin bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba($color-bg, 0.7);
+  @include center;
+}
+
+@mixin popup {
+  background-color: $color-bg-light !important;
+  box-shadow: 0 10px 20px $color-bg;
+  border-radius: 10px;
+  padding: $margin;
+  position: relative;
+  @include close;
+}
