@@ -90,7 +90,7 @@ function TopBar(props) {
         open={isSearchModalOpen}
       />
       <div className={classes.start}>
-        <span className={classes.logo}>Lobbia</span>
+        <img class={classes.logo} src="../../../static/assets/PixelArt.png"/>
       </div>
       <div className={classes.end}>
         <div className={classes["icon-btn-control"]}>

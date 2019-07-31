@@ -16,10 +16,9 @@
 }
 
 .logo {
-  font-size: 28px;
-  color: white;
-  line-height: $topbar-height;
-  margin: 0 15px;
+  height: calc(#{$topbar-height} - 2 * #{$margin});
+  margin: $margin;
+  padding-left: $margin ;
   @include unselectable;
 }
 
