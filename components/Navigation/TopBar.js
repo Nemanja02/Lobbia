@@ -2,6 +2,7 @@ import React from "react";
 
 import classes from "./TopBar.module.scss";
 import SearchModal from "../SearchModal/SearchModal";
+import Router from "next/router"
 import {
   Menu,
   MenuItem,
@@ -58,11 +59,11 @@ function TopBar(props) {
   const dropdownFields = [
     {
       title: "Preferences",
-      icon: "fas fa-sliders-h",
+      icon: "fas fa-sliders-h"
     },
     {
       title: "Log out",
-      icon: "fas fa-caret-square-right",
+      icon: "fas fa-caret-square-right"
     }
   ];
 
@@ -90,7 +91,7 @@ function TopBar(props) {
         open={isSearchModalOpen}
       />
       <div className={classes.start}>
-        <img class={classes.logo} src="../../../static/assets/PixelArt.png"/>
+        <img onClick={Router.push("/feed")} class={classes.logo} src="../../../static/assets/PixelArt.png" />
       </div>
       <div className={classes.end}>
         <div className={classes["icon-btn-control"]}>
@@ -114,15 +115,18 @@ function TopBar(props) {
           >
             {dropdownFields.map(el => {
               return (
-                <StyledMenuItem key={el.title} onClick={el.title === "Log out" ? () => props.logout() : null}>
-                <ListItemIcon>
-                  <i
-                    className={`${el.icon} ${classes["icon-light-color"]}`}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={el.title} />
-              </StyledMenuItem>
-              )
+                <StyledMenuItem
+                  key={el.title}
+                  onClick={el.title === "Log out" ? () => props.logout() : null}
+                >
+                  <ListItemIcon>
+                    <i
+                      className={`${el.icon} ${classes["icon-light-color"]}`}
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary={el.title} />
+                </StyledMenuItem>
+              );
             })}
           </StyledMenu>
         </div>
