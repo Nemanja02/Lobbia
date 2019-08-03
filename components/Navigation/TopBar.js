@@ -62,7 +62,7 @@ function TopBar(props) {
     },
     {
       title: "Log out",
-      icon: "fas fa-caret-square-right",
+      icon: "fas fa-angle-right",
     }
   ];
 
@@ -115,13 +115,17 @@ function TopBar(props) {
             {dropdownFields.map(el => {
               return (
                 <StyledMenuItem key={el.title} onClick={el.title === "Log out" ? () => props.logout() : null}>
-                <ListItemIcon>
-                  <i
-                    className={`${el.icon} ${classes["icon-light-color"]}`}
-                  />
-                </ListItemIcon>
-                <ListItemText primary={el.title} />
-              </StyledMenuItem>
+                  <ListItemIcon style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}>
+                    <i
+                      className={`${el.icon} ${classes["icon-light-color"]}`}
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary={el.title} />
+                </StyledMenuItem>
               )
             })}
           </StyledMenu>

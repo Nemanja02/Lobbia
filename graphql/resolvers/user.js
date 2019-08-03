@@ -1,4 +1,6 @@
 const User = require("../../models/User");
+const { ObjectId } = require('mongoose').Types;
+const SchemaObjectId = require('mongoose').SchemaTypes.ObjectId;
 const jwt = require("jsonwebtoken");
 const { jwt_key } = require("../../config/config.json");
 
@@ -349,8 +351,14 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
     });
   else {
     if (ctx.user.isAuth) {
-      const user = await User.findOne({ _id: id });
+      const user = await User.findOne({ _id: id }).populate('connections');
 
+      if (user.connections.length > 0 || user) for (i in user.connections) {
+        const stringId = user.connections[i].id.toString();
+        user.connections[i].id = stringId;
+        if (!user.connections[i].profilePicture)
+          user.connections[i].profilePicture = "/assets/default-user-male.png";
+      }
       if (!user.profilePicture)
         user.profilePicture = "/assets/default-user-male.png";
 
@@ -496,6 +504,65 @@ exports.usersList = async () => {
 };
 
 // return specific user
-exports.findUser = async (parent, { id }, ctx) => {
-  return await User.findOne({ _id: id });
+exports.findUser = async (parent, { id }) => {
+  const foundUser = await User.findOne({ _id: id }).populate('connections').populate('lobbyHistory');
+  if (foundUser.connections.length > 0 || foundUser) for (i in foundUser.connections) foundUser.connections[i] = foundUser.connections[i].toString();
+  return foundUser;
 };
+
+exports.addConnection = async (parent, { id, connectionId }, ctx) => {
+  // if (!ctx.user.isAuth) throw new AuthenticationError({
+  //   data: {
+  //     message: "You need to be authenticated to perform this action."
+  //   },
+  //   internalData: {
+  //     error: "User tried to add connection without being authenticated.",
+  //     status: 403
+  //   }
+  // })
+
+  if (!id || !connectionId) throw new ValidationError({
+    data: {
+      message: "Please provide all required arguments."
+    },
+    internalData: {
+      error: "User tried to add connection without providing all required parameters",
+      status: 403
+    }
+  })
+
+  try {
+    const foundUser = await User.findOne({ _id: id });
+    if (foundUser.connections.length > 0 || foundUser) for (field of foundUser.connections)
+      if (field == connectionId) throw new ValidationError({
+        data: {
+          message: "User is already in your connections list."
+        },
+        internalData: {
+          error: "User tried to add a connection which is already his friend.",
+          status: 403
+        }
+      })
+
+    await User.findOneAndUpdate({ _id: id }, {
+      $push: {
+        "connections": ObjectId(connectionId)
+      },
+    }, { new: true });
+    return {
+      success: true
+    }
+  } catch (e) {
+    switch (e.name) {
+      case "Validation error":
+        throw e;
+      case "Authentication error":
+        throw e;
+      default:
+        console.log(e);
+    }
+    return {
+      success: false
+    }
+  }
+}

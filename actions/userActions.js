@@ -8,6 +8,12 @@ const fetchQuery = gql`
       profilePicture
       username
       isOnline
+      connections {
+        id
+        username
+        isOnline
+        profilePicture
+      }
     }
   }
 `;

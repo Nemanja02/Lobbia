@@ -29,7 +29,6 @@ module.exports = async (req, res, next) => {
           expiresIn: "1d"
         })
       res.setHeader("Set-Cookie", `token=${newToken}`);
-      console.log(`NEW TOKEN: ${newToken}`);
       req.user.isAuth = true;
       return next();
     }

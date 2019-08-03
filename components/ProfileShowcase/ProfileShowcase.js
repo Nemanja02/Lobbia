@@ -47,7 +47,14 @@ class profile extends Component {
                             }}>
                                 {({ data, loading, error }) => {
                                     if (loading) return (
-                                        <CircularProgress />
+                                        <div style={{
+                                            width: "100%",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center"
+                                        }}>
+                                            <CircularProgress />
+                                        </div>
                                     );
 
                                     let userData;
@@ -76,9 +83,7 @@ class profile extends Component {
 
                                     if (this.props.user.id === id) actionButtons = (
                                         <>
-
                                             <Button variant="contained" color="secondary">Edit <i className={`fas fa-pen ${classes.icon}`} /></Button>
-
                                         </>
                                     )
 

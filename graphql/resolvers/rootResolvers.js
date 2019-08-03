@@ -7,7 +7,8 @@ const {
   login,
   validateFormCredentials,
   getInitialProfileInfo,
-  logout
+  logout,
+  addConnection
 } = require("./user");
 const { initLobby, lobbiesList } = require("./lobby");
 
@@ -28,6 +29,7 @@ module.exports = {
     createUserAccount,
     login,
     logout,
-    initLobby
+    initLobby,
+    addConnection
   }
 };

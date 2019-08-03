@@ -4,7 +4,8 @@ const initialUserStore = {
   profilePicture: "",
   username: "",
   id: "",
-  isOnline: false
+  isOnline: false,
+  connections: []
 };
 
 export default (state = initialUserStore, action) => {

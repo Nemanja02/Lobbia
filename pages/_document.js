@@ -10,13 +10,19 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    {/*FONTS*/}
                     <link
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     />
+                    {/* Material Icons */}
                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-                    <script src="https://kit.fontawesome.com/8d5f687edf.js" />
+
+                    {/*Additional styles from server */}
                     <link rel="stylesheet" href="/css/root.css" />
+
+                    {/*FontAwesome*/}
+                    <script src="https://kit.fontawesome.com/8d5f687edf.js"></script>
                 </Head>
                 <body>
                     <Main />

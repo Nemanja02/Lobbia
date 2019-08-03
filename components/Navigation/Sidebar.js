@@ -3,6 +3,7 @@ import classes from "./Sidebar.module.scss";
 import NavLink from "./NavLink/NavLink";
 import Typography from "../Typography/Typography";
 import { connect } from "react-redux";
+import ProfileShowcase from "../ProfileShowcase/ProfileShowcase";
 
 function Profile({ profilePicture, username, status }) {
   return (
@@ -17,32 +18,29 @@ function Profile({ profilePicture, username, status }) {
   );
 }
 
-function Friend({ profilePicture, username, activity, link }) {
+function Friend({ profilePicture, username, activity, clicked }) {
   let status;
-  let displayActivity;
-  if (activity === "on") {
-    status = classes.green;
-    displayActivity = "Online";
-  } else if (activity === "off") {
-    status = classes.black;
-    displayActivity = "Offline";
-  } else if (activity === "dnd") {
-    status = classes.red;
-    displayActivity = "Do Not Disturb";
-  } else {
-    status = classes.yellow;
-    displayActivity = activity;
+  switch (activity) {
+    case "online":
+      status = "green";
+      break;
+    case "offline":
+      status = "black";
+      break;
+    default:
+      status = "green";
   }
 
   return (
-    <a href={link} className={classes.friend}>
+    <div onClick={clicked} className={classes.friend}>
       <img src={profilePicture} />
-      <div className={`${classes.online} ${status}`} />
+      <div className={`${classes.online} ${classes[status]}`} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
-        <span className={classes.activity}>{displayActivity}</span>
+        <span className={classes.activity}>{activity.charAt(0).toUpperCase() + activity.slice(1)
+        }</span>
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -51,102 +49,107 @@ export function Sidebar(props) {
 
   const [activeTab, changeTabState] = React.useState(1);
 
+  const [selectedUser, setSelectedUser] = React.useState({
+    id: "",
+    isOpen: false
+  });
+
   const switchActiveTab = i => {
     changeTabState(i)
   };
 
-  return (
-    <div className={classes.container}>
-      <div className={classes.division}>
-        <Profile
-          profilePicture={props.user.profilePicture}
-          username={props.user.username}
-          status={props.user.isOnline ? "online" : null}
-        />
-        <ul className={classes.sidebar}>
-          {[{
-            name: "Feed",
-            type: "link"
-          }, {
-            name: "Profile",
-            type: "button",
-            id: props.user.id
-          }, {
-            name: "Settings",
-            type: "link"
-          }].map(el => {
-            let faIcon;
-            let href;
-            if (el.name === "Feed") {
-              faIcon = "fas fa-th-list";
-              href = "/feed";
-            }
-            if (el.name === "Profile") {
-              faIcon = `fas fa-user`;
-              href = `/user/${props.user.id}`;
-            }
-            if (el.name === "Settings") {
-              faIcon = "fas fa-cog";
-              href = "/settings";
-            }
-            return (
-              <p key={el.name} className={classes.sidebarEl}>
-                <NavLink type={el.type} id={el.id || null} statePath={props.path.value} path={href} title={el.name} icon={faIcon} />
-              </p>
-            );
-          })}
-        </ul>
-      </div>
+  const closeProfileInspect = () => setSelectedUser({ isOpen: false });
+  const openProfileInspect = (id) => setSelectedUser({ isOpen: true, id });
 
-      <div className={`${classes.division} ${classes.growdiv}`}>
-        <div className={classes["tab-control"]}>
-          <Typography
-            active={activeTab === 1 ? true : false}
-            clicked={() => switchActiveTab(1)}
-            variant="nav-title"
-            color="light"
-          >
-            Connections
-            </Typography>
-          <Typography
-            clicked={() => switchActiveTab(2)}
-            active={
-              activeTab === 2 ? true : false}
-            variant="nav-title"
-            color="light"
-          >
-            Lobbies
-            </Typography>
+  return (
+    <>
+      <div className={classes.container}>
+        <div className={classes.division}>
+          <Profile
+            profilePicture={props.user.profilePicture}
+            username={props.user.username}
+            status={props.user.isOnline ? "online" : null}
+          />
+          <ul className={classes.sidebar}>
+            {[{
+              name: "Feed",
+              type: "link"
+            }, {
+              name: "Profile",
+              type: "button",
+              id: props.user.id
+            }, {
+              name: "Settings",
+              type: "link"
+            }].map(el => {
+              let faIcon;
+              let href;
+              if (el.name === "Feed") {
+                faIcon = "fas fa-th-list";
+                href = "/feed";
+              }
+              if (el.name === "Profile") {
+                faIcon = `fas fa-user`;
+                href = `/user/${props.user.id}`;
+              }
+              if (el.name === "Settings") {
+                faIcon = "fas fa-cog";
+                href = "/settings";
+              }
+              return (
+                <p key={el.name} className={classes.sidebarEl}>
+                  <NavLink type={el.type} id={el.id || null} statePath={props.path.value} path={href} title={el.name} icon={faIcon} />
+                </p>
+              );
+            })}
+          </ul>
         </div>
-        <div
-          id="style-3"
-          className={`${classes.scrollable} ${classes.tab_body}`}
-        >
-          {[
-            "Faggot",
-            "Big chungus",
-            "Rrrrrrrresi",
-            "Baka prasqui",
-            "Novica"
-          ].map((el, i) => {
-            let status = "on";
-            if (i % 2 === 0) {
-              status = "dnd";
-            }
-            if (i === 4) status = "off";
-            return (
-              <Friend
-                key={el}
-                profilePicture="https://media.wired.com/photos/593222b926780e6c04d2a195/master/w_2400,c_limit/Zuck-TA-AP_17145748750763.jpg"
-                username={el}
-                activity={status}
-                link="lol"
-              />
-            );
-          })}
+
+        <div className={`${classes.division} ${classes.growdiv}`}>
+          <div className={classes["tab-control"]}>
+            <Typography
+              active={activeTab === 1 ? true : false}
+              clicked={() => switchActiveTab(1)}
+              variant="nav-title"
+              color="light"
+            >
+              Connections
+            </Typography>
+            <Typography
+              clicked={() => switchActiveTab(2)}
+              active={
+                activeTab === 2 ? true : false}
+              variant="nav-title"
+              color="light"
+            >
+              Lobbies
+            </Typography>
+          </div>
+          <div
+            id="style-3"
+            className={`${classes.scrollable} ${classes.tab_body}`}
+          >
+            {props.user.connections.length > 0 ? props.user.connections.map((el, i) => {
+              // better activity display(todo)
+              return (
+                <Friend
+                  clicked={() => openProfileInspect(el.id)}
+                  key={el.id}
+                  profilePicture={el.profilePicture}
+                  username={el.username}
+                  activity={el.isOnline ? "online" : "offline"}
+                  id={el.id}
+                />
+              );
+            }) : <div className={classes.emptyFriendList}>
+                <p>Wow, such empty.</p>
+                <i className="fas fa-dog" />
+              </div>}
+          </div>
         </div>
       </div>
-    </div>
+      {selectedUser.isOpen ? <ProfileShowcase id={selectedUser.id} isOpen={selectedUser.isOpen} onClose={closeProfileInspect} /> : null}
+    </>
   );
 }
 

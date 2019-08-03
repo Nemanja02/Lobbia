@@ -22,19 +22,26 @@ module.exports = gql`
     accountDescription: String
     banned: Boolean
     verified: Boolean
+    isOnline: Boolean
     id: ID!
-    lobbyHistory: [ID!]
+    connections: [User]
+    lobbyHistory: [ID]
     balance: Float
     interests: UserInterests
     dateOfBirth: Date
     createdAt: DateTime!
     updatedAt: DateTime!
-    isOnline: Boolean
   }
 
   type Message {
     sender: User
     content: String
+    createdAt: DateTime
+    seen: Boolean
+  }
+
+  type Response {
+    success: Boolean
   }
 
   type Lobby {
@@ -61,10 +68,6 @@ module.exports = gql`
     getInitialProfileInfo(id: ID): User!
   }
 
-  type Response {
-    success: Boolean
-  }
-
   # MUTATIONS
   type Mutation {
     initLobby(participants: [String], type: Int, status: Int): Lobby
@@ -80,6 +83,8 @@ module.exports = gql`
     login(signature: String, password: String): Auth
 
     logout(id: ID!): Response
+
+    addConnection(id: ID! connectionId: ID!): Response
 
     createUserAccount(
       email: String
