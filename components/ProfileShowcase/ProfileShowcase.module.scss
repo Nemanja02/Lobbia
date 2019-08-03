@@ -3,7 +3,7 @@
 
 .main {
     height: 100%;
-    background-color: $color-bg-light;
+    background-color: red;
     border-radius: 10px;
     padding: $margin;
     width: 100%;
@@ -22,9 +22,15 @@
     margin-left: 10px;
 }
 
+.bg > div:nth-child(1){ 
+    @include bg;
+}
+
 .profileDialog {
     background-color: $color-bg-light !important;
     padding: 10px;
+    @include popup;
+    max-width: 90%;
     width: 500px;
     outline: none;
     height: auto !important;
@@ -61,5 +67,4 @@
     top: 4.5%;
     z-index: 20;
     transform: translate(50%, -50%);
-
 }

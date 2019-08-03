@@ -2,6 +2,7 @@ import React from "react";
 
 import classes from "./TopBar.module.scss";
 import SearchModal from "../SearchModal/SearchModal";
+import Router from "next/router"
 import {
   Menu,
   MenuItem,
@@ -58,7 +59,7 @@ function TopBar(props) {
   const dropdownFields = [
     {
       title: "Preferences",
-      icon: "fas fa-sliders-h",
+      icon: "fas fa-sliders-h"
     },
     {
       title: "Log out",
@@ -90,7 +91,7 @@ function TopBar(props) {
         open={isSearchModalOpen}
       />
       <div className={classes.start}>
-        <span className={classes.logo}>Lobbia</span>
+        <img className={classes.logo} src="assets/PixelArt.png" />
       </div>
       <div className={classes.end}>
         <div className={classes["icon-btn-control"]}>
