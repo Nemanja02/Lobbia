@@ -19,7 +19,7 @@ class Feed extends Component {
       <>
         <Layout {...pageProps}>
           <div className={classes.main} >
-            <Typography variant="h6" color="textPrimary">Ako zelite da vidite nekoga na connections listi, idite na <a href="http://localhost:8080/graphq">http://localhost:8080/graphql</a> i pokrenite sledeci query:
+            <Typography variant="h6" color="textPrimary">Ako zelite da vidite nekoga na connections listi, idite na <a href="http://localhost:8080/graphql">http://localhost:8080/graphql</a> i pokrenite sledeci query:
             </Typography>
             <br />
             <Typography variant="caption" color="textPrimary">

@@ -32,9 +32,13 @@ function customFormatError(error) {
 }
 
 app.use(isAuth);
+
 app.use(multer().single("profilePicture"));
+
 app.use(cookieParser());
+
 app.use(express.static("static"));
+
 const gqlServer = new ApolloServer({
   typeDefs,
   resolvers,
