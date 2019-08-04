@@ -357,10 +357,10 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
         const stringId = user.connections[i].id.toString();
         user.connections[i].id = stringId;
         if (!user.connections[i].profilePicture)
-          user.connections[i].profilePicture = "/assets/default-user-male.png";
+          user.connections[i].profilePicture = "static/assets/default-user-male.png";
       }
       if (!user.profilePicture)
-        user.profilePicture = "/assets/default-user-male.png";
+        user.profilePicture = "static/assets/default-user-male.png";
 
       return user;
     }

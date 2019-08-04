@@ -4,7 +4,8 @@
   "description": "backend nodejs part of novica-the-rapist project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "npx next build"
   },
   "repository": {
     "type": "git",
