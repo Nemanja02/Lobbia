@@ -13,7 +13,7 @@ const resolvers = require("./graphql/resolvers/rootResolvers");
 const cfg = require("./config/config.json");
 const isAuth = require("./middlewares/is-auth");
 
-const port = process.env.PORT || cfg.port;
+const port = process.env.NODE_ENV === "dev-preview" ? 80 : 8080;
 const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
