@@ -61,6 +61,22 @@ export function Sidebar(props) {
   const closeProfileInspect = () => setSelectedUser({ isOpen: false });
   const openProfileInspect = (id) => setSelectedUser({ isOpen: true, id });
 
+
+  let friendList;
+
+  if (props.user.connections.length > 0) friendList = props.user.connections.map((el, i) => {
+    return (
+      <Friend
+        clicked={() => openProfileInspect(el.id)}
+        key={el.id}
+        profilePicture={el.profilePicture}
+        username={el.username}
+        activity={el.isOnline ? "online" : "offline"}
+        id={el.id}
+      />
+    );
+  })
+
   return (
     <>
       <div className={classes.container}>
@@ -129,22 +145,7 @@ export function Sidebar(props) {
             id="style-3"
             className={`${classes.scrollable} ${classes.tab_body}`}
           >
-            {props.user.connections.length > 0 ? props.user.connections.map((el, i) => {
-              // better activity display(todo)
-              return (
-                <Friend
-                  clicked={() => openProfileInspect(el.id)}
-                  key={el.id}
-                  profilePicture={el.profilePicture}
-                  username={el.username}
-                  activity={el.isOnline ? "online" : "offline"}
-                  id={el.id}
-                />
-              );
-            }) : <div className={classes.emptyFriendList}>
-                <p>Wow, such empty.</p>
-                <i className="fas fa-dog" />
-              </div>}
+            {friendList}
           </div>
         </div>
       </div>

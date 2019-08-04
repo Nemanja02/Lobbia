@@ -8,10 +8,14 @@
 }
 
 .bg-img {
-  background: url("http://localhost:8080/assets/landing-background.jpg")
-    no-repeat center center fixed;
+  background: no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.background-wrapper {
+  overflow: hidden !important;
   width: 100%;
   height: 100vh;
 }

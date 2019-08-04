@@ -26,7 +26,10 @@ export default (state = initialUserStore, action) => {
         ...action.payload
       };
     case CLEAR_STATE:
-      return {};
+      return {
+        ...state,
+        ...action.payload
+      };
     default:
       return {
         ...state

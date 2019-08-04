@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import RouterLink from "next/link";
 import Router from "next/router";
-import Particles from "react-particles-js";
 import { Mutation } from "react-apollo";
 import { connect } from "react-redux";
 import * as actions from "../actions/userActions";
@@ -328,18 +327,18 @@ class Register extends Component {
             return type === "date" ? (
               dateField
             ) : (
-              <TextField
-                key={el.name}
-                fullWidth
-                variant="filled"
-                helperText={helperText}
-                label={placeholderText}
-                style={marginTop}
-                type={type}
-                onChange={e => this.handleChange(e, el.name)}
-                value={this.state.formFields[el.name].value}
-              />
-            );
+                <TextField
+                  key={el.name}
+                  fullWidth
+                  variant="filled"
+                  helperText={helperText}
+                  label={placeholderText}
+                  style={marginTop}
+                  type={type}
+                  onChange={e => this.handleChange(e, el.name)}
+                  value={this.state.formFields[el.name].value}
+                />
+              );
           })}
         </Grid>
         <Mutation
@@ -678,22 +677,15 @@ class Register extends Component {
 
     return (
       <>
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 60
-              }
-            }
-          }}
-          className={classes["bg-img"]}
-        />
+        <div className={classes["background-wrapper"]}>
+          <img src="static/assets/landing-background.jpg" className={classes["bg-img"]} />
+        </div>
         <div className={classes["custom-form-card"]}>
           {this.state.formStage === 0
             ? firstStepRegistration
             : this.state.formStage === 1
-            ? secondStepRegistration
-            : thirdStepRegistration}
+              ? secondStepRegistration
+              : thirdStepRegistration}
         </div>
         <Snackbar
           autoHideDuration={3000}
@@ -718,7 +710,7 @@ class Register extends Component {
                 <i
                   className={`fas fa-exclamation-circle ${
                     classes.snackbarIcon
-                  }`}
+                    }`}
                 />{" "}
                 {this.state.formValidation.displayMessage}
               </span>

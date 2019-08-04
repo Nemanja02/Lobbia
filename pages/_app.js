@@ -42,16 +42,11 @@ const theme = createMuiTheme({
         fontWeight: "400"
       }
     },
-    MuiButton: {
-      contained: {
-        color: "#fff !important"
-      }
-    }
   },
   palette: {
     text: {
       primary: grey[200],
-      secondary: grey[500]
+      secondary: grey[500],
     },
 
     primary: {

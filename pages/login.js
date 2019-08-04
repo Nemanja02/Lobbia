@@ -98,16 +98,9 @@ export class login extends Component {
 
     return (
       <>
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 60
-              }
-            }
-          }}
-          className={classes["bg-img"]}
-        />
+        <div className={classes["background-wrapper"]}>
+          <img src="static/assets/landing-background.jpg" className={classes["bg-img"]} />
+        </div>
         <div
           onKeyDown={e =>
             this.handleSubmit(
@@ -272,7 +265,7 @@ export class login extends Component {
                 <i
                   className={`fas fa-exclamation-circle ${
                     classes.snackbarIcon
-                  }`}
+                    }`}
                 />{" "}
                 {this.state.error.message}
               </span>

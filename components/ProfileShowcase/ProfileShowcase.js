@@ -6,12 +6,39 @@ import gql from "graphql-tag";
 import { connect } from 'react-redux';
 
 import { CircularProgress, Avatar, Typography, DialogActions, Modal, Grid, Button, Paper, Slide, createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import { grey } from "@material-ui/core/colors";
 
 
-const dangerButtonTheme = createMuiTheme({
+const DangerButtonTheme = createMuiTheme({
     palette: {
         primary: {
             main: "#c03b3b"
+        }
+    }
+});
+
+const ButtonControlTheme = createMuiTheme({
+    palette: {
+        text: {
+            primary: grey[200],
+            secondary: grey[500],
+        },
+
+        primary: {
+            main: "#ff9a60",
+        },
+        secondary: {
+            main: "#3b84c0"
+        },
+        error: {
+            main: "#c03b3b"
+        }
+    },
+    overrides: {
+        MuiButton: {
+            contained: {
+                color: "#fff !important"
+            }
         }
     }
 })
@@ -68,17 +95,17 @@ class profile extends Component {
                                     } else status = "offline";
 
                                     let actionButtons = (
-                                        <>
+                                        <MuiThemeProvider theme={ButtonControlTheme}>
                                             <Button variant="contained" color="primary">Message <i className={`fas fa-envelope ${classes.icon}`} /></Button>
 
                                             <Button variant="contained" color="secondary">Invite <i className={`fas fa-paper-plane ${classes.icon}`} /></Button>
 
-                                            <MuiThemeProvider theme={dangerButtonTheme}>
+                                            <MuiThemeProvider theme={DangerButtonTheme}>
                                                 <Button variant="contained"
                                                     color="primary"
                                                 >Remove <i className={`fas fa-trash ${classes.icon}`} /></Button>
                                             </MuiThemeProvider>
-                                        </>
+                                        </MuiThemeProvider>
                                     )
 
                                     if (this.props.user.id === id) actionButtons = (

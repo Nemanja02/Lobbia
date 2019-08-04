@@ -29,7 +29,14 @@ const logoutMutation = gql`
 
 export const clearState = () => dispatch => {
   dispatch({
-    type: CLEAR_STATE
+    type: CLEAR_STATE,
+    payload: {
+      profilePicture: "",
+      username: "",
+      id: "",
+      isOnline: false,
+      connections: []
+    }
   });
 };
 
