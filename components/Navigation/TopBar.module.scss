@@ -18,7 +18,7 @@
 .logo {
   height: calc(#{$topbar-height} - 2 * #{$margin});
   margin: $margin;
-  padding-left: $margin ;
+  padding-left: $margin;
   @include unselectable;
 }
 
@@ -37,7 +37,7 @@
   padding: 0 10px;
 
   & i {
-    transition: 0.2s all;
+    transition: all $transition;
     margin: 0 10px;
     font-size: 26px;
     color: $color-text-second;
@@ -52,7 +52,7 @@
     font-size: 26px;
     color: $color-primary;
     cursor: pointer;
-    transition: 0.2s all;
+    transition: all $transition;
     // animation: shadow-pulse 0.85s infinite;
     // animation-play-state: paused;
     // box-shadow: none;
@@ -78,7 +78,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   width: $searchbar-width-min;
-  transition: 0.2s all;
+  transition: all $transition;
   border: 1.5px solid transparent;
 
   &:focus {
@@ -111,7 +111,7 @@
   z-index: 10;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
-  transition: 0.2s all;
+  transition: all $transition;
   @include center;
 
   &:hover {
@@ -121,7 +121,7 @@
 
   & i {
     position: relative;
-    transition: 0.2s all;
+    transition: all $transition;
     font-size: 28px;
     color: $color-text;
     z-index: 11;

@@ -16,7 +16,7 @@
       color: $color-text;
       padding: 10px 15px;
       border-radius: 5px;
-      transition: 0.2s all;
+      transition: all $transition;
       border: 1.5px solid transparent;
       flex: 1;
       &:focus {

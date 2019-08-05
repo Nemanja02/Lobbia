@@ -36,12 +36,13 @@ body {
         width: 0;
         background: $color-primary;
         height: 3px;
-        transition: width .2s;
+        transition: width $transition;
         margin-top: 5px;
         border-radius: 500px;
       }
 
-      &:hover div, &.active div{
+      &:hover div,
+      &.active div {
         width: 80%;
       }
     }

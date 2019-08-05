@@ -10,15 +10,26 @@ export class index extends Component {
 
           <nav>
             <ul>
-              <li className={classes.active}>Home<div /></li>
-              <li>About<div /></li>
-              <li>Support<div /></li>
+              <li className={classes.active}>
+                Home
+                <div />
+              </li>
+              <li>
+                About
+                <div />
+              </li>
+              <li>
+                Support
+                <div />
+              </li>
             </ul>
           </nav>
 
           <div className={classes.buttons}>
             <a href="/register">Sign up</a>
-            <a href="/login" className={classes.primary}>log in</a>
+            <a href="/login" className={classes.primary}>
+              log in
+            </a>
           </div>
         </div>
       </>
