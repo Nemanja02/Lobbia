@@ -1,13 +1,13 @@
 @import "../../config/sass/variables.scss";
 @import "../../config/sass/mixins.scss";
 
-li {
-  list-style: none;
-  padding: 1em;
-}
-
 #findBG {
   @include bg;
+
+  li {
+    list-style: none;
+    padding: 1em;
+  }
 
   & .dialog {
     @include popup;
