@@ -26,9 +26,8 @@ export class index extends Component {
           </nav>
 
           <div className={classes.buttons}>
-            <a href="/register">Sign up</a>
-            <a href="/login" className={classes.primary}>
-              log in
+            <a href="/feed" className={classes.primary}>
+              Enter Lobbia
             </a>
           </div>
         </div>
