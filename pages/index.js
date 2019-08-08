@@ -5,30 +5,40 @@ export class index extends Component {
   render() {
     return (
       <>
-        <div className={classes.nav}>
-          <img src="assets/PixelArt.png" />
+        <div id={classes.main}>
+          <div className={classes.nav}>
+            <img src="assets/PixelArt.png" />
 
-          <nav>
-            <ul>
-              <li className={classes.active}>
-                Home
-                <div />
-              </li>
-              <li>
-                About
-                <div />
-              </li>
-              <li>
-                Support
-                <div />
-              </li>
-            </ul>
-          </nav>
+            <nav>
+              <ul>
+                <li className={classes.active}>
+                  Home
+                  <div />
+                </li>
+                <li>
+                  About
+                  <div />
+                </li>
+                <li>
+                  Support
+                  <div />
+                </li>
+              </ul>
+            </nav>
 
-          <div className={classes.buttons}>
-            <a href="/feed" className={classes.primary}>
-              Enter Lobbia
-            </a>
+            <div className={classes.buttons}>
+              <a href="/feed" className={classes.primary}>
+                Enter Lobbia
+              </a>
+            </div>
+          </div>
+
+          <div className={classes.content}>
+            <div>
+              <h1>Welcome</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <img src="index/IndexBG.svg" />
           </div>
         </div>
       </>

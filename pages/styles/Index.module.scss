@@ -5,13 +5,21 @@ body {
   background: $color-bg;
 }
 
+#main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: $color-text;
+}
+
 .nav {
   color: $color-text;
   font-size: 21px;
   padding: 20px;
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 
   img {
     @include unselectable;
@@ -70,5 +78,37 @@ body {
       @include clickable($color-primary);
       border: none;
     }
+  }
+}
+
+.content {
+  padding: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    h1 {
+      font-size: 7vw;
+      font-weight: 300;
+    }
+
+    p {
+      width: 80%;
+      font-size: 1.3vw;
+      font-weight: 300;
+      align-self: flex-end;
+    }
+  }
+
+  img {
+    height: 100%;
+    z-index: 0;
   }
 }
