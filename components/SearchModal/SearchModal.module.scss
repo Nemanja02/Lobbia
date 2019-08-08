@@ -1,13 +1,13 @@
 @import "../../config/sass/variables.scss";
 @import "../../config/sass/mixins.scss";
 
-li {
-  list-style: none;
-  padding: 1em;
-}
-
 #findBG {
   @include bg;
+
+  li {
+    list-style: none;
+    padding: 1em;
+  }
 
   & .dialog {
     @include popup;
@@ -59,7 +59,7 @@ li {
           position: relative;
           @include center;
           flex-direction: column;
-          transition: opacity 0.2s;
+          transition: opacity $transition;
 
           & span {
             text-align: center;
@@ -83,7 +83,7 @@ li {
           top: 100%;
           border-radius: 10px;
           background-color: #fff;
-          transition: top 0.2s;
+          transition: top $transition;
           z-index: 11;
         }
 

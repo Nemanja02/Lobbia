@@ -1,0 +1,74 @@
+@import "../../config/sass/variables.scss";
+@import "../../config/sass/mixins.scss";
+
+body {
+  background: $color-bg;
+}
+
+.nav {
+  color: $color-text;
+  font-size: 21px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+
+  img {
+    @include unselectable;
+    height: 50px;
+  }
+
+  ul {
+    @include center;
+    list-style: none;
+    display: flex;
+    height: 50px;
+    align-items: flex-end;
+    padding: 0px 25px;
+
+    li {
+      @include center;
+      flex-direction: column;
+      margin: 0 25px;
+      cursor: pointer;
+
+      div {
+        width: 0;
+        background: $color-primary;
+        height: 3px;
+        transition: width $transition;
+        margin-top: 5px;
+        border-radius: 500px;
+      }
+
+      &:hover div,
+      &.active div {
+        width: 80%;
+      }
+    }
+  }
+
+  .buttons {
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      @include center;
+      @include clickable($color-bg);
+      color: $color-text;
+      width: 150px;
+      height: 40px;
+      text-align: center;
+      border: $color-primary solid 3px;
+      margin-left: 20px;
+      border-radius: 10px;
+    }
+
+    .primary {
+      @include clickable($color-primary);
+      border: none;
+    }
+  }
+}

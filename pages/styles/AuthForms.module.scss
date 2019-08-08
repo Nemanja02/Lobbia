@@ -103,7 +103,7 @@
   height: 100px;
   border-radius: 12px;
 
-  transition: all 0.3s;
+  transition: all $transition;
 
   &:hover {
     color: rgba(white, 0.3);
@@ -116,7 +116,7 @@
     left: 0px;
     right: 0px;
     border-radius: 12px;
-    transition: background-color 0.3s;
+    transition: background-color $transition;
     &:hover {
       background-color: rgba(lighten($color-bg-light, 60%), 0.25);
     }
@@ -129,13 +129,13 @@
       right: 0px;
       border-radius: 12px;
       border: $color-bg-light solid 5px;
-      transition: all 0.3s;
+      transition: all $transition;
       @include center;
 
       & i {
         font-size: 3em;
         color: rgba(white, 0);
-        transition: color 0.3s;
+        transition: color $transition;
       }
     }
   }

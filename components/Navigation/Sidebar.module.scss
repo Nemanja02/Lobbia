@@ -88,15 +88,14 @@
     margin-top: 20px;
     margin-bottom: 15px;
     color: #fff;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 26px;
   }
 
   & i {
     font-size: 90px;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
   }
-  
 }
 
 .friend {
@@ -232,7 +231,7 @@ span:focus {
     border-bottom-right-radius: 0;
     border-bottom: 3px solid lighten($color-bg, 15%);
     cursor: pointer;
-    transition: 0.2s all;
+    transition: all $transition;
     color: $color-text-second;
 
     &:hover {

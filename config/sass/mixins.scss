@@ -15,21 +15,21 @@
 @mixin scroll {
   overflow-y: auto;
   flex-grow: 100;
-    &::-webkit-scrollbar-track {
-      border-radius: 100px;
-      background-color: $color-bg-light;
-    }
-  
-    &::-webkit-scrollbar {
-      width: 7px;
-      background-color: $color-bg-light;
-      border-radius: 100px;
-    }
-  
-    &::-webkit-scrollbar-thumb {
-      background-color: $color-bg;
-      border-radius: 100px;
-    }
+  &::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: $color-bg-light;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: $color-bg-light;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-bg;
+    border-radius: 100px;
+  }
 }
 
 @mixin circle($R) {
@@ -49,7 +49,8 @@
 @mixin clickable($color) {
   background-color: $color;
   cursor: pointer;
-  transition: background-color .2s, box-shadow .2s;
+  transition: background-color $transition, box-shadow $transition;
+  text-decoration: none;
 
   &:hover {
     background-color: lighten($color, 10%);
@@ -85,7 +86,7 @@
 
 @mixin popup {
   background-color: $color-bg-light !important;
-  box-shadow: 0 10px 20px $color-bg  !important;
+  box-shadow: 0 10px 20px $color-bg !important;
   border-radius: 10px !important;
   padding: $margin;
   position: relative;
