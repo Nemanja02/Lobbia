@@ -18,7 +18,7 @@ import {
   Avatar,
   Tooltip
 } from "@material-ui/core";
-import { grey, orange } from "@material-ui/core/colors";
+import { grey } from "@material-ui/core/colors";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 
@@ -86,13 +86,28 @@ Object.keys(genres).map(key => {
 });
 
 const dateTheme = createMuiTheme({
+  overrides: {
+    MuiTooltip: {
+      tooltip: {
+        fontSize: "12px",
+        fontWeight: "400"
+      }
+    },
+  },
   palette: {
     text: {
       primary: grey[500],
       secondary: grey[600]
     },
+
     primary: {
-      main: "#ff9a60"
+      main: "#ff9a60",
+    },
+    secondary: {
+      main: "#3b84c0"
+    },
+    error: {
+      main: "#c03b3b"
     }
   }
 });
@@ -184,7 +199,7 @@ class Register extends Component {
       },
 
       birthday: {
-        value: getFormattedDate(new Date())
+        value: getFormattedDate(new Date()) || ""
       },
 
       password: {
@@ -223,12 +238,13 @@ class Register extends Component {
   };
 
   handleDate = date => {
+    console.log(date.toISOString());
     this.setState(prevState => ({
       formFields: {
         ...prevState.formFields,
         birthday: {
           ...prevState.formFields.birthday,
-          value: Date.parse(date.toString())
+          value: date
         }
       }
     }));
@@ -305,23 +321,21 @@ class Register extends Component {
             if (el.name === "fullName") placeholderText = "Full name";
 
             const dateField = (
-              <MuiThemeProvider key={el.name} theme={dateTheme}>
-                <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                  <DatePicker
-                    inputVariant="filled"
-                    disableFuture
-                    openTo="year"
-                    format="dd/MM/yyyy"
-                    views={["year", "month", "date"]}
-                    helperText={helperText}
-                    label={placeholderText}
-                    style={marginTop}
-                    fullWidth
-                    value={this.state.formFields.birthday.value}
-                    onChange={date => this.handleDate(date)}
-                  />
-                </MuiPickersUtilsProvider>
-              </MuiThemeProvider>
+              <MuiPickersUtilsProvider key={el.name} utils={DateFnsUtils}>
+                <DatePicker
+                  inputVariant="filled"
+                  disableFuture
+                  openTo="year"
+                  format="dd/MM/yyyy"
+                  views={["year", "month", "date"]}
+                  helperText={helperText}
+                  label={placeholderText}
+                  style={marginTop}
+                  fullWidth
+                  value={this.state.formFields.birthday.value}
+                  onChange={date => this.handleDate(date)}
+                />
+              </MuiPickersUtilsProvider>
             );
 
             return type === "date" ? (
@@ -538,9 +552,7 @@ class Register extends Component {
         fullName: fullName.value,
         password: password.value,
         username: username.value,
-        dateOfBirth: new Date(
-          this.state.formFields.birthday.value
-        ).toISOString(),
+        dateOfBirth: this.state.formFields.birthday.value.toISOString(),
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };
@@ -676,7 +688,7 @@ class Register extends Component {
     );
 
     return (
-      <>
+      <MuiThemeProvider theme={dateTheme}>
         <div className={classes["background-wrapper"]}>
           <img src="static/assets/landing-background.jpg" className={classes["bg-img"]} />
         </div>
@@ -735,7 +747,7 @@ class Register extends Component {
             }
           />
         </Snackbar>
-      </>
+      </MuiThemeProvider>
     );
   }
 }

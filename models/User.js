@@ -99,7 +99,7 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-UserSchema.pre("save", async function(next) {
+UserSchema.pre("save", async function (next) {
   const user = this;
 
   const hashedPassword = await bcrypt.hash(user.password, 12);
@@ -109,7 +109,7 @@ UserSchema.pre("save", async function(next) {
   next();
 });
 
-UserSchema.methods.comparePasswords = async function(candidate) {
+UserSchema.methods.comparePasswords = async function (candidate) {
   try {
     const match = await bcrypt.compare(candidate, this.password);
     return match;
@@ -119,5 +119,7 @@ UserSchema.methods.comparePasswords = async function(candidate) {
     }
   }
 };
+
+UserSchema.index({ name: "text", username: "text" });
 
 module.exports = mongoose.model("User", UserSchema, "users");

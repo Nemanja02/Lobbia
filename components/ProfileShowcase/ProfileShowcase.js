@@ -53,6 +53,9 @@ const profileQuery = gql`
       createdAt
       isOnline
       accountDescription
+      connections {
+          id
+      }
     }
   }
 `;
@@ -73,6 +76,7 @@ class profile extends Component {
                                 id
                             }}>
                                 {({ data, loading, error }) => {
+
                                     if (loading) return (
                                         <div style={{
                                             width: "100%",
@@ -87,6 +91,7 @@ class profile extends Component {
                                     let userData;
                                     if (!error && data.getInitialProfileInfo) userData = { ...data.getInitialProfileInfo };
 
+
                                     let status;
                                     if (userData.isOnline) {
                                         if (userData.accountDescription === "Do not disturb") status = "dnd";
@@ -94,25 +99,61 @@ class profile extends Component {
                                         else status = "online";
                                     } else status = "offline";
 
-                                    let actionButtons = (
-                                        <MuiThemeProvider theme={ButtonControlTheme}>
-                                            <Button variant="contained" color="primary">Message <i className={`fas fa-envelope ${classes.icon}`} /></Button>
+                                    let actionButtons = null;
 
-                                            <Button variant="contained" color="secondary">Invite <i className={`fas fa-paper-plane ${classes.icon}`} /></Button>
+                                    if (this.props.user.id === id) actionVariant = "self-profile";
+                                    else if (isFriend) actionVariant = "friends";
 
-                                            <MuiThemeProvider theme={DangerButtonTheme}>
-                                                <Button variant="contained"
-                                                    color="primary"
-                                                >Remove <i className={`fas fa-trash ${classes.icon}`} /></Button>
-                                            </MuiThemeProvider>
-                                        </MuiThemeProvider>
-                                    )
+                                    let actionVariant = "default";
+                                    let isFriend = false;
 
-                                    if (this.props.user.id === id) actionButtons = (
-                                        <>
-                                            <Button variant="contained" color="secondary">Edit <i className={`fas fa-pen ${classes.icon}`} /></Button>
-                                        </>
-                                    )
+
+                                    for (let field of this.props.user.connections) {
+                                        if (field.id === id) {
+                                            isFriend = true;
+                                        }
+
+                                    }
+
+                                    if (this.props.user.id === id) {
+                                        actionVariant = "self-profile";
+                                    }
+                                    else if (isFriend) {
+                                        actionVariant = "friends";
+                                    }
+
+
+                                    switch (actionVariant) {
+                                        case "default":
+                                            actionButtons = (
+                                                <>
+                                                <Button variant="contained" color="secondary">Add <i className={`fas fa-user-plus ${classes.icon}`} /></Button>
+                                                </>
+                                            )
+                                            break;
+                                        case "friends":
+                                            actionButtons = (
+                                                <MuiThemeProvider theme={ButtonControlTheme}>
+                                                    <Button variant="contained" color="primary">Message <i className={`fas fa-envelope ${classes.icon}`} /></Button>
+
+                                                    <Button variant="contained" color="secondary">Invite <i className={`fas fa-paper-plane ${classes.icon}`} /></Button>
+
+                                                    <MuiThemeProvider theme={DangerButtonTheme}>
+                                                        <Button variant="contained"
+                                                            color="primary"
+                                                        >Remove <i className={`fas fa-trash ${classes.icon}`} /></Button>
+                                                    </MuiThemeProvider>
+                                                </MuiThemeProvider>
+                                            )
+                                            break;
+                                        case "self-profile":
+                                            actionButtons = (
+                                                <>
+                                                    <Button variant="contained" color="secondary">Edit <i className={`fas fa-pen ${classes.icon}`} /></Button>
+                                                </>
+                                            )
+                                            break;
+                                    }
 
                                     if (Object.keys(data.getInitialProfileInfo).length > 0) return (
                                         <>

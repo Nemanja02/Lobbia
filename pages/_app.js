@@ -43,10 +43,15 @@ const theme = createMuiTheme({
       }
     },
   },
+
   palette: {
     text: {
       primary: grey[200],
       secondary: grey[500],
+    },
+
+    background: {
+      paper: "#32393d"
     },
 
     primary: {

@@ -3,6 +3,12 @@ const withCSS = require("@zeit/next-css");
 
 module.exports = withCSS(
   withSass({
-    cssModules: true
+    cssModules: true,
+    webpack(config, options) {
+      config.node = {
+        fs: "empty"
+      }
+      return config;
+    }
   })
 );

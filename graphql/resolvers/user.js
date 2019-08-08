@@ -280,7 +280,6 @@ exports.createUserAccount = async (
 
   const newGamesInterests = [];
 
-  console.log()
 
   for (let game in games) {
     for (let field of gamesInterests) {

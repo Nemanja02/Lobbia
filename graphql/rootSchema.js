@@ -80,6 +80,8 @@ module.exports = gql`
       signature: String
     ): Boolean
 
+    textSearch(query: String length: Int): [User]
+
     login(signature: String, password: String): Auth
 
     logout(id: ID!): Response

@@ -59,10 +59,19 @@
 
     &:hover {
       color: lighten($color-primary, 10%);
-      text-shadow: 0 2px 4px $color-bg;
-      animation-play-state: running;
     }
   }
+}
+
+.dropdownPaper {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  position: absolute;
+  top: 44px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
 }
 
 .sbar {

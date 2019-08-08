@@ -10,6 +10,7 @@ const {
   logout,
   addConnection
 } = require("./user");
+const { textSearch } = require("./search");
 const { initLobby, lobbiesList } = require("./lobby");
 
 module.exports = {
@@ -21,7 +22,7 @@ module.exports = {
     marjanoveUmri,
     findUser,
     lobbiesList,
-    getInitialProfileInfo
+    getInitialProfileInfo,
   },
 
   Mutation: {
@@ -30,6 +31,7 @@ module.exports = {
     login,
     logout,
     initLobby,
-    addConnection
+    addConnection,
+    textSearch
   }
 };
