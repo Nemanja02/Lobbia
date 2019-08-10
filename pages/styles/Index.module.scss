@@ -23,7 +23,7 @@ body {
   width: 100%;
 
   img {
-    width: 50vw;
+    width: 30vw;
     @include unselectable;
     object-fit: contain;
   }
