@@ -63,7 +63,7 @@ body {
 
     a {
       @include center;
-      @include clickable($color-bg);
+      @include clickable($color-danger);
       color: $color-text;
       width: 150px;
       height: 40px;
@@ -111,33 +111,32 @@ body {
   }
 }
 
-@media (min-width: 640px) {
-}
+@media (min-width: 640px) {  .nav {
+  flex-direction: row;
+  align-items: flex-end;
 
-@media (min-width: 768px) {
-  .nav {
+  img {
+    height: 40px;
+  }
+
+  ul {
+    margin-left: 25px;
+    padding: 0px;
     flex-direction: row;
     align-items: flex-end;
 
-    img {
-      height: 40px;
-    }
-
-    ul {
-      margin-left: 25px;
-      padding: 0px;
-      flex-direction: row;
-      align-items: flex-end;
-
-      li {
-        margin: 0 25px;
-      }
-    }
-
-    .buttons {
-      margin-left: 20px;
+    li {
+      margin: 0 25px;
     }
   }
+
+  .buttons {
+    margin-left: 20px;
+  }
+}
+}
+
+@media (min-width: 768px) {
 }
 
 @media (min-width: 1024px) {
