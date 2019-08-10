@@ -14,7 +14,8 @@ body {
 }
 
 .nav {
-  @include center;
+  display: flex;
+  align-items: center;
   color: $color-text;
   font-size: 5vw;
   padding: 20px;
@@ -22,8 +23,9 @@ body {
   width: 100%;
 
   img {
+    width: 50vw;
     @include unselectable;
-    height: 50px;
+    object-fit: contain;
   }
 
   ul {
@@ -125,6 +127,7 @@ body {
     align-items: flex-end;
 
     img {
+      width: initial;
       height: 40px;
     }
 
