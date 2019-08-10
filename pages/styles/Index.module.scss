@@ -74,7 +74,7 @@ body {
     }
 
     .primary {
-      @include clickable($color-danger);
+      @include clickable($color-primary);
       border: none;
     }
   }

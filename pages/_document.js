@@ -23,6 +23,7 @@ class MyDocument extends Document {
 
                     {/*FontAwesome*/}
                     <script src="https://kit.fontawesome.com/8d5f687edf.js"></script>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
                 </Head>
                 <body>
                     <Main />
