@@ -16,14 +16,14 @@ body {
 .nav {
   @include center;
   color: $color-text;
-  font-size: 21px;
+  font-size: 30px;
   padding: 20px;
   flex-direction: column;
   width: 100%;
 
   img {
     @include unselectable;
-    height: 30px;
+    height: 70px;
   }
 
   ul {
@@ -65,8 +65,9 @@ body {
       @include center;
       @include clickable($color-danger);
       color: $color-text;
-      width: 150px;
-      height: 40px;
+      min-width: 150px;
+      min-height: 40px;
+      padding: 15px;
       text-align: center;
       border: $color-primary solid 3px;
       border-radius: 10px;
@@ -119,6 +120,7 @@ body {
 
 @media (min-width: 1024px) {
   .nav {
+    font-size: 21px;
     flex-direction: row;
     align-items: flex-end;
 
