@@ -68,7 +68,7 @@ body {
         }
       }
 
-      &.active {
+      &.active, &:focus {
         transform: translateY(10px);
 
         div {

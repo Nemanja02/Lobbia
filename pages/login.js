@@ -83,7 +83,7 @@ export class login extends Component {
         type = "password";
         helperText = (
           <RouterLink href="/forgot-password">
-            <Link style={{ cursor: "pointer" }}>Forgot you password?</Link>
+            <Link style={{ cursor: "pointer" }}>Forgot your password?</Link>
           </RouterLink>
         );
       }
