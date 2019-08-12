@@ -7,8 +7,14 @@ export class index extends Component {
       <>
         <div id={classes.main}>
           <div className={classes.nav}>
-            <img src="assets/PixelArt.png" />
-
+            <div className={classes.mobileNav}>
+              <img src="assets/PixelArt.png" />
+              <div tabIndex="0" className={classes.burger}>
+                <div />
+                <div />
+                <div />
+              </div>
+            </div>
             <nav>
               <ul>
                 <li className={classes.active}>
@@ -36,7 +42,10 @@ export class index extends Component {
           <div className={classes.content}>
             <div>
               <h1>Welcome</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
             <img src="index/IndexBG.svg" />
           </div>

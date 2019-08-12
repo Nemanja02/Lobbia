@@ -15,8 +15,6 @@ class MyDocument extends Document {
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     />
-                    {/* Material Icons */}
-                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
                     {/*Additional styles from server */}
                     <link rel="stylesheet" href="/css/root.css" />
