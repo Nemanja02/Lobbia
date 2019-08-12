@@ -5,6 +5,10 @@ body {
   background: $color-bg;
 }
 
+*:focus {
+  outline: none;
+}
+
 #main {
   width: 100%;
   height: 100vh;
@@ -40,7 +44,7 @@ body {
       position: relative;
 
       div {
-        transition: transform $transition;
+        transition: all $transition;
         height: calc(100% / 6);
         background-color: white;
         margin-bottom: calc(100% / 6);
@@ -51,7 +55,8 @@ body {
         }
       }
 
-      &:hover div {
+      &:hover div,
+      &:focus div {
         background-color: $color-text-second;
 
         &:nth-child(1) {
@@ -61,7 +66,31 @@ body {
         &:nth-child(3) {
           transform: translateX(-5px);
         }
+      }
 
+      &.active {
+        transform: translateY(10px);
+
+        div {
+          margin-bottom: 3.5px;
+
+          &:nth-child(1) {
+            transform: translateX(-10px);
+            transform: rotate(-45deg);
+            width: 50%;
+          }
+
+          &:nth-child(2) {
+            width: 98%;
+            margin-left: 2%;
+          }
+
+          &:nth-child(3) {
+            transform: translateX(-10px);
+            transform: rotate(45deg);
+            width: 50%;
+          }
+        }
       }
     }
   }
@@ -83,40 +112,45 @@ body {
         width: 0;
         background: $color-primary;
         height: 3px;
-        transition: width $transition;
+        transition: all $transition;
         margin-top: 5px;
         border-radius: 500px;
       }
 
       &:hover div,
+      &:focus div {
+        background-color: $color-primary-dark;
+        width: 80%;
+      }
+
       &.active div {
         width: 80%;
       }
     }
   }
+}
 
-  .buttons {
-    flex: 1;
-    flex-direction: row;
-    display: flex;
-    justify-content: flex-end;
+.buttons {
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
 
-    a {
-      @include center;
-      @include clickable($color-danger);
-      color: $color-text;
-      min-width: 150px;
-      min-height: 40px;
-      padding: 10px;
-      text-align: center;
-      border: $color-primary solid 3px;
-      border-radius: 10px;
-    }
+  a {
+    @include center;
+    @include clickable($color-danger);
+    color: $color-text;
+    min-width: 150px;
+    min-height: 40px;
+    padding: 10px;
+    text-align: center;
+    border: $color-primary solid 3px;
+    border-radius: 10px;
+  }
 
-    .primary {
-      @include clickable($color-primary);
-      border: none;
-    }
+  .primary {
+    @include clickable($color-primary);
+    border: none;
   }
 }
 
@@ -156,9 +190,6 @@ body {
 }
 
 @media (min-width: 768px) {
-}
-
-@media (min-width: 1024px) {
   .nav {
     font-size: 21px;
     flex-direction: row;
@@ -192,6 +223,9 @@ body {
       margin-left: 20px;
     }
   }
+}
+
+@media (min-width: 1024px) {
 }
 
 @media (min-width: 1200px) {

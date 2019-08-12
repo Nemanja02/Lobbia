@@ -17,15 +17,15 @@ export class index extends Component {
             </div>
             <nav>
               <ul>
-                <li className={classes.active}>
+                <li tabIndex="0" className={classes.active}>
                   Home
                   <div />
                 </li>
-                <li>
+                <li tabIndex="0">
                   About
                   <div />
                 </li>
-                <li>
+                <li tabIndex="0">
                   Support
                   <div />
                 </li>

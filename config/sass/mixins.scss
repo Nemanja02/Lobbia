@@ -52,7 +52,7 @@
   transition: background-color $transition, box-shadow $transition;
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: lighten($color, 10%);
     box-shadow: 0 2px 4px $color-bg;
   }
