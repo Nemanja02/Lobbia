@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import classes from "./styles/Index.module.scss";
 import { decorateWithLogger } from "graphql-tools";
+import { getOperationDefinition } from "apollo-utilities";
 
 function Drop({ dropped }) {
-  return (dropped) ? (
-    <ul>
+    return <ul className={(dropped) ? null : classes.closed} >
       <li tabIndex="0" className={classes.active}>
         Home
       <div />
@@ -18,18 +18,16 @@ function Drop({ dropped }) {
       <div />
       </li>
     </ul>
-    ) : null;
 
 }
 
 export class index extends Component {
   render() {
-    var drop = true;
+    var dropped = true;
 
     function changeDrop() {
-      drop = !drop;
-      console.log("State: " + drop);
-
+      dropped = !dropped;
+      console.log("State: " + dropped);
     }
 
     return (
@@ -45,7 +43,7 @@ export class index extends Component {
               </div>
             </div>
             <nav>
-              <Drop dropped={drop} />
+              <Drop dropped={dropped} />
             </nav>
 
             <div className={classes.buttons}>

@@ -67,7 +67,8 @@ body {
         }
       }
 
-      &.active, &:focus {
+      &.active,
+      &:focus {
         div {
           &:nth-child(1) {
             transform: translateY(15px);
@@ -89,6 +90,7 @@ body {
     padding: 20px;
 
     li {
+      transition: all $transition;
       @include center;
       flex-direction: column;
       margin: 10px 25px;
@@ -173,6 +175,23 @@ body {
 }
 
 @media (min-width: 640px) {
+}
+
+@media (max-width: 767px) {
+  li {
+    &.closed {
+      transform: scaleY(0);
+      max-height: 0;
+      overflow: hidden;
+      margin: 0;
+      * {
+        transform: scaleY(0);
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
