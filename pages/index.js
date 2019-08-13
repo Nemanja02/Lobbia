@@ -23,8 +23,8 @@ function Drop({ dropped }) {
 
 export class index extends Component {
   render() {
+    // TODO Pavle make this work pls i cri
     var dropped = true;
-
     function changeDrop() {
       dropped = !dropped;
       console.log("State: " + dropped);
