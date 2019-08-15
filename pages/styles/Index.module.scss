@@ -36,50 +36,6 @@ body {
       @include unselectable;
       object-fit: contain;
     }
-
-    .burger {
-      height: 40px;
-      width: 50px;
-      cursor: pointer;
-      position: relative;
-
-      div {
-        transition: all $transition;
-        height: calc(100% / 6);
-        background-color: white;
-        margin-bottom: calc(100% / 6);
-        border-radius: 10000px;
-
-        &:nth-child(3) {
-          margin-bottom: 0;
-        }
-      }
-
-      &:hover div {
-        background-color: $color-text-second;
-
-        &:nth-child(1) {
-          transform: translateX(-5px);
-        }
-
-        &:nth-child(3) {
-          transform: translateX(-5px);
-        }
-      }
-
-      &.active,
-      &:focus {
-        div {
-          &:nth-child(1) {
-            transform: translateY(15px);
-          }
-
-          &:nth-child(3) {
-            transform: translateY(-15px);
-          }
-        }
-      }
-    }
   }
 
   ul {
@@ -208,7 +164,7 @@ body {
         height: 40px;
       }
 
-      .burger {
+      div {
         display: none;
       }
     }

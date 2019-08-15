@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import classes from "./styles/Index.module.scss";
+import Burger from "../components/Burger/Burger";
 import { decorateWithLogger } from "graphql-tools";
 import { getOperationDefinition } from "apollo-utilities";
 
 function Drop({ dropped }) {
-    return <ul className={(dropped) ? null : classes.closed} >
+  return (
+    <ul className={dropped ? null : classes.closed}>
       <li tabIndex="0" className={classes.active}>
         Home
       <div />
@@ -18,7 +20,7 @@ function Drop({ dropped }) {
       <div />
       </li>
     </ul>
-
+  );
 }
 
 export class index extends Component {
@@ -36,11 +38,7 @@ export class index extends Component {
           <div className={classes.nav}>
             <div className={classes.mobileNav}>
               <img src="assets/PixelArt.png" />
-              <div onClick={() => changeDrop()} tabIndex="0" className={classes.burger}>
-                <div />
-                <div />
-                <div />
-              </div>
+              <Burger clicked={() => console.log("hi")} />
             </div>
             <nav>
               <Drop dropped={dropped} />
