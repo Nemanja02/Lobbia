@@ -135,17 +135,11 @@ body {
 
 @media (max-width: 767px) {
   li {
-    &.closed {
+    &.closed, &.closed * {
       transform: scaleY(0);
       max-height: 0;
       overflow: hidden;
       margin: 0;
-      * {
-        transform: scaleY(0);
-        max-height: 0;
-        overflow: hidden;
-        margin: 0;
-      }
     }
   }
 }
