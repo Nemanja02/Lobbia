@@ -4,32 +4,22 @@ import Burger from "../components/Burger/Burger";
 import { decorateWithLogger } from "graphql-tools";
 import { getOperationDefinition } from "apollo-utilities";
 
-function Drop({ dropped }) {
-  return (
-    <ul className={dropped ? null : classes.closed}>
-      <li tabIndex="0" className={classes.active}>
-        Home
-      <div />
-      </li>
-      <li tabIndex="0">
-        About
-      <div />
-      </li>
-      <li tabIndex="0">
-        Support
-      <div />
-      </li>
-    </ul>
-  );
-}
-
 export class index extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dropped: false
+    };
+  }
+
   render() {
     // FIXME Pavle make this work pls i cri
-    var dropped = true;
-    function changeDrop() {
-      dropped = !dropped;
-      console.log("State: " + dropped);
+    function changeDrop(lol) {
+      lol.setState(state => {
+        return { dropped: !state.dropped };
+      });
+      console.log("State: " + lol.state.dropped);
     }
 
     return (
@@ -38,10 +28,23 @@ export class index extends Component {
           <div className={classes.nav}>
             <div className={classes.mobileNav}>
               <img src="assets/PixelArt.png" />
-              <Burger clicked={() => console.log("hi")} />
+              <Burger clicked={() => changeDrop(this)} />
             </div>
             <nav>
-              <Drop dropped={dropped} />
+              <ul className={this.state.dropped ? null : classes.closed}>
+                <li tabIndex="0" className={classes.active}>
+                  Home
+                  <div />
+                </li>
+                <li tabIndex="0" className={classes.closed}>
+                  About
+                  <div />
+                </li>
+                <li tabIndex="0">
+                  Support
+                  <div />
+                </li>
+              </ul>
             </nav>
 
             <div className={classes.buttons}>

@@ -57,6 +57,8 @@ body {
         background: $color-primary;
         height: 3px;
         transition: all $transition;
+        transform: scaleY(1);
+        overflow: hidden;
         margin-top: 5px;
         border-radius: 500px;
       }
@@ -134,11 +136,10 @@ body {
 }
 
 @media (max-width: 767px) {
-  li {
-    &.closed, &.closed * {
+  ul.closed {
+    &.closed,
+    &.closed * {
       transform: scaleY(0);
-      max-height: 0;
-      overflow: hidden;
       margin: 0;
     }
   }
