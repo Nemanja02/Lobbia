@@ -14,7 +14,6 @@ export class index extends Component {
   }
 
   render() {
-    // FIXME Pavle make this work pls i cri
     function changeDrop(lol) {
       lol.setState(state => {
         return { dropped: !state.dropped };

@@ -150,6 +150,7 @@ body {
 
   nav.closed {
     opacity: 0;
+    pointer-events: none;
   }
 }
 
