@@ -19,7 +19,8 @@
     }
   }
 
-  &:hover div {
+  &:hover div,
+  &:focus div {
     background-color: $color-text-second;
 
     &:nth-child(1) {
@@ -31,8 +32,7 @@
     }
   }
 
-  &.active,
-  &:focus {
+  &.active {
     div {
       &:nth-child(1) {
         transform: translateY(15px);

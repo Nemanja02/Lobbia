@@ -28,15 +28,18 @@ export class index extends Component {
           <div className={classes.nav}>
             <div className={classes.mobileNav}>
               <img src="assets/PixelArt.png" />
-              <Burger clicked={() => changeDrop(this)} />
+              <Burger
+                clicked={() => changeDrop(this)}
+                state={this.state.dropped}
+              />
             </div>
-            <nav>
-              <ul className={this.state.dropped ? null : classes.closed}>
+            <nav className={this.state.dropped ? null : classes.closed}>
+              <ul>
                 <li tabIndex="0" className={classes.active}>
                   Home
                   <div />
                 </li>
-                <li tabIndex="0" className={classes.closed}>
+                <li tabIndex="0">
                   About
                   <div />
                 </li>

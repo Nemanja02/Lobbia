@@ -57,8 +57,6 @@ body {
         background: $color-primary;
         height: 3px;
         transition: all $transition;
-        transform: scaleY(1);
-        overflow: hidden;
         margin-top: 5px;
         border-radius: 500px;
       }
@@ -136,12 +134,22 @@ body {
 }
 
 @media (max-width: 767px) {
-  ul.closed {
-    &.closed,
-    &.closed * {
-      transform: scaleY(0);
-      margin: 0;
-    }
+  .nav a {
+    margin-top: 40px;
+  }
+
+  nav {
+    transition: all $transition;
+    position: fixed;
+    top: 80px;
+    opacity: 1;
+    width: 100%;
+    background-color: $color-bg;
+    z-index: 100;
+  }
+
+  nav.closed {
+    opacity: 0;
   }
 }
 
