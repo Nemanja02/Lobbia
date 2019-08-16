@@ -6,6 +6,7 @@ import Particles from "react-particles-js";
 import RouterLink from "next/link";
 import Router from "next/router";
 import { connect } from "react-redux";
+import clsx from "clsx";
 import * as actions from "../actions/userActions";
 
 const validateFormCredentials = gql`
@@ -30,6 +31,7 @@ import {
   Button,
   Link,
   IconButton,
+  Icon,
   SnackbarContent
 } from "@material-ui/core";
 
@@ -284,7 +286,7 @@ export class login extends Component {
                   }))
                 }
               >
-                <i className={`fas fa-times ${classes.snackbarIcon}`} />
+                <Icon className={clsx("fas fa-times", classes.snackbarIcon)} />
               </IconButton>
             }
           />

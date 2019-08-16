@@ -15,7 +15,7 @@
   background-color: $color-bg-light;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: $default-border-radius;
   margin-bottom: $margin;
 }
 
@@ -105,7 +105,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  border-radius: 5px;
+  border-radius: $default-border-radius;
 
   &:hover {
     background-color: $color-bg;
@@ -177,7 +177,7 @@
 
   &:hover {
     background-color: $color-bg;
-    border-radius: 5px;
+    border-radius: $default-border-radius;
   }
 }
 
@@ -226,9 +226,6 @@ span:focus {
     font-weight: 500;
     font-size: 14px;
     width: 100%;
-    border-radius: 8px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     border-bottom: 3px solid lighten($color-bg, 15%);
     cursor: pointer;
     transition: all $transition;

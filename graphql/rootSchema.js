@@ -14,17 +14,23 @@ module.exports = gql`
     games: [Int!]
   }
 
+  type Connections {
+    pending: [User!]
+    accepted: [User!]
+  }
+
   type User {
     email: String!
     username: String!
     fullName: String!
+    gender: String
     profilePicture: String
     accountDescription: String
     banned: Boolean
     verified: Boolean
     isOnline: Boolean
     id: ID!
-    connections: [User]
+    connections: Connections
     lobbyHistory: [ID]
     balance: Float
     interests: UserInterests
@@ -65,7 +71,7 @@ module.exports = gql`
 
     marjanoveUmri: [User!]!
 
-    getInitialProfileInfo(id: ID): User!
+    getProfileData(id: ID): User!
   }
 
   # MUTATIONS
@@ -77,6 +83,7 @@ module.exports = gql`
       username: String
       password: String
       email: String
+      gender: String
       signature: String
     ): Boolean
 
@@ -86,7 +93,13 @@ module.exports = gql`
 
     logout(id: ID!): Response
 
-    addConnection(id: ID! connectionId: ID!): Response
+    sendConnectionRequest(id: ID! connectionId: ID!): Response
+    
+    cancelConnectionRequest(id: ID! connectionId: ID!): Response
+    
+    acceptConnectionRequest(id: ID! connectionId: ID!): Response
+    
+    removeConnection(id: ID! connectionId: ID!): Response
 
     createUserAccount(
       email: String
@@ -94,6 +107,7 @@ module.exports = gql`
       dateOfBirth: DateTime
       password: String
       fullName: String
+      gender: String
       musicInterests: [Int]
       gamesInterests: [Int]
     ): Auth

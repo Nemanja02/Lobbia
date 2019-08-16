@@ -4,13 +4,10 @@ import "../config/sass/global.scss";
 import classes from "./styles/Page.module.scss";
 import * as actions from "../actions/userActions";
 import { connect } from "react-redux";
-import withAuth from "../lib/withAuth";
+import withDefaults from "../lib/withDefaults";
 import { Typography } from "@material-ui/core";
 
 class Feed extends Component {
-  componentDidMount() {
-    this.props.setId(localStorage.getItem("id"));
-  }
 
   render() {
     const { pageProps } = this.props;
@@ -47,4 +44,4 @@ Feed.getInitialProps = ({ req }) => {
 export default connect(
   state => state,
   actions
-)(withAuth(Feed));
+)(withDefaults(Feed));

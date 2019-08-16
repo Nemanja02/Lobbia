@@ -3,8 +3,6 @@
 
 .main {
     height: 100%;
-    background-color: red;
-    border-radius: 10px;
     padding: $margin;
     width: 100%;
   }
@@ -27,13 +25,22 @@
 }
 
 .profileDialog {
+    border-radius: $default-border-radius !important;
     background-color: $color-bg-light !important;
     padding: 10px;
-    @include popup;
     max-width: 90%;
     width: 500px;
     outline: none;
     height: auto !important;
+}
+
+.dialog-action-container {
+    margin: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .dangerButton {

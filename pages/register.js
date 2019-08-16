@@ -5,18 +5,25 @@ import { Mutation } from "react-apollo";
 import { connect } from "react-redux";
 import * as actions from "../actions/userActions";
 import gql from "graphql-tag";
+import clsx from "clsx";
 import {
   Grid,
   Snackbar,
+  FilledInput,
   TextField,
   Typography,
   Button,
   Link,
   Chip,
   IconButton,
+  Icon,
   SnackbarContent,
   Avatar,
-  Tooltip
+  Tooltip,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel
 } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -38,12 +45,14 @@ const createUserAccount = gql`
     $fullName: String
     $username: String
     $dateOfBirth: DateTime
+    $gender: String
     $password: String
     $musicInterests: [Int]
     $gamesInterests: [Int]
   ) {
     createUserAccount(
       email: $email
+      gender: $gender
       musicInterests: $musicInterests
       gamesInterests: $gamesInterests
       fullName: $fullName
@@ -62,12 +71,14 @@ const validateFormCredentials = gql`
     $username: String
     $password: String
     $email: String
+    $gender: String
   ) {
     validateFormCredentials(
       fullName: $fullName
       username: $username
       password: $password
       email: $email
+      gender: $gender
     )
   }
 `;
@@ -152,7 +163,7 @@ function GenreCheck({ name, stateField, clicked, isClicked }) {
       color="primary"
       avatar={
         <Avatar>
-          <i className="fas fa-music" />
+          <Icon fontSize="small" className={clsx("fas fa-music")} />
         </Avatar>
       }
       onClick={clicked}
@@ -202,14 +213,15 @@ class Register extends Component {
         value: getFormattedDate(new Date()) || ""
       },
 
+      gender: {
+        value: "",
+        options: ["none", "male", "female"]
+      },
+
       password: {
         value: ""
       }
     }
-  };
-
-  handleDateChange = e => {
-    this.setState({ birthday: e.target.value });
   };
 
   formForward = () => {
@@ -237,8 +249,19 @@ class Register extends Component {
     }));
   };
 
+  handleGenderChange = async e => {
+    await this.setState(prevState => ({
+      formFields: {
+        ...prevState.formFields,
+        gender: {
+          ...prevState.formFields.gender,
+          value: e.target.value
+        }
+      }
+    }));
+  }
+
   handleDate = date => {
-    console.log(date.toISOString());
     this.setState(prevState => ({
       formFields: {
         ...prevState.formFields,
@@ -318,6 +341,8 @@ class Register extends Component {
 
             if (el.name === "birthday") type = "date";
 
+            if (el.name === "gender") type = "gender";
+
             if (el.name === "fullName") placeholderText = "Full name";
 
             const dateField = (
@@ -338,21 +363,34 @@ class Register extends Component {
               </MuiPickersUtilsProvider>
             );
 
-            return type === "date" ? (
+            if (type === "date") return (
               dateField
-            ) : (
-                <TextField
-                  key={el.name}
-                  fullWidth
-                  variant="filled"
-                  helperText={helperText}
-                  label={placeholderText}
-                  style={marginTop}
-                  type={type}
-                  onChange={e => this.handleChange(e, el.name)}
-                  value={this.state.formFields[el.name].value}
-                />
-              );
+            )
+            else if (type === "gender") return (
+              <FormControl key={el.name} style={marginTop} fullWidth variant="filled">
+                <InputLabel htmlFor="gender-simple">Gender</InputLabel>
+                <Select fullWidth variant="filled" input={<FilledInput name="age" id="gender-simple" />}
+                  value={this.state.formFields.gender.value} onChange={this.handleGenderChange}>
+                  {this.state.formFields.gender.options.map(el => <MenuItem
+                    key={el}
+                    value={el === "none" ? "" : el}>{el === "none" ? <em>{el.charAt(0).toUpperCase() + el.slice(1)}</em> : el.charAt(0).toUpperCase() + el.slice(1)
+                    }</MenuItem>)}
+                </Select>
+              </FormControl>
+            )
+            else return (
+              <TextField
+                key={el.name}
+                fullWidth
+                variant="filled"
+                helperText={helperText}
+                label={placeholderText}
+                style={marginTop}
+                type={type}
+                onChange={e => this.handleChange(e, el.name)}
+                value={this.state.formFields[el.name].value}
+              />
+            );
           })}
         </Grid>
         <Mutation
@@ -387,7 +425,8 @@ class Register extends Component {
             email: this.state.formFields.email.value,
             password: this.state.formFields.password.value,
             fullName: this.state.formFields.fullName.value,
-            username: this.state.formFields.username.value
+            username: this.state.formFields.username.value,
+            gender: this.state.formFields.gender.value
           }}
         >
           {(validateFormCredentials, { data, error }) => {
@@ -545,17 +584,19 @@ class Register extends Component {
 
     let mutationVariables = null;
     if (this.state.formStage === 2) {
-      const { email, fullName, password, username } = this.state.formFields;
+      const { email, fullName, password, username, gender } = this.state.formFields;
 
       mutationVariables = {
         email: email.value,
         fullName: fullName.value,
         password: password.value,
+        gender: gender.value,
         username: username.value,
         dateOfBirth: this.state.formFields.birthday.value.toISOString(),
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };
+
     }
 
     const thirdStepRegistration = (
@@ -688,7 +729,7 @@ class Register extends Component {
     );
 
     return (
-      <MuiThemeProvider theme={dateTheme}>
+      <>
         <div className={classes["background-wrapper"]}>
           <img src="static/assets/landing-background.jpg" className={classes["bg-img"]} />
         </div>
@@ -742,12 +783,12 @@ class Register extends Component {
                   }))
                 }
               >
-                <i className={`fas fa-times ${classes.snackbarIcon}`} />
+                <Icon className={clsx("fas fa-times", classes.snackbarIcon)} />
               </IconButton>
             }
           />
         </Snackbar>
-      </MuiThemeProvider>
+      </>
     );
   }
 }

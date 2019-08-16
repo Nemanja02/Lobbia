@@ -7,7 +7,7 @@ QUERY: feed (nzm sta bi ru trebalo da bude neki games news idk)
 QUERY: updates, (ako ima neki update prikazi useru sta je dodato)
 QUERY: group history
 QUERY: koliko usera ima u queue za neki igricu
-QUERY: podatci o useru (za profil i za settings)
+QUERY: podatci o useru (za profil i za settings) | DONE
 MUTATION: edit profile pic
 MUTATION: edit settingsa
 MUTATION: search, tj slanje podataka u bazu o useru koji je zapoceo search

@@ -9,6 +9,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "react-apollo";
 import "next-with-apollo";
+import io from "socket.io-client";
 import { setContext } from "apollo-link-context";
 import { parseCookies } from "nookies";
 import { Provider } from "react-redux";
@@ -50,8 +51,14 @@ const theme = createMuiTheme({
       secondary: grey[500],
     },
 
+    action: {
+      active: grey[400],
+      disabled: grey[700],
+    },
+
     background: {
-      paper: "#32393d"
+      paper: "#1e2024",
+      default: "#32393d"
     },
 
     primary: {
@@ -77,29 +84,6 @@ Router.events.on("routeChangeComplete", () => {
 });
 
 export class _app extends Component {
-  state = {
-    id: ""
-  };
-
-  static getinitialProps = async ({ Component, router, ctx }) => {
-    let pageProps = {};
-
-    if (Component.pageProps) {
-      const componentProps = await Component.getinitialProps(ctx);
-      console.log(componentProps);
-      pageProps = {
-        ...pageProps,
-        ...componentProps
-      };
-    }
-
-    return { pageProps };
-  };
-
-  componentDidMount() {
-    const id = localStorage.getItem("id");
-    if (id) this.setState({ id });
-  }
 
   render() {
     const { Component, pageProps, store } = this.props;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import classes from "./Sidebar.module.scss";
 import NavLink from "./NavLink/NavLink";
 import Typography from "../Typography/Typography";
@@ -64,7 +64,7 @@ export function Sidebar(props) {
 
   let friendList;
 
-  if (props.user.connections.length > 0) friendList = props.user.connections.map((el, i) => {
+  if (props.user.connections.accepted) if (props.user.connections.accepted.length > 0) friendList = props.user.connections.accepted.map((el, i) => {
     return (
       <Friend
         clicked={() => openProfileInspect(el.id)}

@@ -4,8 +4,10 @@ const initialUserStore = {
   profilePicture: "",
   username: "",
   id: "",
-  isOnline: false,
-  connections: []
+  connections: {
+    accepted: [],
+    pending: []
+  }
 };
 
 export default (state = initialUserStore, action) => {
