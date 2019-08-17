@@ -19,26 +19,15 @@ class MyDocument extends Document {
           {/*Additional styles from server */}
           <link rel="stylesheet" href="/css/root.css" />
 
-          {/*FontAwesome*/}
+          {/*Font Awesome*/}
           <script src="https://kit.fontawesome.com/8d5f687edf.js" />
-        
-          {/*Brower Colors */}
-          <meta name="theme-color" content="#1e2024" />
-          <meta name="msapplication-navbutton-color" content="#1e2024" />
-
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black-translucent"
-          />
-          
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 

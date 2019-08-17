@@ -36,10 +36,10 @@ const {
 
 exports.validateFormCredentials = async (
   parent,
-  { fullName, email, username, password, signature }
+  { fullName, gender, email, username, password, signature }
 ) => {
   if (!signature) {
-    if (!(fullName && email && username && password))
+    if (!(fullName && email && username && password && gender))
       throw new ValidationError({
         data: {
           message: "Please fill out all form fields."
@@ -151,10 +151,10 @@ exports.validateFormCredentials = async (
       if (!secondCheckResult)
         throw new ValidationError({
           data: {
-            message: "Email or username is not valid. Please try again."
+            message: "Looks like you do not have an account. Try registering first."
           },
           internalData: {
-            error: "User tried to sign in with invalid email/username.",
+            error: "User tried to sign in with email/username that does not exist in db.",
             status: 403
           }
         });
@@ -215,6 +215,7 @@ exports.createUserAccount = async (
     dateOfBirth,
     username,
     password,
+    gender,
     fullName,
     gamesInterests,
     musicInterests
@@ -283,7 +284,6 @@ exports.createUserAccount = async (
 
   for (let game in games) {
     for (let field of gamesInterests) {
-      console.log(game, field);
       if (game == field) {
         newGamesInterests.push({
           label: games[game].label,
@@ -307,11 +307,18 @@ exports.createUserAccount = async (
     }
   }
 
+  let profilePicture;
+
+  if (gender === "male") profilePicture = "static/assets/default-user-male.png";
+  if (gender === "female") profilePicture = "static/assets/default-user-female.png";
+
   const newUser = new User({
     username,
     email,
     fullName,
     password,
+    gender,
+    profilePicture,
     dateOfBirth,
     interests: {
       music: newGenresInterests,
@@ -338,7 +345,7 @@ exports.createUserAccount = async (
   };
 };
 
-exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
+exports.getProfileData = async (parent, { id }, ctx) => {
   if (!ctx.user.isAuth || !ctx.user)
     throw new AuthenticationError({
       data: {
@@ -349,17 +356,8 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
       }
     });
   else {
-    if (ctx.user.isAuth) {
-      const user = await User.findOne({ _id: id }).populate('connections');
-
-      if (user.connections.length > 0 || user) for (i in user.connections) {
-        const stringId = user.connections[i].id.toString();
-        user.connections[i].id = stringId;
-        if (!user.connections[i].profilePicture)
-          user.connections[i].profilePicture = "static/assets/default-user-male.png";
-      }
-      if (!user.profilePicture)
-        user.profilePicture = "static/assets/default-user-male.png";
+    if (ctx.user.isAuth && id) {
+      const user = await User.findOne({ _id: id }).populate('connections.pending').populate('connections.accepted');
 
       return user;
     }
@@ -367,6 +365,7 @@ exports.getInitialProfileInfo = async (parent, { id }, ctx) => {
 };
 
 exports.logout = async (parent, { id }) => {
+  if (!id) console.log(`no id for logout query.`);
   try {
     const doc = await User.findOneAndUpdate(
       { _id: id },
@@ -504,12 +503,12 @@ exports.usersList = async () => {
 
 // return specific user
 exports.findUser = async (parent, { id }) => {
-  const foundUser = await User.findOne({ _id: id }).populate('connections').populate('lobbyHistory');
+  const foundUser = await User.findOne({ _id: id }).populate('connections.pending').populate('connections.accepted');
   if (foundUser.connections.length > 0 || foundUser) for (i in foundUser.connections) foundUser.connections[i] = foundUser.connections[i].toString();
   return foundUser;
 };
 
-exports.addConnection = async (parent, { id, connectionId }, ctx) => {
+exports.sendConnectionRequest = async (parent, { id, connectionId }, ctx) => {
   // if (!ctx.user.isAuth) throw new AuthenticationError({
   //   data: {
   //     message: "You need to be authenticated to perform this action."
@@ -532,22 +531,217 @@ exports.addConnection = async (parent, { id, connectionId }, ctx) => {
 
   try {
     const foundUser = await User.findOne({ _id: id });
-    if (foundUser.connections.length > 0 || foundUser) for (field of foundUser.connections)
-      if (field == connectionId) throw new ValidationError({
-        data: {
-          message: "User is already in your connections list."
-        },
-        internalData: {
-          error: "User tried to add a connection which is already his friend.",
-          status: 403
-        }
-      })
+    if (foundUser.connections.length > 0 || foundUser) {
+      for (let field of foundUser.connections.accepted)
+        if (field == connectionId) throw new ValidationError({
+          data: {
+            message: "User is already in your connections list."
+          },
+          internalData: {
+            error: "User tried to add a connection which is already in accepted list.",
+            status: 403
+          }
+        })
+
+      for (let field of foundUser.connections.pending)
+        if (field == connectionId) throw new ValidationError({
+          data: {
+            message: "You already sent connection request to this user."
+          },
+          internalData: {
+            error: "User tried to add a connection which is already in pending list.",
+            status: 403
+          }
+        })
+    }
+
+    await User.findOneAndUpdate({ _id: connectionId }, {
+      $push: {
+        "connections.pending": ObjectId(id)
+      },
+    }, { new: true });
+    return {
+      success: true
+    }
+  } catch (e) {
+    switch (e.name) {
+      case "Validation error":
+        throw e;
+      case "Authentication error":
+        throw e;
+      default:
+        console.log(e);
+    }
+    return {
+      success: false
+    }
+  }
+}
+
+exports.cancelConnectionRequest = async (parent, { id, connectionId }, ctx) => {
+  // if (!ctx.user.isAuth) throw new AuthenticationError({
+  //   data: {
+  //     message: "You need to be authenticated to perform this action."
+  //   },
+  //   internalData: {
+  //     error: "User tried to add connection without being authenticated.",
+  //     status: 403
+  //   }
+  // })
+
+  if (!id || !connectionId) throw new ValidationError({
+    data: {
+      message: "Please provide all required arguments."
+    },
+    internalData: {
+      error: "User tried to add connection without providing all required parameters",
+      status: 403
+    }
+  })
+
+  try {
+    const foundUser = await User.findOne({ _id: id });
+    if (foundUser.connections.length > 0 || foundUser) {
+
+      for (let field of foundUser.connections.pending)
+        if (field !== connectionId) throw new ValidationError({
+          data: {
+            message: "You haven't sent a connection request to this user."
+          },
+          internalData: {
+            error: "User tried to add a connection which is already in pending list.",
+            status: 403
+          }
+        })
+    }
+
+    const updatedResult = await User.findOneAndUpdate({ _id: connectionId }, {
+      $pull: {
+        "connections.pending": ObjectId(id)
+      },
+    }, { new: true });
+    console.log(updatedResult);
+    return {
+      success: true
+    }
+  } catch (e) {
+    switch (e.name) {
+      case "Validation error":
+        throw e;
+      case "Authentication error":
+        throw e;
+      default:
+        console.log(e);
+    }
+    return {
+      success: false
+    }
+  }
+}
+
+exports.removeConnection = async (parent, { id, connectionId }, ctx) => {
+  // if (!ctx.user.isAuth) throw new AuthenticationError({
+  //   data: {
+  //     message: "You need to be authenticated to perform this action."
+  //   },
+  //   internalData: {
+  //     error: "User tried to add connection without being authenticated.",
+  //     status: 403
+  //   }
+  // })
+
+  if (!id || !connectionId) throw new ValidationError({
+    data: {
+      message: "Please provide all required arguments."
+    },
+    internalData: {
+      error: "User tried to add connection without providing all required parameters",
+      status: 403
+    }
+  })
+
+  try {
+    const foundUser = await User.findOne({ _id: id });
+    if (foundUser.connections.length > 0 || foundUser) {
+
+      for (let field of foundUser.connections.accepted)
+        if (field.toString() !== connectionId) throw new ValidationError({
+          data: {
+            message: "You are not connected with this user."
+          },
+          internalData: {
+            error: "User tried to remove a connection which is not in accepted list.",
+            status: 403
+          }
+        })
+    }
+
+    await User.findOneAndUpdate({ _id: id }, {
+      $pull: {
+        "connections.accepted": ObjectId(connectionId)
+      },
+    }, { new: true });
+    await User.findOneAndUpdate({ _id: connectionId }, {
+      $pull: {
+        "connections.accepted": ObjectId(id)
+      },
+    }, { new: true });
+    return {
+      success: true
+    }
+  } catch (e) {
+    switch (e.name) {
+      case "Validation error":
+        throw e;
+      case "Authentication error":
+        throw e;
+      default:
+        console.log(e);
+    }
+    return {
+      success: false
+    }
+  }
+}
+
+exports.acceptConnectionRequest = async (parent, { id, connectionId }, ctx) => {
+  // if (!ctx.user.isAuth) throw new AuthenticationError({
+  //   data: {
+  //     message: "You need to be authenticated to perform this action."
+  //   },
+  //   internalData: {
+  //     error: "User tried to add connection without being authenticated.",
+  //     status: 403
+  //   }
+  // })
+
+  if (!id || !connectionId) throw new ValidationError({
+    data: {
+      message: "Please provide all required arguments."
+    },
+    internalData: {
+      error: "User tried to add connection without providing all required parameters",
+      status: 403
+    }
+  })
+
+  try {
 
     await User.findOneAndUpdate({ _id: id }, {
       $push: {
-        "connections": ObjectId(connectionId)
+        "connections.accepted": ObjectId(connectionId)
       },
     }, { new: true });
+    await User.findOneAndUpdate({ _id: connectionId }, {
+      $push: {
+        "connections.accepted": ObjectId(id)
+      },
+    }, { new: true });
+    await User.findOneAndUpdate({ _id: id }, {
+      $pull: {
+        "connections.pending": ObjectId(connectionId)
+      }
+    })
     return {
       success: true
     }

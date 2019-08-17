@@ -86,7 +86,6 @@
 
 @mixin popup {
   background-color: $color-bg-light !important;
-  box-shadow: 0 10px 20px $color-bg !important;
   border-radius: 10px !important;
   padding: $margin;
   position: relative;

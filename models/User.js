@@ -53,6 +53,11 @@ const UserSchema = new Schema(
       default: 0
     },
 
+    gender: {
+      type: String,
+      enum: ["male", "female"]
+    },
+
     isOnline: {
       type: Boolean,
       default: false
@@ -77,12 +82,20 @@ const UserSchema = new Schema(
       type: String
     },
 
-    connections: [
-      {
-        type: ObjectId,
-        ref: "User"
-      }
-    ],
+    connections: {
+      pending: [
+        {
+          type: ObjectId,
+          ref: "User"
+        }
+      ],
+      accepted: [
+        {
+          type: ObjectId,
+          ref: "User"
+        }
+      ],
+    },
 
     verified: {
       type: Boolean,

@@ -4,20 +4,29 @@ import gql from "graphql-tag";
 
 const fetchQuery = gql`
   query ProfileData($id: ID) {
-    getInitialProfileInfo(id: $id) {
+    getProfileData(id: $id) {
       profilePicture
       username
       isOnline
       connections {
-        id
-        username
-        isOnline
-        profilePicture
+        pending {
+          id
+          username
+          isOnline
+          profilePicture
+          fullName
+        }
+        accepted {
+          id
+          username
+          isOnline
+          profilePicture
+          fullName
+        }
       }
     }
   }
 `;
-
 
 const logoutMutation = gql`
   mutation($id: ID!) {
@@ -26,6 +35,26 @@ const logoutMutation = gql`
     }
   }
 `;
+
+const sendConnectionRequestMutation = gql`
+  mutation($id: ID $connectionId: ID) {
+    success
+  }
+`;
+
+// const cancelConnectionRequestMutation = gql`
+
+// `;
+
+// const acceptConnectionRequestMutation = gql`
+
+// `;
+
+// const removeConnectionMutation = gql`
+
+// `;
+
+
 
 export const clearState = () => dispatch => {
   dispatch({
@@ -48,6 +77,13 @@ export const setId = id => dispatch => {
     }
   });
 };
+
+export const sendConnectionRequest = (id, connectionid) => async dispatch => {
+  try {
+
+
+  } catch (e) { console.log(e) };
+}
 
 export const logout = id => async dispatch => {
   try {
@@ -77,11 +113,12 @@ export const fetchUserData = id => async dispatch => {
         id
       }
     });
-    delete res.data.getInitialProfileInfo.__typename;
+    delete res.data.getProfileData.__typename;
+    delete res.data.getProfileData.connections.__typename;
     dispatch({
       type: PROFILE_DATA,
       payload: {
-        ...res.data.getInitialProfileInfo
+        ...res.data.getProfileData
       }
     });
   } catch (e) {

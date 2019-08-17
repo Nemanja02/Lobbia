@@ -6,9 +6,12 @@ const {
   findUser,
   login,
   validateFormCredentials,
-  getInitialProfileInfo,
+  getProfileData,
   logout,
-  addConnection
+  acceptConnectionRequest,
+  cancelConnectionRequest,
+  removeConnection,
+  sendConnectionRequest
 } = require("./user");
 const { textSearch } = require("./search");
 const { initLobby, lobbiesList } = require("./lobby");
@@ -22,7 +25,7 @@ module.exports = {
     marjanoveUmri,
     findUser,
     lobbiesList,
-    getInitialProfileInfo,
+    getProfileData,
   },
 
   Mutation: {
@@ -31,7 +34,10 @@ module.exports = {
     login,
     logout,
     initLobby,
-    addConnection,
+    acceptConnectionRequest,
+    removeConnection,
+    cancelConnectionRequest,
+    sendConnectionRequest,
     textSearch
   }
 };

@@ -49,16 +49,11 @@
   }
 
   & > i.icon-special {
-    font-size: 26px;
-    color: $color-primary;
-    cursor: pointer;
-    transition: all $transition;
-    // animation: shadow-pulse 0.85s infinite;
-    // animation-play-state: paused;
-    // box-shadow: none;
-
-    &:hover {
-      color: lighten($color-primary, 10%);
+    & > span > span {
+      font-size: 26px !important;
+    color: $color-primary !important;
+    cursor: pointer !important;
+    transition: all $transition !important;
     }
   }
 }
@@ -71,7 +66,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 300px;
+  background-color: $color-bg-light !important; 
+  width: $searchbar-width-max;
 }
 
 .sbar {
@@ -92,7 +88,7 @@
 
   &:focus {
     outline: none;
-    border: 1.5px solid $color-primary;
+    background-color: lighten($color-bg, 4%);
     width: $searchbar-width-max;
   }
 
@@ -134,14 +130,5 @@
     font-size: 28px;
     color: $color-text;
     z-index: 11;
-  }
-}
-
-@keyframes shadow-pulse {
-  0% {
-    box-shadow: 0 0 0 0px rgba(#fff, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 0 25px rgba(#fff, 0);
   }
 }
