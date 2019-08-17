@@ -68,6 +68,7 @@
     "react-dom": "^16.8.6",
     "react-particles-js": "^2.7.0",
     "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
     "redis": "^2.8.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
