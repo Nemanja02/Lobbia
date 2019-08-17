@@ -6,7 +6,9 @@ export class support extends Component {
   render() {
     return (
       <>
-        <Header page="support" />
+        <div className={classes.main}>
+          <Header page="support" />
+        </div>
       </>
     );
   }

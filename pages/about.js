@@ -6,7 +6,9 @@ export class about extends Component {
   render() {
     return (
       <>
-        <Header page="about" />
+        <div className={classes.main}>
+          <Header page="about" />
+        </div>
       </>
     );
   }

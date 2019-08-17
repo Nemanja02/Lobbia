@@ -111,7 +111,6 @@ nav {
   }
 
   nav.closed {
-    opacity: 0;
     pointer-events: none;
     transform: scaleY(0);
 
