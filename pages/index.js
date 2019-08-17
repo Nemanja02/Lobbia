@@ -5,21 +5,17 @@ import { decorateWithLogger } from "graphql-tools";
 import { getOperationDefinition } from "apollo-utilities";
 
 export class index extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      dropped: false
-    };
-  }
+  state = {
+    dropped: false
+  };
 
   render() {
-    function changeDrop(lol) {
-      lol.setState(state => {
+    const changeDrop = () => {
+      this.setState(state => {
         return { dropped: !state.dropped };
       });
-      console.log("State: " + lol.state.dropped);
-    }
+      console.log("State: " + this.state.dropped);
+    };
 
     return (
       <>
@@ -27,10 +23,7 @@ export class index extends Component {
           <div className={classes.nav}>
             <div className={classes.mobileNav}>
               <img src="assets/PixelArt.png" />
-              <Burger
-                clicked={() => changeDrop(this)}
-                state={this.state.dropped}
-              />
+              <Burger clicked={changeDrop} state={this.state.dropped} />
             </div>
             <nav className={this.state.dropped ? null : classes.closed}>
               <ul>
