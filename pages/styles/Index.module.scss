@@ -17,30 +17,33 @@ body {
   padding: 50px;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   div {
-    width: 35%;
     display: flex;
     flex-direction: column;
     z-index: 1;
 
     h1 {
-      font-size: 7vw;
+      font-size: 10vw;
       font-weight: 300;
     }
 
     p {
-      width: 80%;
+      width: 100%;
+      padding-left: 100px;
       font-size: 1.3vw;
       font-weight: 300;
-      align-self: flex-end;
     }
   }
 
   img {
-    height: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    height: 80vmin;
+    width: calc(100vmin - 40px);
+    object-fit: contain;
     z-index: 0;
   }
 }
@@ -55,4 +58,12 @@ body {
 }
 
 @media (min-width: 1200px) {
+  .content {
+    align-items: center;
+    div {
+      h1 {
+        font-size: 5vw;
+      }
+    }
+  }
 }

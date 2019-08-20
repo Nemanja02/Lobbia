@@ -12,10 +12,10 @@ export class index extends Component {
           <Header page="home" />
           <div className={classes.content}>
             <div>
-              <h1>Welcome</h1>
+              <h1>Ready to take off?</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Prepare to explore the world of online gaming from different
+                perspective
               </p>
             </div>
             <img src="index/IndexBG.svg" />
