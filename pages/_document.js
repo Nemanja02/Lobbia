@@ -10,24 +10,31 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/*FONTS*/}
+          {/* fontsc*/}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
 
-          {/*Additional styles from server */}
+          {/* Additional styles from server */}
           <link rel="stylesheet" href="/css/root.css" />
 
-          {/*Font Awesome*/}
+          {/* Font Awesome */}
           <script src="https://kit.fontawesome.com/8d5f687edf.js" />
+
+          {/* UI colors */}
+          <meta name="theme-color" content="#1e2024" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 

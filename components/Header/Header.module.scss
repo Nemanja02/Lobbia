@@ -96,8 +96,8 @@ nav {
 }
 
 @media (max-width: 767px) {
-  .nav .buttons a {
-    margin-top: 40px;
+  .nav .buttons {
+    display: none;
   }
 
   nav {
