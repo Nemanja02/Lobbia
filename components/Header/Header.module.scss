@@ -15,6 +15,7 @@ nav {
 }
 
 .nav {
+  background-color: $color-bg;
   display: flex;
   align-items: center;
   color: $color-text;
@@ -22,8 +23,10 @@ nav {
   padding: 20px;
   flex-direction: column;
   width: 100%;
+  z-index:10;
 
   .mobileNav {
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -36,6 +39,7 @@ nav {
   }
 
   ul {
+    z-index: 10;
     @include center;
     list-style: none;
     display: flex;
@@ -77,25 +81,28 @@ nav {
   display: flex;
   justify-content: flex-end;
 
-  a {
-    @include center;
-    @include clickable($color-danger);
-    color: $color-text;
-    min-width: 150px;
-    min-height: 40px;
-    padding: 10px;
-    text-align: center;
-    border: $color-primary solid 3px;
-    border-radius: 10px;
-  }
-
-  .primary {
-    @include clickable($color-primary);
-    border: none;
-  }
+  @include button;
 }
 
 @media (max-width: 767px) {
+  
+  .darken {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-bg;
+    opacity: .5;
+    transition: all $transition;
+  }
+
+  .darken.closed {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .nav .buttons {
     display: none;
   }
@@ -107,7 +114,8 @@ nav {
     opacity: 1;
     width: 100%;
     background-color: $color-bg;
-    z-index: 100;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 20px;
   }
 
   nav.closed {
@@ -118,6 +126,7 @@ nav {
       pointer-events: none;
       @include unselectable;
     }
+
   }
 }
 

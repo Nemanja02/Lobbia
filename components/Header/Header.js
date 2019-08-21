@@ -18,8 +18,15 @@ class Header extends Component {
       });
     };
 
+    const unDrop = () => {
+      this.setState(state => {
+        return { dropped: false };
+      });
+    };
+
     return (
       <div className={classes.nav}>
+        <div className={`${classes.darken} ${this.state.dropped ? null : classes.closed}`} onClick={() => unDrop()}/>
         <div className={classes.mobileNav}>
           <img src="assets/PixelArt.png" />
           <Burger clicked={changeDrop} state={this.state.dropped} />
@@ -41,8 +48,8 @@ class Header extends Component {
           </ul>
         </nav>
         <div className={classes.buttons}>
-          <a href="/feed" className={classes.primary}>
-            Enter Lobbia
+          <a href="/login" className={`${classes.primary} ${classes.button}`}>
+            Log in
           </a>
         </div>
       </div>

@@ -17,6 +17,12 @@ export class index extends Component {
                 Prepare to explore the world of online gaming from different
                 perspective
               </p>
+              <a
+                href="/login"
+                className={`${classes.primary} ${classes.button}`}
+              >
+                Log in
+              </a>
             </div>
             <img src="index/IndexBG.svg" />
           </div>
