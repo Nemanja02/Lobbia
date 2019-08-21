@@ -54,8 +54,10 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
+    max-height: calc(100vh - 100px);
     width: 130vmin;
     object-fit: contain;
+    object-position: bottom right;
     z-index: 0;
   }
 }
