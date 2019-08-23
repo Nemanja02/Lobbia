@@ -21,22 +21,6 @@ import {
 } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 
-const DangerButtonTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#ff4f4f"
-    }
-  },
-  overrides: {
-    MuiButton: {
-      root: {
-        margin: "15px",
-        borderColor: "#ccc"
-      }
-    }
-  }
-});
-
 const ButtonControlTheme = createMuiTheme({
   palette: {
     text: {
@@ -48,17 +32,20 @@ const ButtonControlTheme = createMuiTheme({
       main: "#ff9a60"
     },
     secondary: {
-      main: "#3b84c0"
-    },
-    error: {
-      main: "#c03b3b"
+      main: "#ff4f4f"
     }
   },
   overrides: {
     MuiButton: {
       root: {
-        margin: "15px",
-        color: "#fff !important"
+        margin: "15px"
+      },
+
+      contained: {
+        root: {
+          margin: "15px",
+          color: "#fff !important"
+        }
       }
     }
   }
@@ -166,40 +153,36 @@ function Profile(props) {
                       </Typography>
                     );
                     actionButtons = (
-                      <>
-                        <Button variant="contained" color="secondary">
-                          Add{" "}
+                      <MuiThemeProvider theme={ButtonControlTheme}>
+                        <Button variant="contained" color="primary">
+                          Connect
                           <i className={`fas fa-user-plus ${classes.icon}`} />
                         </Button>
-                      </>
+                      </MuiThemeProvider>
                     );
                     break;
                   case "friends":
                     actionButtons = (
                       <MuiThemeProvider theme={ButtonControlTheme}>
                         <Button variant="contained" color="primary">
-                          Message{" "}
-                          <i className={`fas fa-envelope ${classes.icon}`} />
-                        </Button>
-
-                        <Button variant="contained" color="secondary">
                           Invite{" "}
                           <i className={`fas fa-paper-plane ${classes.icon}`} />
                         </Button>
-
-                        <MuiThemeProvider theme={DangerButtonTheme}>
-                          <Button variant="outlined" color="primary">
-                            Remove{" "}
-                            <i className={`fas fa-trash ${classes.icon}`} />
-                          </Button>
-                        </MuiThemeProvider>
+                        <Button variant="outlined" color="primary">
+                          Message{" "}
+                          <i className={`fas fa-envelope ${classes.icon}`} />
+                        </Button>
+                        <Button variant="outlined" color="secondary">
+                          Remove{" "}
+                          <i className={`fas fa-trash ${classes.icon}`} />
+                        </Button>
                       </MuiThemeProvider>
                     );
                     break;
                   case "self-profile":
                     actionButtons = (
                       <>
-                        <Button variant="contained" color="secondary">
+                        <Button variant="contained" color="primary">
                           Edit <i className={`fas fa-pen ${classes.icon}`} />
                         </Button>
                       </>
@@ -221,18 +204,14 @@ function Profile(props) {
                       </Typography>
                     );
                     actionButtons = (
-                      <>
-                        <MuiThemeProvider theme={ButtonControlTheme}>
-                          <Button variant="contained" color="secondary">
-                            Connect
-                          </Button>
-                        </MuiThemeProvider>
-                        <MuiThemeProvider theme={DangerButtonTheme}>
-                          <Button variant="outlined" color="primary">
-                            Decline
-                          </Button>
-                        </MuiThemeProvider>
-                      </>
+                      <MuiThemeProvider theme={ButtonControlTheme}>
+                        <Button variant="contained" color="primary">
+                          Connect
+                        </Button>
+                        <Button variant="outlined" color="secondary">
+                          Decline
+                        </Button>
+                      </MuiThemeProvider>
                     );
                     break;
                 }
