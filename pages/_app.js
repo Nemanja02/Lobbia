@@ -19,11 +19,9 @@ import initStore from "../lib/initStore";
 const { colors } = require("../config/config");
 
 const uri =
-  process.env.NODE_ENV !== "dev-preview"
+  process.env.NODE_ENV !== "production"
     ? "http://localhost:8080/graphql"
     : "/graphql";
-
-console.log(uri);
 
 const httpLink = createHttpLink({
   uri
