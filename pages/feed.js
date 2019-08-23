@@ -8,6 +8,10 @@ import withDefaults from "../lib/withDefaults";
 import { Typography } from "@material-ui/core";
 
 class Feed extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.user.id && !this.props.user.username)
+      this.props.userActions.fetchUserData(this.props.user.id);
+  }
 
   render() {
     const { pageProps } = this.props;
@@ -15,31 +19,12 @@ class Feed extends Component {
     return (
       <>
         <Layout {...pageProps}>
-          <div className={classes.main} >
-            <Typography variant="h6" color="textPrimary">Ako zelite da vidite nekoga na connections listi, idite na <a href="http://localhost:8080/graphql">http://localhost:8080/graphql</a> i pokrenite sledeci query:
-            </Typography>
-            <br />
-            <Typography variant="caption" color="textPrimary">
-              {` mutation {
-  addConnection(id:<vas id iz baze> connectionId: <id nekoga koga zelite da dodate>){
-    success
-  }
-}`}
-            </Typography>
-          </div>
+          <div className={classes.main} />
         </Layout>
       </>
     );
   }
 }
-
-Feed.getInitialProps = ({ req }) => {
-  return {
-    pageProps: {
-      isAuth: req.user.isAuth
-    }
-  };
-};
 
 export default connect(
   state => state,

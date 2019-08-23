@@ -5,7 +5,7 @@ import clsx from "clsx";
 import classes from "./TopBar.module.scss";
 import SearchModal from "../SearchModal/SearchModal";
 import ProfileShowcase from "../ProfileShowcase/ProfileShowcase";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 import {
   Menu,
@@ -26,13 +26,14 @@ import {
   Typography,
   ListSubheader as MuiListSubheader,
   List as MuiList,
-  Popover
+  Popover,
+  Divider
 } from "@material-ui/core";
 import { gql } from "apollo-server-core";
 
 const textSearchMutation = gql`
   mutation($query: String) {
-    textSearch(query: $query length: 5) {
+    textSearch(query: $query, length: 5) {
       fullName
       username
       profilePicture
@@ -44,7 +45,8 @@ const textSearchMutation = gql`
 const StyledMenu = withStyles({
   paper: {
     backgroundColor: "#32393d",
-    boxShadow: "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)"
+    boxShadow:
+      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)"
   }
 })(props => (
   <Menu
@@ -73,16 +75,18 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-const List = withStyles(theme => ({
+const StyledNotificationsList = withStyles(theme => ({
   root: {
-    width: "380px"
+    width: "380px",
+    boxShadow:
+      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4)",
+    backgroundColor: theme.palette.background.default
   }
 }))(MuiList);
 
-
 const StyledListSubheader = withStyles(theme => ({
   root: {
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.background.paper,
     display: "flex",
     padding: "5px 15px",
     justifyContent: "space-between",
@@ -90,8 +94,7 @@ const StyledListSubheader = withStyles(theme => ({
   }
 }))(MuiListSubheader);
 
-const SearchComponent = (props) => {
-
+const SearchComponent = props => {
   const [inputQuery, setInputQuery] = React.useState("");
   const [isQueried, setQueryStatus] = React.useState(false);
   const [selectedUser, setSelectedUser] = React.useState({
@@ -100,81 +103,160 @@ const SearchComponent = (props) => {
   });
 
   const closeProfileInspect = () => setSelectedUser({ isOpen: false });
-  const openProfileInspect = (id) => setSelectedUser({ isOpen: true, id });
+  const openProfileInspect = id => setSelectedUser({ isOpen: true, id });
 
   return (
     <>
-      <Mutation onError={({ graphQLErrors }) => { return }} mutation={textSearchMutation} variables={{ query: inputQuery }} >
+      <Mutation
+        onError={({ graphQLErrors }) => {
+          return;
+        }}
+        mutation={textSearchMutation}
+        variables={{ query: inputQuery }}
+      >
         {(textSearch, { data, loading, error }) => {
-
           let isData = Boolean(data);
 
-
           return (
-            <Grid container direction="column" justify="center" alignItems="center">
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
               <div className={classes.sbar}>
-                <input onBlur={() => setQueryStatus(false)} onChange={(e) => {
-                  setInputQuery(e.target.value);
-                  if (e.target.value.length > 0) {
-                    textSearch();
-                    setQueryStatus(true);
-                  }
-                }} placeholder="Search" className={classes.search} />
+                <input
+                  onBlur={() => setQueryStatus(false)}
+                  onChange={e => {
+                    setInputQuery(e.target.value);
+                    if (e.target.value.length > 0) {
+                      textSearch();
+                      setQueryStatus(true);
+                    }
+                  }}
+                  placeholder="Search"
+                  className={classes.search}
+                />
                 <i className={`fas fa-search ${classes.search_icon_input}`} />
               </div>
               <Fade in={isQueried}>
-                <Paper classes={{ root: classes.dropdownPaper }}>{isData ? data.textSearch.length > 0 ? data.textSearch.map(field => (
-                  <ListItem button onClick={() => openProfileInspect(field.id)} key={field.id}>
-                    <ListItemAvatar>
-                      <Avatar src={field.profilePicture} />
-                    </ListItemAvatar>
-                    <ListItemText primary={field.username} secondary={field.fullName} />
-                  </ListItem>
-                )) : <ListItem>
-                    <ListItemText style={{
-                      textAlign: "center"
-                    }} primary="No results found." />
-                  </ListItem> : <Grid container direction="row" justify="center" alignItems="center" style={{
-                    width: "100%",
-                    padding: "15px 0"
-                  }}><CircularProgress /></Grid>}
-                  {isData && data.textSearch.length > 0 ? <ListItem component="a" button href={`/search/${inputQuery}`}>
-                    <ListItemText primary={`See all results for \`${inputQuery}\``} />
-                  </ListItem> : null}
+                <Paper classes={{ root: classes.dropdownPaper }}>
+                  {isData ? (
+                    data.textSearch.length > 0 ? (
+                      data.textSearch.map(field => (
+                        <ListItem
+                          button
+                          onClick={() => openProfileInspect(field.id)}
+                          key={field.id}
+                        >
+                          <ListItemAvatar>
+                            <Avatar src={field.profilePicture} />
+                          </ListItemAvatar>
+                          <ListItemText
+                            primary={field.username}
+                            secondary={field.fullName}
+                          />
+                        </ListItem>
+                      ))
+                    ) : (
+                      <ListItem>
+                        <ListItemText
+                          style={{
+                            textAlign: "center"
+                          }}
+                          primary="No results found."
+                        />
+                      </ListItem>
+                    )
+                  ) : (
+                    <Grid
+                      container
+                      direction="row"
+                      justify="center"
+                      alignItems="center"
+                      style={{
+                        width: "100%",
+                        padding: "15px 0"
+                      }}
+                    >
+                      <CircularProgress />
+                    </Grid>
+                  )}
+                  {isData && data.textSearch.length > 0 ? (
+                    <>
+                      <Divider />
+                      <ListItem
+                        component="a"
+                        button
+                        href={`/search/${inputQuery}`}
+                      >
+                        <ListItemText
+                          primary={`See all results for \`${inputQuery}\``}
+                        />
+                      </ListItem>
+                    </>
+                  ) : null}
                 </Paper>
               </Fade>
             </Grid>
-          )
+          );
         }}
       </Mutation>
-      {selectedUser.isOpen ? <ProfileShowcase id={selectedUser.id} isOpen={selectedUser.isOpen} onClose={closeProfileInspect} /> : null}
+      {selectedUser.isOpen ? (
+        <ProfileShowcase
+          id={selectedUser.id}
+          isOpen={selectedUser.isOpen}
+          onClose={closeProfileInspect}
+        />
+      ) : null}
     </>
-  )
-}
+  );
+};
 
 class TopBar extends Component {
-
   state = {
     isSearchModalOpen: false,
     isDropdownOpen: null,
     notificationsAnchorEl: null,
+
     selectedUser: {
       id: "",
       isOpen: false
-    }
-  }
+    },
+    notifications: []
+  };
 
   openDropdown = e => this.setState({ isDropdownOpen: e.currentTarget });
   closeDropdown = () => this.setState({ isDropdownOpen: null });
 
-  toggleSearchModal = prevValue => this.setState({ isSearchModalOpen: !prevValue });
+  toggleSearchModal = prevValue =>
+    this.setState({ isSearchModalOpen: !prevValue });
 
-  closeProfileInspect = () => this.setState({ selectedUser: { isOpen: false } });
+  closeProfileInspect = () =>
+    this.setState({ selectedUser: { isOpen: false } });
 
-  openProfileInspect = id => this.setState({ selectedUser: { isOpen: true, id } })
+  openProfileInspect = id =>
+    this.setState({ selectedUser: { isOpen: true, id } });
 
-  openNotifications = e => this.setState({ notificationsAnchorEl: e.currentTarget });
+  openNotifications = e =>
+    this.setState({ notificationsAnchorEl: e.currentTarget });
   closeNotifications = () => this.setState({ notificationsAnchorEl: null });
+
+  getFriendRequests = array => {
+    const notifications = [];
+    array.map(el => notifications.push({ ...el, type: "friend-request" }));
+
+    if (notifications.length > 0) this.setState({ notifications });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      this.props.user.connections.pending.length > 0 &&
+      prevProps.user.connections.pending.length !==
+        this.props.user.connections.pending.length
+    )
+      this.getFriendRequests(this.props.user.connections.pending);
+  }
 
   render() {
     const { isSearchModalOpen, isDropdownOpen } = this.state;
@@ -195,15 +277,12 @@ class TopBar extends Component {
       },
       {
         title: "Log out",
-        icon: "fas fa-angle-right",
+        icon: "fas fa-angle-right"
       }
     ];
 
     if (isDropdownOpen) caretClasses.push(classes.rotatedIcon);
     if (!isDropdownOpen && caretClasses.length >= 2) caretClasses.splice(1, 1);
-
-    let notifications = [];
-    if (this.props.user) if (this.props.user.connections.pending.length > 0) this.props.user.connections.pending.map(el => notifications.push({ ...el, type: "friend-request" }));
 
     return (
       <>
@@ -231,22 +310,35 @@ class TopBar extends Component {
           </div>
           <div className={classes.end}>
             <div className={classes["icon-btn-control"]}>
-              <IconButton onClick={() => this.toggleSearchModal(isSearchModalOpen)}
+              <IconButton
+                onClick={() => this.toggleSearchModal(isSearchModalOpen)}
               >
-                <Icon color="primary" classes={{ root: clsx("fas fa-rocket", classes["icon-special"]) }}
+                <Icon
+                  color="primary"
+                  classes={{
+                    root: clsx("fas fa-rocket", classes["icon-special"])
+                  }}
                 />
               </IconButton>
-              <IconButton onClick={e => {
-                this.openNotifications(e);
-              }}>
-                <Badge badgeContent={notifications.length} invisible={notifications.length <= 0} color="primary" >
+              <IconButton
+                onClick={e => {
+                  this.openNotifications(e);
+                }}
+              >
+                <Badge
+                  badgeContent={this.state.notifications.length}
+                  invisible={this.state.notifications.length <= 0}
+                  color="primary"
+                >
                   <Icon color="action" className={clsx("fas fa-bell")} />
                 </Badge>
               </IconButton>
             </div>
             <SearchComponent />
             <div className={classes["icon-btn-control"]}>
-              <IconButton onClick={this.openDropdown}><Icon classes={{ root: clsx(caretClasses) }} /></IconButton>
+              <IconButton onClick={this.openDropdown}>
+                <Icon classes={{ root: clsx(caretClasses) }} />
+              </IconButton>
               <StyledMenu
                 anchorEl={isDropdownOpen}
                 keepMounted
@@ -255,48 +347,99 @@ class TopBar extends Component {
               >
                 {dropdownFields.map(el => {
                   return (
-                    <StyledMenuItem key={el.title} onClick={el.title === "Log out" ? () => this.props.logout() : null}>
-                      <ListItemIcon style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}>
+                    <StyledMenuItem
+                      key={el.title}
+                      onClick={
+                        el.title === "Log out"
+                          ? () => this.props.logout()
+                          : null
+                      }
+                    >
+                      <ListItemIcon
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
                         <i
-                          className={`${el.icon} ${classes["icon-light-color"]}`}
+                          className={`${el.icon} ${
+                            classes["icon-light-color"]
+                          }`}
                         />
                       </ListItemIcon>
                       <ListItemText primary={el.title} />
                     </StyledMenuItem>
-                  )
+                  );
                 })}
               </StyledMenu>
             </div>
           </div>
         </div>
-        <Popover anchorEl={this.state.notificationsAnchorEl} anchorOrigin={{
-          horizontal: "left",
-          vertical: "top"
-        }} transformOrigin={{ horizontal: "right", vertical: "top" }} onClose={this.closeNotifications} open={Boolean(this.state.notificationsAnchorEl)}>
-          <List subheader={<StyledListSubheader>Notifications <Icon className={clsx("fas fa-bell")} /></StyledListSubheader>}>
-            {notifications.length > 0 ? notifications.map(el => {
-              switch (el.type) {
-                case "friend-request":
-                  return <ListItem key={el.id} button onClick={() => this.openProfileInspect(el.id)}>
-                    <ListItemAvatar>
-                      <Avatar src={el.profilePicture} />
-                    </ListItemAvatar>
-                    <ListItemText primary={<Typography variant="subtitle1">
-                      {el.fullName} ({el.username})
-                    </Typography>} secondary={<Typography variant="caption">sent you a friend request.</Typography>} >
-                    </ListItemText>
-                  </ListItem>
-              }
-            }) : <ListItem key="1">
-                <ListItemText primary={<Typography variant="h6">Wow, such empty.</Typography>} />
-              </ListItem>}
-          </List>
+        <Popover
+          anchorEl={this.state.notificationsAnchorEl}
+          anchorOrigin={{
+            horizontal: "left",
+            vertical: "top"
+          }}
+          transformOrigin={{ horizontal: "right", vertical: "top" }}
+          onClose={this.closeNotifications}
+          open={Boolean(this.state.notificationsAnchorEl)}
+        >
+          <StyledNotificationsList
+            subheader={
+              <StyledListSubheader>
+                Notifications <Icon className={clsx("fas fa-bell")} />
+              </StyledListSubheader>
+            }
+          >
+            {this.state.notifications.length > 0 ? (
+              this.state.notifications.map(el => {
+                switch (el.type) {
+                  case "friend-request":
+                    return (
+                      <ListItem
+                        key={el.id}
+                        button
+                        onClick={() => this.openProfileInspect(el.id)}
+                      >
+                        <ListItemAvatar>
+                          <Avatar src={el.profilePicture} />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={
+                            <Typography variant="subtitle1">
+                              {el.fullName} ({el.username})
+                            </Typography>
+                          }
+                          secondary={
+                            <Typography color="textSecondary" variant="caption">
+                              sent you a connect request.
+                            </Typography>
+                          }
+                        />
+                      </ListItem>
+                    );
+                }
+              })
+            ) : (
+              <ListItem key="1">
+                <ListItemText
+                  primary={
+                    <Typography variant="h6">Wow, such empty.</Typography>
+                  }
+                />
+              </ListItem>
+            )}
+          </StyledNotificationsList>
         </Popover>
-        {this.state.selectedUser.isOpen ? <ProfileShowcase id={this.state.selectedUser.id} isOpen={this.state.selectedUser.isOpen} onClose={this.closeProfileInspect} /> : null}
+        {this.state.selectedUser.isOpen ? (
+          <ProfileShowcase
+            id={this.state.selectedUser.id}
+            isOpen={this.state.selectedUser.isOpen}
+            onClose={this.closeProfileInspect}
+          />
+        ) : null}
       </>
     );
   }

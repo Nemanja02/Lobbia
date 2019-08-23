@@ -1,8 +1,8 @@
 const User = require("../../models/User");
-const { ObjectId } = require('mongoose').Types;
-const SchemaObjectId = require('mongoose').SchemaTypes.ObjectId;
+const { ObjectId } = require("mongoose").Types;
+const SchemaObjectId = require("mongoose").SchemaTypes.ObjectId;
 const jwt = require("jsonwebtoken");
-const { jwt_key } = require("../../config/config.json");
+const { jwt_key } = require("../../config/config");
 
 const genres = require("../../config/music_genres.json");
 const games = require("../../config/games.json");
@@ -151,10 +151,12 @@ exports.validateFormCredentials = async (
       if (!secondCheckResult)
         throw new ValidationError({
           data: {
-            message: "Looks like you do not have an account. Try registering first."
+            message:
+              "Looks like you do not have an account. Try registering first."
           },
           internalData: {
-            error: "User tried to sign in with email/username that does not exist in db.",
+            error:
+              "User tried to sign in with email/username that does not exist in db.",
             status: 403
           }
         });
@@ -281,7 +283,6 @@ exports.createUserAccount = async (
 
   const newGamesInterests = [];
 
-
   for (let game in games) {
     for (let field of gamesInterests) {
       if (game == field) {
@@ -310,7 +311,8 @@ exports.createUserAccount = async (
   let profilePicture;
 
   if (gender === "male") profilePicture = "static/assets/default-user-male.png";
-  if (gender === "female") profilePicture = "static/assets/default-user-female.png";
+  if (gender === "female")
+    profilePicture = "static/assets/default-user-female.png";
 
   const newUser = new User({
     username,
@@ -357,7 +359,9 @@ exports.getProfileData = async (parent, { id }, ctx) => {
     });
   else {
     if (ctx.user.isAuth && id) {
-      const user = await User.findOne({ _id: id }).populate('connections.pending').populate('connections.accepted');
+      const user = await User.findOne({ _id: id })
+        .populate("connections.pending")
+        .populate("connections.accepted");
 
       return user;
     }
@@ -503,8 +507,12 @@ exports.usersList = async () => {
 
 // return specific user
 exports.findUser = async (parent, { id }) => {
-  const foundUser = await User.findOne({ _id: id }).populate('connections.pending').populate('connections.accepted');
-  if (foundUser.connections.length > 0 || foundUser) for (i in foundUser.connections) foundUser.connections[i] = foundUser.connections[i].toString();
+  const foundUser = await User.findOne({ _id: id })
+    .populate("connections.pending")
+    .populate("connections.accepted");
+  if (foundUser.connections.length > 0 || foundUser)
+    for (i in foundUser.connections)
+      foundUser.connections[i] = foundUser.connections[i].toString();
   return foundUser;
 };
 
@@ -519,50 +527,60 @@ exports.sendConnectionRequest = async (parent, { id, connectionId }, ctx) => {
   //   }
   // })
 
-  if (!id || !connectionId) throw new ValidationError({
-    data: {
-      message: "Please provide all required arguments."
-    },
-    internalData: {
-      error: "User tried to add connection without providing all required parameters",
-      status: 403
-    }
-  })
+  if (!id || !connectionId)
+    throw new ValidationError({
+      data: {
+        message: "Please provide all required arguments."
+      },
+      internalData: {
+        error:
+          "User tried to add connection without providing all required parameters",
+        status: 403
+      }
+    });
 
   try {
     const foundUser = await User.findOne({ _id: id });
     if (foundUser.connections.length > 0 || foundUser) {
       for (let field of foundUser.connections.accepted)
-        if (field == connectionId) throw new ValidationError({
-          data: {
-            message: "User is already in your connections list."
-          },
-          internalData: {
-            error: "User tried to add a connection which is already in accepted list.",
-            status: 403
-          }
-        })
+        if (field == connectionId)
+          throw new ValidationError({
+            data: {
+              message: "User is already in your connections list."
+            },
+            internalData: {
+              error:
+                "User tried to add a connection which is already in accepted list.",
+              status: 403
+            }
+          });
 
       for (let field of foundUser.connections.pending)
-        if (field == connectionId) throw new ValidationError({
-          data: {
-            message: "You already sent connection request to this user."
-          },
-          internalData: {
-            error: "User tried to add a connection which is already in pending list.",
-            status: 403
-          }
-        })
+        if (field == connectionId)
+          throw new ValidationError({
+            data: {
+              message: "You already sent connection request to this user."
+            },
+            internalData: {
+              error:
+                "User tried to add a connection which is already in pending list.",
+              status: 403
+            }
+          });
     }
 
-    await User.findOneAndUpdate({ _id: connectionId }, {
-      $push: {
-        "connections.pending": ObjectId(id)
+    await User.findOneAndUpdate(
+      { _id: connectionId },
+      {
+        $push: {
+          "connections.pending": ObjectId(id)
+        }
       },
-    }, { new: true });
+      { new: true }
+    );
     return {
       success: true
-    }
+    };
   } catch (e) {
     switch (e.name) {
       case "Validation error":
@@ -574,9 +592,9 @@ exports.sendConnectionRequest = async (parent, { id, connectionId }, ctx) => {
     }
     return {
       success: false
-    }
+    };
   }
-}
+};
 
 exports.cancelConnectionRequest = async (parent, { id, connectionId }, ctx) => {
   // if (!ctx.user.isAuth) throw new AuthenticationError({
@@ -589,41 +607,48 @@ exports.cancelConnectionRequest = async (parent, { id, connectionId }, ctx) => {
   //   }
   // })
 
-  if (!id || !connectionId) throw new ValidationError({
-    data: {
-      message: "Please provide all required arguments."
-    },
-    internalData: {
-      error: "User tried to add connection without providing all required parameters",
-      status: 403
-    }
-  })
+  if (!id || !connectionId)
+    throw new ValidationError({
+      data: {
+        message: "Please provide all required arguments."
+      },
+      internalData: {
+        error:
+          "User tried to add connection without providing all required parameters",
+        status: 403
+      }
+    });
 
   try {
     const foundUser = await User.findOne({ _id: id });
     if (foundUser.connections.length > 0 || foundUser) {
-
       for (let field of foundUser.connections.pending)
-        if (field !== connectionId) throw new ValidationError({
-          data: {
-            message: "You haven't sent a connection request to this user."
-          },
-          internalData: {
-            error: "User tried to add a connection which is already in pending list.",
-            status: 403
-          }
-        })
+        if (field !== connectionId)
+          throw new ValidationError({
+            data: {
+              message: "You haven't sent a connection request to this user."
+            },
+            internalData: {
+              error:
+                "User tried to add a connection which is already in pending list.",
+              status: 403
+            }
+          });
     }
 
-    const updatedResult = await User.findOneAndUpdate({ _id: connectionId }, {
-      $pull: {
-        "connections.pending": ObjectId(id)
+    const updatedResult = await User.findOneAndUpdate(
+      { _id: connectionId },
+      {
+        $pull: {
+          "connections.pending": ObjectId(id)
+        }
       },
-    }, { new: true });
+      { new: true }
+    );
     console.log(updatedResult);
     return {
       success: true
-    }
+    };
   } catch (e) {
     switch (e.name) {
       case "Validation error":
@@ -635,9 +660,9 @@ exports.cancelConnectionRequest = async (parent, { id, connectionId }, ctx) => {
     }
     return {
       success: false
-    }
+    };
   }
-}
+};
 
 exports.removeConnection = async (parent, { id, connectionId }, ctx) => {
   // if (!ctx.user.isAuth) throw new AuthenticationError({
@@ -650,45 +675,56 @@ exports.removeConnection = async (parent, { id, connectionId }, ctx) => {
   //   }
   // })
 
-  if (!id || !connectionId) throw new ValidationError({
-    data: {
-      message: "Please provide all required arguments."
-    },
-    internalData: {
-      error: "User tried to add connection without providing all required parameters",
-      status: 403
-    }
-  })
+  if (!id || !connectionId)
+    throw new ValidationError({
+      data: {
+        message: "Please provide all required arguments."
+      },
+      internalData: {
+        error:
+          "User tried to add connection without providing all required parameters",
+        status: 403
+      }
+    });
 
   try {
     const foundUser = await User.findOne({ _id: id });
     if (foundUser.connections.length > 0 || foundUser) {
-
       for (let field of foundUser.connections.accepted)
-        if (field.toString() !== connectionId) throw new ValidationError({
-          data: {
-            message: "You are not connected with this user."
-          },
-          internalData: {
-            error: "User tried to remove a connection which is not in accepted list.",
-            status: 403
-          }
-        })
+        if (field.toString() !== connectionId)
+          throw new ValidationError({
+            data: {
+              message: "You are not connected with this user."
+            },
+            internalData: {
+              error:
+                "User tried to remove a connection which is not in accepted list.",
+              status: 403
+            }
+          });
     }
 
-    await User.findOneAndUpdate({ _id: id }, {
-      $pull: {
-        "connections.accepted": ObjectId(connectionId)
+    await User.findOneAndUpdate(
+      { _id: id },
+      {
+        $pull: {
+          "connections.accepted": ObjectId(connectionId)
+        }
       },
-    }, { new: true });
-    await User.findOneAndUpdate({ _id: connectionId }, {
-      $pull: {
-        "connections.accepted": ObjectId(id)
+      { new: true }
+    );
+    await User.findOneAndUpdate(
+      { _id: connectionId },
+      {
+        $pull: {
+          "connections.accepted": ObjectId(id)
+        }
       },
-    }, { new: true });
+      { new: true }
+    );
     return {
       success: true
-    }
+    };
   } catch (e) {
     switch (e.name) {
       case "Validation error":
@@ -700,9 +736,9 @@ exports.removeConnection = async (parent, { id, connectionId }, ctx) => {
     }
     return {
       success: false
-    }
+    };
   }
-}
+};
 
 exports.acceptConnectionRequest = async (parent, { id, connectionId }, ctx) => {
   // if (!ctx.user.isAuth) throw new AuthenticationError({
@@ -715,36 +751,48 @@ exports.acceptConnectionRequest = async (parent, { id, connectionId }, ctx) => {
   //   }
   // })
 
-  if (!id || !connectionId) throw new ValidationError({
-    data: {
-      message: "Please provide all required arguments."
-    },
-    internalData: {
-      error: "User tried to add connection without providing all required parameters",
-      status: 403
-    }
-  })
+  if (!id || !connectionId)
+    throw new ValidationError({
+      data: {
+        message: "Please provide all required arguments."
+      },
+      internalData: {
+        error:
+          "User tried to add connection without providing all required parameters",
+        status: 403
+      }
+    });
 
   try {
-
-    await User.findOneAndUpdate({ _id: id }, {
-      $push: {
-        "connections.accepted": ObjectId(connectionId)
+    await User.findOneAndUpdate(
+      { _id: id },
+      {
+        $push: {
+          "connections.accepted": ObjectId(connectionId)
+        }
       },
-    }, { new: true });
-    await User.findOneAndUpdate({ _id: connectionId }, {
-      $push: {
-        "connections.accepted": ObjectId(id)
+      { new: true }
+    );
+    await User.findOneAndUpdate(
+      { _id: connectionId },
+      {
+        $push: {
+          "connections.accepted": ObjectId(id)
+        }
       },
-    }, { new: true });
-    await User.findOneAndUpdate({ _id: id }, {
-      $pull: {
-        "connections.pending": ObjectId(connectionId)
+      { new: true }
+    );
+    await User.findOneAndUpdate(
+      { _id: id },
+      {
+        $pull: {
+          "connections.pending": ObjectId(connectionId)
+        }
       }
-    })
+    );
     return {
       success: true
-    }
+    };
   } catch (e) {
     switch (e.name) {
       case "Validation error":
@@ -756,6 +804,6 @@ exports.acceptConnectionRequest = async (parent, { id, connectionId }, ctx) => {
     }
     return {
       success: false
-    }
+    };
   }
-}
+};

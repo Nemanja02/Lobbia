@@ -2,76 +2,65 @@
 @import "../../config/sass/mixins.scss";
 
 .main {
-    height: 100%;
-    padding: $margin;
-    width: 100%;
-  }
-
+  height: 100%;
+  padding: $margin;
+  width: 100%;
+}
 
 .displayAvatar {
-    width: "100%";                                    
-    margin: "20px";
-    height: "100%";
+  width: "100%";
+  margin: "20px";
+  height: "100%";
 }
 
 .icon {
-    color: $color-text;
-    font-size: 1.3rem;
-    margin-left: 10px;
+  color: $color-text;
+  font-size: 1.3rem;
+  margin-left: 10px;
 }
 
-.bg > div:nth-child(1){ 
-    @include bg;
+.bg > div:nth-child(1) {
+  @include bg;
 }
 
 .profileDialog {
-    border-radius: $default-border-radius !important;
-    background-color: $color-bg-light !important;
-    padding: 10px;
-    max-width: 90%;
-    width: 500px;
-    outline: none;
-    height: auto !important;
+  border-radius: $default-border-radius !important;
+  background-color: $color-bg-light !important;
+  padding: 10px;
+  max-width: 90%;
+  width: 500px;
+  outline: none;
+  height: auto !important;
 }
 
 .dialog-action-container {
-    margin: 15px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  margin: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .dangerButton {
-    background-color: $color-danger !important;
+  background-color: $color-danger !important;
 }
 
 .status-circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 100px;
-    margin: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  margin: 5px;
 }
 
 .online {
-    background-color: $color-ok;
+  background-color: $color-ok;
 }
 
 .offline {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 .dnd {
-    background-color: $color-danger;
-}
-
-.close {
-    cursor: pointer;
-    font-size: 33px !important;
-    position: fixed;
-    right: 2.16%;
-    top: 4.5%;
-    z-index: 20;
-    transform: translate(50%, -50%);
+  background-color: $color-danger;
 }

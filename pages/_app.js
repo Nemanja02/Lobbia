@@ -16,6 +16,8 @@ import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import initStore from "../lib/initStore";
 
+const { colors } = require("../config/config");
+
 const httpLink = createHttpLink({
   uri: "http://localhost:8080/graphql"
 });
@@ -42,33 +44,35 @@ const theme = createMuiTheme({
         fontSize: "12px",
         fontWeight: "400"
       }
-    },
+    }
   },
 
   palette: {
     text: {
       primary: grey[200],
-      secondary: grey[500],
+      secondary: grey[500]
     },
 
     action: {
       active: grey[400],
-      disabled: grey[700],
+      disabled: grey[700]
     },
 
     background: {
-      paper: "#1e2024",
-      default: "#32393d"
+      paper: colors.background.light,
+      default: colors.background.primary
     },
 
     primary: {
-      main: "#ff9a60",
+      main: colors.primary
     },
+
     secondary: {
-      main: "#3b84c0"
+      main: colors.secondary
     },
+
     error: {
-      main: "#c03b3b"
+      main: colors.error
     }
   }
 });
@@ -84,7 +88,6 @@ Router.events.on("routeChangeComplete", () => {
 });
 
 export class _app extends Component {
-
   render() {
     const { Component, pageProps, store } = this.props;
 

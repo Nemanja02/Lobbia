@@ -37,7 +37,7 @@ const logoutMutation = gql`
 `;
 
 const sendConnectionRequestMutation = gql`
-  mutation($id: ID $connectionId: ID) {
+  mutation($id: ID, $connectionId: ID) {
     success
   }
 `;
@@ -54,18 +54,9 @@ const sendConnectionRequestMutation = gql`
 
 // `;
 
-
-
 export const clearState = () => dispatch => {
   dispatch({
-    type: CLEAR_STATE,
-    payload: {
-      profilePicture: "",
-      username: "",
-      id: "",
-      isOnline: false,
-      connections: []
-    }
+    type: CLEAR_STATE
   });
 };
 
@@ -80,10 +71,10 @@ export const setId = id => dispatch => {
 
 export const sendConnectionRequest = (id, connectionid) => async dispatch => {
   try {
-
-
-  } catch (e) { console.log(e) };
-}
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const logout = id => async dispatch => {
   try {
