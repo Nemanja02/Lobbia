@@ -13,12 +13,12 @@ body {
   display: flex;
   flex-direction: column;
   color: $color-text;
-  
+
   @include button;
 }
 
 .content {
-  padding: 50px 50px;
+  padding: 25px 50px;
   height: 100%;
   display: flex;
 
@@ -28,7 +28,6 @@ body {
     z-index: 1;
     line-height: 1.4;
     width: 100%;
-
 
     h1 {
       font-size: 8vw;
@@ -79,6 +78,10 @@ body {
       p {
         font-size: 1.3vw;
       }
+    }
+    img {
+      height: 80vh;
+      width: 80vw;
     }
   }
 }
