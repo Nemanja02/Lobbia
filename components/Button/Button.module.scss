@@ -1,0 +1,18 @@
+@import "../../config/sass/variables.scss";
+@import "../../config/sass/mixins.scss";
+
+.button {
+  @include clickable($color-bg);
+  color: $color-text;
+  min-width: 150px;
+  min-height: 40px;
+  padding: 10px;
+  text-align: center;
+  border: $color-primary solid 3px;
+  border-radius: 10px;
+}
+
+.button.primary {
+  @include clickable($color-primary);
+  border: none;
+}

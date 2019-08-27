@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classes from "./Header.module.scss";
 import Burger from "../Burger/Burger";
+import Button from "../Button/Button";
 
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -26,7 +27,12 @@ class Header extends Component {
 
     return (
       <div className={classes.nav}>
-        <div className={`${classes.darken} ${this.state.dropped ? null : classes.closed}`} onClick={() => unDrop()}/>
+        <div
+          className={`${classes.darken} ${
+            this.state.dropped ? null : classes.closed
+          }`}
+          onClick={() => unDrop()}
+        />
         <div className={classes.mobileNav}>
           <img src="assets/PixelArt.png" />
           <Burger clicked={changeDrop} state={this.state.dropped} />
@@ -48,9 +54,9 @@ class Header extends Component {
           </ul>
         </nav>
         <div className={classes.buttons}>
-          <a href="/login" className={`${classes.primary} ${classes.button}`}>
+          <Button href="/login" primary="true">
             Log in
-          </a>
+          </Button>
         </div>
       </div>
     );

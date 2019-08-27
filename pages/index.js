@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classes from "./styles/Index.module.scss";
 import Header from "../components/Header/Header";
+import Button from "../components/Button/Button";
 import { decorateWithLogger } from "graphql-tools";
 import { getOperationDefinition } from "apollo-utilities";
 
@@ -17,12 +18,10 @@ export class index extends Component {
                 Prepare to explore the world of online gaming from different
                 perspective
               </p>
-              <a
-                href="/login"
-                className={`${classes.primary} ${classes.button}`}
-              >
+
+              <Button class={classes.button} href="/login" primary="true" style={{ margin: "10px" }}>
                 Log in
-              </a>
+              </Button>
             </div>
             <img src="index/IndexBG.svg" />
           </div>

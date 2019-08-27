@@ -13,8 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   color: $color-text;
-
-  @include button;
 }
 
 .content {
@@ -41,7 +39,6 @@ body {
       padding-left: 7vw;
     }
 
-    @include button;
     .button {
       margin: 20px;
       align-self: center;
@@ -65,10 +62,10 @@ body {
 }
 
 @media (min-width: 768px) {
-  .primary {
+  .button {
     display: none;
-    background-color: #fff;
   }
+
   .content {
     align-items: center;
     div {
