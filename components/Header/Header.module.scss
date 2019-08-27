@@ -123,6 +123,10 @@ nav {
       pointer-events: none;
       @include unselectable;
     }
+
+    &:focus-within {
+      transform: scaleY(1);
+    }
   }
 }
 

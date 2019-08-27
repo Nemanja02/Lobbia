@@ -4,6 +4,7 @@ import classes from "./Button.module.scss";
 function Button(props) {
   return (
     <a
+      tabIndex="0"
       href={props.href}
       className={`
         ${props.primary ? classes.primary : null} 
