@@ -63,7 +63,7 @@ nav {
       }
 
       &:hover div,
-      &:focus div {
+      & a:focus + div {
         background-color: $color-primary-dark;
         width: 80%;
       }
