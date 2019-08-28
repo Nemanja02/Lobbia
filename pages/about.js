@@ -4,22 +4,6 @@ import Header from "../components/Header/Header";
 import { Typography, TextField, Container, CardMedia } from "@material-ui/core";
 import { typography, textAlign } from "@material-ui/system";
 export class about extends Component {
-  // paragraphStyle = {
-  //   color: "white",
-  //   fontSize: "24px",
-  //   width: "50%",
-  //   margin: "10px"
-  // };
-  // imgStyle = {
-  //   width: "65%",
-  //   float: "right",
-  //   margin: "10px"
-  // };
-  // titleStyle = {
-  //   color: "white",
-  //   fontSize: "36px",
-  //   margin: "10px"
-  // };
   render() {
     return (
       <>

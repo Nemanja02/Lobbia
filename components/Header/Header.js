@@ -55,7 +55,10 @@ class Header extends Component {
             })}
           </ul>
         </nav>
-        <div className={classes.buttons}>
+        <div
+          style={this.props.hideButton ? { display: "none" } : null}
+          className={classes.buttons}
+        >
           <Button href="/login" primary="true">
             Log in
           </Button>

@@ -31,6 +31,8 @@ import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 
 import DateFnsUtils from "@date-io/date-fns";
 
+import Header from "../components/Header/Header";
+
 import classes from "./styles/AuthForms.module.scss";
 import genres from "../config/music_genres.json";
 import games from "../config/games.json";
@@ -103,7 +105,7 @@ const dateTheme = createMuiTheme({
         fontSize: "12px",
         fontWeight: "400"
       }
-    },
+    }
   },
   palette: {
     text: {
@@ -112,7 +114,7 @@ const dateTheme = createMuiTheme({
     },
 
     primary: {
-      main: "#ff9a60",
+      main: "#ff9a60"
     },
     secondary: {
       main: "#3b84c0"
@@ -259,7 +261,7 @@ class Register extends Component {
         }
       }
     }));
-  }
+  };
 
   handleDate = date => {
     this.setState(prevState => ({
@@ -363,34 +365,49 @@ class Register extends Component {
               </MuiPickersUtilsProvider>
             );
 
-            if (type === "date") return (
-              dateField
-            )
-            else if (type === "gender") return (
-              <FormControl key={el.name} style={marginTop} fullWidth variant="filled">
-                <InputLabel htmlFor="gender-simple">Gender</InputLabel>
-                <Select fullWidth variant="filled" input={<FilledInput name="age" id="gender-simple" />}
-                  value={this.state.formFields.gender.value} onChange={this.handleGenderChange}>
-                  {this.state.formFields.gender.options.map(el => <MenuItem
-                    key={el}
-                    value={el === "none" ? "" : el}>{el === "none" ? <em>{el.charAt(0).toUpperCase() + el.slice(1)}</em> : el.charAt(0).toUpperCase() + el.slice(1)
-                    }</MenuItem>)}
-                </Select>
-              </FormControl>
-            )
-            else return (
-              <TextField
-                key={el.name}
-                fullWidth
-                variant="filled"
-                helperText={helperText}
-                label={placeholderText}
-                style={marginTop}
-                type={type}
-                onChange={e => this.handleChange(e, el.name)}
-                value={this.state.formFields[el.name].value}
-              />
-            );
+            if (type === "date") return dateField;
+            else if (type === "gender")
+              return (
+                <FormControl
+                  key={el.name}
+                  style={marginTop}
+                  fullWidth
+                  variant="filled"
+                >
+                  <InputLabel htmlFor="gender-simple">Gender</InputLabel>
+                  <Select
+                    fullWidth
+                    variant="filled"
+                    input={<FilledInput name="age" id="gender-simple" />}
+                    value={this.state.formFields.gender.value}
+                    onChange={this.handleGenderChange}
+                  >
+                    {this.state.formFields.gender.options.map(el => (
+                      <MenuItem key={el} value={el === "none" ? "" : el}>
+                        {el === "none" ? (
+                          <em>{el.charAt(0).toUpperCase() + el.slice(1)}</em>
+                        ) : (
+                          el.charAt(0).toUpperCase() + el.slice(1)
+                        )}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              );
+            else
+              return (
+                <TextField
+                  key={el.name}
+                  fullWidth
+                  variant="filled"
+                  helperText={helperText}
+                  label={placeholderText}
+                  style={marginTop}
+                  type={type}
+                  onChange={e => this.handleChange(e, el.name)}
+                  value={this.state.formFields[el.name].value}
+                />
+              );
           })}
         </Grid>
         <Mutation
@@ -584,7 +601,13 @@ class Register extends Component {
 
     let mutationVariables = null;
     if (this.state.formStage === 2) {
-      const { email, fullName, password, username, gender } = this.state.formFields;
+      const {
+        email,
+        fullName,
+        password,
+        username,
+        gender
+      } = this.state.formFields;
 
       mutationVariables = {
         email: email.value,
@@ -596,7 +619,6 @@ class Register extends Component {
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };
-
     }
 
     const thirdStepRegistration = (
@@ -730,64 +752,64 @@ class Register extends Component {
 
     return (
       <>
-        <div className={classes["background-wrapper"]}>
-          <img src="static/assets/landing-background.jpg" className={classes["bg-img"]} />
-        </div>
-        <div className={classes["custom-form-card"]}>
-          {this.state.formStage === 0
-            ? firstStepRegistration
-            : this.state.formStage === 1
+        <div className={classes.wrapper}>
+          <Header hideButton="true" />
+          <div className={classes["custom-form-card"]}>
+            {this.state.formStage === 0
+              ? firstStepRegistration
+              : this.state.formStage === 1
               ? secondStepRegistration
               : thirdStepRegistration}
-        </div>
-        <Snackbar
-          autoHideDuration={3000}
-          onClose={() =>
-            this.setState(prevState => ({
-              ...prevState,
-              formValidation: {
-                ...prevState.formValidation,
-                isValidated: true,
-                logLevel: "",
+          </div>
+          <Snackbar
+            autoHideDuration={3000}
+            onClose={() =>
+              this.setState(prevState => ({
+                ...prevState,
+                formValidation: {
+                  ...prevState.formValidation,
+                  isValidated: true,
+                  logLevel: "",
 
-                displayMessage: ""
-              }
-            }))
-          }
-          open={!this.state.formValidation.isValidated}
-        >
-          <SnackbarContent
-            className={classes[this.state.formValidation.logLevel]}
-            message={
-              <span className={classes.displayMessage}>
-                <i
-                  className={`fas fa-exclamation-circle ${
-                    classes.snackbarIcon
-                    }`}
-                />{" "}
-                {this.state.formValidation.displayMessage}
-              </span>
-            }
-            action={
-              <IconButton
-                onClick={() =>
-                  this.setState(prevState => ({
-                    ...prevState,
-                    formValidation: {
-                      ...prevState.formValidation,
-                      isValidated: true,
-                      logLevel: "",
-
-                      displayMessage: ""
-                    }
-                  }))
+                  displayMessage: ""
                 }
-              >
-                <Icon className={clsx("fas fa-times", classes.snackbarIcon)} />
-              </IconButton>
+              }))
             }
-          />
-        </Snackbar>
+            open={!this.state.formValidation.isValidated}
+          >
+            <SnackbarContent
+              className={classes[this.state.formValidation.logLevel]}
+              message={
+                <span className={classes.displayMessage}>
+                  <i
+                    className={`fas fa-exclamation-circle ${classes.snackbarIcon}`}
+                  />{" "}
+                  {this.state.formValidation.displayMessage}
+                </span>
+              }
+              action={
+                <IconButton
+                  onClick={() =>
+                    this.setState(prevState => ({
+                      ...prevState,
+                      formValidation: {
+                        ...prevState.formValidation,
+                        isValidated: true,
+                        logLevel: "",
+
+                        displayMessage: ""
+                      }
+                    }))
+                  }
+                >
+                  <Icon
+                    className={clsx("fas fa-times", classes.snackbarIcon)}
+                  />
+                </IconButton>
+              }
+            />
+          </Snackbar>
+        </div>
       </>
     );
   }

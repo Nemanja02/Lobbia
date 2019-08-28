@@ -6,6 +6,7 @@
   font-size: 40px;
   margin: 10px 10px 20px 10px;
 }
+
 .photo {
   height: 60%;
   width: 120%;
@@ -16,22 +17,25 @@
   right: 0;
   z-index: -1;
 }
+
 .info {
   color: white;
   font-size: 24px;
   width: 50%;
   margin: 10px 10px 20px 10px;
 }
+
 .quote {
   color: white;
   text-align: center;
   font-size: 45px;
 }
+
 @media (max-width: 768px) {
   .info {
     width: calc(100% - 20px);
-    text-align: center;
   }
+  
   .title {
     text-align: center;
   }

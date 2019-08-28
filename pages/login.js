@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import classes from "./styles/AuthForms.module.scss";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
-import Particles from "react-particles-js";
 import RouterLink from "next/link";
 import Router from "next/router";
 import { connect } from "react-redux";
 import clsx from "clsx";
 import * as actions from "../actions/userActions";
+
+import Header from "../components/Header/Header";
 
 const validateFormCredentials = gql`
   mutation($signature: String, $password: String) {
@@ -100,197 +101,197 @@ export class login extends Component {
 
     return (
       <>
-        <div className={classes["background-wrapper"]}>
-          <img src="static/assets/landing-background.jpg" className={classes["bg-img"]} />
-        </div>
-        <div
-          onKeyDown={e =>
-            this.handleSubmit(
-              e,
-              this.validateFormCredentials,
-              this.login,
-              "keypress"
-            )
-          }
-          className={classes["custom-form-card"]}
-          style={{
-            width: "500px",
-            minHeight: "540px"
-          }}
-        >
-          <Mutation
-            onError={({ graphQLErrors }) => {
-              this.setState({
-                error: {
-                  show: true,
-                  message: graphQLErrors[0].data.message,
-                  logLevel: "danger"
-                }
-              });
-            }}
-            mutation={validateFormCredentials}
-            variables={{
-              signature: this.state.loginForm.signature,
-              password: this.state.loginForm.password
+        <div className={classes.wrapper}>
+          <Header hideButton="true" />
+          <div
+            onKeyDown={e =>
+              this.handleSubmit(
+                e,
+                this.validateFormCredentials,
+                this.login,
+                "keypress"
+              )
+            }
+            className={classes["custom-form-card"]}
+            style={{
+              width: "500px",
+              minHeight: "540px"
             }}
           >
-            {(validateFormCredentials, { data }) => {
-              this.validateFormCredentials = validateFormCredentials;
-              return (
-                <Grid
-                  className={classes.grid}
-                  container
-                  direction="column"
-                  alignItems="center"
-                  justify="space-between"
-                >
-                  <Grid container direction="column" alignItems="center">
-                    <Typography
-                      style={{
-                        justifySelf: "flex-start"
-                      }}
-                      variant="h4"
-                      color="textPrimary"
-                    >
-                      Welcome back
-                    </Typography>
-                    <Typography
-                      style={{
-                        margin: "10px 0 20px 0 !important",
-                        justifySelf: "flex-start"
-                      }}
-                      variant="subtitle2"
-                      color="textSecondary"
-                    >
-                      It's great to see you again!
-                    </Typography>
-                  </Grid>
+            <Mutation
+              onError={({ graphQLErrors }) => {
+                this.setState({
+                  error: {
+                    show: true,
+                    message: graphQLErrors[0].data.message,
+                    logLevel: "danger"
+                  }
+                });
+              }}
+              mutation={validateFormCredentials}
+              variables={{
+                signature: this.state.loginForm.signature,
+                password: this.state.loginForm.password
+              }}
+            >
+              {(validateFormCredentials, { data }) => {
+                this.validateFormCredentials = validateFormCredentials;
+                return (
                   <Grid
-                    style={{
-                      width: "80%",
-                      marginBottom: "20px"
-                    }}
+                    className={classes.grid}
                     container
                     direction="column"
                     alignItems="center"
+                    justify="space-between"
                   >
-                    {formFieldsArr.map(el => (
-                      <TextField
-                        helperText={el.helperText}
-                        type={el.type}
-                        label={el.displayName}
-                        key={el.name}
-                        fullWidth
-                        variant="filled"
-                        style={{ marginTop: "20px" }}
-                        onChange={e => this.handleChange(e, el.name)}
-                      />
-                    ))}
-                  </Grid>
-                  <Grid>
-                    <Mutation
-                      onCompleted={data => {
-                        localStorage.setItem("id", data.login.id);
-                        Router.push("/feed");
+                    <Grid container direction="column" alignItems="center">
+                      <Typography
+                        style={{
+                          justifySelf: "flex-start"
+                        }}
+                        variant="h4"
+                        color="textPrimary"
+                      >
+                        Welcome back
+                      </Typography>
+                      <Typography
+                        style={{
+                          margin: "10px 0 20px 0 !important",
+                          justifySelf: "flex-start"
+                        }}
+                        variant="subtitle2"
+                        color="textSecondary"
+                      >
+                        It's great to see you again!
+                      </Typography>
+                    </Grid>
+                    <Grid
+                      style={{
+                        width: "80%",
+                        marginBottom: "20px"
                       }}
-                      variables={{
-                        signature: this.state.loginForm.signature,
-                        password: this.state.loginForm.password
-                      }}
-                      mutation={loginMutation}
+                      container
+                      direction="column"
+                      alignItems="center"
                     >
-                      {login => {
-                        this.login = login;
-                        return (
-                          <Grid
-                            container
-                            direction="column"
-                            alignItems="center"
-                          >
-                            <Button
-                              onClick={e =>
-                                this.handleSubmit(
-                                  e,
-                                  validateFormCredentials,
-                                  login,
-                                  "click"
-                                )
-                              }
-                              variant="contained"
-                              color="primary"
+                      {formFieldsArr.map(el => (
+                        <TextField
+                          helperText={el.helperText}
+                          type={el.type}
+                          label={el.displayName}
+                          key={el.name}
+                          fullWidth
+                          variant="filled"
+                          style={{ marginTop: "20px" }}
+                          onChange={e => this.handleChange(e, el.name)}
+                        />
+                      ))}
+                    </Grid>
+                    <Grid>
+                      <Mutation
+                        onCompleted={data => {
+                          localStorage.setItem("id", data.login.id);
+                          Router.push("/feed");
+                        }}
+                        variables={{
+                          signature: this.state.loginForm.signature,
+                          password: this.state.loginForm.password
+                        }}
+                        mutation={loginMutation}
+                      >
+                        {login => {
+                          this.login = login;
+                          return (
+                            <Grid
+                              container
+                              direction="column"
+                              alignItems="center"
                             >
-                              Submit
-                            </Button>
-                            <Typography
-                              style={{ margin: "4px" }}
-                              variant="caption"
-                              color="textSecondary"
-                            >
-                              Don't have an account?{" "}
-                              <RouterLink href="/register">
-                                <Link style={{ cursor: "pointer" }}>
-                                  Register
-                                </Link>
-                              </RouterLink>
-                            </Typography>
-                          </Grid>
-                        );
-                      }}
-                    </Mutation>
+                              <Button
+                                onClick={e =>
+                                  this.handleSubmit(
+                                    e,
+                                    validateFormCredentials,
+                                    login,
+                                    "click"
+                                  )
+                                }
+                                variant="contained"
+                                color="primary"
+                              >
+                                Submit
+                              </Button>
+                              <Typography
+                                style={{ margin: "4px" }}
+                                variant="caption"
+                                color="textSecondary"
+                              >
+                                Don't have an account?{" "}
+                                <RouterLink href="/register">
+                                  <Link style={{ cursor: "pointer" }}>
+                                    Register
+                                  </Link>
+                                </RouterLink>
+                              </Typography>
+                            </Grid>
+                          );
+                        }}
+                      </Mutation>
+                    </Grid>
                   </Grid>
-                </Grid>
-              );
-            }}
-          </Mutation>
-        </div>
-        {/* gql err snackbar */}
-        <Snackbar
-          autoHideDuration={3000}
-          onClose={() =>
-            this.setState(prevState => ({
-              ...prevState,
-              formValidation: {
-                ...prevState.formValidation,
-                isValidated: true,
-                logLevel: "",
+                );
+              }}
+            </Mutation>
+          </div>
+          {/* gql err snackbar */}
+          <Snackbar
+            autoHideDuration={3000}
+            onClose={() =>
+              this.setState(prevState => ({
+                ...prevState,
+                formValidation: {
+                  ...prevState.formValidation,
+                  isValidated: true,
+                  logLevel: "",
 
-                displayMessage: ""
-              }
-            }))
-          }
-          open={this.state.error.show}
-        >
-          <SnackbarContent
-            className={classes[this.state.error.logLevel]}
-            message={
-              <span className={classes.displayMessage}>
-                <i
-                  className={`fas fa-exclamation-circle ${
-                    classes.snackbarIcon
-                    }`}
-                />{" "}
-                {this.state.error.message}
-              </span>
-            }
-            action={
-              <IconButton
-                onClick={() =>
-                  this.setState(prevState => ({
-                    ...prevState,
-                    error: {
-                      ...prevState.error,
-                      show: false,
-                      logLevel: "",
-                      message: ""
-                    }
-                  }))
+                  displayMessage: ""
                 }
-              >
-                <Icon className={clsx("fas fa-times", classes.snackbarIcon)} />
-              </IconButton>
+              }))
             }
-          />
-        </Snackbar>
+            open={this.state.error.show}
+          >
+            <SnackbarContent
+              className={classes[this.state.error.logLevel]}
+              message={
+                <span className={classes.displayMessage}>
+                  <i
+                    className={`fas fa-exclamation-circle ${classes.snackbarIcon}`}
+                  />{" "}
+                  {this.state.error.message}
+                </span>
+              }
+              action={
+                <IconButton
+                  onClick={() =>
+                    this.setState(prevState => ({
+                      ...prevState,
+                      error: {
+                        ...prevState.error,
+                        show: false,
+                        logLevel: "",
+                        message: ""
+                      }
+                    }))
+                  }
+                >
+                  <Icon
+                    className={clsx("fas fa-times", classes.snackbarIcon)}
+                  />
+                </IconButton>
+              }
+            />
+          </Snackbar>
+        </div>
       </>
     );
   }
