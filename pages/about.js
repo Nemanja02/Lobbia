@@ -58,7 +58,7 @@ export class about extends Component {
               explicabo. Quaerat, eum.Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Animi ipsam maiores eaque dolorem beatae
               inventore sunt, sequi officiis earum quis. Enim facere mollitia
-              pariatur cupiditate culpa est explicabo. Quaerat, eum.
+              pariatur cupiditate est explicabo. Quaerat, eum.
             </div>
             <img
               src="https://images.pexels.com/photos/264706/pexels-photo-264706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
