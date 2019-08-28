@@ -33,7 +33,7 @@ export class support extends Component {
                 margin: "20px"
               }}
             >
-              Contact support!
+              Help us out
             </Typography>
             <Typography
               variant="body1"
@@ -44,8 +44,8 @@ export class support extends Component {
                 margin: "20px"
               }}
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae,
-              neque odio eligendi molestias non est.
+              If there is any problem you have please report it here we will be
+              glad to fix it
             </Typography>
             <TextField
               type="text"
