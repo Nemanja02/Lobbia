@@ -7,9 +7,14 @@
   margin: 10px 10px 20px 10px;
 }
 .photo {
-  width: 70%;
-  float: right;
-  margin: 10px 10px 20px 10px;
+  height: 60%;
+  width: 120%;
+  object-fit: contain;
+  object-position: bottom right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 .info {
   color: white;
@@ -23,9 +28,6 @@
   font-size: 45px;
 }
 @media (max-width: 768px) {
-  .photo {
-    width: calc(100% - 20px);
-  }
   .info {
     width: calc(100% - 20px);
     text-align: center;

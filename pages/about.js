@@ -29,11 +29,8 @@ export class about extends Component {
             <br />
             {/* Neki quote nesto nmp */}
             <Typography variant="h2" className={classes.quote}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
-              nostrum.
+              About Lobbia
             </Typography>
-            <br />
-            <br />
             {/* Neki naslov fzn o nama ili nesto tako(nije obavezno) */}
             <div className={classes.title}>Paragraph title</div>
             {/* Neki tekst/opis */}
@@ -44,22 +41,6 @@ export class about extends Component {
               explicabo. Quaerat, eum.
             </p>
             {/* Slika cisto da bude nesto */}
-            <img
-              src="https://images.pexels.com/photos/264706/pexels-photo-264706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-              className={classes.photo}
-            />
-            <div style={{ clear: "both" }}></div>
-            {/* I ovo samo ako treba jos nesto da se doda */}
-            <div className={classes.title}>Paragraph title</div>
-            <div className={classes.info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-              ipsam maiores eaque dolorem beatae inventore sunt, sequi officiis
-              earum quis. Enim facere mollitia pariatur cupiditate culpa est
-              explicabo. Quaerat, eum.Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Animi ipsam maiores eaque dolorem beatae
-              inventore sunt, sequi officiis earum quis. Enim facere mollitia
-              pariatur cupiditate est explicabo. Quaerat, eum.
-            </div>
             <img
               src="https://images.pexels.com/photos/264706/pexels-photo-264706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               className={classes.photo}
