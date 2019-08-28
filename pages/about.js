@@ -12,8 +12,7 @@ export class about extends Component {
     color: "white",
     fontSize: "24px",
     width: "50%",
-    margin: "10px",
-    wordBreak: "break-all"
+    margin: "10px"
   };
   imgStyle = {
     width: "65%",
