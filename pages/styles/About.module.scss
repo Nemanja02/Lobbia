@@ -1,0 +1,36 @@
+@import "./Index.module.scss";
+@import "../../config/sass/variables.scss";
+
+.title {
+  color: white;
+  font-size: 40px;
+  margin: 10px 10px 20px 10px;
+}
+.photo {
+  width: 70%;
+  float: right;
+  margin: 10px 10px 20px 10px;
+}
+.info {
+  color: white;
+  font-size: 24px;
+  width: 50%;
+  margin: 10px 10px 20px 10px;
+}
+.quote {
+  color: white;
+  text-align: center;
+  font-size: 45px;
+}
+@media (max-width: 768px) {
+  .photo {
+    width: calc(100% - 20px);
+  }
+  .info {
+    width: calc(100% - 20px);
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+  }
+}
