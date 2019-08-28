@@ -46,7 +46,7 @@ class Header extends Component {
                   key={el}
                   className={el === this.props.page ? classes.active : null}
                 >
-                  <a tabindex="1" href={`/${el === "home" ? "" : el}`}>
+                  <a tabIndex="1" href={`/${el === "home" ? "" : el}`}>
                     {capitalize(el)}
                   </a>
                   <div />
