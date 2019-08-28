@@ -314,7 +314,12 @@ class Register extends Component {
         >
           Create an account
         </Typography>
-        <Grid style={{paddingBottom: "20px"}} container direction="column" alignItems="center">
+        <Grid
+          style={{ paddingBottom: "20px" }}
+          container
+          direction="column"
+          alignItems="center"
+        >
           {formFieldsArr.map(el => {
             let placeholderText =
               el.name.charAt(0).toUpperCase() + el.name.slice(1);
@@ -746,61 +751,63 @@ class Register extends Component {
       <>
         <div className={classes.wrapper}>
           <Header hideButton="true" />
-          <div className={classes["custom-form-card"]}>
-            {this.state.formStage === 0
-              ? firstStepRegistration
-              : this.state.formStage === 1
-              ? secondStepRegistration
-              : thirdStepRegistration}
-          </div>
-          <Snackbar
-            autoHideDuration={3000}
-            onClose={() =>
-              this.setState(prevState => ({
-                ...prevState,
-                formValidation: {
-                  ...prevState.formValidation,
-                  isValidated: true,
-                  logLevel: "",
+          <div className={classes.body}>
+            <div className={classes["custom-form-card"]}>
+              {this.state.formStage === 0
+                ? firstStepRegistration
+                : this.state.formStage === 1
+                ? secondStepRegistration
+                : thirdStepRegistration}
+            </div>
+            <Snackbar
+              autoHideDuration={3000}
+              onClose={() =>
+                this.setState(prevState => ({
+                  ...prevState,
+                  formValidation: {
+                    ...prevState.formValidation,
+                    isValidated: true,
+                    logLevel: "",
 
-                  displayMessage: ""
-                }
-              }))
-            }
-            open={!this.state.formValidation.isValidated}
-          >
-            <SnackbarContent
-              className={classes[this.state.formValidation.logLevel]}
-              message={
-                <span className={classes.displayMessage}>
-                  <i
-                    className={`fas fa-exclamation-circle ${classes.snackbarIcon}`}
-                  />{" "}
-                  {this.state.formValidation.displayMessage}
-                </span>
-              }
-              action={
-                <IconButton
-                  onClick={() =>
-                    this.setState(prevState => ({
-                      ...prevState,
-                      formValidation: {
-                        ...prevState.formValidation,
-                        isValidated: true,
-                        logLevel: "",
-
-                        displayMessage: ""
-                      }
-                    }))
+                    displayMessage: ""
                   }
-                >
-                  <Icon
-                    className={clsx("fas fa-times", classes.snackbarIcon)}
-                  />
-                </IconButton>
+                }))
               }
-            />
-          </Snackbar>
+              open={!this.state.formValidation.isValidated}
+            >
+              <SnackbarContent
+                className={classes[this.state.formValidation.logLevel]}
+                message={
+                  <span className={classes.displayMessage}>
+                    <i
+                      className={`fas fa-exclamation-circle ${classes.snackbarIcon}`}
+                    />{" "}
+                    {this.state.formValidation.displayMessage}
+                  </span>
+                }
+                action={
+                  <IconButton
+                    onClick={() =>
+                      this.setState(prevState => ({
+                        ...prevState,
+                        formValidation: {
+                          ...prevState.formValidation,
+                          isValidated: true,
+                          logLevel: "",
+
+                          displayMessage: ""
+                        }
+                      }))
+                    }
+                  >
+                    <Icon
+                      className={clsx("fas fa-times", classes.snackbarIcon)}
+                    />
+                  </IconButton>
+                }
+              />
+            </Snackbar>
+          </div>
         </div>
       </>
     );
