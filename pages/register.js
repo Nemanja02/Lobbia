@@ -314,15 +314,7 @@ class Register extends Component {
         >
           Create an account
         </Typography>
-        <Grid
-          style={{
-            width: "60%",
-            marginBottom: "20px"
-          }}
-          container
-          direction="column"
-          alignItems="center"
-        >
+        <Grid style={{paddingBottom: "20px"}} container direction="column" alignItems="center">
           {formFieldsArr.map(el => {
             let placeholderText =
               el.name.charAt(0).toUpperCase() + el.name.slice(1);
