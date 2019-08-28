@@ -28,9 +28,10 @@ class Header extends Component {
     return (
       <div className={classes.nav}>
         <div
-          className={`${classes.darken} ${
-            this.state.dropped ? null : classes.closed
-          }`}
+          className={`
+            ${classes.darken} 
+            ${this.state.dropped ? null : classes.closed}
+          `}
           onClick={() => unDrop()}
         />
         <div className={classes.mobileNav}>

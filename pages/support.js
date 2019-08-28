@@ -6,14 +6,25 @@ import Button from "../components/Button/Button";
 import classes from "./styles/Index.module.scss";
 
 export class support extends Component {
-  inputStyle = { width: "calc(100% - 20px)", margin: "10px" };
+  container = {
+    margin: "auto",
+    width: "800px",
+    maxWidth: "100%",
+    padding: "20px",
+    display: "flex",
+    flexDirection: "column"
+  };
+
+  input = {
+    marginBottom: "20px"
+  };
 
   render() {
     return (
       <>
         <div className={classes.main}>
           <Header page="support" />
-          <Container maxWidth="md" fixed>
+          <div style={this.container}>
             <Typography
               variant="h2"
               style={{
@@ -40,15 +51,15 @@ export class support extends Component {
               type="text"
               variant="filled"
               id="outlined-full-width"
-              style={this.inputStyle}
               label="Enter name"
+              style={this.input}
             />
             <TextField
               type="email"
               variant="filled"
               id="outlined-full-width"
-              style={this.inputStyle}
               label="Enter email"
+              style={this.input}
             />
             <TextField
               label="Enter your feedback here!"
@@ -56,21 +67,17 @@ export class support extends Component {
               multiline={true}
               rows={5}
               rowsMax={10}
-              style={this.inputStyle}
+              style={this.input}
             />
 
-            <div className={classes.buttons}>
-              <form>
-                <Button
-                  href="/support"
-                  primary="true"
-                  style={{ margin: "10px" }}
-                >
-                  Send feedback!
-                </Button>
-              </form>
-            </div>
-          </Container>
+            <Button
+              href="/support"
+              primary="true"
+              style={{ alignSelf: "flex-end" }}
+            >
+              Send feedback!
+            </Button>
+          </div>
         </div>
       </>
     );
