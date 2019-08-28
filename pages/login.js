@@ -113,10 +113,6 @@ export class login extends Component {
               )
             }
             className={classes["custom-form-card"]}
-            style={{
-              width: "500px",
-              minHeight: "540px"
-            }}
           >
             <Mutation
               onError={({ graphQLErrors }) => {
