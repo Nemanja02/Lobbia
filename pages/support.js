@@ -24,7 +24,7 @@ export class support extends Component {
       <>
         <div className={classes.main}>
           <Header page="support" />
-          <div style={this.container}>
+          <form style={this.container}>
             <Typography
               variant="h2"
               style={{
@@ -47,20 +47,20 @@ export class support extends Component {
               If there is any problem you have please report it here we will be
               glad to fix it
             </Typography>
-            <TextField
-              type="text"
-              variant="filled"
-              id="outlined-full-width"
-              label="Enter name"
-              style={this.input}
-            />
-            <TextField
-              type="email"
-              variant="filled"
-              id="outlined-full-width"
-              label="Enter email"
-              style={this.input}
-            />
+
+            {["name", "email"].map(el => {
+              return (
+                <TextField
+                  type="text"
+                  variant="filled"
+                  id={el}
+                  name={el}
+                  label={`Enter ${el}`}
+                  style={this.input}
+                  autoCompleteType={el}
+                />
+              );
+            })}
             <TextField
               label="Enter your feedback here!"
               variant="filled"
@@ -77,7 +77,7 @@ export class support extends Component {
             >
               Send feedback!
             </Button>
-          </div>
+          </form>
         </div>
       </>
     );
