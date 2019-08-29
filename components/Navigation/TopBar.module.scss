@@ -4,10 +4,22 @@
 .topbar {
   width: 100%;
   height: $topbar-height;
-  background-color: $color-bg-light;
-  padding: 0 0;
+  background-color: $color-bg;
+  padding: 0 $margin;
   @include center;
   justify-content: space-between;
+  box-shadow: 5px 0 5px darken($color-bg, 10%);
+}
+
+.start {
+  align-items: center;
+  display: flex;
+
+  & > div {
+    height: 30px;
+    width: 40px;
+    display: none;
+  }
 }
 
 .end {
@@ -18,7 +30,6 @@
 .logo {
   height: calc(#{$topbar-height} - 2 * #{$margin});
   margin: $margin;
-  padding-left: $margin;
   @include unselectable;
 }
 
@@ -51,9 +62,9 @@
   & > i.icon-special {
     & > span > span {
       font-size: 26px !important;
-    color: $color-primary !important;
-    cursor: pointer !important;
-    transition: all $transition !important;
+      color: $color-primary !important;
+      cursor: pointer !important;
+      transition: all $transition !important;
     }
   }
 }
@@ -66,7 +77,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: $color-bg-light !important; 
+  background-color: $color-bg-light !important;
   width: $searchbar-width-max;
 }
 
@@ -78,7 +89,7 @@
 
 .search {
   font-size: 12, 5px;
-  background-color: $color-bg;
+  background-color: $color-bg-light;
   color: $color-text;
   padding: 5px 10px;
   border-radius: 5px;
@@ -130,5 +141,11 @@
     font-size: 28px;
     color: $color-text;
     z-index: 11;
+  }
+}
+
+@media (max-width: 700px) {
+  .start div {
+    display: block;
   }
 }

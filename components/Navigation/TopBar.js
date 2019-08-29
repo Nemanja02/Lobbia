@@ -5,6 +5,8 @@ import clsx from "clsx";
 import classes from "./TopBar.module.scss";
 import SearchModal from "../SearchModal/SearchModal";
 import ProfileShowcase from "../ProfileShowcase/ProfileShowcase";
+import Burger from "../Burger/Burger";
+
 import { connect } from "react-redux";
 
 import {
@@ -215,6 +217,7 @@ const SearchComponent = props => {
 
 class TopBar extends Component {
   state = {
+    isSidebarOpen: false,
     isSearchModalOpen: false,
     isDropdownOpen: null,
     notificationsAnchorEl: null,
@@ -231,6 +234,8 @@ class TopBar extends Component {
 
   toggleSearchModal = prevValue =>
     this.setState({ isSearchModalOpen: !prevValue });
+
+  toggleSidebar = prevValue => this.setState({ isSidebarOpen: !prevValue });
 
   closeProfileInspect = () =>
     this.setState({ selectedUser: { isOpen: false } });
@@ -259,7 +264,7 @@ class TopBar extends Component {
   }
 
   render() {
-    const { isSearchModalOpen, isDropdownOpen } = this.state;
+    const { isSearchModalOpen, isDropdownOpen, isSidebarOpen } = this.state;
     let caretClasses = ["fas fa-caret-down"];
 
     const dropdownFields = [
@@ -306,6 +311,10 @@ class TopBar extends Component {
             open={isSearchModalOpen}
           />
           <div className={classes.start}>
+            <Burger
+              clicked={() => this.toggleSidebar(isSidebarOpen)}
+              state={isSidebarOpen}
+            />
             <img className={classes.logo} src="assets/PixelArt.png" />
           </div>
           <div className={classes.end}>

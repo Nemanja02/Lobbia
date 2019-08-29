@@ -6,6 +6,20 @@ import Button from "../components/Button/Button";
 import classes from "./styles/Index.module.scss";
 
 export class support extends Component {
+  constructor(props) {
+    super(props);
+    // create a ref to store the textInput DOM element
+    this.name = React.createRef();
+    this.email = React.createRef();
+    this.focusTextInput = this.focusTextInput.bind(this);
+  }
+
+  focusTextInput() {
+    // Explicitly focus the text input using the raw DOM API
+    // Note: we're accessing "current" to get the DOM node
+    this.name.current.focus();
+    console.log("woooo");
+  }
   container = {
     margin: "auto",
     width: "800px",
@@ -59,6 +73,7 @@ export class support extends Component {
                   name={el}
                   label={`Enter ${el}`}
                   style={this.input}
+                  inputRef={this[el]}
                 />
               );
             })}
@@ -69,11 +84,10 @@ export class support extends Component {
               rows={5}
               rowsMax={10}
               style={this.input}
-              ref="feedback"
             />
 
             <Button
-              href="/support"
+              click={this.focusTextInput}
               primary="true"
               style={{ alignSelf: "flex-end" }}
             >

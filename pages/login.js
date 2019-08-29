@@ -226,6 +226,7 @@ export class login extends Component {
                                   Don't have an account?{" "}
                                   <RouterLink href="/register">
                                     <Link
+                                      tabIndex="0"
                                       style={{
                                         cursor: "pointer"
                                       }}
