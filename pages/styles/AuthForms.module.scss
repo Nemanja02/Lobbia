@@ -19,8 +19,8 @@
 .body {
   width: 100%;
   flex: 1;
-  @include center;
   @include scroll;
+  position: relative;
 }
 
 .input {
@@ -37,12 +37,11 @@
 }
 
 .custom-form-card {
-  position: relative;
+  margin: 0 auto;
   width: 550px;
   max-width: 90%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
 }
 
 .warning {
@@ -174,4 +173,10 @@
 .scrollable {
   height: 350px;
   @include scroll;
+}
+
+@media (min-height: 650px) {
+  .body {
+    @include center;
+  }
 }
