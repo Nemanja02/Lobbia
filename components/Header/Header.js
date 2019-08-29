@@ -35,7 +35,7 @@ class Header extends Component {
           onClick={() => unDrop()}
         />
         <div className={classes.mobileNav}>
-          <a href="/" tabindex="-1">
+          <a href="/" tabIndex="-1">
             <img src="assets/PixelArt.png" />
           </a>
           <Burger clicked={changeDrop} state={this.state.dropped} />
