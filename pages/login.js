@@ -219,13 +219,17 @@ export class login extends Component {
                                   Submit
                                 </Button>
                                 <Typography
-                                  style={{ margin: "4px" }}
+                                  style={{ margin: "10px" }}
                                   variant="caption"
                                   color="textSecondary"
                                 >
                                   Don't have an account?{" "}
                                   <RouterLink href="/register">
-                                    <Link style={{ cursor: "pointer" }}>
+                                    <Link
+                                      style={{
+                                        cursor: "pointer"
+                                      }}
+                                    >
                                       Register
                                     </Link>
                                   </RouterLink>

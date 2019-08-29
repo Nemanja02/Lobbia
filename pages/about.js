@@ -10,7 +10,6 @@ export class about extends Component {
         <div className={classes.main}>
           <Header page="about" />
           <Container maxWidth="lg" fixed>
-            <br />
             {/* Neki quote nesto nmp */}
             <Typography variant="h2" className={classes.quote}>
               About Lobbia
@@ -25,10 +24,7 @@ export class about extends Component {
               explicabo. Quaerat, eum.
             </p>
             {/* Slika cisto da bude nesto */}
-            <img
-              src="https://images.pexels.com/photos/264706/pexels-photo-264706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-              className={classes.photo}
-            />
+            <img src="index/IndexBG.svg" className={classes.photo} />
           </Container>
         </div>
       </>
