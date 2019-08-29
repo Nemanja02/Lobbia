@@ -4,7 +4,8 @@
 .title {
   color: white;
   font-size: 40px;
-  margin: 10px 10px 20px 10px;
+
+  margin: 20px 10px 20px 10px;
 }
 
 .photo {
@@ -21,21 +22,26 @@
 .info {
   color: white;
   font-size: 24px;
-  width: 50%;
+  width: 60%;
+  line-height: 33px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   margin: 10px 10px 20px 10px;
 }
 
 .quote {
   color: white;
   text-align: center;
+  margin-top: 20px;
   font-size: 45px;
 }
 
 @media (max-width: 768px) {
   .info {
     width: calc(100% - 20px);
+    text-align: center;
   }
-  
+
   .title {
     text-align: center;
   }

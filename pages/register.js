@@ -456,7 +456,7 @@ class Register extends Component {
           }}
         </Mutation>
         <Typography
-          style={{ margin: "4px" }}
+          style={{ margin: "10px" }}
           color="textSecondary"
           variant="caption"
         >
