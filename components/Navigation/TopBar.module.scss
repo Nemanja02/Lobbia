@@ -33,6 +33,10 @@
   @include unselectable;
 }
 
+.fa-caret-down {
+  transition: transform $transition;
+}
+
 .rotatedIcon {
   transform: rotate(180deg);
 }

@@ -346,7 +346,8 @@ class TopBar extends Component {
             <SearchComponent />
             <div className={classes["icon-btn-control"]}>
               <IconButton onClick={this.openDropdown}>
-                <Icon classes={{ root: clsx(caretClasses) }} />
+                <Icon classes={{ root: clsx(caretClasses) }}
+                style={{transition: "transform .2s ease-out"}} />
               </IconButton>
               <StyledMenu
                 anchorEl={isDropdownOpen}
