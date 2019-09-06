@@ -3,17 +3,21 @@
 #root {
   background-color: $color-bg;
   position: fixed;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .wrap {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  flex: 1;
 }
 
 #main {
+  display: flex;
+  flex-direction: column;
   background-color: $color-bg;
   margin: $margin 0;
   margin-right: $margin;

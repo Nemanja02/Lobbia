@@ -3,7 +3,7 @@
 
 .container {
   display: flex;
-  height: calc(100vh - #{$topbar-height});
+  height: 100%;
   flex-direction: column;
   padding: $margin;
   padding-bottom: 0;
