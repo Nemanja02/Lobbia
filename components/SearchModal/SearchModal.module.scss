@@ -55,6 +55,7 @@
         transition: flex 0.5s;
 
         & > .group {
+          @include unselectable;
           height: min-content;
           z-index: 100;
           position: relative;
