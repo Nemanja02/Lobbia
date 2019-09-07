@@ -16,6 +16,7 @@
     width: 65%;
     height: 65%;
     padding-right: 0;
+    padding-bottom: 0;
 
     & > span {
       font-size: 29px;
@@ -47,8 +48,8 @@
         cursor: pointer;
         flex: 1;
         position: relative;
-        height: 100%;
         margin-right: 10px;
+        margin-bottom: 10px;
         border-radius: 10px;
         padding: $margin;
         @include center;
@@ -101,7 +102,7 @@
 @media (min-width: 768px) {
   #findBG .dialog > div {
     flex-direction: row;
-    & > a{
+    & > a {
       & .grow {
         transform: scaleY(0);
         transform-origin: bottom;
