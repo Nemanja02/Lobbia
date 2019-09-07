@@ -19,11 +19,16 @@ export class index extends Component {
                 perspective
               </p>
 
-              <Button class={classes.button} href="/login" primary="true" style={{ margin: "10px" }}>
+              <Button
+                class={classes.button}
+                href="/login"
+                primary="true"
+                style={{ margin: "10px" }}
+              >
                 Log in
               </Button>
             </div>
-            <img src="index/IndexBG.svg" />
+            <img src="index/IndexBG.svg" alt="Background photo" />
           </div>
         </div>
       </>

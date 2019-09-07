@@ -315,7 +315,7 @@ class TopBar extends Component {
               clicked={() => this.toggleSidebar(isSidebarOpen)}
               state={isSidebarOpen}
             />
-            <img className={classes.logo} src="assets/PixelArt.png" />
+            <img className={classes.logo} src="assets/PixelArt.png" alt="Lobbia"/>
           </div>
           <div className={classes.end}>
             <div className={classes["icon-btn-control"]}>

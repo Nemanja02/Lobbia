@@ -15,6 +15,7 @@
 @mixin scroll {
   overflow-y: auto;
   flex-grow: 100;
+
   &::-webkit-scrollbar-track {
     border-radius: 100px;
     background-color: $color-bg-light;
@@ -27,7 +28,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $color-bg;
+    background-color: $color-primary;
     border-radius: 100px;
   }
 }
@@ -52,7 +53,8 @@
   transition: background-color $transition, box-shadow $transition;
   text-decoration: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: lighten($color, 10%);
     box-shadow: 0 2px 4px $color-bg;
   }

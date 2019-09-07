@@ -36,7 +36,7 @@ class Header extends Component {
         />
         <div className={classes.mobileNav}>
           <a href="/" tabIndex="-1">
-            <img src="assets/PixelArt.png" />
+            <img src="assets/PixelArt.png" alt="Lobbia" />
           </a>
           <Burger clicked={changeDrop} state={this.state.dropped} />
         </div>
@@ -48,7 +48,7 @@ class Header extends Component {
                   key={el}
                   className={el === this.props.page ? classes.active : null}
                 >
-                  <a tabIndex="1" href={`/${el === "home" ? "" : el}`}>
+                  <a tabIndex="0" href={`/${el === "home" ? "" : el}`}>
                     {capitalize(el)}
                   </a>
                   <div />

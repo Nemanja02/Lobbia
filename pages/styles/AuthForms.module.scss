@@ -1,12 +1,6 @@
 @import "../../config/sass/variables.scss";
 @import "../../config/sass/mixins.scss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a[href="/register"]:focus {
   color: $color-primary-dark;
 }
@@ -82,7 +76,6 @@ a[href="/register"]:focus {
   overflow-x: auto;
   align-content: flex-start;
   width: initial;
-  height: 350px;
   & span {
     color: $color-text-second;
     font-size: 16px;
@@ -175,7 +168,6 @@ a[href="/register"]:focus {
 }
 
 .scrollable {
-  height: 350px;
   @include scroll;
 }
 

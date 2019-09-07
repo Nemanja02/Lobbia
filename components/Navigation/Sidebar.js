@@ -8,7 +8,7 @@ import ProfileShowcase from "../ProfileShowcase/ProfileShowcase";
 function Profile({ profilePicture, username, status }) {
   return (
     <div className={classes.user}>
-      <img src={profilePicture} />
+      <img src={profilePicture} alt={username} />
       <div className={classes.online} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
@@ -33,20 +33,19 @@ function Friend({ profilePicture, username, activity, clicked }) {
 
   return (
     <div onClick={clicked} className={classes.friend}>
-      <img src={profilePicture} />
+      <img src={profilePicture} alt={username} />
       <div className={`${classes.online} ${classes[status]}`} />
       <div className={classes.about}>
         <span className={classes.username}>{username}</span>
-        <span className={classes.activity}>{activity.charAt(0).toUpperCase() + activity.slice(1)
-        }</span>
+        <span className={classes.activity}>
+          {activity.charAt(0).toUpperCase() + activity.slice(1)}
+        </span>
       </div>
     </div>
   );
 }
 
 export function Sidebar(props) {
-
-
   const [activeTab, changeTabState] = React.useState(1);
 
   const [selectedUser, setSelectedUser] = React.useState({
@@ -55,27 +54,28 @@ export function Sidebar(props) {
   });
 
   const switchActiveTab = i => {
-    changeTabState(i)
+    changeTabState(i);
   };
 
   const closeProfileInspect = () => setSelectedUser({ isOpen: false });
-  const openProfileInspect = (id) => setSelectedUser({ isOpen: true, id });
-
+  const openProfileInspect = id => setSelectedUser({ isOpen: true, id });
 
   let friendList;
 
-  if (props.user.connections.accepted) if (props.user.connections.accepted.length > 0) friendList = props.user.connections.accepted.map((el, i) => {
-    return (
-      <Friend
-        clicked={() => openProfileInspect(el.id)}
-        key={el.id}
-        profilePicture={el.profilePicture}
-        username={el.username}
-        activity={el.isOnline ? "online" : "offline"}
-        id={el.id}
-      />
-    );
-  })
+  if (props.user.connections.accepted)
+    if (props.user.connections.accepted.length > 0)
+      friendList = props.user.connections.accepted.map((el, i) => {
+        return (
+          <Friend
+            clicked={() => openProfileInspect(el.id)}
+            key={el.id}
+            profilePicture={el.profilePicture}
+            username={el.username}
+            activity={el.isOnline ? "online" : "offline"}
+            id={el.id}
+          />
+        );
+      });
 
   return (
     <>
@@ -87,17 +87,21 @@ export function Sidebar(props) {
             status={props.user.isOnline ? "online" : null}
           />
           <ul className={classes.sidebar}>
-            {[{
-              name: "Feed",
-              type: "link"
-            }, {
-              name: "Profile",
-              type: "button",
-              id: props.user.id
-            }, {
-              name: "Settings",
-              type: "link"
-            }].map(el => {
+            {[
+              {
+                name: "Feed",
+                type: "link"
+              },
+              {
+                name: "Profile",
+                type: "button",
+                id: props.user.id
+              },
+              {
+                name: "Settings",
+                type: "link"
+              }
+            ].map(el => {
               let faIcon;
               let href;
               if (el.name === "Feed") {
@@ -114,7 +118,14 @@ export function Sidebar(props) {
               }
               return (
                 <p key={el.name} className={classes.sidebarEl}>
-                  <NavLink type={el.type} id={el.id || null} statePath={props.path.value} path={href} title={el.name} icon={faIcon} />
+                  <NavLink
+                    type={el.type}
+                    id={el.id || null}
+                    statePath={props.path.value}
+                    path={href}
+                    title={el.name}
+                    icon={faIcon}
+                  />
                 </p>
               );
             })}
@@ -133,8 +144,7 @@ export function Sidebar(props) {
             </Typography>
             <Typography
               clicked={() => switchActiveTab(2)}
-              active={
-                activeTab === 2 ? true : false}
+              active={activeTab === 2 ? true : false}
               variant="nav-title"
               color="light"
             >
@@ -149,7 +159,13 @@ export function Sidebar(props) {
           </div>
         </div>
       </div>
-      {selectedUser.isOpen ? <ProfileShowcase id={selectedUser.id} isOpen={selectedUser.isOpen} onClose={closeProfileInspect} /> : null}
+      {selectedUser.isOpen ? (
+        <ProfileShowcase
+          id={selectedUser.id}
+          isOpen={selectedUser.isOpen}
+          onClose={closeProfileInspect}
+        />
+      ) : null}
     </>
   );
 }

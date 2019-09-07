@@ -24,7 +24,7 @@ export class about extends Component {
               explicabo. Quaerat, eum.
             </p>
             {/* Slika cisto da bude nesto */}
-            <img src="index/IndexBG.svg" className={classes.photo} />
+            <img src="index/IndexBG.svg" className={classes.photo} alt="Background photo"/>
           </Container>
         </div>
       </>
