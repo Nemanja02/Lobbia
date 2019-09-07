@@ -22,7 +22,6 @@ export class index extends Component {
               <Button
                 class={classes.button}
                 href="/login"
-                primary="true"
                 style={{ margin: "10px" }}
               >
                 Log in

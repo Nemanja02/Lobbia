@@ -7,8 +7,7 @@ function Button(props) {
       onClick={props.click}
       tabIndex="0"
       href={props.href}
-      className={`
-        ${props.primary ? classes.primary : null} 
+      className={` 
         ${classes.button} 
         ${props.class}
       `}

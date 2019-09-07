@@ -61,7 +61,7 @@ class Header extends Component {
           style={this.props.hideButton ? { display: "none" } : null}
           className={classes.buttons}
         >
-          <Button href="/login" primary="true">
+          <Button href="/login">
             Log in
           </Button>
         </div>

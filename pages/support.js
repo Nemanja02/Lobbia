@@ -88,7 +88,6 @@ export class support extends Component {
 
             <Button
               click={this.focusTextInput}
-              primary="true"
               style={{ alignSelf: "flex-end" }}
             >
               Send feedback!
