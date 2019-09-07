@@ -8,7 +8,6 @@ import jwt from "jsonwebtoken";
 import { parseCookies, destroyCookie } from "nookies";
 
 function Layout(props) {
-
   return (
     <div id={classes.root}>
       <TopBar
@@ -21,7 +20,7 @@ function Layout(props) {
       />
       <div className={classes.wrap}>
         <Sidebar />
-        <div id={classes.main}>{props.children}</div>
+        <main>{props.children}</main>
       </div>
     </div>
   );

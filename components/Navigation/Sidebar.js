@@ -79,7 +79,7 @@ export function Sidebar(props) {
 
   return (
     <>
-      <div className={classes.container}>
+      <aside className={classes.container}>
         <div className={classes.division}>
           <Profile
             profilePicture={props.user.profilePicture}
@@ -117,16 +117,18 @@ export function Sidebar(props) {
                 href = "/settings";
               }
               return (
-                <p key={el.name} className={classes.sidebarEl}>
-                  <NavLink
-                    type={el.type}
-                    id={el.id || null}
-                    statePath={props.path.value}
-                    path={href}
-                    title={el.name}
-                    icon={faIcon}
-                  />
-                </p>
+                <li key={el.name}>
+                  <p className={classes.sidebarEl}>
+                    <NavLink
+                      type={el.type}
+                      id={el.id || null}
+                      statePath={props.path.value}
+                      path={href}
+                      title={el.name}
+                      icon={faIcon}
+                    />
+                  </p>
+                </li>
               );
             })}
           </ul>
@@ -158,7 +160,7 @@ export function Sidebar(props) {
             {friendList}
           </div>
         </div>
-      </div>
+      </aside>
       {selectedUser.isOpen ? (
         <ProfileShowcase
           id={selectedUser.id}

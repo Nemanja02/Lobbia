@@ -128,6 +128,7 @@ const SearchComponent = props => {
             >
               <div className={classes.sbar}>
                 <input
+                  aria-label="Search"
                   onBlur={() => setQueryStatus(false)}
                   onChange={e => {
                     setInputQuery(e.target.value);
@@ -291,7 +292,7 @@ class TopBar extends Component {
 
     return (
       <>
-        <div className={classes.topbar}>
+        <header className={classes.topbar}>
           <SearchModal
             types={[
               {
@@ -315,11 +316,16 @@ class TopBar extends Component {
               clicked={() => this.toggleSidebar(isSidebarOpen)}
               state={isSidebarOpen}
             />
-            <img className={classes.logo} src="assets/PixelArt.png" alt="Lobbia"/>
+            <img
+              className={classes.logo}
+              src="assets/PixelArt.png"
+              alt="Lobbia"
+            />
           </div>
           <div className={classes.end}>
             <div className={classes["icon-btn-control"]}>
               <IconButton
+                aria-label="Lunch"
                 onClick={() => this.toggleSearchModal(isSearchModalOpen)}
               >
                 <Icon
@@ -330,6 +336,7 @@ class TopBar extends Component {
                 />
               </IconButton>
               <IconButton
+                aria-label="Notifications"
                 onClick={e => {
                   this.openNotifications(e);
                 }}
@@ -345,9 +352,11 @@ class TopBar extends Component {
             </div>
             <SearchComponent />
             <div className={classes["icon-btn-control"]}>
-              <IconButton onClick={this.openDropdown}>
-                <Icon classes={{ root: clsx(caretClasses) }}
-                style={{transition: "transform .2s ease-out"}} />
+              <IconButton aria-label="More options" onClick={this.openDropdown}>
+                <Icon
+                  classes={{ root: clsx(caretClasses) }}
+                  style={{ transition: "transform .2s ease-out" }}
+                />
               </IconButton>
               <StyledMenu
                 anchorEl={isDropdownOpen}
@@ -385,7 +394,7 @@ class TopBar extends Component {
               </StyledMenu>
             </div>
           </div>
-        </div>
+        </header>
         <Popover
           anchorEl={this.state.notificationsAnchorEl}
           anchorOrigin={{
