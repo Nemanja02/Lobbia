@@ -358,6 +358,9 @@ class Register extends Component {
                   fullWidth
                   value={this.state.formFields.birthday.value}
                   onChange={date => this.handleDate(date)}
+                  inputProps={{
+                    "aria-label": "Birthday"
+                  }}
                 />
               </MuiPickersUtilsProvider>
             );
@@ -403,6 +406,9 @@ class Register extends Component {
                   type={type}
                   onChange={e => this.handleChange(e, el.name)}
                   value={this.state.formFields[el.name].value}
+                  inputProps={{
+                    "aria-label": [placeholderText]
+                  }}
                 />
               );
           })}
@@ -750,7 +756,7 @@ class Register extends Component {
     return (
       <>
         <div className={classes.wrapper}>
-          <Header hideButton="true" />
+          <Header hideButton="true" page="register" />
           <div className={classes.body}>
             <div className={classes["custom-form-card"]}>
               {this.state.formStage === 0

@@ -27,6 +27,7 @@ class Header extends Component {
 
     return (
       <div className={classes.nav}>
+        <title>{capitalize(this.props.page)} | Lobbia</title>
         <div
           className={`
             ${classes.darken} 
@@ -61,9 +62,7 @@ class Header extends Component {
           style={this.props.hideButton ? { display: "none" } : null}
           className={classes.buttons}
         >
-          <Button href="/login">
-            Log in
-          </Button>
+          <Button href="/login">Log in</Button>
         </div>
       </div>
     );

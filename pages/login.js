@@ -102,7 +102,7 @@ export class login extends Component {
     return (
       <>
         <div className={classes.wrapper}>
-          <Header hideButton="true" />
+          <Header hideButton="true" page="log in" />
           <div className={classes.body}>
             <div
               onKeyDown={e =>
@@ -175,12 +175,16 @@ export class login extends Component {
                           <TextField
                             helperText={el.helperText}
                             type={el.type}
+                            aria-label={el.displayName}
                             label={el.displayName}
                             key={el.name}
                             fullWidth
                             variant="filled"
                             style={{ marginTop: "20px" }}
                             onChange={e => this.handleChange(e, el.name)}
+                            inputProps={{
+                              "aria-label": [el.displayName]
+                            }}
                           />
                         ))}
                       </Grid>
