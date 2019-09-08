@@ -19,6 +19,7 @@ class Layout extends React.Component {
   };
 
   toggleSidebar = prevValue => this.setState({ isSidebarOpen: !prevValue });
+  
   render() {
     return (
       <div id={classes.root}>

@@ -12,11 +12,17 @@
     background-color: white;
     border-radius: 10000px;
 
+    &:nth-child(1) {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+
     &:nth-child(2) {
       transform: translateY(100%);
     }
 
     &:nth-child(3) {
+      transform-origin: right;
       transform: translateY(200%);
     }
   }
@@ -26,22 +32,22 @@
     background-color: $color-text-second;
 
     &:nth-child(1) {
-      transform: translateX(-5px);
+      transform: scaleX(0.8);
     }
 
     &:nth-child(3) {
-      transform: translate(-5px, 200%);
+      transform: translateY(200%) scaleX(0.8);
     }
   }
 
   &.active {
     div {
       &:nth-child(1) {
-        transform: translateY(200%);
+        transform: translateY(200%) scaleX(0.8);
       }
 
       &:nth-child(3) {
-        transform: translateY(0%);
+        transform: translateY(0%) scaleX(0.8);
       }
     }
   }
