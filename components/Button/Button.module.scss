@@ -2,12 +2,11 @@
 @import "../../config/sass/mixins.scss";
 
 .button {
-  @include clickable($color-bg);
-  color: $color-text;
+  @include clickable($color-primary);
+  color: $color-bg;
   min-width: 150px;
   min-height: 40px;
   padding: 10px;
   text-align: center;
-  border: $color-primary solid 4px;
-  border-radius: 10px;
+  border-radius: 5px;
 }

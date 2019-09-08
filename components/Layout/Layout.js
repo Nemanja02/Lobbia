@@ -7,23 +7,38 @@ import * as actions from "../../actions/userActions";
 import jwt from "jsonwebtoken";
 import { parseCookies, destroyCookie } from "nookies";
 
-function Layout(props) {
-  return (
-    <div id={classes.root}>
-      <TopBar
-        logout={async () => {
-          const decoded = await jwt.decode(parseCookies().token);
-          props.logout(decoded.id);
-          props.clearState();
-          destroyCookie({}, "token");
-        }}
-      />
-      <div className={classes.wrap}>
-        <Sidebar />
-        <main>{props.children}</main>
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleSidebar = this.toggleSidebar.bind(this);
+  }
+
+  state = {
+    isSidebarOpen: false
+  };
+
+  toggleSidebar = prevValue => this.setState({ isSidebarOpen: !prevValue });
+  render() {
+    return (
+      <div id={classes.root}>
+        <TopBar
+          burgerState={this.state.isSidebarOpen}
+          toggleBurgerState={this.toggleSidebar}
+          logout={async () => {
+            const decoded = await jwt.decode(parseCookies().token);
+            this.props.logout(decoded.id);
+            this.props.clearState();
+            destroyCookie({}, "token");
+          }}
+        />
+        <div className={classes.wrap}>
+          <Sidebar opened={this.state.isSidebarOpen} />
+          <main>{this.props.children}</main>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default connect(

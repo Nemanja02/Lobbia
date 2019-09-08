@@ -8,11 +8,12 @@
   padding: $margin;
   padding-bottom: 0;
   transition: transform $transition;
+  width: $sidebar-width;
 }
 
 .division {
   padding: $margin;
-  width: $sidebar-width;
+  width: 100%;
   background-color: $color-bg-light;
   display: flex;
   flex-direction: column;
@@ -31,6 +32,9 @@
 
 .sidebar {
   width: 100%;
+  li {
+    list-style: none;
+  }
 }
 
 .user {
@@ -240,6 +244,10 @@ span:focus {
 
 @media (max-width: 700px) {
   .container {
-    transform: translateX(-100%);
+    width: 100%;
+    padding-right: 0;
+    &.closed {
+      transform: translateX(-100%);
+    }
   }
 }

@@ -218,7 +218,6 @@ const SearchComponent = props => {
 
 class TopBar extends Component {
   state = {
-    isSidebarOpen: false,
     isSearchModalOpen: false,
     isDropdownOpen: null,
     notificationsAnchorEl: null,
@@ -235,8 +234,6 @@ class TopBar extends Component {
 
   toggleSearchModal = prevValue =>
     this.setState({ isSearchModalOpen: !prevValue });
-
-  toggleSidebar = prevValue => this.setState({ isSidebarOpen: !prevValue });
 
   closeProfileInspect = () =>
     this.setState({ selectedUser: { isOpen: false } });
@@ -265,7 +262,7 @@ class TopBar extends Component {
   }
 
   render() {
-    const { isSearchModalOpen, isDropdownOpen, isSidebarOpen } = this.state;
+    const { isSearchModalOpen, isDropdownOpen } = this.state;
     let caretClasses = ["fas fa-caret-down"];
 
     const dropdownFields = [
@@ -313,8 +310,10 @@ class TopBar extends Component {
           />
           <div className={classes.start}>
             <Burger
-              clicked={() => this.toggleSidebar(isSidebarOpen)}
-              state={isSidebarOpen}
+              clicked={() =>
+                this.props.toggleBurgerState(this.props.burgerState)
+              }
+              state={this.props.burgerState}
             />
             <img
               className={classes.logo}
