@@ -48,6 +48,7 @@
 }
 
 @mixin clickable($color) {
+  @include unselectable;
   background-color: $color;
   cursor: pointer;
   transition: background-color $transition, box-shadow $transition;

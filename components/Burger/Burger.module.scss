@@ -43,11 +43,11 @@
   &.active {
     div {
       &:nth-child(1) {
-        transform: translateY(200%) scaleX(0.8);
+        transform: scaleX(0.8) translateY(200%);
       }
 
       &:nth-child(3) {
-        transform: translateY(0%) scaleX(0.8);
+        transform: scaleX(0.8) translateY(0%);
       }
     }
   }
