@@ -60,6 +60,7 @@
         transition: flex 0.5s;
 
         & > .group {
+          cursor: pointer;
           @include unselectable;
           height: min-content;
           z-index: 100;
@@ -69,6 +70,7 @@
           transition: opacity $transition;
 
           & span {
+            cursor: pointer;
             text-align: center;
             line-height: 1.4;
 
