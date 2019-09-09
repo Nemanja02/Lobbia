@@ -54,7 +54,7 @@
         position: relative;
         margin-right: 10px;
         margin-bottom: 10px;
-        border-radius: 10px;
+        border-radius: $default-border-radius;
         padding: $margin;
         @include center;
         transition: flex 0.5s;
@@ -91,7 +91,7 @@
           @include fillArea;
           transform: scaleX(0);
           transform-origin: left;
-          border-radius: 10px;
+          border-radius: $default-border-radius;
           background-color: #fff;
           transition: transform $transition;
           z-index: 11;
