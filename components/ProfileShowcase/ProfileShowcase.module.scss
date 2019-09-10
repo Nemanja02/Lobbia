@@ -4,13 +4,10 @@
 .main {
   height: 100%;
   padding: $margin;
-  width: 100%;
 }
 
 .displayAvatar {
-  width: "100%";
   margin: "20px";
-  height: "100%";
 }
 
 .icon {
@@ -35,7 +32,6 @@
 
 .dialog-action-container {
   margin: 15px;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
