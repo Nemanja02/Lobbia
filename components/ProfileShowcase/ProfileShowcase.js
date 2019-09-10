@@ -251,7 +251,7 @@ function Profile(props) {
                           </Typography>
                           {informationText ? (
                             <Grid
-                              style={{ width: "initial" }}
+                              style={{ width: "initial", marginBottom: "10px" }}
                               justify="center"
                               container
                               direction="row"
@@ -259,7 +259,7 @@ function Profile(props) {
                             >
                               <Icon
                                 color="primary"
-                                style={{ margin: "10px" }}
+                                style={{ marginRight: "10px" }}
                                 className={clsx("fas fa-info-circle")}
                                 fontSize="small"
                               />
