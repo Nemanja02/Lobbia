@@ -25,7 +25,7 @@
     & > span {
       font-size: 29px;
       font-weight: 700;
-      padding: 10px;
+      padding: 12px;
       color: $color-text;
       text-align: center;
     }
@@ -52,8 +52,8 @@
         cursor: pointer;
         flex: 1;
         position: relative;
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin-right: 12px;
+        margin-bottom: 12px;
         border-radius: $default-border-radius;
         padding: $margin;
         @include center;
