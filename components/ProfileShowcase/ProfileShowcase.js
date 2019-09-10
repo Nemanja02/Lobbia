@@ -220,13 +220,17 @@ function Profile(props) {
                   return (
                     <>
                       <Grid
+                        style={{ width: "initial" }}
                         justify="center"
                         container
                         direction="column"
                         alignItems="center"
                       >
                         <Grid
-                          style={{ marginTop: "20px" }}
+                          style={{
+                            marginTop: "20px",
+                            width: "initial"
+                          }}
                           container
                           direction="column"
                           justify="center"
@@ -247,6 +251,7 @@ function Profile(props) {
                           </Typography>
                           {informationText ? (
                             <Grid
+                              style={{ width: "initial" }}
                               justify="center"
                               container
                               direction="row"
@@ -272,6 +277,7 @@ function Profile(props) {
                                                 </Grid> */}
                         </Grid>
                         <Grid
+                          style={{ width: "initial" }}
                           className={classes["dialog-action-container"]}
                           container
                           alignItems="center"
