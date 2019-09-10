@@ -251,7 +251,11 @@ function Profile(props) {
                           </Typography>
                           {informationText ? (
                             <Grid
-                              style={{ width: "initial", marginBottom: "10px" }}
+                              style={{
+                                width: "initial",
+                                marginTop: "10px",
+                                marginBottom: "10px",
+                              }}
                               justify="center"
                               container
                               direction="row"
@@ -269,12 +273,12 @@ function Profile(props) {
                             </Grid>
                           ) : null}
                           {/* <Grid container direction="row" alignItems="center">
-                                                    <div className={`${classes['status-circle']} ${classes[status]}`} />
-                                                    <Typography
-                                                        color="textSecondary" variant="caption">
-                                                        {userData.isOnline ? userData.accountDescription || "Online" : "Offline"}
-                                                    </Typography>
-                                                </Grid> */}
+                                <div className={`${classes['status-circle']} ${classes[status]}`} />
+                                <Typography
+                                  color="textSecondary" variant="caption">
+                                  {userData.isOnline ? userData.accountDescription || "Online" : "Offline"}
+                                </Typography>
+                              </Grid> */}
                         </Grid>
                         <Grid
                           style={{ width: "initial" }}
