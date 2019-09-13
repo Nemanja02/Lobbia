@@ -13,6 +13,7 @@ function Slider({ opened }) {
   const [{ x }, set] = useSpring(() => {
     return { x: 0 };
   });
+
   const { bind } = useGestureResponder({
     onStartShouldSet: () => true,
     onMove: ({ delta, xy }) => {
@@ -34,17 +35,27 @@ function Slider({ opened }) {
     return x;
   }
 
+  var position = opened
+    ? {
+        transform: x.interpolate(x => {
+          return `translateX(${Math.min(addResistance(x), 0)}px)`;
+        })
+      }
+    : {
+        transform: x.interpolate(x => {
+          return `translateX(calc(-100% + ${Math.min(addResistance(x))}px))`;
+        })
+      };
   return (
     <animated.div
       {...bind}
       style={{
-        transform: x.interpolate(x => {
-          return `translateX(${addResistance(x)}px)`;
-        }),
+        ...position,
+        transition: `transform .2s ease-out`,
         width: `100%`
       }}
     >
-      <Sidebar opened={opened} />
+      <Sidebar />
     </animated.div>
   );
 }

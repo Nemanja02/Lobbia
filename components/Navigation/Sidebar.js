@@ -79,12 +79,7 @@ export function Sidebar(props) {
 
   return (
     <>
-      <aside
-        className={`
-          ${classes.container} 
-          ${props.opened ? null : classes.closed}
-        `}
-      >
+      <aside className={classes.container}>
         <div className={classes.division}>
           <Profile
             profilePicture={props.user.profilePicture}
