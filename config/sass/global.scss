@@ -9,6 +9,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-*:not(input.field) {
+*:not(input) {
   @include unselectable;
 }
