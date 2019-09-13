@@ -4,6 +4,10 @@
 #findBG {
   @include bg;
 
+  .bgdiv {
+    @include fillArea;
+  }
+
   li {
     list-style: none;
     padding: 1em;

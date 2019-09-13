@@ -5,6 +5,7 @@ import { Slide } from "@material-ui/core";
 function SearchModal({ open, clicked, types }) {
   return open ? (
     <div id={classes.findBG}>
+      <div className={classes.bgdiv} onClick={clicked}/>
       <Slide in={open} direction="up" mountOnEnter unmountOnExit>
         <div className={classes.dialog}>
           <span>Create Lobby</span>
