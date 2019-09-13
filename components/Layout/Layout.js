@@ -11,18 +11,20 @@ import { useGestureResponder } from "react-gesture-responder";
 import { useSpring, animated } from "react-spring";
 
 function Slider({ changeState, opened }) {
+  const slideArea = 20;
+  const minSlide = 30;
   const [{ x }, set] = useSpring(() => {
     return { x: 0 };
   });
 
   const { bind } = useGestureResponder({
     onStartShouldSet: () => true,
-    onMove: ({ delta, xy }) => {
+    onMove: ({ delta }) => {
       set({ x: delta[0], immediate: true });
       console.log({ delta });
     },
     onRelease: ({ delta }) => {
-      if (Math.abs(delta[0]) > 30) {
+      if (Math.abs(delta[0]) > minSlide) {
         console.log(delta[0]);
         changeState(opened);
         set({ x: 0, immediate: true });
@@ -52,8 +54,8 @@ function Slider({ changeState, opened }) {
       }
     : {
         transform: x.interpolate(x => {
-          return `translateX(calc(-100% + 20px + ${Math.min(
-            addResistance(x)
+          return `translateX(calc(-100% + ${slideArea} + ${addResistance(
+            x
           )}px))`;
         })
       };
@@ -64,9 +66,9 @@ function Slider({ changeState, opened }) {
         ...position,
         position: `fixed`,
         transition: `transform .2s ease-out`,
-        width: `calc(100% + 20px)`,
+        width: `calc(100% + ${slideArea}px)`,
         height: `calc(100% - 60px)`,
-        paddingRight: `32px`
+        paddingRight: `${slideArea}px`
       }}
     >
       <Sidebar />

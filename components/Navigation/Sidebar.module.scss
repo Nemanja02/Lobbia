@@ -245,9 +245,5 @@ span:focus {
 @media (max-width: 700px) {
   .container {
     width: 100%;
-    padding-right: 0;
-    &.closed {
-      transform: translateX(-100%);
-    }
   }
 }
