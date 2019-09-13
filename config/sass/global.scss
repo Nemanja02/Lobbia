@@ -7,5 +7,8 @@
   font-family: "Roboto", sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+}
+
+*:not(input.field) {
   @include unselectable;
 }
