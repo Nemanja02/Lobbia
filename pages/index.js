@@ -15,7 +15,7 @@ export class index extends Component {
             <div>
               <h1>Ready to take off?</h1>
               <p>
-                Prepare to explore the world of online gaming from adifferent
+                Prepare to explore the world of online gaming from a different
                 perspective
               </p>
 
