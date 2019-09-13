@@ -24,8 +24,10 @@ function Slider({ changeState, opened }) {
       if (Math.abs(delta[0]) > 30) {
         console.log(delta[0]);
         changeState(opened);
+        set({ x: 0, immediate: true });
+      } else {
+        set({ x: 0, immediate: false });
       }
-      set({ x: 0, immediate: false });
     }
   });
 
@@ -52,7 +54,7 @@ function Slider({ changeState, opened }) {
           )}px))`;
         })
       };
-  return (
+  return /*Is window small?*/ true ? (
     <animated.div
       {...bind}
       style={{
@@ -66,6 +68,8 @@ function Slider({ changeState, opened }) {
     >
       <Sidebar />
     </animated.div>
+  ) : (
+    <Sidebar />
   );
 }
 
