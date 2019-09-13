@@ -24,10 +24,6 @@ class MyDocument extends Document {
 
           {/* UI colors */}
           <meta name="theme-color" content="#1e2024" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black-translucent"
-          />
 
           {/* Disable zoom */}
 
