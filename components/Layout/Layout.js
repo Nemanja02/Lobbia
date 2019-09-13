@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Sidebar from "../Navigation/Sidebar";
 import classes from "./Layout.module.scss";
 import TopBar from "../Navigation/TopBar";
@@ -41,6 +42,8 @@ function Slider({ changeState, opened }) {
     return x;
   }
 
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
+
   var position = opened
     ? {
         transform: x.interpolate(x => {
@@ -54,7 +57,7 @@ function Slider({ changeState, opened }) {
           )}px))`;
         })
       };
-  return /*Is window small?*/ true ? (
+  return isMobile ? (
     <animated.div
       {...bind}
       style={{
