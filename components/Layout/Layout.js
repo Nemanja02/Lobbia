@@ -9,7 +9,7 @@ import { parseCookies, destroyCookie } from "nookies";
 import { useGestureResponder } from "react-gesture-responder";
 import { useSpring, animated } from "react-spring";
 
-function Slider({ opened }) {
+function Slider({ changeState, opened }) {
   const [{ x }, set] = useSpring(() => {
     return { x: 0 };
   });
@@ -21,6 +21,10 @@ function Slider({ opened }) {
       console.log({ delta });
     },
     onRelease: ({ delta }) => {
+      if (Math.abs(delta[0]) > 30) {
+        console.log(delta[0]);
+        changeState(opened);
+      }
       set({ x: 0, immediate: false });
     }
   });
@@ -43,7 +47,9 @@ function Slider({ opened }) {
       }
     : {
         transform: x.interpolate(x => {
-          return `translateX(calc(-100% + ${Math.min(addResistance(x))}px))`;
+          return `translateX(calc(-100% + 20px + ${Math.min(
+            addResistance(x)
+          )}px))`;
         })
       };
   return (
@@ -51,8 +57,11 @@ function Slider({ opened }) {
       {...bind}
       style={{
         ...position,
+        position: `fixed`,
         transition: `transform .2s ease-out`,
-        width: `100%`
+        width: `calc(100% + 20px)`,
+        height: `calc(100% - 60px)`,
+        paddingRight: `32px`
       }}
     >
       <Sidebar />
@@ -87,7 +96,10 @@ class Layout extends React.Component {
           }}
         />
         <div className={classes.wrap}>
-          <Slider opened={this.state.isSidebarOpen} />
+          <Slider
+            opened={this.state.isSidebarOpen}
+            changeState={this.toggleSidebar}
+          />
           <main>{this.props.children}</main>
         </div>
       </div>
