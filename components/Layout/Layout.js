@@ -66,7 +66,7 @@ function Slider({ changeState, opened }) {
         transition: `transform .2s ease-out`,
         width: `calc(100% + 20px)`,
         height: `calc(100% - 60px)`,
-        paddingRight: `32px`
+        paddingRight: `20px`
       }}
     >
       <Sidebar />
