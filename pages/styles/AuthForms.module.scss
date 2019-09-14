@@ -171,8 +171,8 @@ a[href="/register"]:focus {
   @include scroll;
 }
 
-@media (min-height: 650px) {
-  .body {
-    @include center;
-  }
-}
+// @media (min-height: 650px) {
+//   .body {
+//     @include center;
+//   }
+// }

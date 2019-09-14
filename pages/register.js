@@ -502,14 +502,8 @@ class Register extends Component {
     }
 
     const secondStepRegistration = (
-      <Grid
-        className={classes.grid}
-        container
-        direction="column"
-        alignItems="center"
-        justify="space-between"
-      >
-        <Grid container direction="column" alignItems="center">
+      <Grid className={classes.grid} container>
+        <Grid container direction="column">
           <Typography variant="h4" color="textPrimary">
             Which games do you play?
           </Typography>
@@ -519,13 +513,11 @@ class Register extends Component {
         </Grid>
         <Grid
           style={{
-            flexGrow: 1,
+            flex: 1,
             height: "100%"
           }}
           container
           direction="column"
-          justify="space-between"
-          alignItems="center"
         >
           <Grid
             style={{
@@ -533,7 +525,6 @@ class Register extends Component {
             }}
             container
             direction="column"
-            alignItems="center"
           >
             <Typography
               style={{ alignSelf: "flex-start" }}
@@ -618,7 +609,7 @@ class Register extends Component {
         password: password.value,
         gender: gender.value,
         username: username.value,
-        dateOfBirth: this.state.formFields.birthday.value.toISOString(),
+        dateOfBirth: this.state.formFields.birthday.value.toISOString,
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };
