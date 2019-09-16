@@ -27,27 +27,43 @@
     }
   }
 
-  &:hover div,
-  &:focus div {
-    background-color: $color-text-second;
-
-    &:nth-child(1) {
-      transform: scaleX(0.8);
-    }
-
-    &:nth-child(3) {
-      transform: translateY(200%) scaleX(0.8);
-    }
-  }
-
   &.active {
     div {
       &:nth-child(1) {
-        transform: scaleX(0.8) translateY(200%);
+        transform: translateY(200%);
       }
 
       &:nth-child(3) {
-        transform: scaleX(0.8) translateY(0%);
+        transform: translateY(0%);
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .burger {
+    &:hover div,
+    &:focus div {
+      background-color: $color-text-second;
+
+      &:nth-child(1) {
+        transform: scaleX(0.8);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(200%) scaleX(0.8);
+      }
+    }
+
+    &.active {
+      div {
+        &:nth-child(1) {
+          transform: scaleX(0.8) translateY(200%);
+        }
+
+        &:nth-child(3) {
+          transform: scaleX(0.8) translateY(0%);
+        }
       }
     }
   }

@@ -18,7 +18,7 @@ function Slider({ changeState, opened }) {
 
   const { bind } = useGestureResponder({
     onStartShouldSet: () => true,
-    onMove: ({ delta, xy }) => {
+    onMove: ({ delta }) => {
       set({ x: delta[0], immediate: true });
     },
     onRelease: ({ delta }) => {
@@ -26,7 +26,7 @@ function Slider({ changeState, opened }) {
         console.log(delta[0]);
         changeState(opened);
       }
-        set({ x: 0, immediate: true });
+      set({ x: 0, immediate: true });
     }
   });
 
@@ -55,7 +55,7 @@ function Slider({ changeState, opened }) {
       };
 
   return (
-     <animated.div
+    <animated.div
       {...bind}
       style={{
         ...position,
@@ -68,7 +68,7 @@ function Slider({ changeState, opened }) {
     >
       <Sidebar />
     </animated.div>
-  )
+  );
 }
 
 function IsMobile({ changeState, opened }) {
@@ -106,7 +106,10 @@ class Layout extends React.Component {
           }}
         />
         <div className={classes.wrap}>
-          <IsMobile changeState={this.toggleSidebar} opened={this.state.isSidebarOpen}/>
+          <IsMobile
+            changeState={this.toggleSidebar}
+            opened={this.state.isSidebarOpen}
+          />
           <main>{this.props.children}</main>
         </div>
       </div>
