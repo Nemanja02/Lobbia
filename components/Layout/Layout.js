@@ -25,10 +25,8 @@ function Slider({ changeState, opened }) {
       if (Math.abs(delta[0]) > lol) {
         console.log(delta[0]);
         changeState(opened);
-        set({ x: 0, immediate: true });
-      } else {
-        set({ x: 0, immediate: false });
       }
+        set({ x: 0, immediate: true });
     }
   });
 
@@ -56,8 +54,8 @@ function Slider({ changeState, opened }) {
         })
       };
 
-  return useMediaQuery({ query: "(max-width: 700px)" }) ? (
-    <animated.div
+  return (
+     <animated.div
       {...bind}
       style={{
         ...position,
@@ -70,9 +68,7 @@ function Slider({ changeState, opened }) {
     >
       <Sidebar />
     </animated.div>
-  ) : (
-    <Sidebar />
-  );
+  )
 }
 
 function IsMobile({ changeState, opened }) {
@@ -110,7 +106,7 @@ class Layout extends React.Component {
           }}
         />
         <div className={classes.wrap}>
-          <IsMobile />
+          <IsMobile changeState={this.toggleSidebar} opened={this.state.isSidebarOpen}/>
           <main>{this.props.children}</main>
         </div>
       </div>
