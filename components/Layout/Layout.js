@@ -11,6 +11,7 @@ import { useGestureResponder } from "react-gesture-responder";
 import { useSpring, animated } from "react-spring";
 
 function Slider({ changeState, opened }) {
+  const lol = 150;
   const [{ x }, set] = useSpring(() => {
     return { x: 0 };
   });
@@ -19,10 +20,9 @@ function Slider({ changeState, opened }) {
     onStartShouldSet: () => true,
     onMove: ({ delta, xy }) => {
       set({ x: delta[0], immediate: true });
-      console.log({ delta });
     },
     onRelease: ({ delta }) => {
-      if (Math.abs(delta[0]) > 30) {
+      if (Math.abs(delta[0]) > lol) {
         console.log(delta[0]);
         changeState(opened);
         set({ x: 0, immediate: true });
@@ -42,8 +42,6 @@ function Slider({ changeState, opened }) {
     return x;
   }
 
-  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
-
   var position = opened
     ? {
         transform: x.interpolate(x => {
@@ -57,7 +55,8 @@ function Slider({ changeState, opened }) {
           )}px))`;
         })
       };
-  return isMobile ? (
+
+  return useMediaQuery({ query: "(max-width: 700px)" }) ? (
     <animated.div
       {...bind}
       style={{
@@ -71,6 +70,14 @@ function Slider({ changeState, opened }) {
     >
       <Sidebar />
     </animated.div>
+  ) : (
+    <Sidebar />
+  );
+}
+
+function IsMobile({ changeState, opened }) {
+  return useMediaQuery({ query: "(max-width: 700px)" }) ? (
+    <Slider opened={opened} changeState={changeState} />
   ) : (
     <Sidebar />
   );
@@ -103,10 +110,7 @@ class Layout extends React.Component {
           }}
         />
         <div className={classes.wrap}>
-          <Slider
-            opened={this.state.isSidebarOpen}
-            changeState={this.toggleSidebar}
-          />
+          <IsMobile />
           <main>{this.props.children}</main>
         </div>
       </div>
