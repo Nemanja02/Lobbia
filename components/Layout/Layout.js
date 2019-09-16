@@ -22,7 +22,7 @@ function Slider({ changeState, opened }) {
       set({ x: delta[0], immediate: true });
     },
     onRelease: ({ delta }) => {
-      if (opened ? delta[0] < lol : delta[0] > lol) {
+      if (opened ? delta[0] < - lol : delta[0] > lol) {
         console.log(delta[0]);
         changeState(opened);
       }
