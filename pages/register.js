@@ -27,7 +27,10 @@ import {
 } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker
+} from "@material-ui/pickers";
 
 import DateFnsUtils from "@date-io/date-fns";
 
@@ -189,7 +192,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 1,
+    formStage: 0,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -346,7 +349,7 @@ class Register extends Component {
 
             const dateField = (
               <MuiPickersUtilsProvider key={el.name} utils={DateFnsUtils}>
-                <DatePicker
+                <KeyboardDatePicker
                   inputVariant="filled"
                   disableFuture
                   openTo="year"
@@ -560,7 +563,7 @@ class Register extends Component {
           alignItems="center"
           justify="space-between"
         >
-          <Grid container direction="row" justify="center" alignSelf="flex-end">
+          <Grid container direction="row" justify="center">
             <Button
               className={classes.marginSides}
               onClick={this.formBackward}
@@ -609,7 +612,7 @@ class Register extends Component {
         password: password.value,
         gender: gender.value,
         username: username.value,
-        dateOfBirth: this.state.formFields.birthday.value.toISOString,
+        dateOfBirth: this.state.formFields.birthday.value.toISOString(),
         gamesInterests: selectedGames,
         musicInterests: selectedMusic
       };
