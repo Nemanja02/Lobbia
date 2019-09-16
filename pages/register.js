@@ -189,7 +189,7 @@ class Register extends Component {
   state = {
     isAuthSuccessful: false,
 
-    formStage: 0,
+    formStage: 1,
     formValidation: {
       logLevel: "",
       isValidated: true,
@@ -502,8 +502,8 @@ class Register extends Component {
     }
 
     const secondStepRegistration = (
-      <Grid className={classes.grid} container>
-        <Grid container direction="column">
+      <Grid className={classes.grid} container direction="column">
+        <Grid container direction="column" direction="column">
           <Typography variant="h4" color="textPrimary">
             Which games do you play?
           </Typography>
@@ -560,7 +560,7 @@ class Register extends Component {
           alignItems="center"
           justify="space-between"
         >
-          <Grid container direction="row" justify="center">
+          <Grid container direction="row" justify="center" alignSelf="flex-end">
             <Button
               className={classes.marginSides}
               onClick={this.formBackward}

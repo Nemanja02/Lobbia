@@ -6,7 +6,7 @@
   font-size: 15px;
   color: $color-text;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: $default-border-radius;
   padding: 2px 0;
   margin: 2px 0;
   display: flex;
@@ -44,7 +44,7 @@
     background-color: $color-bg;
     cursor: pointer;
     color: $color-text;
-    border-radius: 6px;
+    border-radius: $default-border-radius;
   }
 
   &:hover > &Icon {

@@ -15,9 +15,9 @@
   align-items: center;
   display: flex;
 
+  --height: 30px;
+
   & > div {
-    height: 30px;
-    width: 40px;
     display: none;
   }
 }
@@ -28,8 +28,8 @@
 }
 
 .logo {
-  height: calc(#{$topbar-height} - 2 * #{$margin});
-  margin: $margin;
+  height: 30px;
+  margin-left: $margin;
   @include unselectable;
 }
 
@@ -96,7 +96,7 @@
   background-color: $color-bg-light;
   color: $color-text;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: $default-border-radius;
   width: $searchbar-width-min;
   transition: all $transition;
   border: 1.5px solid transparent;
@@ -126,7 +126,7 @@
   height: 40px;
   width: 80px;
   background-color: $color-primary;
-  border-radius: 8px;
+  border-radius: $default-border-radius;
   flex-direction: row;
   z-index: 10;
   cursor: pointer;

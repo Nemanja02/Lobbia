@@ -2,7 +2,10 @@
 @import "../../config/sass/mixins.scss";
 
 .burger {
-  $height: calc(100% / 5);
+  --height: inherit;
+  height: var(--height);
+  width: calc(1.2 * var(--height));
+  $height: calc(var(--height) / 5);
   cursor: pointer;
   position: relative;
 
